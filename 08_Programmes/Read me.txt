@@ -1,0 +1,35 @@
+Manette chevalier ancienne version:
+contient 6 programmes 
+pour faire fonctionner la manette 2018 et appairer les bluetooth shields.
+La manette a le rôle de master et le robot celui de slave
+
+étape 1:
+-téléverser le master_button dans dans l'arduino qui servira de master
+-téléverser le slave_led dans l'arduino qui servira de slave
+
+étape 2:
+-téléverser pjon_testBluM dans le master
+-téléverser pjon_testBluS dans le slave
+-ouvrir pour les deux le moniteur en série et vérifier que les deux affichent setup complete
+
+étape 3:
+-téléverser Manette_Mega_Bluetooth dans le master
+-téléverser Robot_Mega_bluetoothV3.1 dans le slave
+
+Manette chevalier nouvelle version:
+contient une programme non testé 
+qui combine le code de l'écran de la manette chevalier 2018 et le protocole de communication de 2017
+
+PJON:
+contient les programmes de la manette chevalier prévu au départ
+BT_v2.0 est le programme qui envoie la trame expliquée dans l'étude
+BR_v2.0 est le programme qui reçoit la trame expliquée dans l'étude
+Les codes breadboard sont versions test
+pjon_trans permet de configurer les shields master
+pjon_rec permet de configurer les shields slave
+pjon_test permettent de tester si la communication bluetooth et pjon transitent correctement entre les shields
+
+MANETTE_TABLE_LEVITATION:
+contient les deux programmes de la manette table de lévitation
+Table_levitation est le programme qui envoie les données
+TL_re est le programme qui reçoit les données

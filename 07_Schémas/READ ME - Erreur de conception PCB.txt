@@ -1,0 +1,6 @@
+Attention! Il y a eu une erreur à la conception qui concerne la Polymanette Chevalier et celle de la table à lévitation.
+
+Dans KiCad, la couche du dessus du PCB et celle du dessous ont été inverseés.
+
+C'est-à-dire que F.Cu, qui devrait être celle du dessus (Front) est en celle du dessous
+et B.Cu, qui devrait être la couche du dessous (Bottom) est celle du dessus.

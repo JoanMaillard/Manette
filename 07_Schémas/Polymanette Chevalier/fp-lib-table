@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name Arduino)(type KiCad)(uri "C:/Users/Alexandre.PICOTTE/Documents/P1704_Manettes/07_Schémas/Librairie d'empreintes/Arduino.pretty")(options "")(descr ""))
+  (lib (name Chevalier_2017)(type KiCad)(uri "C:/Users/Alexandre.PICOTTE/Documents/P1704_Manettes/07_Schémas/Librairie d'empreintes/Chevaliers_2017.pretty")(options "")(descr ""))
+  (lib (name Polymanette_2018)(type KiCad)(uri "C:/Users/Alexandre.PICOTTE/Documents/P1704_Manettes/07_Schémas/Librairie d'empreintes/Polymanette_2018.pretty")(options "")(descr ""))
+)
