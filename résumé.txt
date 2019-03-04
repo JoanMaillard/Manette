@@ -7,6 +7,10 @@ Smart switch
 
 https://www.nkkswitches.com/pdf/IS-Dev-Kit-9-Users-Manual.pdf
 
+Bluetooth
+
+https://www.cypress.com/file/138606/download
+
 Layout
 
 2 joysticks (2 axes chaque)
