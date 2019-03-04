@@ -23,12 +23,14 @@ Layout
 1 switch pour l'allumage (2 positions)
 1 port USB(-C?) pour charger
 1 écran pour la sélection des modes de jeu
-
+1 buzzer pour donner des informations auditives
+1 BMS
+4 batteries Li-ion
 _______________________________________________
 
 6 axes (analog)
 12 boutons (digital)
 1 port serial
 1 output écran
-
+1 buzzer
 
