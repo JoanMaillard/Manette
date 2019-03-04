@@ -1,0 +1,12 @@
+SEMAINE 1
+
+Jour 1 - 04.03.2019
+- Prise en main du projet
+- Information sur les versions existantes des manettes
+- Etablissement d'un git
+- Etablissement de certains objectifs de base
+- Début de prise en main d'un module Bluetooth (choix encore à faire)
+- Réflexions sur la solution d'alimentation (de préférence Li-Ion 2S2P avec BMS)
+- Réalisation d'un diagramme de fonction basique
+	- Voir document "diagramme_fonctionnel.vsdx"
+- Préparation de la station de travail (driver Wacom)
