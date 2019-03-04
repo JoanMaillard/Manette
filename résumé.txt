@@ -1,0 +1,23 @@
+Batteries
+
+https://eu.nkon.nl/rechargeable/18650-size/samsung-inr-18650-30q-3000mah-button-top.html
+https://eu.nkon.nl/accessories/bms-batterijspacer/2s-bms-2mos-2004d.html
+
+Smart switch
+
+https://www.nkkswitches.com/pdf/IS-Dev-Kit-9-Users-Manual.pdf
+
+Layout
+
+2 joysticks (2 axes chaque)
+2 gâchettes analogiques (1 axe chaque)
+2 bumpers au dessus des gâchettes (boutons)
+4 boutons frontaux
+1 d-pad 4 positions
+1 start
+1 select
+1 switch pour l'allumage (2 positions)
+1 port USB(-C?) pour charger
+1 écran pour la sélection des modes de jeu
+
+
