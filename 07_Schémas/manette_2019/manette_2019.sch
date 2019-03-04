@@ -211,4 +211,15 @@ F 3 "" H 4600 5300 50  0001 C CNN
 	1    4600 5300
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:Speaker LS?
+U 1 1 5C7D5866
+P 4250 6000
+F 0 "LS?" H 4420 5996 50  0000 L CNN
+F 1 "Speaker" H 4420 5905 50  0000 L CNN
+F 2 "" H 4250 5800 50  0001 C CNN
+F 3 "~" H 4240 5950 50  0001 C CNN
+	1    4250 6000
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
