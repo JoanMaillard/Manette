@@ -1,0 +1,29 @@
+Rapport de choix de protocole et de module Bluetooth:
+
+Au choix: 
+- Module Cypress en Bluetooth 4.1 en mode kiss
+- Module Seeed en Bluetooth 2.0 + EDR avec appairage en dur
+
+Avantages du Cypress
+- Appairage facile et rapide
+- Data rate plus grand, permettant une marge pour la transmission des données supérieures (quoique notre utilisation reste faible)
+- Faible consommation car en mode low energy
+
+Désavantages du Cypress
+- L'appairage Kiss présente une difficulté supplémentaire quant à la mise en place: il est possible que le module s'appaire avec le mauvais périphérique
+- Le module et la devboard sont d'une taille non-négligeable
+- Le module et la devboard sont basés sur une architecture ARM avec des Cortex-M0, et non avec des processeurs d'architecture AVR comme on les connaît.
+- On pressent une probable incompatibilité des modules Cypress avec les autres à notre disposition
+
+Avantages du Seeed
+- Appairage solide, donc en cas de perte de connection, puis rentrée à portée à nouveau, elle est immédiatement rétablie, ou au moins retentée
+- Data rate plus stable et portée légèrement plus grande
+- Très petite taille et facilité d'utilisation (périphérique MOSI/MISO)
+- Compatible Arduino sans interface spécifique
+
+Désavantages du Seeed
+- Bluetooth 2.0 avec EDR -> appairage plus compliqué / long à réaliser
+- Data rate un peu plus faible, mais dans les limites du raisonnable (sans compter que notre utilisation est de toute façon faible)
+- Consomme potentiellement un peu plus que le module en 4.1, mais avec une batterie de taille suffisante, ce problème disparaît.
+
+Notre choix se porte sur le module Seeed. 
