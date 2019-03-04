@@ -24,4 +24,11 @@ Layout
 1 port USB(-C?) pour charger
 1 écran pour la sélection des modes de jeu
 
+_______________________________________________
+
+6 axes (analog)
+12 boutons (digital)
+1 port serial
+1 output écran
+
 
