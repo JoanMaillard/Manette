@@ -13,3 +13,4 @@ Jour 1 - 04.03.2019
 
 Jour 2 - 05.03.2019
 - Réfection du document de choix du module Bluetooth
+- Elaboration d'un fichier MS Project pour la planification
