@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name Manette_Chevaliers-rescue)(type Legacy)(uri ${KIPRJMOD}/Manette_Chevaliers-rescue.lib)(options "")(descr ""))
+  (lib (name arduino)(type Legacy)(uri "P:/projet_manette/manette/07_Schémas/Librairies de composants/arduino-kicad-library-master/arduino-kicad-library-master/arduino.lib")(options "")(descr ""))
+  (lib (name Manette_arcade)(type Legacy)(uri "P:/projet_manette/manette/07_Schémas/Librairies de composants/Manette_arcade_2018/Manette_arcade.lib")(options "")(descr ""))
+)

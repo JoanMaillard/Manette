@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:manette_2019-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -220,6 +221,90 @@ F 1 "Speaker" H 4420 5905 50  0000 L CNN
 F 2 "" H 4250 5800 50  0001 C CNN
 F 3 "~" H 4240 5950 50  0001 C CNN
 	1    4250 6000
+	1    0    0    -1  
+$EndComp
+Text GLabel 9600 4500 0    50   Input ~ 0
++5V
+Text GLabel 9350 4600 0    50   Output ~ 0
+MISO
+Text GLabel 9600 4700 0    50   Input ~ 0
+SCK
+Text GLabel 9350 4800 0    50   Input ~ 0
+MOSI
+Text GLabel 9550 4900 0    50   UnSpc ~ 0
+LCD
+Text GLabel 9300 5000 0    50   UnSpc ~ 0
+SD
+Text GLabel 9550 5100 0    50   UnSpc ~ 0
+D/C
+Text GLabel 9300 5200 0    50   Input ~ 0
+RESET
+Text GLabel 9550 5300 0    50   Input ~ 0
++5V
+$Comp
+L power:GND #PWR?
+U 1 1 5C7E33B4
+P 9600 5500
+F 0 "#PWR?" H 9600 5250 50  0001 C CNN
+F 1 "GND" H 9605 5327 50  0000 C CNN
+F 2 "" H 9600 5500 50  0001 C CNN
+F 3 "" H 9600 5500 50  0001 C CNN
+	1    9600 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9600 5500 9600 5400
+Wire Wire Line
+	9600 5400 9750 5400
+Wire Wire Line
+	9550 5300 9750 5300
+Wire Wire Line
+	9300 5200 9750 5200
+Wire Wire Line
+	9550 5100 9750 5100
+Wire Wire Line
+	9750 5000 9300 5000
+Wire Wire Line
+	9550 4900 9750 4900
+Wire Wire Line
+	9350 4800 9750 4800
+Wire Wire Line
+	9750 4700 9600 4700
+Wire Wire Line
+	9350 4600 9750 4600
+Wire Wire Line
+	9600 4500 9750 4500
+$Comp
+L Connector_Generic:Conn_01x10 J?
+U 1 1 5C7E2DEA
+P 9950 4900
+F 0 "J?" H 10030 4892 50  0000 L CNN
+F 1 "Conn_01x10" H 10030 4801 50  0000 L CNN
+F 2 "" H 9950 4900 50  0001 C CNN
+F 3 "~" H 9950 4900 50  0001 C CNN
+	1    9950 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5C7E3FD7
+P 5450 1000
+F 0 "SW?" H 5450 1285 50  0000 C CNN
+F 1 "SW_Push" H 5450 1194 50  0000 C CNN
+F 2 "" H 5450 1200 50  0001 C CNN
+F 3 "" H 5450 1200 50  0001 C CNN
+	1    5450 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5C7E3FDE
+P 5450 1550
+F 0 "SW?" H 5450 1835 50  0000 C CNN
+F 1 "SW_Push" H 5450 1744 50  0000 C CNN
+F 2 "" H 5450 1750 50  0001 C CNN
+F 3 "" H 5450 1750 50  0001 C CNN
+	1    5450 1550
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
