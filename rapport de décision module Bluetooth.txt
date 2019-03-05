@@ -3,6 +3,7 @@ Rapport de choix de protocole et de module Bluetooth:
 Au choix: 
 - Module Cypress en Bluetooth 4.1 en mode kiss
 - Module Seeed en Bluetooth 2.0 + EDR avec appairage en dur
+- ESP32 en Bluetooth 4.1 en mode appairage dur / Wifi 
 
 Avantages du Cypress
 - Appairage facile et rapide
@@ -25,5 +26,19 @@ Désavantages du Seeed
 - Bluetooth 2.0 avec EDR -> appairage plus compliqué / long à réaliser
 - Data rate un peu plus faible, mais dans les limites du raisonnable (sans compter que notre utilisation est de toute façon faible)
 - Consomme potentiellement un peu plus que le module en 4.1, mais avec une batterie de taille suffisante, ce problème disparaît.
+- Occupe des pins MOSI/MISO de l'AtMega et le charge des capteurs ET des de la gestion du Bluetooth
 
-Notre choix se porte sur le module Seeed. 
+Avantages de l'ESP
+- Appairage solide
+- Data rate très stable car 
+- nous permet de déporter la communication de la lecture des éléments
+- Module 4.1 BLE -> module faible consommation pour la communication et technologie commune actuelle
+- Architecture connue AVR, comme les arduinos
+
+Désavantages de l'ESP
+- Consommation d'énergie globale potentiellement plus grande (module dédié supplémentaire)
+- Prend un peu de place, mais moins qu'un arduino appairé à un chip unique AtMega
+- Occupe des pins MOSI/MISO de l'AtMega, sans en prendre plus pour autant
+
+
+Notre choix se porte sur le module ESP. 
