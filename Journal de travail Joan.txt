@@ -10,3 +10,6 @@ Jour 1 - 04.03.2019
 - Réalisation d'un diagramme de fonction basique
 	- Voir document "diagramme_fonctionnel.vsdx"
 - Préparation de la station de travail (driver Wacom)
+
+Jour 2 - 05.03.2019
+- Réfection du document de choix du module Bluetooth
