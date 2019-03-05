@@ -36,3 +36,11 @@ _______________________________________________
 1 output écran
 1 buzzer
 
+Matériel utilisé:
+- AtMega 328P-PU
+- NodeMCU ESP32
+- MCP23017
+- boutons
+- joysticks
+- led (allumage)
+
