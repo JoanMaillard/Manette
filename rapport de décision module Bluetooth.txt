@@ -15,6 +15,7 @@ Désavantages du Cypress
 - Le module et la devboard sont d'une taille non-négligeable
 - Le module et la devboard sont basés sur une architecture ARM avec des Cortex-M0, et non avec des processeurs d'architecture AVR comme on les connaît.
 - On pressent une probable incompatibilité des modules Cypress avec les autres à notre disposition
+- Module Cypress cher
 
 Avantages du Seeed
 - Appairage solide, donc en cas de perte de connection, puis rentrée à portée à nouveau, elle est immédiatement rétablie, ou au moins retentée
