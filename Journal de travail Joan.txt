@@ -13,4 +13,9 @@ Jour 1 - 04.03.2019
 
 Jour 2 - 05.03.2019
 - Réfection du document de choix du module Bluetooth
+- Commande du module Bluetooth
 - Elaboration d'un fichier MS Project pour la planification
+- Discussion avec le groupe des robots chevaliers et minotaure pour établir la façon d'intégrer les manettes: nous développons un dongle
+- Mise en place d'un système de test de data transfer pour le serial 
+- Préparation pour un test simple (1 potard, 2 boutons à transmettre en serial)
+- Avance sur le fichier MS project
