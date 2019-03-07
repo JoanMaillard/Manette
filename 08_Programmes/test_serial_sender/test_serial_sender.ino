@@ -4,14 +4,14 @@
 #define pinb1 2
 #define pinb2 3
 #define pinb3 4
-#define DATA_SIZE 5
+#define DATA_SIZE 8
 
 byte potVal, potX, potY;
 bool but1, but2, but3;
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(19200);
   pinMode(pinaxis1, INPUT);
   pinMode(pinaxis2, INPUT);
   pinMode(pinaxis3, INPUT);
@@ -65,5 +65,8 @@ byte * conc() {
   concatenated[2] = potVal;
   concatenated[3] = potX;
   concatenated[4] = potY;
+  concatenated[5] = potVal;
+  concatenated[6] = potX;
+  concatenated[7] = potY;
   return concatenated;
 }

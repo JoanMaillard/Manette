@@ -1,10 +1,10 @@
-#define BUFFER_SIZE 5
+#define BUFFER_SIZE 8
 
 byte dataBuffer[BUFFER_SIZE];
 void setup() {
   // put your setup code here, to run once:
-  Serial3.begin(9600);
-  Serial.begin(115200);
+  Serial3.begin(19200);
+  Serial.begin(2000000);
 }
 
 void loop() {
@@ -14,5 +14,6 @@ void loop() {
     Serial.print(dataBuffer[i]);
     Serial.print(" ");
   }
+  Serial.print(millis());
   Serial.println("");
 }
