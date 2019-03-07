@@ -1,6 +1,40 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 2
+LIBS:adc-dac
+LIBS:analog_switches
+LIBS:atmel
+LIBS:audio
+LIBS:cmos4000
+LIBS:conn
+LIBS:device
+LIBS:dsp
+LIBS:linear
+LIBS:memory
+LIBS:microcontrollers
+LIBS:motors
+LIBS:power
+LIBS:relays
+LIBS:regul
+LIBS:switches
+LIBS:transistors
+LIBS:74xx
+LIBS:xilinx
+LIBS:microchip
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:contrib
+LIBS:valves
+LIBS:arduino
+LIBS:Manette_arcade
 LIBS:Manette_Chevaliers-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -15,7 +49,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Manette_Chevaliers-rescue:GND #PWR01
+L GND #PWR01
 U 1 1 5B03E849
 P 1450 2350
 F 0 "#PWR01" H 1450 2100 50  0001 C CNN
@@ -26,7 +60,7 @@ F 3 "" H 1450 2350 50  0001 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:LED D1
+L LED D1
 U 1 1 5B0FD566
 P 9300 5700
 F 0 "D1" H 9300 5800 50  0000 C CNN
@@ -106,7 +140,7 @@ NoConn ~ 4650 4450
 NoConn ~ 4650 5050
 NoConn ~ 4650 5550
 $Comp
-L Manette_Chevaliers-rescue:Screw_Terminal_01x02 J5
+L Screw_Terminal_01x02 J5
 U 1 1 5B111BD1
 P 8800 900
 F 0 "J5" H 8800 1000 50  0000 C CNN
@@ -119,7 +153,7 @@ $EndComp
 Text Label 8600 800  2    60   ~ 0
 9.6VDC
 $Comp
-L Manette_Chevaliers-rescue:GND #PWR02
+L GND #PWR02
 U 1 1 5B1152B9
 P 5850 6000
 F 0 "#PWR02" H 5850 5750 50  0001 C CNN
@@ -130,7 +164,7 @@ F 3 "" H 5850 6000 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:GND #PWR03
+L GND #PWR03
 U 1 1 5B115417
 P 1000 5250
 F 0 "#PWR03" H 1000 5000 50  0001 C CNN
@@ -141,7 +175,7 @@ F 3 "" H 1000 5250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:GND #PWR04
+L GND #PWR04
 U 1 1 5B1158D3
 P 9500 5050
 F 0 "#PWR04" H 9500 4800 50  0001 C CNN
@@ -152,7 +186,7 @@ F 3 "" H 9500 5050 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:Arduino_Mega2560_Shield XA1
+L Arduino_Mega2560_Shield XA1
 U 1 1 5B11F8C8
 P 5950 3400
 F 0 "XA1" V 6050 3400 60  0000 C CNN
@@ -163,7 +197,7 @@ F 3 "" H 6650 6150 60  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:GND #PWR05
+L GND #PWR05
 U 1 1 5B123253
 P 1300 7250
 F 0 "#PWR05" H 1300 7000 50  0001 C CNN
@@ -174,7 +208,7 @@ F 3 "" H 1300 7250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:PWR_FLAG #FLG06
+L PWR_FLAG #FLG06
 U 1 1 5B1239FF
 P 1300 7250
 F 0 "#FLG06" H 1300 7325 50  0001 C CNN
@@ -186,7 +220,7 @@ F 3 "" H 1300 7250 50  0001 C CNN
 $EndComp
 NoConn ~ 7250 2750
 $Comp
-L Manette_Chevaliers-rescue:ULN2803A U1
+L ULN2803A U1
 U 1 1 5B126248
 P 4100 6550
 F 0 "U1" H 4100 7075 50  0000 C CNN
@@ -197,7 +231,7 @@ F 3 "" H 4200 6450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:GND #PWR07
+L GND #PWR07
 U 1 1 5B128263
 P 4100 7250
 F 0 "#PWR07" H 4100 7000 50  0001 C CNN
@@ -208,7 +242,7 @@ F 3 "" H 4100 7250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:GND #PWR08
+L GND #PWR08
 U 1 1 5B1128C7
 P 8600 900
 F 0 "#PWR08" H 8600 650 50  0001 C CNN
@@ -222,7 +256,7 @@ NoConn ~ 4650 2250
 Text GLabel 5950 750  1    60   Output ~ 0
 +5V
 $Comp
-L Manette_Chevaliers-rescue:Speaker LS1
+L Speaker LS1
 U 1 1 5B135E91
 P 9650 6250
 F 0 "LS1" H 9700 6475 50  0000 R CNN
@@ -233,7 +267,7 @@ F 3 "" H 9640 6200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:R R1
+L R R1
 U 1 1 5B136B9C
 P 9600 5700
 F 0 "R1" V 9680 5700 50  0000 C CNN
@@ -244,7 +278,7 @@ F 3 "" H 9600 5700 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:Conn_01x10 J6
+L Conn_01x10 J6
 U 1 1 5B1373D4
 P 9700 4550
 F 0 "J6" H 9700 5050 50  0000 C CNN
@@ -259,7 +293,7 @@ Boutons\nJoystick
 Text Notes 9350 3700 0    60   ~ 0
 Ecran TFT\nLED d'alim.\nBuzzer
 $Comp
-L Manette_Chevaliers-rescue:Screw_Terminal_01x04 J3
+L Screw_Terminal_01x04 J3
 U 1 1 5B164479
 P 7750 2250
 F 0 "J3" H 7750 2450 50  0000 C CNN
@@ -274,7 +308,7 @@ Text GLabel 9450 6250 0    60   Input ~ 0
 Text GLabel 9750 5700 2    60   Input ~ 0
 +5V
 $Comp
-L Manette_Chevaliers-rescue:SW_Push SW1
+L SW_Push SW1
 U 1 1 5B167D3E
 P 1650 2350
 F 0 "SW1" H 1700 2450 50  0000 L CNN
@@ -287,7 +321,7 @@ $EndComp
 Text GLabel 6300 750  1    60   Output ~ 0
 9.6V
 $Comp
-L Manette_Chevaliers-rescue:C C2
+L C C2
 U 1 1 5B156818
 P 7600 950
 F 0 "C2" H 7625 1050 50  0000 L CNN
@@ -298,7 +332,7 @@ F 3 "" H 7600 950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:C C1
+L C C1
 U 1 1 5B156A41
 P 7250 950
 F 0 "C1" H 7275 1050 50  0000 L CNN
@@ -309,7 +343,7 @@ F 3 "" H 7250 950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:PWR_FLAG #FLG09
+L PWR_FLAG #FLG09
 U 1 1 5B15EA49
 P 1700 7250
 F 0 "#FLG09" H 1700 7325 50  0001 C CNN
@@ -324,7 +358,7 @@ Pwr
 Text GLabel 6150 750  1    60   UnSpc ~ 0
 Pwr
 $Comp
-L Manette_Chevaliers-rescue:PWR_FLAG #FLG010
+L PWR_FLAG #FLG010
 U 1 1 5B15F9DC
 P 5700 550
 F 0 "#FLG010" H 5700 625 50  0001 C CNN
@@ -347,7 +381,7 @@ BT_3V3
 Text Label 7300 4350 0    60   ~ 0
 BT_RESET
 $Comp
-L Manette_Chevaliers-rescue:Screw_Terminal_01x08 J2
+L Screw_Terminal_01x08 J2
 U 1 1 5B16A6B3
 P 5300 6850
 F 0 "J2" H 5300 7250 50  0000 C CNN
@@ -365,7 +399,7 @@ NoConn ~ 5750 800
 Text GLabel 4800 7050 3    60   Input ~ 0
 9.6V
 $Comp
-L Manette_Chevaliers-rescue:SW_SPST SW6
+L SW_SPST SW6
 U 1 1 5B19442F
 P 8000 800
 F 0 "SW6" H 8000 925 50  0000 C CNN
@@ -386,7 +420,7 @@ NoConn ~ 4650 3650
 NoConn ~ 7250 3150
 NoConn ~ 7250 3250
 $Comp
-L Manette_Chevaliers-rescue:Screw_Terminal_01x03 J1
+L Screw_Terminal_01x03 J1
 U 1 1 5B1A9D03
 P 4350 1650
 F 0 "J1" H 4350 1850 50  0000 C CNN
@@ -402,7 +436,7 @@ NoConn ~ 1500 5200
 NoConn ~ 4650 4650
 NoConn ~ 4650 4850
 $Comp
-L Manette_Chevaliers-rescue:Screw_Terminal_01x05 J4
+L Screw_Terminal_01x05 J4
 U 1 1 5B1EC5E6
 P 1600 2750
 F 0 "J4" H 1600 3050 50  0000 C CNN
@@ -413,7 +447,7 @@ F 3 "" H 1600 2750 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:GND #PWR011
+L GND #PWR011
 U 1 1 5B1EC98C
 P 1800 2950
 F 0 "#PWR011" H 1800 2700 50  0001 C CNN
@@ -433,10 +467,10 @@ Wire Wire Line
 	1000 3650 1000 3800
 Connection ~ 1000 5200
 Wire Wire Line
-	950  5200 1000 5200
+	950  5200 1050 5200
 Connection ~ 1000 3800
 Wire Wire Line
-	950  3800 1000 3800
+	950  3800 1050 3800
 Wire Wire Line
 	4650 1850 4150 1850
 Wire Wire Line
@@ -470,12 +504,12 @@ Wire Notes Line
 Wire Notes Line
 	10300 3750 8700 3750
 Wire Wire Line
-	5850 800  5950 800 
+	5850 800  6050 800 
 Wire Wire Line
 	5950 800  5950 750 
 Connection ~ 5950 800 
 Wire Wire Line
-	5750 6000 5850 6000
+	5750 6000 6150 6000
 Connection ~ 5850 6000
 Connection ~ 5950 6000
 Connection ~ 6050 6000
@@ -485,7 +519,7 @@ Wire Wire Line
 	6300 800  6300 750 
 Connection ~ 6300 800 
 Wire Wire Line
-	5100 7050 5100 7100
+	5100 7050 5100 7150
 Connection ~ 5100 7100
 Wire Notes Line
 	8700 3750 8700 6515
@@ -494,7 +528,7 @@ Wire Notes Line
 Wire Wire Line
 	6150 750  6150 800 
 Wire Wire Line
-	5850 550  5850 700 
+	5850 550  5850 800 
 Wire Wire Line
 	5850 550  5700 550 
 Wire Notes Line
@@ -648,7 +682,7 @@ Wire Wire Line
 	1000 5250 1000 5200
 Connection ~ 1000 5250
 $Comp
-L Manette_Chevaliers-rescue:Conn_01x01 J7
+L Conn_01x01 J7
 U 1 1 5B1FDEB7
 P 1700 3600
 F 0 "J7" H 1700 3700 50  0000 C CNN
@@ -659,7 +693,7 @@ F 3 "" H 1700 3600 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:R R2
+L R R2
 U 1 1 5B1FF0B9
 P 1850 3800
 F 0 "R2" V 1930 3800 50  0000 C CNN
@@ -678,7 +712,7 @@ NoConn ~ 7250 5150
 NoConn ~ 7250 5250
 NoConn ~ 7250 5350
 $Comp
-L Manette_Chevaliers-rescue:Conn_01x01 J8
+L Conn_01x01 J8
 U 1 1 5B320FA0
 P 5550 6000
 F 0 "J8" H 5550 6100 50  0000 C CNN
@@ -689,7 +723,7 @@ F 3 "" H 5550 6000 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Manette_Chevaliers-rescue:Joystick_RSF_2-Axis JS1
+L Joystick_RSF_2-Axis JS1
 U 1 1 5B34AE85
 P 1400 4550
 F 0 "JS1" H 1250 4600 60  0000 C CNN
@@ -700,12 +734,12 @@ F 3 "" H 1200 4550 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6150 800  6300 800 
+	6150 800  7800 800 
 Wire Wire Line
 	8200 800  8600 800 
 Connection ~ 7600 800 
 $Comp
-L Manette_Chevaliers-rescue:GND #PWR012
+L GND #PWR012
 U 1 1 5B34F833
 P 7400 1100
 F 0 "#PWR012" H 7400 850 50  0001 C CNN
@@ -716,31 +750,7 @@ F 3 "" H 7400 1100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7250 1100 7400 1100
+	7250 1100 7600 1100
 Connection ~ 7400 1100
 Connection ~ 7250 800 
-Wire Wire Line
-	1000 5200 1050 5200
-Wire Wire Line
-	1000 3800 1050 3800
-Wire Wire Line
-	5950 800  6050 800 
-Wire Wire Line
-	5850 6000 5950 6000
-Wire Wire Line
-	5950 6000 6050 6000
-Wire Wire Line
-	6050 6000 6150 6000
-Wire Wire Line
-	6300 800  7250 800 
-Wire Wire Line
-	5100 7100 5100 7150
-Wire Wire Line
-	5850 700  5850 800 
-Wire Wire Line
-	7600 800  7800 800 
-Wire Wire Line
-	7400 1100 7600 1100
-Wire Wire Line
-	7250 800  7600 800 
 $EndSCHEMATC

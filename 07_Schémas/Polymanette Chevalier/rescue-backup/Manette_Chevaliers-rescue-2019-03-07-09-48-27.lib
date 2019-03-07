@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# Manette_Chevaliers-rescue:Arduino_Mega2560_Shield
+# Arduino_Mega2560_Shield
 #
-DEF Manette_Chevaliers-rescue:Arduino_Mega2560_Shield XA 0 40 Y Y 1 F N
+DEF Arduino_Mega2560_Shield XA 0 40 Y Y 1 F N
 F0 "XA" 100 0 60 V V C CNN
-F1 "Manette_Chevaliers-rescue:Arduino_Mega2560_Shield" -100 0 60 V V C CNN
+F1 "Arduino_Mega2560_Shield" -100 0 60 V V C CNN
 F2 "" 700 2750 60 H I C CNN
 F3 "" 700 2750 60 H I C CNN
 $FPLIST
@@ -149,11 +149,11 @@ X VIN VIN -200 2600 300 D 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:C
+# C
 #
-DEF Manette_Chevaliers-rescue:C C 0 10 N Y 1 F N
+DEF C C 0 10 N Y 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "Manette_Chevaliers-rescue:C" 25 -100 50 H V L CNN
+F1 "C" 25 -100 50 H V L CNN
 F2 "" 38 -150 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -167,11 +167,11 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:Conn_01x01
+# Conn_01x01
 #
-DEF Manette_Chevaliers-rescue:Conn_01x01 J 0 40 Y N 1 F N
+DEF Conn_01x01 J 0 40 Y N 1 F N
 F0 "J" 0 100 50 H V C CNN
-F1 "Manette_Chevaliers-rescue:Conn_01x01" 0 -100 50 H V C CNN
+F1 "Conn_01x01" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -189,11 +189,11 @@ X Pin_1 1 -200 0 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:Conn_01x10
+# Conn_01x10
 #
-DEF Manette_Chevaliers-rescue:Conn_01x10 J 0 40 Y N 1 F N
+DEF Conn_01x10 J 0 40 Y N 1 F N
 F0 "J" 0 500 50 H V C CNN
-F1 "Manette_Chevaliers-rescue:Conn_01x10" 0 -600 50 H V C CNN
+F1 "Conn_01x10" 0 -600 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -229,11 +229,11 @@ X Pin_9 9 -200 -400 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:GND
+# GND
 #
-DEF Manette_Chevaliers-rescue:GND #PWR 0 0 Y Y 1 F P
+DEF GND #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -250 50 H I C CNN
-F1 "Manette_Chevaliers-rescue:GND" 0 -150 50 H V C CNN
+F1 "GND" 0 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -242,11 +242,11 @@ X GND 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:Joystick_RSF_2-Axis
+# Joystick_RSF_2-Axis
 #
-DEF Manette_Chevaliers-rescue:Joystick_RSF_2-Axis JS 0 40 Y Y 1 F N
+DEF Joystick_RSF_2-Axis JS 0 40 Y Y 1 F N
 F0 "JS" -150 50 60 H V C CNN
-F1 "Manette_Chevaliers-rescue:Joystick_RSF_2-Axis" -600 50 60 V V C CNN
+F1 "Joystick_RSF_2-Axis" -600 50 60 V V C CNN
 F2 "" -200 0 60 H I C CNN
 F3 "" -200 0 60 H I C CNN
 DRAW
@@ -276,11 +276,11 @@ X ~ 9 100 -650 200 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:LED
+# LED
 #
-DEF Manette_Chevaliers-rescue:LED D 0 40 Y N 1 F N
+DEF LED D 0 40 Y N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "Manette_Chevaliers-rescue:LED" 100 -100 50 H V C CNN
+F1 "LED" 100 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -297,11 +297,11 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:PWR_FLAG
+# PWR_FLAG
 #
-DEF Manette_Chevaliers-rescue:PWR_FLAG #FLG 0 0 N N 1 F P
+DEF PWR_FLAG #FLG 0 0 N N 1 F P
 F0 "#FLG" 0 75 50 H I C CNN
-F1 "Manette_Chevaliers-rescue:PWR_FLAG" 0 150 50 H V C CNN
+F1 "PWR_FLAG" 0 150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -310,11 +310,11 @@ X pwr 1 0 0 0 U 50 50 0 0 w
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:R
+# R
 #
-DEF Manette_Chevaliers-rescue:R R 0 0 N Y 1 F N
+DEF R R 0 0 N Y 1 F N
 F0 "R" 80 0 50 V V C CNN
-F1 "Manette_Chevaliers-rescue:R" 0 0 50 V V C CNN
+F1 "R" 0 0 50 V V C CNN
 F2 "" -70 0 50 V I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -328,11 +328,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:SW_Push
+# SW_Push
 #
-DEF Manette_Chevaliers-rescue:SW_Push SW 0 40 N N 1 F N
+DEF SW_Push SW 0 40 N N 1 F N
 F0 "SW" 50 100 50 H V L CNN
-F1 "Manette_Chevaliers-rescue:SW_Push" 0 -60 50 H V C CNN
+F1 "SW_Push" 0 -60 50 H V C CNN
 F2 "" 0 200 50 H I C CNN
 F3 "" 0 200 50 H I C CNN
 DRAW
@@ -345,11 +345,11 @@ X 2 2 200 0 100 L 50 50 0 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:SW_SPST
+# SW_SPST
 #
-DEF Manette_Chevaliers-rescue:SW_SPST SW 0 0 Y N 1 F N
+DEF SW_SPST SW 0 0 Y N 1 F N
 F0 "SW" 0 125 50 H V C CNN
-F1 "Manette_Chevaliers-rescue:SW_SPST" 0 -100 50 H V C CNN
+F1 "SW_SPST" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -361,11 +361,11 @@ X B 2 200 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:Screw_Terminal_01x02
+# Screw_Terminal_01x02
 #
-DEF Manette_Chevaliers-rescue:Screw_Terminal_01x02 J 0 40 Y N 1 F N
+DEF Screw_Terminal_01x02 J 0 40 Y N 1 F N
 F0 "J" 0 100 50 H V C CNN
-F1 "Manette_Chevaliers-rescue:Screw_Terminal_01x02" 0 -200 50 H V C CNN
+F1 "Screw_Terminal_01x02" 0 -200 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -385,11 +385,11 @@ X Pin_2 2 -200 -100 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:Screw_Terminal_01x03
+# Screw_Terminal_01x03
 #
-DEF Manette_Chevaliers-rescue:Screw_Terminal_01x03 J 0 40 Y N 1 F N
+DEF Screw_Terminal_01x03 J 0 40 Y N 1 F N
 F0 "J" 0 200 50 H V C CNN
-F1 "Manette_Chevaliers-rescue:Screw_Terminal_01x03" 0 -200 50 H V C CNN
+F1 "Screw_Terminal_01x03" 0 -200 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -413,11 +413,11 @@ X Pin_3 3 -200 -100 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:Screw_Terminal_01x04
+# Screw_Terminal_01x04
 #
-DEF Manette_Chevaliers-rescue:Screw_Terminal_01x04 J 0 40 Y N 1 F N
+DEF Screw_Terminal_01x04 J 0 40 Y N 1 F N
 F0 "J" 0 200 50 H V C CNN
-F1 "Manette_Chevaliers-rescue:Screw_Terminal_01x04" 0 -300 50 H V C CNN
+F1 "Screw_Terminal_01x04" 0 -300 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -445,11 +445,11 @@ X Pin_4 4 -200 -200 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:Screw_Terminal_01x05
+# Screw_Terminal_01x05
 #
-DEF Manette_Chevaliers-rescue:Screw_Terminal_01x05 J 0 40 Y N 1 F N
+DEF Screw_Terminal_01x05 J 0 40 Y N 1 F N
 F0 "J" 0 300 50 H V C CNN
-F1 "Manette_Chevaliers-rescue:Screw_Terminal_01x05" 0 -300 50 H V C CNN
+F1 "Screw_Terminal_01x05" 0 -300 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -481,11 +481,11 @@ X Pin_5 5 -200 -200 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:Screw_Terminal_01x08
+# Screw_Terminal_01x08
 #
-DEF Manette_Chevaliers-rescue:Screw_Terminal_01x08 J 0 40 Y N 1 F N
+DEF Screw_Terminal_01x08 J 0 40 Y N 1 F N
 F0 "J" 0 400 50 H V C CNN
-F1 "Manette_Chevaliers-rescue:Screw_Terminal_01x08" 0 -500 50 H V C CNN
+F1 "Screw_Terminal_01x08" 0 -500 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -529,11 +529,11 @@ X Pin_8 8 -200 -400 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:Speaker
+# Speaker
 #
-DEF Manette_Chevaliers-rescue:Speaker LS 0 0 Y N 1 F N
+DEF Speaker LS 0 0 Y N 1 F N
 F0 "LS" 50 225 50 H V R CNN
-F1 "Manette_Chevaliers-rescue:Speaker" 50 150 50 H V R CNN
+F1 "Speaker" 50 150 50 H V R CNN
 F2 "" 0 -200 50 H I C CNN
 F3 "" -10 -50 50 H I C CNN
 DRAW
@@ -544,11 +544,11 @@ X 2 2 -200 -100 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# Manette_Chevaliers-rescue:ULN2803A
+# ULN2803A
 #
-DEF Manette_Chevaliers-rescue:ULN2803A U 0 40 Y Y 1 F N
+DEF ULN2803A U 0 40 Y Y 1 F N
 F0 "U" 0 525 50 H V C CNN
-F1 "Manette_Chevaliers-rescue:ULN2803A" 0 450 50 H V C CNN
+F1 "ULN2803A" 0 450 50 H V C CNN
 F2 "" 50 -650 50 H I L CNN
 F3 "" 100 -100 50 H I C CNN
 $FPLIST
