@@ -1,0 +1,16 @@
+Cahier des charges - P1704 2019
+
+- Une manette sans fil
+	- La manette doit permettre de contrôler à distance des chevaliers, soit de leur transmettre des données (projet P1631)
+	- La manette doit permettre de contrôler à distance un module pédagogique MCT Siemens 1200/Arduino, 
+	soit de lui transmettre des données (projet M19xx, développement du module de réception à décider)
+	- Dans la manette, un écran intégré permettant d'afficher diverses choses
+	- Une forme ergonomique dans un format aussi réduit que possible
+	- Une durée de vie de la batterie d'au moins une heure
+- Un second design de manette sans fil fonctionnant sur le même principe, pour contrôler le minotaure
+- 
+- Un récepteur pour les manettes qui se branche sur l'arduino principal des chevaliers / du minotaure via une interface serial
+
+Matériel et technologies imposés:
+- Communication Bluetooth
+- Manette avec écran, au moins 2 axes et des gâchettes aux indexf

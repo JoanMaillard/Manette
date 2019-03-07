@@ -19,3 +19,12 @@ Jour 2 - 05.03.2019
 - Mise en place d'un système de test de data transfer pour le serial 
 - Préparation pour un test simple (1 potard, 2 boutons à transmettre en serial)
 - Avance sur le fichier MS project
+
+Jour 3 - 07.03.2019
+- Finition du test simple, établissement de la quantité de données totale à transmettre par l'AtMega vers l'ESP (8 octets)
+- Préparation du PPT de présentation du lendemain
+- Update MS Project sheet
+- Recherches sur la communication Bluetooth
+- Ajout d'un périphérique de level shifting 5v-3.3v
+- Added transistor pour que l'ESP reset l'AtMega qui lit les boutons etc.
+- Essai de l'ancienne manette

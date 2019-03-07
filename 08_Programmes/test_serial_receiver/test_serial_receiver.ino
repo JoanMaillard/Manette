@@ -3,8 +3,12 @@
 byte dataBuffer[BUFFER_SIZE];
 void setup() {
   // put your setup code here, to run once:
+  pinMode(2,OUTPUT);
   Serial3.begin(19200);
   Serial.begin(2000000);
+  //digitalWrite(2,LOW);
+  delay(100);
+  digitalWrite(2,HIGH);
 }
 
 void loop() {
@@ -14,6 +18,6 @@ void loop() {
     Serial.print(dataBuffer[i]);
     Serial.print(" ");
   }
-  Serial.print(millis());
+  //Serial.print(millis());
   Serial.println("");
 }
