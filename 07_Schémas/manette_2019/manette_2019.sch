@@ -17,12 +17,12 @@ $EndDescr
 $Comp
 L MCU_Module:Arduino_UNO_R3 A1
 U 1 1 5C7D419E
-P 3550 3100
-F 0 "A1" H 3550 4278 50  0000 C CNN
-F 1 "Arduino_UNO_R3" H 3550 4187 50  0000 C CNN
-F 2 "Module:Arduino_UNO_R3" H 3700 2050 50  0001 L CNN
-F 3 "https://www.arduino.cc/en/Main/arduinoBoardUno" H 3350 4150 50  0001 C CNN
-	1    3550 3100
+P 2000 2150
+F 0 "A1" H 2000 3328 50  0000 C CNN
+F 1 "Arduino_UNO_R3" H 2000 3237 50  0000 C CNN
+F 2 "Module:Arduino_UNO_R3" H 2150 1100 50  0001 L CNN
+F 3 "https://www.arduino.cc/en/Main/arduinoBoardUno" H 1800 3200 50  0001 C CNN
+	1    2000 2150
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -223,66 +223,66 @@ F 3 "~" H 4240 5950 50  0001 C CNN
 	1    4250 6000
 	1    0    0    -1  
 $EndComp
-Text GLabel 9600 4500 0    50   Input ~ 0
+Text GLabel 1450 4350 0    50   Input ~ 0
 +5V
-Text GLabel 9350 4600 0    50   Output ~ 0
+Text GLabel 1200 4450 0    50   Output ~ 0
 MISO
-Text GLabel 9600 4700 0    50   Input ~ 0
+Text GLabel 1450 4550 0    50   Input ~ 0
 SCK
-Text GLabel 9350 4800 0    50   Input ~ 0
+Text GLabel 1200 4650 0    50   Input ~ 0
 MOSI
-Text GLabel 9550 4900 0    50   UnSpc ~ 0
+Text GLabel 1400 4750 0    50   UnSpc ~ 0
 LCD
-Text GLabel 9300 5000 0    50   UnSpc ~ 0
+Text GLabel 1150 4850 0    50   UnSpc ~ 0
 SD
-Text GLabel 9550 5100 0    50   UnSpc ~ 0
+Text GLabel 1400 4950 0    50   UnSpc ~ 0
 D/C
-Text GLabel 9300 5200 0    50   Input ~ 0
+Text GLabel 1150 5050 0    50   Input ~ 0
 RESET
-Text GLabel 9550 5300 0    50   Input ~ 0
+Text GLabel 1400 5150 0    50   Input ~ 0
 +5V
 $Comp
 L power:GND #PWR?
 U 1 1 5C7E33B4
-P 9600 5500
-F 0 "#PWR?" H 9600 5250 50  0001 C CNN
-F 1 "GND" H 9605 5327 50  0000 C CNN
-F 2 "" H 9600 5500 50  0001 C CNN
-F 3 "" H 9600 5500 50  0001 C CNN
-	1    9600 5500
+P 1450 5350
+F 0 "#PWR?" H 1450 5100 50  0001 C CNN
+F 1 "GND" H 1455 5177 50  0000 C CNN
+F 2 "" H 1450 5350 50  0001 C CNN
+F 3 "" H 1450 5350 50  0001 C CNN
+	1    1450 5350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9600 5500 9600 5400
+	1450 5350 1450 5250
 Wire Wire Line
-	9600 5400 9750 5400
+	1450 5250 1600 5250
 Wire Wire Line
-	9550 5300 9750 5300
+	1400 5150 1600 5150
 Wire Wire Line
-	9300 5200 9750 5200
+	1150 5050 1600 5050
 Wire Wire Line
-	9550 5100 9750 5100
+	1400 4950 1600 4950
 Wire Wire Line
-	9750 5000 9300 5000
+	1600 4850 1150 4850
 Wire Wire Line
-	9550 4900 9750 4900
+	1400 4750 1600 4750
 Wire Wire Line
-	9350 4800 9750 4800
+	1200 4650 1600 4650
 Wire Wire Line
-	9750 4700 9600 4700
+	1600 4550 1450 4550
 Wire Wire Line
-	9350 4600 9750 4600
+	1200 4450 1600 4450
 Wire Wire Line
-	9600 4500 9750 4500
+	1450 4350 1600 4350
 $Comp
 L Connector_Generic:Conn_01x10 J?
 U 1 1 5C7E2DEA
-P 9950 4900
-F 0 "J?" H 10030 4892 50  0000 L CNN
-F 1 "Conn_01x10" H 10030 4801 50  0000 L CNN
-F 2 "" H 9950 4900 50  0001 C CNN
-F 3 "~" H 9950 4900 50  0001 C CNN
-	1    9950 4900
+P 1800 4750
+F 0 "J?" H 1880 4742 50  0000 L CNN
+F 1 "Conn_01x10" H 1880 4651 50  0000 L CNN
+F 2 "" H 1800 4750 50  0001 C CNN
+F 3 "~" H 1800 4750 50  0001 C CNN
+	1    1800 4750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -307,4 +307,29 @@ F 3 "" H 5450 1750 50  0001 C CNN
 	1    5450 1550
 	1    0    0    -1  
 $EndComp
+$Comp
+L MCP23017:MCP23017 U?
+U 1 1 5C80D464
+P 4150 1900
+F 0 "U?" H 4250 1915 50  0000 C CNN
+F 1 "MCP23017" H 4250 1824 50  0000 C CNN
+F 2 "" H 4250 1850 50  0001 C CNN
+F 3 "" H 4250 1850 50  0001 C CNN
+	1    4150 1900
+	1    0    0    -1  
+$EndComp
+Text GLabel 1250 3450 0    50   Input ~ 0
+MISO
+Text GLabel 1250 3750 0    50   Output ~ 0
+SCK
+Text GLabel 2000 3750 0    50   Output ~ 0
+MOSI
+Text GLabel 1800 3550 0    50   UnSpc ~ 0
+LCD
+Text GLabel 2200 3600 0    50   UnSpc ~ 0
+SD
+Text GLabel 2350 3800 0    50   UnSpc ~ 0
+D/C
+Text GLabel 2550 3500 0    50   Output ~ 0
+RESET
 $EndSCHEMATC
