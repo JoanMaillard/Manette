@@ -15,10 +15,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW3
 U 1 1 5C7D4510
 P 6200 2100
-F 0 "SW?" H 6200 2385 50  0000 C CNN
+F 0 "SW3" H 6200 2385 50  0000 C CNN
 F 1 "Button_X" H 6200 2294 50  0000 C CNN
 F 2 "" H 6200 2300 50  0001 C CNN
 F 3 "" H 6200 2300 50  0001 C CNN
@@ -26,10 +26,10 @@ F 3 "" H 6200 2300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW4
 U 1 1 5C7D45CD
 P 6200 2650
-F 0 "SW?" H 6200 2935 50  0000 C CNN
+F 0 "SW4" H 6200 2935 50  0000 C CNN
 F 1 "Button_Y" H 6200 2844 50  0000 C CNN
 F 2 "" H 6200 2850 50  0001 C CNN
 F 3 "" H 6200 2850 50  0001 C CNN
@@ -37,10 +37,10 @@ F 3 "" H 6200 2850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW5
 U 1 1 5C7D45ED
 P 6200 3150
-F 0 "SW?" H 6200 3435 50  0000 C CNN
+F 0 "SW5" H 6200 3435 50  0000 C CNN
 F 1 "Button_Start" H 6200 3344 50  0000 C CNN
 F 2 "" H 6200 3350 50  0001 C CNN
 F 3 "" H 6200 3350 50  0001 C CNN
@@ -48,10 +48,10 @@ F 3 "" H 6200 3350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW6
 U 1 1 5C7D4610
 P 6200 3700
-F 0 "SW?" H 6200 3985 50  0000 C CNN
+F 0 "SW6" H 6200 3985 50  0000 C CNN
 F 1 "Button_Select" H 6200 3894 50  0000 C CNN
 F 2 "" H 6200 3900 50  0001 C CNN
 F 3 "" H 6200 3900 50  0001 C CNN
@@ -59,10 +59,10 @@ F 3 "" H 6200 3900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Manette_arcade:Joystick_RSF_2-Axis JS?
+L Manette_arcade:Joystick_RSF_2-Axis JS2
 U 1 1 5C7D49EC
 P 9100 3900
-F 0 "JS?" H 8520 4003 60  0000 R CNN
+F 0 "JS2" H 8520 4003 60  0000 R CNN
 F 1 "Joystick_RSF_2-Axis" H 8520 3897 60  0000 R CNN
 F 2 "" H 8900 3900 60  0001 C CNN
 F 3 "" H 8900 3900 60  0001 C CNN
@@ -92,21 +92,21 @@ F 3 "~" H 9600 5400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW11
 U 1 1 5C7D4D3A
 P 6800 3150
-F 0 "SW?" H 6800 3435 50  0000 C CNN
-F 1 "SW_Push" H 6800 3344 50  0000 C CNN
+F 0 "SW11" H 6800 3435 50  0000 C CNN
+F 1 "R_button" H 6800 3344 50  0000 C CNN
 F 2 "" H 6800 3350 50  0001 C CNN
 F 3 "" H 6800 3350 50  0001 C CNN
 	1    6800 3150
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW9
 U 1 1 5C7D4D48
 P 6800 2100
-F 0 "SW?" H 6800 2385 50  0000 C CNN
+F 0 "SW9" H 6800 2385 50  0000 C CNN
 F 1 "Button_Gauche" H 6800 2294 50  0000 C CNN
 F 2 "" H 6800 2300 50  0001 C CNN
 F 3 "" H 6800 2300 50  0001 C CNN
@@ -114,10 +114,10 @@ F 3 "" H 6800 2300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW10
 U 1 1 5C7D4D4F
 P 6800 2650
-F 0 "SW?" H 6800 2935 50  0000 C CNN
+F 0 "SW10" H 6800 2935 50  0000 C CNN
 F 1 "Button_Bas" H 6800 2844 50  0000 C CNN
 F 2 "" H 6800 2850 50  0001 C CNN
 F 3 "" H 6800 2850 50  0001 C CNN
@@ -136,10 +136,10 @@ F 3 "" H 6200 1200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW2
 U 1 1 5C7D4F7D
 P 6200 1550
-F 0 "SW?" H 6200 1835 50  0000 C CNN
+F 0 "SW2" H 6200 1835 50  0000 C CNN
 F 1 "Button_B" H 6200 1744 50  0000 C CNN
 F 2 "" H 6200 1750 50  0001 C CNN
 F 3 "" H 6200 1750 50  0001 C CNN
@@ -147,25 +147,14 @@ F 3 "" H 6200 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_DPDT_x2 SW?
-U 1 1 5C7D5504
-P 6900 4250
-F 0 "SW?" H 6900 4535 50  0000 C CNN
-F 1 "SW_DPDT_x2" H 6900 4444 50  0000 C CNN
-F 2 "" H 6900 4250 50  0001 C CNN
-F 3 "" H 6900 4250 50  0001 C CNN
-	1    6900 4250
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:Speaker LS?
 U 1 1 5C7D5866
-P 5600 4750
-F 0 "LS?" H 5770 4746 50  0000 L CNN
-F 1 "Speaker" H 5770 4655 50  0000 L CNN
-F 2 "" H 5600 4550 50  0001 C CNN
-F 3 "~" H 5590 4700 50  0001 C CNN
-	1    5600 4750
+P 6050 4850
+F 0 "LS?" H 6220 4846 50  0000 L CNN
+F 1 "Speaker" H 6220 4755 50  0000 L CNN
+F 2 "" H 6050 4650 50  0001 C CNN
+F 3 "~" H 6040 4800 50  0001 C CNN
+	1    6050 4850
 	1    0    0    -1  
 $EndComp
 Text GLabel 1450 4350 0    50   Input ~ 0
@@ -220,10 +209,10 @@ Wire Wire Line
 Wire Wire Line
 	1450 4350 1600 4350
 $Comp
-L Connector_Generic:Conn_01x10 J?
+L Connector_Generic:Conn_01x10 J1
 U 1 1 5C7E2DEA
 P 1800 4750
-F 0 "J?" H 1880 4742 50  0000 L CNN
+F 0 "J1" H 1880 4742 50  0000 L CNN
 F 1 "Conn_01x10" H 1880 4651 50  0000 L CNN
 F 2 "" H 1800 4750 50  0001 C CNN
 F 3 "~" H 1800 4750 50  0001 C CNN
@@ -231,10 +220,10 @@ F 3 "~" H 1800 4750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW7
 U 1 1 5C7E3FD7
 P 6800 1000
-F 0 "SW?" H 6800 1285 50  0000 C CNN
+F 0 "SW7" H 6800 1285 50  0000 C CNN
 F 1 "Button_Droite" H 6800 1194 50  0000 C CNN
 F 2 "" H 6800 1200 50  0001 C CNN
 F 3 "" H 6800 1200 50  0001 C CNN
@@ -242,10 +231,10 @@ F 3 "" H 6800 1200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW8
 U 1 1 5C7E3FDE
 P 6800 1550
-F 0 "SW?" H 6800 1835 50  0000 C CNN
+F 0 "SW8" H 6800 1835 50  0000 C CNN
 F 1 "Button_Haut" H 6800 1744 50  0000 C CNN
 F 2 "" H 6800 1750 50  0001 C CNN
 F 3 "" H 6800 1750 50  0001 C CNN
@@ -253,47 +242,47 @@ F 3 "" H 6800 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L MCP23017:MCP23017 U?
+L MCP23017:MCP23017 U2
 U 1 1 5C80D464
-P 4100 1450
-F 0 "U?" H 4200 1465 50  0000 C CNN
-F 1 "MCP23017" H 4200 1374 50  0000 C CNN
-F 2 "" H 4200 1400 50  0001 C CNN
-F 3 "" H 4200 1400 50  0001 C CNN
-	1    4100 1450
+P 4400 1450
+F 0 "U2" H 4500 1465 50  0000 C CNN
+F 1 "MCP23017" H 4500 1374 50  0000 C CNN
+F 2 "" H 4500 1400 50  0001 C CNN
+F 3 "" H 4500 1400 50  0001 C CNN
+	1    4400 1450
 	1    0    0    -1  
 $EndComp
-Text GLabel 2450 1650 2    50   Input ~ 0
+Text GLabel 2750 1650 2    50   Input ~ 0
 MISO
-Text GLabel 2450 1750 2    50   Output ~ 0
+Text GLabel 2750 1750 2    50   Output ~ 0
 SCK
-Text GLabel 2450 1550 2    50   Output ~ 0
+Text GLabel 2750 1550 2    50   Output ~ 0
 MOSI
-Text GLabel 2450 1250 2    50   UnSpc ~ 0
+Text GLabel 2750 1250 2    50   UnSpc ~ 0
 LCD
-Text GLabel 2450 3650 2    50   UnSpc ~ 0
+Text GLabel 2750 3650 2    50   UnSpc ~ 0
 SD
-Text GLabel 2450 1350 2    50   UnSpc ~ 0
+Text GLabel 2750 1350 2    50   UnSpc ~ 0
 D/C
-Text GLabel 2450 1450 2    50   Output ~ 0
+Text GLabel 2750 1450 2    50   Output ~ 0
 RESET
-Text GLabel 2450 2550 2    50   Output ~ 0
+Text GLabel 2750 2550 2    50   Output ~ 0
 SDA
-Text GLabel 2450 2650 2    50   Output ~ 0
+Text GLabel 2750 2650 2    50   Output ~ 0
 SCL
-Text GLabel 3650 3400 0    50   Input ~ 0
+Text GLabel 3950 3400 0    50   Input ~ 0
 SCL
-Text GLabel 3650 3550 0    50   Input ~ 0
+Text GLabel 3950 3550 0    50   Input ~ 0
 SDA
 $Comp
-L MCU_Microchip_ATmega:ATmega328-PU U?
+L MCU_Microchip_ATmega:ATmega328-PU U1
 U 1 1 5C8105C7
-P 1850 2450
-F 0 "U?" H 1209 2496 50  0000 R CNN
-F 1 "ATmega328-PU" H 1209 2405 50  0000 R CNN
-F 2 "Package_DIP:DIP-28_W7.62mm" H 1850 2450 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 1850 2450 50  0001 C CNN
-	1    1850 2450
+P 2150 2450
+F 0 "U1" H 1509 2496 50  0000 R CNN
+F 1 "ATmega328-PU" H 1509 2405 50  0000 R CNN
+F 2 "Package_DIP:DIP-28_W7.62mm" H 2150 2450 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 2150 2450 50  0001 C CNN
+	1    2150 2450
 	1    0    0    -1  
 $EndComp
 Text GLabel 9900 1550 2    50   Output ~ 0
@@ -311,27 +300,27 @@ Left_joystick_button
 $Comp
 L power:GND #PWR?
 U 1 1 5C816B1D
-P 1850 3950
-F 0 "#PWR?" H 1850 3700 50  0001 C CNN
-F 1 "GND" H 1855 3777 50  0000 C CNN
-F 2 "" H 1850 3950 50  0001 C CNN
-F 3 "" H 1850 3950 50  0001 C CNN
-	1    1850 3950
+P 2150 3950
+F 0 "#PWR?" H 2150 3700 50  0001 C CNN
+F 1 "GND" H 2155 3777 50  0000 C CNN
+F 2 "" H 2150 3950 50  0001 C CNN
+F 3 "" H 2150 3950 50  0001 C CNN
+	1    2150 3950
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5C816DC7
-P 3500 3100
-F 0 "#PWR?" H 3500 2850 50  0001 C CNN
-F 1 "GND" H 3505 2927 50  0000 C CNN
-F 2 "" H 3500 3100 50  0001 C CNN
-F 3 "" H 3500 3100 50  0001 C CNN
-	1    3500 3100
+P 3800 3100
+F 0 "#PWR?" H 3800 2850 50  0001 C CNN
+F 1 "GND" H 3805 2927 50  0000 C CNN
+F 2 "" H 3800 3100 50  0001 C CNN
+F 3 "" H 3800 3100 50  0001 C CNN
+	1    3800 3100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3500 3100 3650 3100
+	3800 3100 3950 3100
 $Comp
 L power:GND #PWR?
 U 1 1 5C817E41
@@ -427,10 +416,10 @@ Wire Wire Line
 Wire Wire Line
 	9200 4550 9200 4650
 $Comp
-L Manette_arcade:Joystick_RSF_2-Axis JS?
+L Manette_arcade:Joystick_RSF_2-Axis JS1
 U 1 1 5C7D4903
 P 9100 1700
-F 0 "JS?" H 8520 1803 60  0000 R CNN
+F 0 "JS1" H 8520 1803 60  0000 R CNN
 F 1 "Joystick_RSF_2-Axis" H 8520 1697 60  0000 R CNN
 F 2 "" H 8900 1700 60  0001 C CNN
 F 3 "" H 8900 1700 60  0001 C CNN
@@ -447,38 +436,38 @@ Text GLabel 9400 950  1    50   Input ~ 0
 +5V
 Text GLabel 9400 3150 1    50   Input ~ 0
 +5V
-Text GLabel 4750 1750 2    50   Input ~ 0
+Text GLabel 5050 1750 2    50   Input ~ 0
 R_joystick_analog_x
-Text GLabel 4750 1900 2    50   Input ~ 0
+Text GLabel 5050 1900 2    50   Input ~ 0
 R_joystick_analog_y
-Text GLabel 4750 2350 2    50   Input ~ 0
+Text GLabel 5050 2350 2    50   Input ~ 0
 R_joystick_button
-Text GLabel 4750 2050 2    50   Input ~ 0
+Text GLabel 5050 2050 2    50   Input ~ 0
 L_joystick_analog_x
-Text GLabel 4750 2200 2    50   Input ~ 0
+Text GLabel 5050 2200 2    50   Input ~ 0
 L_joystick_analog_y
-Text GLabel 4750 2500 2    50   Input ~ 0
+Text GLabel 5050 2500 2    50   Input ~ 0
 L_joystick_button
-Text GLabel 4750 2800 2    50   Output ~ 0
+Text GLabel 5050 2800 2    50   Output ~ 0
 L_trigger
-Text GLabel 4750 2650 2    50   Output ~ 0
+Text GLabel 5050 2650 2    50   Output ~ 0
 R_trigger
 $Comp
-L Switch:SW_Push SW?
+L Switch:SW_Push SW12
 U 1 1 5C7D4D41
 P 6800 3700
-F 0 "SW?" H 6800 3985 50  0000 C CNN
-F 1 "SW_Push" H 6800 3894 50  0000 C CNN
+F 0 "SW12" H 6800 3985 50  0000 C CNN
+F 1 "L_button" H 6800 3894 50  0000 C CNN
 F 2 "" H 6800 3900 50  0001 C CNN
 F 3 "" H 6800 3900 50  0001 C CNN
 	1    6800 3700
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_Array:ULN2803A U?
+L Transistor_Array:ULN2803A U3
 U 1 1 5C82C60F
 P 4350 5150
-F 0 "U?" H 4350 5717 50  0000 C CNN
+F 0 "U3" H 4350 5717 50  0000 C CNN
 F 1 "ULN2803A" H 4350 5626 50  0000 C CNN
 F 2 "" H 4400 4500 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/uln2803a.pdf" H 4450 4950 50  0001 C CNN
@@ -488,65 +477,100 @@ $EndComp
 $Comp
 L Device:Resonator Y?
 U 1 1 5C82CAB8
-P 2900 1900
-F 0 "Y?" V 3200 1850 50  0000 L CNN
-F 1 "Resonator" V 3150 1700 50  0000 L CNN
-F 2 "" H 2875 1900 50  0001 C CNN
-F 3 "~" H 2875 1900 50  0001 C CNN
-	1    2900 1900
+P 3200 1900
+F 0 "Y?" V 3500 1850 50  0000 L CNN
+F 1 "Resonator" V 3450 1700 50  0000 L CNN
+F 2 "" H 3175 1900 50  0001 C CNN
+F 3 "~" H 3175 1900 50  0001 C CNN
+	1    3200 1900
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5C82D22E
-P 3200 2000
-F 0 "#PWR?" H 3200 1750 50  0001 C CNN
-F 1 "GND" H 3205 1827 50  0000 C CNN
-F 2 "" H 3200 2000 50  0001 C CNN
-F 3 "" H 3200 2000 50  0001 C CNN
-	1    3200 2000
+P 3500 2000
+F 0 "#PWR?" H 3500 1750 50  0001 C CNN
+F 1 "GND" H 3505 1827 50  0000 C CNN
+F 2 "" H 3500 2000 50  0001 C CNN
+F 3 "" H 3500 2000 50  0001 C CNN
+	1    3500 2000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3200 2000 3200 1900
+	3500 2000 3500 1900
 Wire Wire Line
-	3200 1900 3100 1900
+	3500 1900 3400 1900
 Wire Wire Line
-	2900 2050 2900 2100
+	3200 2050 3200 2100
 Wire Wire Line
-	2900 2100 2750 2100
+	3200 2100 3050 2100
 Wire Wire Line
-	2750 2100 2750 1950
+	3050 2100 3050 1950
 Wire Wire Line
-	2900 1750 2900 1700
+	3200 1750 3200 1700
 Wire Wire Line
-	2900 1700 2750 1700
+	3200 1700 3050 1700
 Wire Wire Line
-	2750 1700 2750 1850
+	3050 1700 3050 1850
 Wire Wire Line
-	2450 1850 2750 1850
+	2750 1850 3050 1850
 Wire Wire Line
-	2750 1950 2450 1950
+	3050 1950 2750 1950
 $Comp
 L Device:LED D?
 U 1 1 5C83283C
-P 6750 5600
-F 0 "D?" H 6741 5816 50  0000 C CNN
-F 1 "LED" H 6741 5725 50  0000 C CNN
-F 2 "" H 6750 5600 50  0001 C CNN
-F 3 "~" H 6750 5600 50  0001 C CNN
-	1    6750 5600
+P 6600 5400
+F 0 "D?" H 6591 5616 50  0000 C CNN
+F 1 "LED" H 6591 5525 50  0000 C CNN
+F 2 "" H 6600 5400 50  0001 C CNN
+F 3 "~" H 6600 5400 50  0001 C CNN
+	1    6600 5400
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 5C8328E9
-P 5950 5800
-F 0 "R?" H 6020 5846 50  0000 L CNN
-F 1 "R" H 6020 5755 50  0000 L CNN
-F 2 "" V 5880 5800 50  0001 C CNN
-F 3 "~" H 5950 5800 50  0001 C CNN
-	1    5950 5800
+P 6100 5400
+F 0 "R?" H 6170 5446 50  0000 L CNN
+F 1 "R" H 6170 5355 50  0000 L CNN
+F 2 "" V 6030 5400 50  0001 C CNN
+F 3 "~" H 6100 5400 50  0001 C CNN
+	1    6100 5400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Switch:SW_DPST_x2 SW14
+U 1 1 5C83593E
+P 800 1500
+F 0 "SW14" V 850 1250 50  0000 C CNN
+F 1 "Power On/Off" V 750 1100 50  0000 C CNN
+F 2 "" H 800 1500 50  0001 C CNN
+F 3 "" H 800 1500 50  0001 C CNN
+	1    800  1500
+	0    -1   -1   0   
+$EndComp
+Text GLabel 800  1700 3    50   Input ~ 0
++5V
+$Comp
+L power:+5V #PWR?
+U 1 1 5C8399A9
+P 800 1300
+F 0 "#PWR?" H 800 1150 50  0001 C CNN
+F 1 "+5V" H 815 1473 50  0000 C CNN
+F 2 "" H 800 1300 50  0001 C CNN
+F 3 "" H 800 1300 50  0001 C CNN
+	1    800  1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Manette_arcade:SW_Push SW13
+U 1 1 5C83B5DB
+P 6800 4350
+F 0 "SW13" H 6800 4635 50  0000 C CNN
+F 1 "Calib" H 6800 4544 50  0000 C CNN
+F 2 "" H 6800 4550 50  0001 C CNN
+F 3 "" H 6800 4550 50  0001 C CNN
+	1    6800 4350
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
