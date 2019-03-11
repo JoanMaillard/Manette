@@ -10,6 +10,7 @@ Cahier des charges - P1704 2019
 - Un second design de manette sans fil fonctionnant sur le même principe, pour contrôler le minotaure
 - 
 - Un récepteur pour les manettes qui se branche sur l'arduino principal des chevaliers / du minotaure via une interface serial
+- Implémentation du Bluetooth sur la console d'arcade située dans la classe T135
 
 Matériel et technologies imposés:
 - Communication Bluetooth
