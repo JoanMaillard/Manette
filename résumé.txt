@@ -12,6 +12,7 @@ Bluetooth
 
 https://www.conrad.ch/fr/joy-it-sbc-nodemcu-esp32-1-pcs-1656367.html
 https://www.cypress.com/file/138606/download
+https://techtutorialsx.com/2018/12/09/esp32-arduino-serial-over-bluetooth-client-connection-event/
 
 Boutons
 
