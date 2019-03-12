@@ -13,12 +13,13 @@ Bluetooth
 https://www.conrad.ch/fr/joy-it-sbc-nodemcu-esp32-1-pcs-1656367.html
 https://www.cypress.com/file/138606/download
 https://techtutorialsx.com/2018/12/09/esp32-arduino-serial-over-bluetooth-client-connection-event/
+https://github.com/gioblu/PJON/tree/master/src/strategies/ThroughSerial
+https://github.com/gioblu/PJON/blob/master/documentation/addressing.md
 
 Boutons
 
 https://ch.farnell.com/fr-CH/multimec/1js00/cap-commutateur-round-9-6mm-bleu/dp/2280392
 https://ch.farnell.com/multimec/ra3fth9/taster-spst-0-05a-24vdc-tht/dp/2473076?MER=bn_level5_4NP_LastViewed_1
-
 Layout
 
 2 joysticks (2 axes chaque)
