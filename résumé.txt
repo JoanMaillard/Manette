@@ -20,6 +20,10 @@ Boutons
 
 https://ch.farnell.com/fr-CH/multimec/1js00/cap-commutateur-round-9-6mm-bleu/dp/2280392
 https://ch.farnell.com/multimec/ra3fth9/taster-spst-0-05a-24vdc-tht/dp/2473076?MER=bn_level5_4NP_LastViewed_1
+bouton large: https://www.conrad.ch/fr/poussoir-rafi-546169042-1-pcs-704044.html
+https://www.conrad.ch/fr/capuchon-de-bouton-poussoir-mec-1q091-noir-1-pcs-705258.html?sc.ref=Product%20Details
+https://www.conrad.ch/fr/bouton-poussoir-a-rappel-mec-3fth9-25-vdc-005-a-1-x-offon-ip67-a-rappel-1-pcs-705268.html
+
 Layout
 
 2 joysticks (2 axes chaque)
