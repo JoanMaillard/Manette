@@ -10,8 +10,8 @@
 BluetoothSerial BTSerial;
 uint8_t bus_id[] = {0,0,0,1};
 PJONMaster<ThroughSerial> bus(bus_id);
-#define SERVICE_UUID        "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
-#define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
+#define SERVICE_UUID        "b9d4de40-44be-11e9-b210-d663bd873d93"
+#define CHARACTERISTIC_UUID "b9d4e282-44be-11e9-b210-d663bd873d93"
 
 void setup() {
   // put your setup code here, to run once:
