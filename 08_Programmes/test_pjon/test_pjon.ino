@@ -31,6 +31,7 @@ void setup() {
   pAdvertising->addServiceUUID(SERVICE_UUID);
   pAdvertising->start();
   Serial.println("Characteristic defined! Now you can read it in your phone!");
+  bus.begin();
   bus.set_error(error_function);
 }
 

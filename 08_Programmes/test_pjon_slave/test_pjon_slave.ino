@@ -92,6 +92,7 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
 
 void setup() {
   // put your setup code here, to run once:
+  Serial.begin(115200);
   Serial.println("Starting Arduino BLE Client application...");
   BLEDevice::init("");
 
@@ -103,7 +104,6 @@ void setup() {
   pBLEScan->setActiveScan(true);
   pBLEScan->start(30);
   
-  Serial.begin(115200);
 }
 
 void callback(esp_spp_cb_event_t event, esp_spp_cb_param_t *param) {
