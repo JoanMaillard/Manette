@@ -28,3 +28,35 @@ Jour 3 - 07.03.2019
 - Ajout d'un périphérique de level shifting 5v-3.3v
 - Added transistor pour que l'ESP reset l'AtMega qui lit les boutons etc.
 - Essai de l'ancienne manette
+
+Jour 4 - 08.03.2019
+- Réunion avec M. Locatelli pour revoir le cahier des charges
+- Removed transistor (pas nécessaire, problème corrigé - mauvais contact)
+- Commande des ESP32
+- Aide à la réparation / remise en service de la manette avec les chevaliers
+
+Jour 5 - 11.03.2019
+- Réfection du MS Project et du cahier des charges
+- Elaboration du programme de test PJON
+- Suite de l'aide à la remise en service des chevaliers
+
+Jour 6 - 12.03.2019
+- Suite de l'élaboration du programme de test PJON
+- Elaboration d'un plan de base pour la manette version breadboard
+- Correctifs sur le diagramme fonctionnel, graphique de complément sur la communication BT/PJON
+
+Jour 7 - 14.03.2019
+- Préparation de la présentation des projets
+- Réfections du cahier des charges
+- Etablissement du cahier des charges avec le groupe des chevaliers
+- Réfections sur le code de l'ESP pour intégrer le code PJON avec la communication BT comme sous-couche
+
+Jour 8 - 15.03.2019
+- Début du montage de la manette Breadboard (avec beaucoup de scotch)
+- Présentation des projets
+- Validation des cahiers des charges
+- Recherches diverses (gâchettes analogiques -> potentiomètres linéaires, doc BT, ...)
+
+Jour 9 - 18.03.2019
+- Continuation du montage de la manette Breadboard
+- Complément de doc
