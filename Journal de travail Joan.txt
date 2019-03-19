@@ -60,3 +60,9 @@ Jour 8 - 15.03.2019
 Jour 9 - 18.03.2019
 - Continuation du montage de la manette Breadboard
 - Complément de doc
+
+Jour 10 - 19.03.2019
+- Fin montage de la manette breadboard
+- Mise en place dans le code de test de la manette: système de calibration (non-centré)
+- Correction de problèmes d'interférence I2C sur les axes des pins A4/A5
+- Toujours pas d'ESP32
