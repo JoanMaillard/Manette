@@ -144,12 +144,12 @@ void loop() {
     minIny3 = temp[3];
     minInx4 = temp[4];
     minIny4 = temp[5];
-    maxIn1 = temp[6];
-    maxIn2 = temp[7];
-    maxInx3 = temp[8];
-    maxIny3 = temp[9];
-    maxInx4 = temp[10];
-    maxIny4 = temp[11];
+    maxIn1 = temp[6]-2;
+    maxIn2 = temp[7]-2;
+    maxInx3 = temp[8]-2;
+    maxIny3 = temp[9]-2;
+    maxInx4 = temp[10]-2;
+    maxIny4 = temp[11]-2;
     midX3 = analogRead(pinaxis3);
     midY3 = analogRead(pinaxis4);
     midX4 = analogRead(pinaxis5);
@@ -208,19 +208,19 @@ void getValues() {
   potVal1 = map(constrain(analogRead(pinaxis1), minIn1, maxIn1),minIn1,maxIn1,0,255); //get axies constrained between their max values
   potVal2 = map(constrain(analogRead(pinaxis2), minIn2, maxIn2),minIn2,maxIn2,0,255);
   if (X1 <= midX3)                                                                                                                                  //map joysticks between 0 and 255 regardless of their calib inputs
-  {joy1X = map(constrain(X1, minInx3, midX3), minInx3, midX3,0,128);}
+  {joy1X = map(constrain(X1, minInx3, midX3), minInx3, midX3,0,127);}
   else 
   {joy1X = map(constrain(X1, midX3, maxInx3), midX3, maxInx3, 128, 255);}
   if (Y1 <= midY3) 
-  {joy1Y = map(constrain(Y1, minIny3, midY3), minIny3, midY3,0,128);}
+  {joy1Y = map(constrain(Y1, minIny3, midY3), minIny3, midY3,0,127);}
   else
   {joy1Y = map(constrain(Y1, midY3, maxIny3), midY3, maxIny3, 128, 255);}
   if (X2 <= midX4)
-  {joy2X = map(constrain(X2, minInx4, midX4), minInx4, midX4,0,128);}
+  {joy2X = map(constrain(X2, minInx4, midX4), minInx4, midX4,0,127);}
   else 
   {joy2X = map(constrain(X2, midX4, maxInx4), midX4, maxInx4, 128, 255);}
   if (Y2 <= midY4)
-  {joy2Y = map(constrain(Y2, minIny4, midY4), minIny4, midY4,0,128);}
+  {joy2Y = map(constrain(Y2, minIny4, midY4), minIny4, midY4,0,127);}
   else
   {joy2Y = map(constrain(Y2, midY4, maxIny4), midY4, maxIny4, 128, 255);}
 }
