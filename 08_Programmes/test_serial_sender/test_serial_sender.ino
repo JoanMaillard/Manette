@@ -1,4 +1,4 @@
-#define SDA_PORT PORTD
+ #define SDA_PORT PORTD
 #define SDA_PIN 6 // = A4
 #define SCL_PORT PORTD
 #define SCL_PIN 7 // = A5
@@ -18,7 +18,7 @@
 const byte regA = 0x12;
 const byte regB = 0x13;
 byte potVal1, potVal2, joy1X, joy1Y, joy2X, joy2Y;
-int minIn1, minIn2, minInx3, minInx4, minIny3, minIny4, maxIn1, maxIn2, maxInx3, maxInx4, maxIny3, maxIny4;
+int minIn1, minIn2, minInx3, minInx4, minIny3, minIny4, maxIn1, maxIn2, maxInx3, maxInx4, maxIny3, maxIny4, midX3, midY3, midX4, midY4;
 bool calibrating = false;
 bool calPressed = false;
 
@@ -76,6 +76,7 @@ void loop() {
   //if (!calibrating) {Serial.write(mainData,DATA_SIZE);}
   //else {}
   if (calibrating) {
+    Serial.println("Calibrating...");
     digitalWrite(8,HIGH);
     minIn1 = 0;
     minIn2 = 0;
@@ -95,7 +96,6 @@ void loop() {
       byte *buttonData = getButtons();
       calButCheck(buttonData[0]);
       tpotVal1 = analogRead(pinaxis1);
-      Serial.println(tpotVal1);
       tpotVal2 = analogRead(pinaxis2);
       tjoy1X = analogRead(pinaxis3);
       tjoy1Y = analogRead(pinaxis4);
@@ -150,6 +150,10 @@ void loop() {
     maxIny3 = temp[9];
     maxInx4 = temp[10];
     maxIny4 = temp[11];
+    midX3 = analogRead(pinaxis3);
+    midY3 = analogRead(pinaxis4);
+    midX4 = analogRead(pinaxis5);
+    midY4 = analogRead(pinaxis6);
   }
   else {
     digitalWrite(8,LOW);
@@ -197,12 +201,28 @@ byte * getButtons() {
   }
 
 void getValues() {
+  int X1 = analogRead(pinaxis3);
+  int Y1 = analogRead(pinaxis4);
+  int X2 = analogRead(pinaxis5);
+  int Y2 = analogRead(pinaxis6);
   potVal1 = map(constrain(analogRead(pinaxis1), minIn1, maxIn1),minIn1,maxIn1,0,255); //get axies constrained between their max values
   potVal2 = map(constrain(analogRead(pinaxis2), minIn2, maxIn2),minIn2,maxIn2,0,255);
-  joy1X = map(constrain(analogRead(pinaxis3), minInx3, maxInx3),minInx3,maxInx3,0,255);
-  joy1Y = map(constrain(analogRead(pinaxis4), minIny3, maxIny3),minIny3,maxIny3,0,255);
-  joy2X = map(constrain(analogRead(pinaxis5), minInx4, maxInx4),minInx4,maxInx4,0,255);
-  joy2Y = map(constrain(analogRead(pinaxis6), minIny4, maxIny4),minIny4,maxIny4,0,255);
+  if (X1 <= midX3)                                                                                                                                  //map joysticks between 0 and 255 regardless of their calib inputs
+  {joy1X = map(constrain(X1, minInx3, midX3), minInx3, midX3,0,128);}
+  else 
+  {joy1X = map(constrain(X1, midX3, maxInx3), midX3, maxInx3, 128, 255);}
+  if (Y1 <= midY3) 
+  {joy1Y = map(constrain(Y1, minIny3, midY3), minIny3, midY3,0,128);}
+  else
+  {joy1Y = map(constrain(Y1, midY3, maxIny3), midY3, maxIny3, 128, 255);}
+  if (X2 <= midX4)
+  {joy2X = map(constrain(X2, minInx4, midX4), minInx4, midX4,0,128);}
+  else 
+  {joy2X = map(constrain(X2, midX4, maxInx4), midX4, maxInx4, 128, 255);}
+  if (Y2 <= midY4)
+  {joy2Y = map(constrain(Y2, minIny4, midY4), minIny4, midY4,0,128);}
+  else
+  {joy2Y = map(constrain(Y2, midY4, maxIny4), midY4, maxIny4, 128, 255);}
 }
 
 void calButCheck(byte val1) {
