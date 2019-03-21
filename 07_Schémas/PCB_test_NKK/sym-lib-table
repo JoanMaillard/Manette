@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name NKK_Smartswitch)(type Legacy)(uri P:/projet_manette/manette/07_Schémas/PCB_test_NKK/NKK_Smartswitch.lib)(options "")(descr ""))
+)
