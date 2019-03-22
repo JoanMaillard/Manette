@@ -61,7 +61,8 @@ bool connectToServer(BLEAddress pAddress) {
     Serial.print("The characteristic value was: ");
     Serial.println(value.c_str());
 
-    pRemoteCharacteristic->registerForNotify(notifyCallback);
+   // pRemoteCharacteristic->registerForNotify(notifyCallback);
+   // Serial.println("registerForNotify successful");
     return true;
 }
 
@@ -130,8 +131,9 @@ void loop() {
       else {
         Serial.println("BT link initialized");
       }
-      bus.acquire_id_master_slave();
-      bus.set_error(error_handler);
+      SerialBT.begin("ESP2");
+     //bus.acquire_id_master_slave();
+     // bus.set_error(error_handler);
       } else {
         Serial.println("We have failed to connect to the server; there is nothin more we will do.");
       }
