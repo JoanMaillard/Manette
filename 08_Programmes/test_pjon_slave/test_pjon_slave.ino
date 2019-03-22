@@ -124,7 +124,7 @@ void loop() {
       connected = true;
       SerialBT.register_callback(callback);
 
-      if (!SerialBT.begin("ESP32")) {
+      if (!SerialBT.begin("ESP2")) {
         Serial.println("An error occurred initializing BT link");
       }
       else {

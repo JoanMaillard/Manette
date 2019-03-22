@@ -16,7 +16,7 @@ PJONMaster<ThroughSerial> bus(bus_id);
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
-  BLEDevice::init("MyESP32");
+  BLEDevice::init("ESP1");
   BLEServer *pServer = BLEDevice::createServer();
   BLEService *pService = pServer->createService(SERVICE_UUID);
   BLECharacteristic *pCharacteristic = pService->createCharacteristic(
