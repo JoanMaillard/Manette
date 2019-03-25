@@ -41,7 +41,7 @@ L Switch:SW_Push SW5
 U 1 1 5C7D45ED
 P 6200 3150
 F 0 "SW5" H 6200 3435 50  0000 C CNN
-F 1 "Button_Start" H 6200 3344 50  0000 C CNN
+F 1 "Button_START" H 6200 3344 50  0000 C CNN
 F 2 "" H 6200 3350 50  0001 C CNN
 F 3 "" H 6200 3350 50  0001 C CNN
 	1    6200 3150
@@ -52,7 +52,7 @@ L Switch:SW_Push SW6
 U 1 1 5C7D4610
 P 6200 3700
 F 0 "SW6" H 6200 3985 50  0000 C CNN
-F 1 "Button_Select" H 6200 3894 50  0000 C CNN
+F 1 "Button_SELECT" H 6200 3894 50  0000 C CNN
 F 2 "" H 6200 3900 50  0001 C CNN
 F 3 "" H 6200 3900 50  0001 C CNN
 	1    6200 3700
@@ -107,7 +107,7 @@ L Switch:SW_Push SW9
 U 1 1 5C7D4D48
 P 6800 2100
 F 0 "SW9" H 6800 2385 50  0000 C CNN
-F 1 "Button_Gauche" H 6800 2294 50  0000 C CNN
+F 1 "Button_LEFT" H 6800 2294 50  0000 C CNN
 F 2 "" H 6800 2300 50  0001 C CNN
 F 3 "" H 6800 2300 50  0001 C CNN
 	1    6800 2100
@@ -118,7 +118,7 @@ L Switch:SW_Push SW10
 U 1 1 5C7D4D4F
 P 6800 2650
 F 0 "SW10" H 6800 2935 50  0000 C CNN
-F 1 "Button_Bas" H 6800 2844 50  0000 C CNN
+F 1 "Button_DOWN" H 6800 2844 50  0000 C CNN
 F 2 "" H 6800 2850 50  0001 C CNN
 F 3 "" H 6800 2850 50  0001 C CNN
 	1    6800 2650
@@ -224,7 +224,7 @@ L Switch:SW_Push SW7
 U 1 1 5C7E3FD7
 P 6800 1000
 F 0 "SW7" H 6800 1285 50  0000 C CNN
-F 1 "Button_Droite" H 6800 1194 50  0000 C CNN
+F 1 "Button_RIGHT" H 6800 1194 50  0000 C CNN
 F 2 "" H 6800 1200 50  0001 C CNN
 F 3 "" H 6800 1200 50  0001 C CNN
 	1    6800 1000
@@ -235,7 +235,7 @@ L Switch:SW_Push SW8
 U 1 1 5C7E3FDE
 P 6800 1550
 F 0 "SW8" H 6800 1835 50  0000 C CNN
-F 1 "Button_Haut" H 6800 1744 50  0000 C CNN
+F 1 "Button_UP" H 6800 1744 50  0000 C CNN
 F 2 "" H 6800 1750 50  0001 C CNN
 F 3 "" H 6800 1750 50  0001 C CNN
 	1    6800 1550
@@ -244,35 +244,35 @@ $EndComp
 $Comp
 L MCP23017:MCP23017 U2
 U 1 1 5C80D464
-P 4400 1450
-F 0 "U2" H 4500 1465 50  0000 C CNN
-F 1 "MCP23017" H 4500 1374 50  0000 C CNN
-F 2 "" H 4500 1400 50  0001 C CNN
-F 3 "" H 4500 1400 50  0001 C CNN
-	1    4400 1450
+P 4350 2850
+F 0 "U2" H 4450 2865 50  0000 C CNN
+F 1 "MCP23017" H 4450 2774 50  0000 C CNN
+F 2 "" H 4450 2800 50  0001 C CNN
+F 3 "" H 4450 2800 50  0001 C CNN
+	1    4350 2850
 	1    0    0    -1  
 $EndComp
-Text GLabel 2750 1650 2    50   Input ~ 0
+Text GLabel 2050 6050 2    50   Input ~ 0
 MISO
-Text GLabel 2750 1750 2    50   Output ~ 0
+Text GLabel 2050 6200 2    50   Output ~ 0
 SCK
-Text GLabel 2750 1550 2    50   Output ~ 0
+Text GLabel 2050 5950 2    50   Output ~ 0
 MOSI
-Text GLabel 2750 1250 2    50   UnSpc ~ 0
+Text GLabel 2050 5650 2    50   UnSpc ~ 0
 LCD
-Text GLabel 2750 3650 2    50   UnSpc ~ 0
+Text GLabel 2050 5500 2    50   UnSpc ~ 0
 SD
-Text GLabel 2750 1350 2    50   UnSpc ~ 0
+Text GLabel 2050 5750 2    50   UnSpc ~ 0
 D/C
-Text GLabel 2750 1450 2    50   Output ~ 0
+Text GLabel 2050 5850 2    50   Output ~ 0
 RESET
 Text GLabel 2750 2550 2    50   Output ~ 0
 SDA
 Text GLabel 2750 2650 2    50   Output ~ 0
 SCL
-Text GLabel 3950 3400 0    50   Input ~ 0
+Text GLabel 3900 4800 0    50   Input ~ 0
 SCL
-Text GLabel 3950 3550 0    50   Input ~ 0
+Text GLabel 3900 4950 0    50   Input ~ 0
 SDA
 $Comp
 L MCU_Microchip_ATmega:ATmega328-PU U1
@@ -311,16 +311,16 @@ $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5C816DC7
-P 3800 3100
-F 0 "#PWR?" H 3800 2850 50  0001 C CNN
-F 1 "GND" H 3805 2927 50  0000 C CNN
-F 2 "" H 3800 3100 50  0001 C CNN
-F 3 "" H 3800 3100 50  0001 C CNN
-	1    3800 3100
+P 3750 4500
+F 0 "#PWR?" H 3750 4250 50  0001 C CNN
+F 1 "GND" H 3755 4327 50  0000 C CNN
+F 2 "" H 3750 4500 50  0001 C CNN
+F 3 "" H 3750 4500 50  0001 C CNN
+	1    3750 4500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3800 3100 3950 3100
+	3750 4500 3900 4500
 $Comp
 L power:GND #PWR?
 U 1 1 5C817E41
@@ -436,21 +436,21 @@ Text GLabel 9400 950  1    50   Input ~ 0
 +5V
 Text GLabel 9400 3150 1    50   Input ~ 0
 +5V
-Text GLabel 5050 1750 2    50   Input ~ 0
+Text GLabel 4700 2100 2    50   Input ~ 0
 R_joystick_analog_x
-Text GLabel 5050 1900 2    50   Input ~ 0
+Text GLabel 4700 2250 2    50   Input ~ 0
 R_joystick_analog_y
-Text GLabel 5050 2350 2    50   Input ~ 0
+Text GLabel 3900 3450 0    50   Input ~ 0
 R_joystick_button
-Text GLabel 5050 2050 2    50   Input ~ 0
+Text GLabel 4700 2400 2    50   Input ~ 0
 L_joystick_analog_x
-Text GLabel 5050 2200 2    50   Input ~ 0
+Text GLabel 4700 2550 2    50   Input ~ 0
 L_joystick_analog_y
-Text GLabel 5050 2500 2    50   Input ~ 0
+Text GLabel 3900 3600 0    50   Input ~ 0
 L_joystick_button
-Text GLabel 5050 2800 2    50   Output ~ 0
+Text GLabel 4150 2550 2    50   Input ~ 0
 L_trigger
-Text GLabel 5050 2650 2    50   Output ~ 0
+Text GLabel 4150 2400 2    50   Input ~ 0
 R_trigger
 $Comp
 L Switch:SW_Push SW12
@@ -697,4 +697,28 @@ Text GLabel 2750 3250 2    50   Output ~ 0
 Power
 Text GLabel 2750 3150 2    50   Output ~ 0
 Buzzer
+Text GLabel 3900 3750 0    50   Input ~ 0
+Button_LEFT
+Text GLabel 3900 3900 0    50   Input ~ 0
+Button_UP
+Text GLabel 3900 4050 0    50   Input ~ 0
+Button_RIGHT
+Text GLabel 3900 4200 0    50   Input ~ 0
+Button_DOWN
+Text GLabel 5000 3150 2    50   Input ~ 0
+Button_A
+Text GLabel 5000 3300 2    50   Input ~ 0
+Button_B
+Text GLabel 5000 3450 2    50   Input ~ 0
+Button_Y
+Text GLabel 5000 3600 2    50   Input ~ 0
+Button_X
+Text GLabel 5000 4050 2    50   Input ~ 0
+Button_START
+Text GLabel 5000 4200 2    50   Input ~ 0
+Button_SELECT
+Text GLabel 5000 3750 2    50   Input ~ 0
+R_Bumper
+Text GLabel 5000 3900 2    50   Input ~ 0
+L_Bumper
 $EndSCHEMATC
