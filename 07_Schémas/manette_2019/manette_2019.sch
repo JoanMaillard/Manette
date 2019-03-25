@@ -5,7 +5,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Manette 2019"
+Title "Manette Universelle"
 Date "2019-03-04"
 Rev ""
 Comp "CPNV"
@@ -70,22 +70,22 @@ F 3 "" H 8150 2100 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_POT RV?
+L Device:R_POT RV1
 U 1 1 5C7D4ACF
 P 8800 6000
-F 0 "RV?" H 8730 6046 50  0000 R CNN
-F 1 "R_POT" H 8730 5955 50  0000 R CNN
+F 0 "RV1" H 8730 6046 50  0000 R CNN
+F 1 "L_trigger" H 8730 5955 50  0000 R CNN
 F 2 "" H 8800 6000 50  0001 C CNN
 F 3 "~" H 8800 6000 50  0001 C CNN
 	1    8800 6000
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_POT RV?
+L Device:R_POT RV2
 U 1 1 5C7D4B89
 P 9900 6000
-F 0 "RV?" H 9830 6046 50  0000 R CNN
-F 1 "R_POT" H 9830 5955 50  0000 R CNN
+F 0 "RV2" H 9830 6046 50  0000 R CNN
+F 1 "R_trigger" H 9830 5955 50  0000 R CNN
 F 2 "" H 9900 6000 50  0001 C CNN
 F 3 "~" H 9900 6000 50  0001 C CNN
 	1    9900 6000
@@ -147,10 +147,10 @@ F 3 "" H 10700 1900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Speaker LS?
+L Device:Speaker LS1
 U 1 1 5C7D5866
 P 5550 7250
-F 0 "LS?" H 5500 6950 50  0000 L CNN
+F 0 "LS1" H 5500 6950 50  0000 L CNN
 F 1 "Speaker" H 5400 6850 50  0000 L CNN
 F 2 "" H 5550 7050 50  0001 C CNN
 F 3 "~" H 5540 7200 50  0001 C CNN
@@ -217,13 +217,13 @@ F 3 "" H 6350 3500 50  0001 C CNN
 	1    6250 3550
 	1    0    0    -1  
 $EndComp
-Text GLabel 2750 1900 0    50   Input ~ 0
+Text GLabel 4850 1900 0    50   Input ~ 0
 MISO
-Text GLabel 2750 1800 0    50   Output ~ 0
+Text GLabel 4850 1800 0    50   Output ~ 0
 SCK
-Text GLabel 2750 2000 0    50   Output ~ 0
+Text GLabel 4850 2000 0    50   Output ~ 0
 MOSI
-Text GLabel 2750 1500 0    50   Output ~ 0
+Text GLabel 4850 1500 0    50   Output ~ 0
 RESET
 Text GLabel 3950 5350 2    50   Output ~ 0
 SDA
@@ -779,12 +779,12 @@ Wire Wire Line
 $Comp
 L ESP32:ESP32 U1
 U 1 1 5CA33ACA
-P 3850 1050
-F 0 "U1" H 3850 1525 50  0000 C CNN
-F 1 "ESP32" H 3850 1434 50  0000 C CNN
-F 2 "" H 3250 1000 50  0001 C CNN
-F 3 "" H 3250 1000 50  0001 C CNN
-	1    3850 1050
+P 5950 1050
+F 0 "U1" H 5950 1525 50  0000 C CNN
+F 1 "ESP32" H 5950 1434 50  0000 C CNN
+F 2 "" H 5350 1000 50  0001 C CNN
+F 3 "" H 5350 1000 50  0001 C CNN
+	1    5950 1050
 	1    0    0    -1  
 $EndComp
 Text Label 9850 800  0    197  ~ 0
@@ -802,38 +802,38 @@ F 3 "" H 1800 7000 50  0001 C CNN
 $EndComp
 Text GLabel 1500 6650 0    50   Input ~ 0
 DC
-Text GLabel 2750 1600 0    50   Output ~ 0
+Text GLabel 4850 1600 0    50   Output ~ 0
 DC
 Text GLabel 1500 6850 0    50   Input ~ 0
 OLEDCS
-Text GLabel 2750 1700 0    50   Output ~ 0
+Text GLabel 4850 1700 0    50   Output ~ 0
 OLEDCS
 Text GLabel 3350 2850 1    50   Input ~ 0
 +5V
 $Comp
 L power:GND #PWR?
 U 1 1 5CA7EA37
-P 2400 2200
-F 0 "#PWR?" H 2400 1950 50  0001 C CNN
-F 1 "GND" H 2405 2027 50  0000 C CNN
-F 2 "" H 2400 2200 50  0001 C CNN
-F 3 "" H 2400 2200 50  0001 C CNN
-	1    2400 2200
+P 4500 2200
+F 0 "#PWR?" H 4500 1950 50  0001 C CNN
+F 1 "GND" H 4505 2027 50  0000 C CNN
+F 2 "" H 4500 2200 50  0001 C CNN
+F 3 "" H 4500 2200 50  0001 C CNN
+	1    4500 2200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2400 2200 2400 2100
+	4500 2200 4500 2100
 Wire Wire Line
-	2400 2100 2750 2100
-Text GLabel 2750 1400 0    50   Input ~ 0
+	4500 2100 4850 2100
+Text GLabel 4850 1400 0    50   Input ~ 0
 SDCS
 Text GLabel 1500 6950 0    50   Input ~ 0
 SDCS
 Text Label 650  6300 0    197  ~ 0
 Outputs
-Text GLabel 4950 1100 2    50   Input ~ 0
+Text GLabel 7050 1100 2    50   Input ~ 0
 RX_ESP32
-Text GLabel 4950 1000 2    50   Input ~ 0
+Text GLabel 7050 1000 2    50   Input ~ 0
 TX_ESP32
 $Comp
 L Interface:PCA9306 U6
@@ -846,7 +846,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/pca9306.pdf" H 1100 4200 50  0001 C CNN
 	1    1400 3750
 	1    0    0    -1  
 $EndComp
-Text GLabel 2750 2200 0    50   Input ~ 0
+Text GLabel 4850 2200 0    50   Input ~ 0
 +3.3V
 Text GLabel 1500 3100 1    50   Input ~ 0
 3.3V
@@ -963,7 +963,7 @@ Text GLabel 1950 2000 2    50   Output ~ 0
 +3.3V
 Wire Notes Line
 	500  2550 2300 2550
-Text Label 750  700  0    197  ~ 0
+Text Label 750  750  0    197  ~ 0
 Power
 Wire Notes Line
 	500  6050 7600 6050
@@ -975,4 +975,10 @@ Wire Notes Line
 	2300 500  2300 4500
 Text Label 500  2800 0    197  ~ 0
 SerialComm
+Text Label 2550 750  0    197  ~ 0
+Command
+Text GLabel 5600 5050 2    50   Output ~ 0
++5V
+Wire Wire Line
+	7850 4000 7750 4000
 $EndSCHEMATC
