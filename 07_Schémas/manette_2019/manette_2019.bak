@@ -157,21 +157,15 @@ F 3 "~" H 5540 7200 50  0001 C CNN
 	1    5550 7250
 	1    0    0    -1  
 $EndComp
-Text GLabel 1300 7350 0    50   Input ~ 0
+Text GLabel 1350 7350 0    50   Input ~ 0
 +5V
-Text GLabel 750  6750 0    50   Output ~ 0
+Text GLabel 1500 7050 0    50   Output ~ 0
 MISO
-Text GLabel 1350 6550 0    50   Input ~ 0
+Text GLabel 1500 6550 0    50   Input ~ 0
 SCK
-Text GLabel 1100 6450 0    50   Input ~ 0
+Text GLabel 1500 6450 0    50   Input ~ 0
 MOSI
-Text GLabel 1000 6900 0    50   UnSpc ~ 0
-LCD
-Text GLabel 750  7000 0    50   UnSpc ~ 0
-SD
-Text GLabel 1000 7100 0    50   UnSpc ~ 0
-D/C
-Text GLabel 750  7200 0    50   Input ~ 0
+Text GLabel 1500 6750 0    50   Input ~ 0
 RESET
 $Comp
 L power:GND #PWR?
@@ -189,21 +183,7 @@ Wire Wire Line
 Wire Wire Line
 	1350 7450 1500 7450
 Wire Wire Line
-	750  7200 1200 7200
-Wire Wire Line
-	1000 7100 1200 7100
-Wire Wire Line
-	1200 7000 750  7000
-Wire Wire Line
-	1000 6900 1200 6900
-Wire Wire Line
-	1100 6450 1500 6450
-Wire Wire Line
-	1500 6550 1350 6550
-Wire Wire Line
-	750  6750 1150 6750
-Wire Wire Line
-	1300 7350 1450 7350
+	1350 7350 1500 7350
 $Comp
 L Switch:SW_Push SW7
 U 1 1 5C7E3FD7
@@ -227,47 +207,41 @@ F 3 "" H 10400 4100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L MCP23017:MCP23017 U2
+L MCP23017:MCP23017 U3
 U 1 1 5C80D464
-P 4900 3700
-F 0 "U2" H 5000 3715 50  0000 C CNN
-F 1 "MCP23017" H 5000 3624 50  0000 C CNN
-F 2 "" H 5000 3650 50  0001 C CNN
-F 3 "" H 5000 3650 50  0001 C CNN
-	1    4900 3700
+P 5000 3400
+F 0 "U3" H 5100 3415 50  0000 C CNN
+F 1 "MCP23017" H 5100 3324 50  0000 C CNN
+F 2 "" H 5100 3350 50  0001 C CNN
+F 3 "" H 5100 3350 50  0001 C CNN
+	1    5000 3400
 	1    0    0    -1  
 $EndComp
-Text GLabel 2700 7050 2    50   Input ~ 0
+Text GLabel 3650 2800 0    50   Input ~ 0
 MISO
-Text GLabel 2700 7200 2    50   Output ~ 0
+Text GLabel 3650 2700 0    50   Output ~ 0
 SCK
-Text GLabel 2700 6950 2    50   Output ~ 0
+Text GLabel 3650 2900 0    50   Output ~ 0
 MOSI
-Text GLabel 2700 6650 2    50   UnSpc ~ 0
-LCD
-Text GLabel 2700 6500 2    50   UnSpc ~ 0
-SD
-Text GLabel 2700 6750 2    50   UnSpc ~ 0
-D/C
-Text GLabel 2700 6850 2    50   Output ~ 0
+Text GLabel 3650 2400 0    50   Output ~ 0
 RESET
-Text GLabel 2550 5550 2    50   Output ~ 0
+Text GLabel 2350 5250 2    50   Output ~ 0
 SDA
-Text GLabel 2550 5650 2    50   Output ~ 0
+Text GLabel 2350 5350 2    50   Output ~ 0
 SCL
-Text GLabel 4450 5650 0    50   Input ~ 0
+Text GLabel 4550 5350 0    50   Input ~ 0
 SCL
-Text GLabel 4450 5800 0    50   Input ~ 0
+Text GLabel 4550 5500 0    50   Input ~ 0
 SDA
 $Comp
-L MCU_Microchip_ATmega:ATmega328-PU U1
+L MCU_Microchip_ATmega:ATmega328-PU U2
 U 1 1 5C8105C7
-P 1950 4550
-F 0 "U1" H 1309 4596 50  0000 R CNN
-F 1 "ATmega328-PU" H 1309 4505 50  0000 R CNN
-F 2 "Package_DIP:DIP-28_W7.62mm" H 1950 4550 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 1950 4550 50  0001 C CNN
-	1    1950 4550
+P 1750 4250
+F 0 "U2" H 1109 4296 50  0000 R CNN
+F 1 "ATmega328-PU" H 1109 4205 50  0000 R CNN
+F 2 "Package_DIP:DIP-28_W7.62mm" H 1750 4250 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 1750 4250 50  0001 C CNN
+	1    1750 4250
 	1    0    0    -1  
 $EndComp
 Text GLabel 8700 4600 2    50   Output ~ 0
@@ -285,27 +259,27 @@ Left_joystick_button
 $Comp
 L power:GND #PWR?
 U 1 1 5C816B1D
-P 1950 6050
-F 0 "#PWR?" H 1950 5800 50  0001 C CNN
-F 1 "GND" H 1955 5877 50  0000 C CNN
-F 2 "" H 1950 6050 50  0001 C CNN
-F 3 "" H 1950 6050 50  0001 C CNN
-	1    1950 6050
+P 1750 5750
+F 0 "#PWR?" H 1750 5500 50  0001 C CNN
+F 1 "GND" H 1755 5577 50  0000 C CNN
+F 2 "" H 1750 5750 50  0001 C CNN
+F 3 "" H 1750 5750 50  0001 C CNN
+	1    1750 5750
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5C816DC7
-P 4300 5350
-F 0 "#PWR?" H 4300 5100 50  0001 C CNN
-F 1 "GND" H 4305 5177 50  0000 C CNN
-F 2 "" H 4300 5350 50  0001 C CNN
-F 3 "" H 4300 5350 50  0001 C CNN
-	1    4300 5350
+P 4400 5050
+F 0 "#PWR?" H 4400 4800 50  0001 C CNN
+F 1 "GND" H 4405 4877 50  0000 C CNN
+F 2 "" H 4400 5050 50  0001 C CNN
+F 3 "" H 4400 5050 50  0001 C CNN
+	1    4400 5050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4300 5350 4450 5350
+	4400 5050 4550 5050
 $Comp
 L power:GND #PWR?
 U 1 1 5C817E41
@@ -403,21 +377,21 @@ $EndComp
 Wire Wire Line
 	7550 5400 7450 5400
 Connection ~ 7450 5400
-Text GLabel 2550 4250 2    50   Input ~ 0
+Text GLabel 2350 3950 2    50   Input ~ 0
 R_joystick_analog_x
-Text GLabel 2550 4350 2    50   Input ~ 0
+Text GLabel 2350 4050 2    50   Input ~ 0
 R_joystick_analog_y
-Text GLabel 4450 4300 0    50   Output ~ 0
+Text GLabel 4550 4000 0    50   Output ~ 0
 R_joystick_button
-Text GLabel 2550 4450 2    50   Input ~ 0
+Text GLabel 2350 4150 2    50   Input ~ 0
 L_joystick_analog_x
-Text GLabel 2550 4550 2    50   Input ~ 0
+Text GLabel 2350 4250 2    50   Input ~ 0
 L_joystick_analog_y
-Text GLabel 4450 4450 0    50   Output ~ 0
+Text GLabel 4550 4150 0    50   Output ~ 0
 L_joystick_button
-Text GLabel 2550 4750 2    50   Input ~ 0
+Text GLabel 2350 4450 2    50   Input ~ 0
 L_trigger
-Text GLabel 2550 4650 2    50   Input ~ 0
+Text GLabel 2350 4350 2    50   Input ~ 0
 R_trigger
 $Comp
 L Switch:SW_Push SW12
@@ -431,10 +405,10 @@ F 3 "" H 10400 5550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Transistor_Array:ULN2803A U3
+L Transistor_Array:ULN2803A U5
 U 1 1 5C82C60F
 P 3850 6750
-F 0 "U3" H 3850 7317 50  0000 C CNN
+F 0 "U5" H 3850 7317 50  0000 C CNN
 F 1 "ULN2803A" H 3850 7226 50  0000 C CNN
 F 2 "" H 3900 6100 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/uln2803a.pdf" H 3950 6550 50  0001 C CNN
@@ -444,45 +418,45 @@ $EndComp
 $Comp
 L Device:Resonator Y?
 U 1 1 5C82CAB8
-P 3250 3900
-F 0 "Y?" V 3550 3850 50  0000 L CNN
-F 1 "Resonator" V 3500 3700 50  0000 L CNN
-F 2 "" H 3225 3900 50  0001 C CNN
-F 3 "~" H 3225 3900 50  0001 C CNN
-	1    3250 3900
+P 3050 3600
+F 0 "Y?" V 3350 3550 50  0000 L CNN
+F 1 "Resonator" V 3300 3400 50  0000 L CNN
+F 2 "" H 3025 3600 50  0001 C CNN
+F 3 "~" H 3025 3600 50  0001 C CNN
+	1    3050 3600
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5C82D22E
-P 3550 4000
-F 0 "#PWR?" H 3550 3750 50  0001 C CNN
-F 1 "GND" H 3555 3827 50  0000 C CNN
-F 2 "" H 3550 4000 50  0001 C CNN
-F 3 "" H 3550 4000 50  0001 C CNN
-	1    3550 4000
+P 3350 3700
+F 0 "#PWR?" H 3350 3450 50  0001 C CNN
+F 1 "GND" H 3355 3527 50  0000 C CNN
+F 2 "" H 3350 3700 50  0001 C CNN
+F 3 "" H 3350 3700 50  0001 C CNN
+	1    3350 3700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3550 4000 3550 3900
+	3350 3700 3350 3600
 Wire Wire Line
-	3550 3900 3450 3900
+	3350 3600 3250 3600
 $Comp
-L Device:LED D?
+L Device:LED D1
 U 1 1 5C83283C
 P 5300 6550
-F 0 "D?" H 5291 6766 50  0000 C CNN
-F 1 "LED" H 5291 6675 50  0000 C CNN
+F 0 "D1" H 5300 6640 50  0000 C CNN
+F 1 "LED_B" H 5300 6710 50  0000 C CNN
 F 2 "" H 5300 6550 50  0001 C CNN
 F 3 "~" H 5300 6550 50  0001 C CNN
 	1    5300 6550
 	1    0    0    1   
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R1
 U 1 1 5C8328E9
 P 4800 6550
-F 0 "R?" H 4870 6596 50  0000 L CNN
+F 0 "R1" H 4870 6596 50  0000 L CNN
 F 1 "R" H 4870 6505 50  0000 L CNN
 F 2 "" V 4730 6550 50  0001 C CNN
 F 3 "~" H 4800 6550 50  0001 C CNN
@@ -492,25 +466,25 @@ $EndComp
 $Comp
 L Switch:SW_DPST_x2 SW14
 U 1 1 5C83593E
-P 1150 1050
-F 0 "SW14" V 1200 1350 50  0000 C CNN
-F 1 "Power On/Off" V 1100 1500 50  0000 C CNN
-F 2 "" H 1150 1050 50  0001 C CNN
-F 3 "" H 1150 1050 50  0001 C CNN
-	1    1150 1050
+P 2850 900
+F 0 "SW14" V 2900 1200 50  0000 C CNN
+F 1 "Power On/Off" V 2800 1350 50  0000 C CNN
+F 2 "" H 2850 900 50  0001 C CNN
+F 3 "" H 2850 900 50  0001 C CNN
+	1    2850 900 
 	0    -1   -1   0   
 $EndComp
-Text GLabel 1900 1500 2    50   Input ~ 0
+Text GLabel 3600 1350 2    50   Output ~ 0
 +5V
 $Comp
 L power:+5V #PWR?
 U 1 1 5C8399A9
-P 1150 850
-F 0 "#PWR?" H 1150 700 50  0001 C CNN
-F 1 "+5V" H 1165 1023 50  0000 C CNN
-F 2 "" H 1150 850 50  0001 C CNN
-F 3 "" H 1150 850 50  0001 C CNN
-	1    1150 850 
+P 2850 700
+F 0 "#PWR?" H 2850 550 50  0001 C CNN
+F 1 "+5V" H 2865 873 50  0000 C CNN
+F 2 "" H 2850 700 50  0001 C CNN
+F 3 "" H 2850 700 50  0001 C CNN
+	1    2850 700 
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -522,17 +496,6 @@ F 1 "Calib" H 10400 5894 50  0000 C CNN
 F 2 "" H 10400 5900 50  0001 C CNN
 F 3 "" H 10400 5900 50  0001 C CNN
 	1    10400 5700
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 5C866717
-P 5800 6300
-F 0 "#PWR?" H 5800 6150 50  0001 C CNN
-F 1 "+5V" H 5815 6473 50  0000 C CNN
-F 2 "" H 5800 6300 50  0001 C CNN
-F 3 "" H 5800 6300 50  0001 C CNN
-	1    5800 6300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -551,10 +514,10 @@ $EndComp
 Text GLabel 3450 6750 0    50   Input ~ 0
 Buzzer
 $Comp
-L Device:R R?
+L Device:R R3
 U 1 1 5C865F77
 P 4800 7250
-F 0 "R?" H 4870 7296 50  0000 L CNN
+F 0 "R3" H 4870 7296 50  0000 L CNN
 F 1 "R" H 4870 7205 50  0000 L CNN
 F 2 "" V 4730 7250 50  0001 C CNN
 F 3 "~" H 4800 7250 50  0001 C CNN
@@ -562,21 +525,21 @@ F 3 "~" H 4800 7250 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:LED D?
+L Device:LED D2
 U 1 1 5C86BA29
 P 5300 6850
-F 0 "D?" H 5291 7066 50  0000 C CNN
-F 1 "LED" H 5291 6975 50  0000 C CNN
+F 0 "D2" H 5300 6950 50  0000 C CNN
+F 1 "LED_R" H 5300 7020 50  0000 C CNN
 F 2 "" H 5300 6850 50  0001 C CNN
 F 3 "~" H 5300 6850 50  0001 C CNN
 	1    5300 6850
 	1    0    0    1   
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R2
 U 1 1 5C86BA30
 P 4800 6850
-F 0 "R?" H 4870 6896 50  0000 L CNN
+F 0 "R2" H 4870 6896 50  0000 L CNN
 F 1 "R" H 4870 6805 50  0000 L CNN
 F 2 "" V 4730 6850 50  0001 C CNN
 F 3 "~" H 4800 6850 50  0001 C CNN
@@ -610,10 +573,10 @@ Wire Wire Line
 	5800 7750 5800 6850
 Connection ~ 5800 6850
 $Comp
-L Device:D D?
+L Device:D D3
 U 1 1 5C878C9C
 P 5000 7400
-F 0 "D?" H 5000 7616 50  0000 C CNN
+F 0 "D3" H 5000 7600 50  0000 C CNN
 F 1 "D" H 5000 7525 50  0000 C CNN
 F 2 "" H 5000 7400 50  0001 C CNN
 F 3 "~" H 5000 7400 50  0001 C CNN
@@ -642,78 +605,78 @@ Text GLabel 3450 6650 0    50   Input ~ 0
 Power
 Text GLabel 3450 6550 0    50   Input ~ 0
 Connected
-Text GLabel 2550 5450 2    50   Output ~ 0
+Text GLabel 2350 5150 2    50   Output ~ 0
 Connected
-Text GLabel 2550 5350 2    50   Output ~ 0
+Text GLabel 2350 5050 2    50   Output ~ 0
 Power
-Text GLabel 2550 5250 2    50   Output ~ 0
+Text GLabel 2350 4950 2    50   Output ~ 0
 Buzzer
-Text GLabel 4450 4600 0    50   Output ~ 0
+Text GLabel 4550 4300 0    50   Output ~ 0
 Button_LEFT
-Text GLabel 4450 4750 0    50   Output ~ 0
+Text GLabel 4550 4450 0    50   Output ~ 0
 Button_UP
-Text GLabel 4450 4900 0    50   Output ~ 0
+Text GLabel 4550 4600 0    50   Output ~ 0
 Button_RIGHT
-Text GLabel 4450 5050 0    50   Output ~ 0
+Text GLabel 4550 4750 0    50   Output ~ 0
 Button_DOWN
-Text GLabel 5550 4000 2    50   Output ~ 0
+Text GLabel 5650 3700 2    50   Output ~ 0
 Button_A
-Text GLabel 5550 4150 2    50   Output ~ 0
+Text GLabel 5650 3850 2    50   Output ~ 0
 Button_B
-Text GLabel 5550 4300 2    50   Output ~ 0
+Text GLabel 5650 4000 2    50   Output ~ 0
 Button_Y
-Text GLabel 5550 4450 2    50   Output ~ 0
+Text GLabel 5650 4150 2    50   Output ~ 0
 Button_X
-Text GLabel 5550 4900 2    50   Output ~ 0
+Text GLabel 5650 4600 2    50   Output ~ 0
 Button_START
-Text GLabel 5550 5050 2    50   Output ~ 0
+Text GLabel 5650 4750 2    50   Output ~ 0
 Button_SELECT
-Text GLabel 5550 4600 2    50   Output ~ 0
+Text GLabel 5650 4300 2    50   Output ~ 0
 R_Bumper
-Text GLabel 5550 4750 2    50   Output ~ 0
+Text GLabel 5650 4450 2    50   Output ~ 0
 L_Bumper
 Wire Wire Line
-	3250 4050 3250 4150
+	3050 3750 3050 3850
 Wire Wire Line
-	3250 4150 2900 4150
+	3050 3850 2700 3850
 Wire Wire Line
-	2900 4150 2900 4050
+	2700 3850 2700 3750
 Wire Wire Line
-	2900 4050 2550 4050
+	2700 3750 2350 3750
 Wire Wire Line
-	3250 3750 3250 3700
+	3050 3450 3050 3400
 Wire Wire Line
-	3250 3700 2900 3700
+	3050 3400 2700 3400
 Wire Wire Line
-	2900 3700 2900 3950
+	2700 3400 2700 3650
 Wire Wire Line
-	2900 3950 2550 3950
+	2700 3650 2350 3650
 $Comp
-L Regulator_Switching:R-78E5.0-0.5 U?
+L Regulator_Switching:R-78E5.0-0.5 U6
 U 1 1 5C9AC915
-P 1600 1500
-F 0 "U?" H 1600 1742 50  0000 C CNN
-F 1 "R-78E5.0-0.5" H 1600 1651 50  0000 C CNN
-F 2 "Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT" H 1650 1250 50  0001 L CIN
-F 3 "https://www.recom-power.com/pdf/Innoline/R-78Exx-0.5.pdf" H 1600 1500 50  0001 C CNN
-	1    1600 1500
+P 3300 1350
+F 0 "U6" H 3300 1592 50  0000 C CNN
+F 1 "R-78E5.0-0.5" H 3300 1501 50  0000 C CNN
+F 2 "Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT" H 3350 1100 50  0001 L CIN
+F 3 "https://www.recom-power.com/pdf/Innoline/R-78Exx-0.5.pdf" H 3300 1350 50  0001 C CNN
+	1    3300 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5C9B9F3C
-P 1600 1800
-F 0 "#PWR?" H 1600 1550 50  0001 C CNN
-F 1 "GND" H 1605 1627 50  0000 C CNN
-F 2 "" H 1600 1800 50  0001 C CNN
-F 3 "" H 1600 1800 50  0001 C CNN
-	1    1600 1800
+P 3300 1650
+F 0 "#PWR?" H 3300 1400 50  0001 C CNN
+F 1 "GND" H 3305 1477 50  0000 C CNN
+F 2 "" H 3300 1650 50  0001 C CNN
+F 3 "" H 3300 1650 50  0001 C CNN
+	1    3300 1650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1300 1500 1150 1500
+	3000 1350 2850 1350
 Wire Wire Line
-	1150 1500 1150 1250
+	2850 1350 2850 1100
 $Comp
 L power:GND #PWR?
 U 1 1 5C9E80F4
@@ -818,14 +781,14 @@ Wire Wire Line
 Wire Wire Line
 	8000 5400 8000 5550
 $Comp
-L ESP32:ESP32 U?
+L ESP32:ESP32 U1
 U 1 1 5CA33ACA
-P 4050 1400
-F 0 "U?" H 4050 1875 50  0000 C CNN
-F 1 "ESP32" H 4050 1784 50  0000 C CNN
-F 2 "" H 3450 1350 50  0001 C CNN
-F 3 "" H 3450 1350 50  0001 C CNN
-	1    4050 1400
+P 4750 1950
+F 0 "U1" H 4750 2425 50  0000 C CNN
+F 1 "ESP32" H 4750 2334 50  0000 C CNN
+F 2 "" H 4150 1900 50  0001 C CNN
+F 3 "" H 4150 1900 50  0001 C CNN
+	1    4750 1950
 	1    0    0    -1  
 $EndComp
 Wire Notes Line
@@ -835,14 +798,131 @@ Wire Notes Line
 Text Label 6500 900  0    197  ~ 0
 Inputs
 $Comp
-L Adafruit_OLED_RGB_Screen:OLED_Display U?
+L Adafruit_OLED_RGB_Screen:OLED_Display U4
 U 1 1 5CA3C6B3
 P 1800 7000
-F 0 "U?" H 2028 7076 50  0000 L CNN
+F 0 "U4" H 2028 7076 50  0000 L CNN
 F 1 "OLED_Display" H 2028 6985 50  0000 L CNN
 F 2 "" H 1800 7000 50  0001 C CNN
 F 3 "" H 1800 7000 50  0001 C CNN
 	1    1800 7000
 	1    0    0    -1  
 $EndComp
+Text GLabel 1500 6650 0    50   Input ~ 0
+DC
+Text GLabel 3650 2500 0    50   Output ~ 0
+DC
+Text GLabel 1500 6850 0    50   Input ~ 0
+OLEDCS
+Text GLabel 3650 2600 0    50   Output ~ 0
+OLEDCS
+Text GLabel 1750 2750 1    50   Input ~ 0
++5V
+$Comp
+L power:GND #PWR?
+U 1 1 5CA7EA37
+P 3300 3100
+F 0 "#PWR?" H 3300 2850 50  0001 C CNN
+F 1 "GND" H 3305 2927 50  0000 C CNN
+F 2 "" H 3300 3100 50  0001 C CNN
+F 3 "" H 3300 3100 50  0001 C CNN
+	1    3300 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 3100 3300 3000
+Wire Wire Line
+	3300 3000 3650 3000
+Text GLabel 3650 2300 0    50   Input ~ 0
+SDCS
+Text GLabel 1500 6950 0    50   Input ~ 0
+SDCS
+Wire Notes Line
+	500  5950 6300 5950
+Text Label 650  6250 0    197  ~ 0
+Outputs
+Text GLabel 5850 2000 2    50   Input ~ 0
+RX_ESP32
+Text GLabel 5850 1900 2    50   Input ~ 0
+TX_ESP32
+$Comp
+L Interface:PCA9306 U?
+U 1 1 5CA9EA73
+P 1450 1600
+F 0 "U?" H 1450 1014 50  0000 C CNN
+F 1 "PCA9306" H 1450 923 50  0000 C CNN
+F 2 "" H 1050 1950 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/pca9306.pdf" H 1150 2050 50  0001 C CNN
+	1    1450 1600
+	1    0    0    -1  
+$EndComp
+Text GLabel 3650 3100 0    50   Input ~ 0
+3.3V
+Text GLabel 1550 950  1    50   Input ~ 0
+3.3V
+Text GLabel 5650 5200 2    50   Input ~ 0
++5V
+Wire Wire Line
+	5650 5350 5800 5350
+Wire Wire Line
+	5800 5350 5800 5500
+Wire Wire Line
+	5800 5500 5650 5500
+Wire Wire Line
+	5650 5650 5800 5650
+Wire Wire Line
+	5800 5650 5800 5500
+Connection ~ 5800 5500
+$Comp
+L power:GND #PWR?
+U 1 1 5CABEA89
+P 5800 5700
+F 0 "#PWR?" H 5800 5450 50  0001 C CNN
+F 1 "GND" H 5805 5527 50  0000 C CNN
+F 2 "" H 5800 5700 50  0001 C CNN
+F 3 "" H 5800 5700 50  0001 C CNN
+	1    5800 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 5700 5800 5650
+Connection ~ 5800 5650
+Text GLabel 5800 6300 1    50   Input ~ 0
++5V
+Text GLabel 1350 950  1    50   Input ~ 0
++5V
+Text GLabel 1850 1700 2    50   Input ~ 0
+RX_ESP32
+Text GLabel 1850 1600 2    50   Input ~ 0
+TX_ESP32
+Text GLabel 1050 1700 0    50   Input ~ 0
+TX_Atmega
+Text GLabel 1050 1600 0    50   Input ~ 0
+RX_Atmega
+Wire Wire Line
+	1350 1100 1350 950 
+$Comp
+L Device:R R4
+U 1 1 5CAEC44C
+P 1950 1250
+F 0 "R4" H 1880 1204 50  0000 R CNN
+F 1 "200K" H 1880 1295 50  0000 R CNN
+F 2 "" V 1880 1250 50  0001 C CNN
+F 3 "~" H 1950 1250 50  0001 C CNN
+	1    1950 1250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1550 950  1550 1050
+Wire Wire Line
+	1950 1100 1950 1050
+Wire Wire Line
+	1950 1050 1550 1050
+Connection ~ 1550 1050
+Wire Wire Line
+	1550 1050 1550 1100
+Wire Wire Line
+	1850 1500 1950 1500
+Wire Wire Line
+	1950 1500 1950 1400
 $EndSCHEMATC
