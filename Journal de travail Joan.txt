@@ -66,3 +66,16 @@ Jour 10 - 19.03.2019
 - Mise en place dans le code de test de la manette: système de calibration (non-centré)
 - Correction de problèmes d'interférence I2C sur les axes des pins A4/A5
 - Toujours pas d'ESP32
+
+Jour 11 - 21.03.2019
+- Corrections légères sur le code de test de la manette (correction d'une imprécision dans le système de calibration à cause du courant de fuite causé par la LED)
+- Toujours pas d'ESP32, peaufinage du protocole (optimisation), réflexions sur le système duplex
+
+Jour 12 - 22.03.2019
+- Les ESP32 sont arrivés - suis allé les chercher
+- Discussion avec M. Vulliamy pour l'impression 3D - il faudra fournir les plans complets ainsi que vérifier la faisabilité de l'impression
+- Discussion avec un représentant du groupe des robots S7 par rapport à la disponibilité des pins RX/TX de leur côté
+- Test du code préparé à l'avance - le BLE ne sera pas approprié, car monodirectionnel -> passage au profil SPP (Serial Port Profile) pour PJON
+
+Jour 13 - 25.03.2019
+- Complément de doc, préparation pour les revues de projet
