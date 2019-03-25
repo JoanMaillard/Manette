@@ -1,24 +1,27 @@
-#include <PJON.h>
-#include <PJONSlave.h>
+/*#include <PJON.h>
+#include <PJONSlave.h>*/
 #include <BLEDevice.h>
-#include <BluetoothSerial.h>
-BluetoothSerial SerialBT;
+/*#include <BluetoothSerial.h>
+BluetoothSerial BTSerial;
 uint8_t bus_id[] = {0,0,0,1};
+PJONSlave<ThroughSerial> bus(bus_id, PJON_NOT_ASSIGNED);*/
 // The remote service we wish to connect to.
 static BLEUUID serviceUUID("b9d4de40-44be-11e9-b210-d663bd873d93");
 // The characteristic of the remote service we are interested in.
 static BLEUUID    charUUID("b9d4e282-44be-11e9-b210-d663bd873d93");
-PJONSlave<ThroughSerial> bus(bus_id, PJON_NOT_ASSIGNED);
+
 
 static BLEAddress *pServerAddress;
 static boolean doConnect = false;
 static boolean connected = false;
 static BLERemoteCharacteristic* pRemoteCharacteristic;
 
+bool acquired = false;
+
 static void notifyCallback(
   BLERemoteCharacteristic* pBLERemoteCharacteristic,
   uint8_t* pData,
-  size_t length,
+  unsigned int length,
   bool isNotify) {
     Serial.print("Notify callback for characteristic ");
     Serial.print(pBLERemoteCharacteristic->getUUID().toString().c_str());
@@ -61,8 +64,7 @@ bool connectToServer(BLEAddress pAddress) {
     Serial.print("The characteristic value was: ");
     Serial.println(value.c_str());
 
-   // pRemoteCharacteristic->registerForNotify(notifyCallback);
-   // Serial.println("registerForNotify successful");
+    //pRemoteCharacteristic->registerForNotify(notifyCallback);
     return true;
 }
 
@@ -95,7 +97,7 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
   Serial.println("Starting Arduino BLE Client application...");
-  BLEDevice::init("");
+  BLEDevice::init("ESP2");
 
   // Retrieve a Scanner and set the callback we want to use to be informed when we
   // have detected a new device.  Specify that we want active scanning and start the
@@ -107,11 +109,11 @@ void setup() {
   
 }
 
-void callback(esp_spp_cb_event_t event, esp_spp_cb_param_t *param) {
+/*void callback(esp_spp_cb_event_t event, esp_spp_cb_param_t *param) {
   if (event == ESP_SPP_SRV_OPEN_EVT) {
     Serial.println("Client connected");
   }
-}
+}*/
 
 void loop() {
   // put your main code here, to run repeatedly:
@@ -123,27 +125,46 @@ void loop() {
     if (connectToServer(*pServerAddress)) {
       Serial.println("We are now connected to the BLE Server.");
       connected = true;
-      SerialBT.register_callback(callback);
+      /*BTSerial.register_callback(callback);
 
-      if (!SerialBT.begin("ESP2")) {
+      if (!BTSerial.begin("Net1")) {
         Serial.println("An error occurred initializing BT link");
       }
       else {
         Serial.println("BT link initialized");
       }
-      SerialBT.begin("ESP2");
-     //bus.acquire_id_master_slave();
-     // bus.set_error(error_handler);
-      } else {
+      bus.set_error(error_handler);
+      bus.set_receiver(receiver_handler);
+      bus.set_communication_mode(PJON_HALF_DUPLEX);
+      bus.strategy.set_serial(&BTSerial);
+      Serial.println("Serial set");
+      bus.begin();
+      Serial.println("Bus begun");*/
+    }
+        else {
         Serial.println("We have failed to connect to the server; there is nothin more we will do.");
       }
     doConnect = false;
   }
+      
+ /* bus.acquire_id_master_slave();
+  if((bus.device_id() != PJON_NOT_ASSIGNED) && !acquired) {
+    Serial.print("Acquired device id: ");
+    Serial.println(bus.device_id());
+    Serial.flush();
+    acquired = true;
+  }
+  else if (!acquired) {
+    bus.acquire_id_master_slave();
+  }
+  if (bus.device_id() != PJON_NOT_ASSIGNED) {
+    bus.receive();
+  }*/
 
   
 }
 
-void error_handler(unsigned char code,  short unsigned int data, void *banana) {
+/*void error_handler(unsigned char code,  short unsigned int data, void *banana) {
   // Standard PJON error
   if(code == PJON_CONNECTION_LOST) {
     Serial.print("Connection lost with device ");
@@ -161,3 +182,13 @@ void error_handler(unsigned char code,  short unsigned int data, void *banana) {
       Serial.println("Master-slave id request procedure failed.");
   }
 }
+
+void receiver_handler(uint8_t *payload, uint16_t length, const PJON_Packet_Info &packet_info) {
+  Serial.print("Received: ");
+  for(uint16_t i = 0; i < length; i++) {
+    Serial.print((char)payload[i]);
+    Serial.print(" ");
+  }
+  Serial.println();
+  Serial.flush();
+};*/
