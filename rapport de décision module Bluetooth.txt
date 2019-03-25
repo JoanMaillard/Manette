@@ -33,8 +33,9 @@ Avantages de l'ESP
 - Appairage solide
 - Data rate très stable car 
 - nous permet de déporter la communication de la lecture des éléments
-- Module 4.1 BLE -> module faible consommation pour la communication et technologie commune actuelle
-- Architecture connue AVR, comme les arduinos
+- Module 4.1 SPP -> module half-duplex rapide pour la communication et technologie commune actuelle
+- Architecture connue (AVR), comme les arduinos
+- Permet de dédier la gestion de l'écran et des moteurs de rumble directement sans sacrifier de la réactivité sur l'arduino de data gathering
 
 Désavantages de l'ESP
 - Consommation d'énergie globale potentiellement plus grande (module dédié supplémentaire)
