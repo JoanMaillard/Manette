@@ -1,13 +1,13 @@
 #define BUFFER_SIZE 8
+#define INPUT_PIN
 
 byte dataBuffer[BUFFER_SIZE];
 void setup() {
   // put your setup code here, to run once:
-  pinMode(3,INPUT_PULLUP);
-  pinMode(2,OUTPUT);
-  Serial3.begin(19200);
-  Serial.begin(2000000);
-  digitalWrite(2,HIGH);
+  //pinMode(3,INPUT_PULLUP);
+  //pinMode(2,OUTPUT);
+  Serial3.begin(115200);
+  //digitalWrite(2,HIGH);
 }
 
 void loop() {
@@ -19,13 +19,13 @@ void loop() {
   }
   //Serial.print(millis());
   Serial.println("");
-  if (!digitalRead(3)) {
+  /*if (!digitalRead(3)) {
     reset();
-  }
+  }//*/
 }
 
-void reset() {
+/*void reset() {
   digitalWrite(2,LOW);
   delay(100);
   digitalWrite(2,HIGH);
-}
+}//*/

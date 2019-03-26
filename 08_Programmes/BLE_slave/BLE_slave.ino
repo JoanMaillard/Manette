@@ -2,6 +2,12 @@
 #include <BLEUtils.h>
 #include <BLEScan.h>
 #include <BLEAdvertisedDevice.h>
+
+#define BUFFER_SIZE 8
+#define INPUT_PIN
+
+byte dataBuffer[BUFFER_SIZE];
+
 // The remote service we wish to connect to.
 static BLEUUID serviceUUID("b9d4de40-44be-11e9-b210-d663bd873d93");
 // The characteristic of the remote service we are interested in.
@@ -15,8 +21,8 @@ static BLERemoteCharacteristic* pRemoteCharacteristic;
 static BLERemoteCharacteristic* pRemoteCharacteristicBack;
 static BLEAdvertisedDevice* myDevice;
 
-uint8_t val[8] = {0,0,0,0,0,0,0,0};
-uint8_t retVal[2] = {0,0};
+//uint8_t val[8] = {0,0,0,0,0,0,0,0};//*/
+uint8_t retVal[2] = {0,0};//*/
 
 
 static void notifyCallback(
@@ -133,9 +139,9 @@ void setup() {
 
 // This is the Arduino main loop function.
 void loop() {
-  for(int i = 0; i<8; i++) {
+  /*for(int i = 0; i<8; i++) {
     val[i]++;
-  }
+  }//*/
   // If the flag "doConnect" is true then we have scanned for and found the desired
   // BLE Server with which we wish to connect.  Now we connect to it.  Once we are 
   // connected we set the connected flag to be true.
@@ -151,16 +157,11 @@ void loop() {
   }
 
   if (connected) {
-    byte newValue[8];
-    //Serial.print("Setting new characteristic value to:");
-    for (int i = 0; i<8; i++) {
-      newValue[i] = val[i];
-      //Serial.print(newValue[i]);
-    }
-    //Serial.println("");
+    
+    Serial.readBytes(dataBuffer,BUFFER_SIZE);
     
     // Set the characteristic's value to be the array of bytes that is actually a string.
-    pRemoteCharacteristic->writeValue(newValue, 8, 1);
+    pRemoteCharacteristic->writeValue(dataBuffer, 8, 1);
   }else if(doScan){
     BLEDevice::getScan()->start(0);  // this is just eample to start scan after disconnect, most likely there is better way to do it in arduino
   }

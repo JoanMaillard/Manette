@@ -25,12 +25,7 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
   void onWrite(BLECharacteristic* pChar){
     uint8_t ctrlInput[8] = {0};
     memcpy(ctrlInput, pChar->getValue().c_str(), 8);
-    Serial.println(millis());
-    for (int i = 0; i<7; i++) {
-      Serial.print(ctrlInput[i]);
-      Serial.print(", ");
-    }
-    Serial.println(ctrlInput[7]);
+    Serial.write(ctrlInput, 8);
   }
 };
 
@@ -71,5 +66,9 @@ void setup() {
 
 
 void loop() {
-  //Insert serial send/receive code here
+  byte fallbackProperties[2] = {0,0};
+  if (Serial.available()) {
+    //insert code for follow-up feedback
+  }
+  pCharacteristicBack->setValue(fallbackProperties,2,1);
 }
