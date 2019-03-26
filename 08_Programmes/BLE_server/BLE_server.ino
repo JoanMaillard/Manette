@@ -18,17 +18,17 @@ void setup() {
   BLEServer *pServer = BLEDevice::createServer();
   BLEService *pService = pServer->createService(SERVICE_UUID);
   pCharacteristic = pService->createCharacteristic(
-                                         CHARACTERISTIC_UUID,
-                                         BLECharacteristic::PROPERTY_READ |
-                                         BLECharacteristic::PROPERTY_WRITE
-                                       );
+                      CHARACTERISTIC_UUID,
+                      BLECharacteristic::PROPERTY_READ |
+                      BLECharacteristic::PROPERTY_WRITE
+                    );
 
   pCharacteristic->setValue("Hello World says Neil");
   pCharacteristicBack = pService->createCharacteristic(
-                                         CHARACTERISTIC_BCK_UUID,
-                                         BLECharacteristic::PROPERTY_READ |
-                                         BLECharacteristic::PROPERTY_WRITE
-                                       );
+                          CHARACTERISTIC_BCK_UUID,
+                          BLECharacteristic::PROPERTY_READ |
+                          BLECharacteristic::PROPERTY_WRITE
+                        );
 
   pCharacteristicBack->setValue("Yolo");
   pService->start();
@@ -36,8 +36,8 @@ void setup() {
   BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
   pAdvertising->addServiceUUID(SERVICE_UUID);
   pAdvertising->setScanResponse(true);
-  pAdvertising->setMinInterval(0x06);  // set minimum connection interval to 6x1.25ms
-  pAdvertising->setMaxInterval(0x0A); // set maximum connection interval to 10x1.25ms
+  pAdvertising->setMinPreferred(0x06);  // set minimum connection interval to 6x1.25ms
+  pAdvertising->setMinPreferred(0x12); // set maximum connection interval to 10x1.25ms
   BLEDevice::startAdvertising();
   Serial.println("Characteristic defined! Now you can read it in your phone!");
 }
