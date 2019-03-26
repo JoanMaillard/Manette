@@ -15,7 +15,9 @@ static BLERemoteCharacteristic* pRemoteCharacteristic;
 static BLERemoteCharacteristic* pRemoteCharacteristicBack;
 static BLEAdvertisedDevice* myDevice;
 
-byte val = 0;
+uint8_t val[8] = {0,0,0,0,0,0,0,0};
+uint8_t retVal[2] = {0,0};
+
 
 static void notifyCallback(
   BLERemoteCharacteristic* pBLERemoteCharacteristic,
@@ -131,25 +133,34 @@ void setup() {
 
 // This is the Arduino main loop function.
 void loop() {
-  val++;
+  for(int i = 0; i<8; i++) {
+    val[i]++;
+  }
   // If the flag "doConnect" is true then we have scanned for and found the desired
   // BLE Server with which we wish to connect.  Now we connect to it.  Once we are 
   // connected we set the connected flag to be true.
   if (doConnect == true) {
     if (connectToServer()) {
       Serial.println("We are now connected to the BLE Server.");
+      
     } else {
       Serial.println("We have failed to connect to the server; there is nothin more we will do.");
     }
     doConnect = false;
+    
   }
 
   if (connected) {
-    byte newValue = val;
-    //Serial.println("Setting new characteristic value to \"" + newValue + "\"");
+    byte newValue[8];
+    //Serial.print("Setting new characteristic value to:");
+    for (int i = 0; i<8; i++) {
+      newValue[i] = val[i];
+      //Serial.print(newValue[i]);
+    }
+    //Serial.println("");
     
     // Set the characteristic's value to be the array of bytes that is actually a string.
-    pRemoteCharacteristic->writeValue(newValue, 0);
+    pRemoteCharacteristic->writeValue(newValue, 8, 1);
   }else if(doScan){
     BLEDevice::getScan()->start(0);  // this is just eample to start scan after disconnect, most likely there is better way to do it in arduino
   }

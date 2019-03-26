@@ -8,29 +8,55 @@
 
 BLECharacteristic *pCharacteristic;
 BLECharacteristic *pCharacteristicBack;
+uint8_t defaultInValues[8] = {0,0,0,0,0,0,0,0};
+uint8_t defaultOutValues[2] = {0,0};
 
-void setup() {
+class MyCallbacks : public BLEServerCallbacks {
+  void onConnect(BLEServer* pServer){
+       Serial.println("Device connected");
+  }
+
+  void onDisconnect(BLEServer* pServer){
+      Serial.println("Device disconnected");
+  }
+};
+
+class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
+  void onWrite(BLECharacteristic* pChar){
+    uint8_t ctrlInput[8] = {0};
+    memcpy(ctrlInput, pChar->getValue().c_str(), 8);
+    Serial.println(millis());
+    for (int i = 0; i<7; i++) {
+      Serial.print(ctrlInput[i]);
+      Serial.print(", ");
+    }
+    Serial.println(ctrlInput[7]);
+  }
+};
+
+void setup() { 
   // put your setup code here, to run once:
   Serial.begin(115200);
   Serial.println("Starting BLE work!");
 
-  BLEDevice::init("Long name works now");
+  BLEDevice::init("ESP1");
   BLEServer *pServer = BLEDevice::createServer();
+  pServer->setCallbacks(new MyCallbacks());
   BLEService *pService = pServer->createService(SERVICE_UUID);
   pCharacteristic = pService->createCharacteristic(
                       CHARACTERISTIC_UUID,
                       BLECharacteristic::PROPERTY_READ |
                       BLECharacteristic::PROPERTY_WRITE
                     );
-
-  pCharacteristic->setValue("Hello World says Neil");
+  pCharacteristic->setCallbacks(new MyCtrlCharCallbacks);
+  pCharacteristic->setValue(defaultInValues, 8);
   pCharacteristicBack = pService->createCharacteristic(
                           CHARACTERISTIC_BCK_UUID,
                           BLECharacteristic::PROPERTY_READ |
                           BLECharacteristic::PROPERTY_WRITE
                         );
 
-  pCharacteristicBack->setValue("Yolo");
+  pCharacteristicBack->setValue(defaultOutValues, 2);
   pService->start();
   // BLEAdvertising *pAdvertising = pServer->getAdvertising();  // this still is working for backward compatibility
   BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
@@ -42,9 +68,8 @@ void setup() {
   Serial.println("Characteristic defined! Now you can read it in your phone!");
 }
 
+
+
 void loop() {
-  // put your main code here, to run repeatedly:
-  //Serial.println(millis());
-  Serial.println(pCharacteristic->getValue().c_str());
-  //Serial.println(pCharacteristicBack->getValue().c_str());
+  //Insert serial send/receive code here
 }
