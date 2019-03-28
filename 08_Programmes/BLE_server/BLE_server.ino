@@ -1,6 +1,7 @@
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEServer.h>
+#include <HardwareSerial.h>
 
 #define SERVICE_UUID        "b9d4de40-44be-11e9-b210-d663bd873d93"
 #define CHARACTERISTIC_UUID "b9d4e282-44be-11e9-b210-d663bd873d93"
@@ -10,6 +11,7 @@ BLECharacteristic *pCharacteristic;
 BLECharacteristic *pCharacteristicBack;
 uint8_t defaultInValues[8] = {0,0,0,0,0,0,0,0};
 uint8_t defaultOutValues[2] = {0,0};
+HardwareSerial outSer(2);
 
 class MyCallbacks : public BLEServerCallbacks {
   void onConnect(BLEServer* pServer){
@@ -25,12 +27,13 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
   void onWrite(BLECharacteristic* pChar){
     uint8_t ctrlInput[8] = {0};
     memcpy(ctrlInput, pChar->getValue().c_str(), 8);
-    Serial.write(ctrlInput, 8);
+    outSer.write(ctrlInput, 8);
   }
 };
 
 void setup() { 
   // put your setup code here, to run once:
+  outSer.begin(115200);
   Serial.begin(115200);
   Serial.println("Starting BLE work!");
 
@@ -67,8 +70,9 @@ void setup() {
 
 void loop() {
   byte fallbackProperties[2] = {0,0};
-  if (Serial.available()) {
+  if (outSer.available() > 2) {
     //insert code for follow-up feedback
+    outSer.readBytes(fallbackProperties, 2);
   }
-  pCharacteristicBack->setValue(fallbackProperties,2,1);
+  pCharacteristicBack->setValue(fallbackProperties,2);
 }

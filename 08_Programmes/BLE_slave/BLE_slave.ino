@@ -2,11 +2,13 @@
 #include <BLEUtils.h>
 #include <BLEScan.h>
 #include <BLEAdvertisedDevice.h>
+#include <HardwareSerial.h>
 
 #define BUFFER_SIZE 8
 #define INPUT_PIN
 
 byte dataBuffer[BUFFER_SIZE];
+HardwareSerial outSer(2);
 
 // The remote service we wish to connect to.
 static BLEUUID serviceUUID("b9d4de40-44be-11e9-b210-d663bd873d93");
@@ -122,6 +124,7 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
 
 void setup() {
   Serial.begin(115200);
+  outSer.begin(115200);
   Serial.println("Starting Arduino BLE Client application...");
   BLEDevice::init("");
 
@@ -158,12 +161,12 @@ void loop() {
 
   if (connected) {
     
-    Serial.readBytes(dataBuffer,BUFFER_SIZE);
+    outSer.readBytes(dataBuffer,BUFFER_SIZE);
     
     // Set the characteristic's value to be the array of bytes that is actually a string.
     pRemoteCharacteristic->writeValue(dataBuffer, 8, 1);
   }else if(doScan){
-    BLEDevice::getScan()->start(0);  // this is just eample to start scan after disconnect, most likely there is better way to do it in arduino
+    BLEDevice::getScan()->start(5, false);  // this is just eample to start scan after disconnect, most likely there is better way to do it in arduino
   }
   
 } // End of loop
