@@ -40,7 +40,7 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
 
 void setup() { 
   // put your setup code here, to run once:
-  outSer.begin(115200);
+  outSer.begin(115200, SERIAL_8N1);
   Serial.begin(115200);
   //Serial.println("Starting BLE work!");
 
@@ -77,9 +77,9 @@ void setup() {
 
 void loop() {
   byte fallbackProperties[2] = {0,0};
-  if (outSer.available() > 2) {
+  //if (outSer.available() > 2) {
     //insert code for follow-up feedback
     outSer.readBytes(fallbackProperties, 2);
-  }
+  //}
   pCharacteristicBack->setValue(fallbackProperties,2);
 }
