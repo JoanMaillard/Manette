@@ -39,7 +39,7 @@ void setup() {
   Serial.begin(115200);
   i2c_init();
   if (!i2c_start((I2C_7BITADDR<<1)|I2C_WRITE)) { // start transfer
-        Serial.println("I2C device busy");
+        //Serial.println("I2C device busy");
         return;
     }
   i2c_write(0);
@@ -57,7 +57,7 @@ void setup() {
   i2c_write(0x0D);
   i2c_write(0xFF);
   i2c_stop();
-  Serial.println("setup complete");
+  //Serial.println("setup complete");
   pinMode(pinaxis1, INPUT);
   pinMode(pinaxis2, INPUT);
   pinMode(pinaxis3, INPUT);
@@ -76,7 +76,7 @@ void loop() {
   //if (!calibrating) {Serial.write(mainData,DATA_SIZE);}
   //else {}
   if (calibrating) {
-    Serial.println("Calibrating...");
+    //Serial.println("Calibrating...");
     digitalWrite(8,HIGH);
     minIn1 = 0;
     minIn2 = 0;
@@ -159,28 +159,29 @@ void loop() {
     digitalWrite(8,LOW);
     getValues();
     byte *mainData = conc(buttonData[0], buttonData[1]);
-    Serial.print(mainData[0]);
-    Serial.print(", ");
-    Serial.print(mainData[1]);
-    Serial.print(", ");
-    Serial.print(mainData[2]);
-    Serial.print(", ");
-    Serial.print(mainData[3]);
-    Serial.print(", ");
-    Serial.print(mainData[4]);
-    Serial.print(", ");
-    Serial.print(mainData[5]);
-    Serial.print(", ");
-    Serial.print(mainData[6]);
-    Serial.print(", ");
-    Serial.println(mainData[7]);
+    Serial.write(mainData, 8);
+    //Serial.print(mainData[0]);
+    //Serial.print(", ");
+    //Serial.print(mainData[1]);
+    //Serial.print(", ");
+    //Serial.print(mainData[2]);
+    //Serial.print(", ");
+    //Serial.print(mainData[3]);
+    //Serial.print(", ");
+    //Serial.print(mainData[4]);
+    //Serial.print(", ");
+    //Serial.print(mainData[5]);
+    //Serial.print(", ");
+    //Serial.print(mainData[6]);
+    //Serial.print(", ");
+    //Serial.println(mainData[7]);
   }
 }
   
 byte * getButtons() {
   static byte vals[2]; 
   if (!i2c_start((I2C_7BITADDR<<1)|I2C_WRITE)) { // start transfer
-        Serial.println("I2C device busy");
+        //Serial.println("I2C device busy");
         return;
     }
   i2c_write(regA);
@@ -188,7 +189,7 @@ byte * getButtons() {
   byte val1 = i2c_read(true); // read one byte and send NAK to terminate
   i2c_stop(); // send stop condition
   if (!i2c_start((I2C_7BITADDR<<1)|I2C_WRITE)) { // start transfer
-       Serial.println("I2C device busy");
+       //Serial.println("I2C device busy");
        return;
    }
   i2c_write(regB);
