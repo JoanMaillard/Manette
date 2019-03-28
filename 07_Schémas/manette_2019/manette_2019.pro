@@ -1,6 +1,6 @@
-update=25.03.2019 14:34:47
+update=27.03.2019 16:25:07
 version=1
-last_client=kicad
+last_client=eeschema
 [general]
 version=1
 RootSch=
@@ -39,5 +39,5 @@ SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=
 SpiceAjustPassiveValues=0
-LabSize=197
+LabSize=50
 ERC_TestSimilarLabels=1
