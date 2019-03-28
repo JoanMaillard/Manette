@@ -605,12 +605,6 @@ Text GLabel 3450 6650 0    50   Input ~ 0
 Power
 Text GLabel 3450 6550 0    50   Input ~ 0
 Connected
-Text GLabel 3950 5250 2    50   Output ~ 0
-Connected
-Text GLabel 3950 5150 2    50   Output ~ 0
-Power
-Text GLabel 3950 5050 2    50   Output ~ 0
-Buzzer
 Text GLabel 5800 4450 0    50   Output ~ 0
 Button_LEFT
 Text GLabel 5800 4600 0    50   Output ~ 0
@@ -977,8 +971,14 @@ Text Label 500  2800 0    197  ~ 0
 SerialComm
 Text Label 2550 750  0    197  ~ 0
 Command
-Text GLabel 5600 5050 2    50   Output ~ 0
+Text GLabel 5775 5050 0    50   Input ~ 0
 +5V
 Wire Wire Line
 	7850 4000 7750 4000
+Text GLabel 7050 1200 2    50   Output ~ 0
+Buzzer
+Text GLabel 7050 1300 2    50   Output ~ 0
+Power
+Text GLabel 7050 1400 2    50   Output ~ 0
+Connected
 $EndSCHEMATC
