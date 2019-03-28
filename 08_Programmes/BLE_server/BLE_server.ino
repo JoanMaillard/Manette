@@ -15,11 +15,11 @@ HardwareSerial outSer(2);
 
 class MyCallbacks : public BLEServerCallbacks {
   void onConnect(BLEServer* pServer){
-       //Serial.println("Device connected");
+       Serial.println("Device connected");
   }
 
   void onDisconnect(BLEServer* pServer){
-      //Serial.println("Device disconnected");
+      Serial.println("Device disconnected");
   }
 };
 
@@ -30,11 +30,11 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
     pCharData = pChar->getData();
     for (int i = 0; i<8; i++) {
       ctrlInput[i] = pCharData[i];
-      //Serial.print(ctrlInput[i], BIN);
-      //Serial.print("   ");
+      Serial.print(ctrlInput[i], BIN);
+      Serial.print("   ");
     }
     outSer.write(ctrlInput, 8);
-    //Serial.println("");
+    Serial.println("");
   }
 };
 
@@ -42,7 +42,7 @@ void setup() {
   // put your setup code here, to run once:
   outSer.begin(115200, SERIAL_8N1);
   Serial.begin(115200);
-  //Serial.println("Starting BLE work!");
+  Serial.println("Starting BLE work!");
 
   BLEDevice::init("ESP1");
   BLEServer *pServer = BLEDevice::createServer();
@@ -70,16 +70,14 @@ void setup() {
   pAdvertising->setMinPreferred(0x06);  // set minimum connection interval to 6x1.25ms
   pAdvertising->setMinPreferred(0x12); // set maximum connection interval to 10x1.25ms
   BLEDevice::startAdvertising();
-  //Serial.println("Characteristic defined! Now you can read it in your phone!");
+  Serial.println("Characteristic defined! Now you can read it in your phone!");
 }
 
-
-
 void loop() {
-  byte fallbackProperties[2] = {0,0};
+  //byte fallbackProperties[2] = {0,0};
   //if (outSer.available() > 2) {
     //insert code for follow-up feedback
-    outSer.readBytes(fallbackProperties, 2);
+    //outSer.readBytes(fallbackProperties, 2);
   //}
-  pCharacteristicBack->setValue(fallbackProperties,2);
+  //pCharacteristicBack->setValue(fallbackProperties,2);
 }
