@@ -21,6 +21,7 @@ byte potVal1, potVal2, joy1X, joy1Y, joy2X, joy2Y;
 int minIn1, minIn2, minInx3, minInx4, minIny3, minIny4, maxIn1, maxIn2, maxInx3, maxInx4, maxIny3, maxIny4, midX3, midY3, midX4, midY4;
 bool calibrating = false;
 bool calPressed = false;
+byte var;
 
 void setup() {
   // put your setup code here, to run once:
@@ -65,9 +66,11 @@ void setup() {
   pinMode(pinaxis5, INPUT);
   pinMode(pinaxis6, INPUT);
   pinMode(8, OUTPUT);
+  pinMode(9, INPUT_PULLUP);
 }
 
 void loop() {
+  var++;
   byte *buttonData = getButtons();
   
   calButCheck(buttonData[0]);
@@ -159,7 +162,11 @@ void loop() {
     digitalWrite(8,LOW);
     getValues();
     byte *mainData = conc(buttonData[0], buttonData[1]);
+    mainData[1]=var;
     Serial.write(mainData, 8);
+    if(!digitalRead(9)){
+      Serial.println(mainData[1]);
+    }
     /*Serial.print(mainData[0]);
     Serial.print(", ");
     Serial.print(mainData[1]);
