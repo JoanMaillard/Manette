@@ -8,6 +8,7 @@ void setup() {
   //pinMode(2,OUTPUT);
   Serial.begin(115200);
   Serial3.begin(115200);
+  pinMode(2, OUTPUT);
   //digitalWrite(2,HIGH);
 }
 
@@ -18,6 +19,12 @@ void loop() {
   for (int i = 0; i < BUFFER_SIZE; i++) {
     Serial.print(dataBuffer[i]);
     Serial.print(" ");
+  }
+  if (dataBuffer[0] == 2) {
+    digitalWrite(2, HIGH);
+  }
+  else {
+    digitalWrite(2, LOW);
   }
   //Serial.print(millis());
   Serial.println("");
