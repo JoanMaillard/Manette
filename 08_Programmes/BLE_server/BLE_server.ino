@@ -27,7 +27,9 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
   void onWrite(BLECharacteristic* pChar){
     uint8_t ctrlInput[8] = {0};
     uint8_t* pCharData;
+    Serial.println(millis());
     pCharData = pChar->getData();
+    Serial.println(millis());
     for (int i = 0; i<8; i++) {
       ctrlInput[i] = pCharData[i];
       Serial.print(ctrlInput[i], BIN);
