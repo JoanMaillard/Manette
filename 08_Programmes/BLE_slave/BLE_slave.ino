@@ -161,7 +161,8 @@ void loop() {
   }
 
   if (connected) {
-
+    outSer.write(255,1);
+    while (outSer.available() < 8) {}
     outSer.readBytes(dataBuffer, BUFFER_SIZE);
     if (!digitalRead(17)) {
       Serial.println(dataBuffer[1]);
