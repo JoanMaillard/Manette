@@ -160,6 +160,7 @@ void loop() {
   }
   else {
     digitalWrite(8, LOW);
+ 
     if (Serial.read() == 255) {
       getValues();
       byte *mainData = conc(buttonData[0], buttonData[1]);
@@ -168,6 +169,7 @@ void loop() {
       if (!digitalRead(9)) {
         Serial.println(mainData[1]);
       }
+      
     }
     /*Serial.print(mainData[0]);
       Serial.print(", ");
