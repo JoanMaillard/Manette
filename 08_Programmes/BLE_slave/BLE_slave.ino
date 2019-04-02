@@ -124,6 +124,7 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
 
 void setup() {
   outSer.begin(115200, SERIAL_8N1);
+  Serial.begin(115200);
   //pinMode(27, INPUT_PULLUP);
   //Serial.println("Starting Arduino BLE Client application...");
   BLEDevice::init("");
@@ -176,15 +177,17 @@ void loop() {
 
 
     pRemoteCharacteristic->writeValue(dataBuffer, 8, 1); //write inputs inside of dataBuffer to BT server
-    feedbackDataServ = pRemoteCharacteristicBack->readData(); //read feedback data from server
-    for (byte i = 0; i<2; i++) {
+   /* feedbackDataServ = pRemoteCharacteristicBack->readRawData(); //read feedback data from server
+    for (byte i = 0; i < 2; i++) {
       feedbackData[i] = feedbackDataServ[i];
+      Serial.print(feedbackData[i]);
+      Serial.print("  ");
     }
-
+    Serial.println(""); 
     //TODO:  Treat feedback data (screen, buzzer and so on)
-    
+
     /*Serial.println(millis());
-    Serial.println("----");//*/
+      Serial.println("----");//*/
   } else if (doScan) {
     BLEDevice::getScan()->start(5, false);  // this is just eample to start scan after disconnect, most likely there is better way to do it in arduino
   }
