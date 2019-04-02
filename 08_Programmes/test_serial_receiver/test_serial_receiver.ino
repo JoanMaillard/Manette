@@ -1,7 +1,22 @@
 #define BUFFER_SIZE 8
-#define INPUT_PIN
+#define A 7 //addr 0
+#define B 4 //addr 0
+#define X 6 //addr 0
+#define Y 5 //addr 0
+#define WEST 4 //addr 1
+#define EAST 6 //addr 1
+#define NORTH 5 //addr 1
+#define SOUTH 7 //addr 1
+#define LB 2 //addr 0
+#define RB 3 //addr 0
+#define LS 4 //addr 1
+#define RS 3 //addr 1
+#define START 1 //addr 0
+#define SELECT 0 //addr 0
+
 
 byte dataBuffer[BUFFER_SIZE];
+
 void setup() {
   // put your setup code here, to run once:
   //pinMode(3,INPUT_PULLUP);
@@ -14,14 +29,14 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  byte dataBufferWrite[2] = {127, 132};
-  Serial3.readBytes(dataBuffer,BUFFER_SIZE);
+  byte dataBufferWrite[2] = {127, 132}; // two feedback bytes, as per the protocol
+  Serial3.readBytes(dataBuffer,BUFFER_SIZE); //controller input data
   for (int i = 0; i < BUFFER_SIZE; i++) {
-    Serial.print(dataBuffer[i]);
+    Serial.print(dataBuffer[i]); //prints controller data
     Serial.print(" ");
   }
-  if (dataBuffer[0] == 2) {
-    digitalWrite(2, HIGH);
+  if (bitRead(dataBuffer[0], A)||bitRead(dataBuffer[1], NORTH)) {
+    digitalWrite(2, HIGH); //lights the LED if the button assigned to number 2 is pressed
   }
   else {
     digitalWrite(2, LOW);

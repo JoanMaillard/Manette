@@ -5,7 +5,7 @@
 #include <HardwareSerial.h>
 
 #define BUFFER_SIZE 8
-#define INPUT_PIN
+#define WRITE_CONTROL 255
 
 byte dataBuffer[BUFFER_SIZE];
 HardwareSerial outSer(2);
@@ -143,9 +143,6 @@ void setup() {
 
 // This is the Arduino main loop function.
 void loop() {
-  /*for(int i = 0; i<8; i++) {
-    val[i]++;
-    }//*/
   // If the flag "doConnect" is true then we have scanned for and found the desired
   // BLE Server with which we wish to connect.  Now we connect to it.  Once we are
   // connected we set the connected flag to be true.
@@ -161,16 +158,14 @@ void loop() {
   }
 
   if (connected) {
-    Serial.println(millis());
-    byte varre = 255;
+    uint8_t* feedbackDataServ;
+    uint8_t feedbackData[2] = {0, 0};
+    //Serial.println(millis());
 
-    outSer.write(varre);
-    while (outSer.available() < 8) {}
+    outSer.write(WRITE_CONTROL); //signal inputs controller that the ESP is ready to read controller data
+    while (outSer.available() < 8) {} //do nothing as long as not all the serial inputs are ready to be read
 
-    outSer.readBytes(dataBuffer, BUFFER_SIZE);
-    if (!digitalRead(27)) {
-      Serial.println(dataBuffer[1]);
-    }
+    outSer.readBytes(dataBuffer, BUFFER_SIZE); //read inputs from inputs controller and store into dataBuffer
     //for (int i = 0; i < 8; i++) {
     //Serial.print(dataBuffer[i]);
     //Serial.print("   ");
@@ -180,14 +175,17 @@ void loop() {
 
     // Set the characteristic's value to be the array of bytes that is actually a string.
 
-    pRemoteCharacteristic->writeValue(dataBuffer, 8, 1);
-    Serial.println(millis());
-    Serial.println("----");
-    //outSer.flush();
+    pRemoteCharacteristic->writeValue(dataBuffer, 8, 1); //write inputs inside of dataBuffer to BT server
+    feedbackDataServ = pRemoteCharacteristicBack->readData(); //read feedback data from server
+    for (byte i = 0; i<2; i++) {
+      feedbackData[i] = feedbackDataServ[i];
+    }
 
-    //delay(10);
+    //TODO:  Treat feedback data (screen, buzzer and so on)
+    
+    /*Serial.println(millis());
+    Serial.println("----");//*/
   } else if (doScan) {
-    ////Serial.println("yolo");
     BLEDevice::getScan()->start(5, false);  // this is just eample to start scan after disconnect, most likely there is better way to do it in arduino
   }
 
