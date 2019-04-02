@@ -184,13 +184,13 @@ void loop() {
 
     pRemoteCharacteristic->writeValue(dataBuffer, 8, 1); //write inputs inside of dataBuffer to BT server
     feedbackDataServ = pRemoteCharacteristicBack->readValue(); //read feedback data from server
-    Serial.println("read feedback data");
+   // Serial.println("read feedback data");
     for (byte i = 0; i < 2; i++) {
       feedbackData[i] = (uint8_t)feedbackDataServ[i];
-      Serial.print(feedbackData[i]);
-      Serial.print("  ");
+      //Serial.print(feedbackData[i]);
+      //Serial.print("  ");
     }
-    Serial.println(""); 
+    //Serial.println(""); 
     //TODO:  Treat feedback data (screen, buzzer and so on)
 
     /*Serial.println(millis());
