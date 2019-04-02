@@ -91,9 +91,15 @@ bool connectToServer() {
     //Serial.print("The characteristic value was: ");
     //Serial.println(value.c_str());
   }
+  if (pRemoteCharacteristicBack->canRead()) {
+    std::string value = pRemoteCharacteristicBack->readValue();
+  }
 
   if (pRemoteCharacteristic->canNotify())
     pRemoteCharacteristic->registerForNotify(notifyCallback);
+
+  if (pRemoteCharacteristicBack->canNotify())
+    pRemoteCharacteristicBack->registerForNotify(notifyCallback);
 
   connected = true;
   return true;
@@ -177,7 +183,7 @@ void loop() {
 
 
     pRemoteCharacteristic->writeValue(dataBuffer, 8, 1); //write inputs inside of dataBuffer to BT server
-   /* feedbackDataServ = pRemoteCharacteristicBack->readRawData(); //read feedback data from server
+    feedbackDataServ = pRemoteCharacteristicBack->readRawData(); //read feedback data from server
     for (byte i = 0; i < 2; i++) {
       feedbackData[i] = feedbackDataServ[i];
       Serial.print(feedbackData[i]);

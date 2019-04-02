@@ -14,7 +14,7 @@
 #define START 1 //addr 0
 #define SELECT 0 //addr 0
 
-
+byte yolo=0;
 byte dataBuffer[BUFFER_SIZE];
 
 void setup() {
@@ -28,8 +28,9 @@ void setup() {
 }
 
 void loop() {
+  yolo++;
   // put your main code here, to run repeatedly:
-  byte dataBufferWrite[2] = {127, 132}; // two feedback bytes, as per the protocol
+  byte dataBufferWrite[2] = {127, yolo}; // two feedback bytes, as per the protocol
   Serial3.readBytes(dataBuffer,BUFFER_SIZE); //controller input data
   for (int i = 0; i < BUFFER_SIZE; i++) {
     Serial.print(dataBuffer[i]); //prints controller data
