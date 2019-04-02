@@ -66,7 +66,7 @@ void setup() {
   pinMode(pinaxis5, INPUT);
   pinMode(pinaxis6, INPUT);
   pinMode(8, OUTPUT);
-  pinMode(9, INPUT_PULLUP);
+  //pinMode(9, INPUT_PULLUP);
 }
 
 void loop() {
@@ -166,9 +166,9 @@ void loop() {
       byte *mainData = conc(buttonData[0], buttonData[1]);
       //mainData[1] = var;
       Serial.write(mainData, 8);
-      if (!digitalRead(9)) {
+      /*if (!digitalRead(9)) {
         Serial.println(mainData[1]);
-      }
+      }//*/
       
     }
     /*Serial.print(mainData[0]);

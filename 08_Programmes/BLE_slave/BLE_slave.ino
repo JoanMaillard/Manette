@@ -123,9 +123,8 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
 
 
 void setup() {
-  Serial.begin(115200);
   outSer.begin(115200, SERIAL_8N1);
-  pinMode(27, INPUT_PULLUP);
+  //pinMode(27, INPUT_PULLUP);
   //Serial.println("Starting Arduino BLE Client application...");
   BLEDevice::init("");
 
@@ -164,8 +163,8 @@ void loop() {
 
     outSer.write(WRITE_CONTROL); //signal inputs controller that the ESP is ready to read controller data
     while (outSer.available() < 8) {} //do nothing as long as not all the serial inputs are ready to be read
-
     outSer.readBytes(dataBuffer, BUFFER_SIZE); //read inputs from inputs controller and store into dataBuffer
+
     //for (int i = 0; i < 8; i++) {
     //Serial.print(dataBuffer[i]);
     //Serial.print("   ");
@@ -174,6 +173,7 @@ void loop() {
 
 
     // Set the characteristic's value to be the array of bytes that is actually a string.
+
 
     pRemoteCharacteristic->writeValue(dataBuffer, 8, 1); //write inputs inside of dataBuffer to BT server
     feedbackDataServ = pRemoteCharacteristicBack->readData(); //read feedback data from server
