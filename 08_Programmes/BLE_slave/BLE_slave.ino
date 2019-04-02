@@ -123,9 +123,8 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
 
 
 void setup() {
-  Serial.begin(115200);
   outSer.begin(115200, SERIAL_8N1);
-  pinMode(27, INPUT_PULLUP);
+  //pinMode(27, INPUT_PULLUP);
   //Serial.println("Starting Arduino BLE Client application...");
   BLEDevice::init("");
 
@@ -161,16 +160,16 @@ void loop() {
   }
 
   if (connected) {
-    Serial.println(millis());
+
     byte varre = 255;
 
     outSer.write(varre);
     while (outSer.available() < 8) {}
 
     outSer.readBytes(dataBuffer, BUFFER_SIZE);
-    if (!digitalRead(27)) {
+    /*if (!digitalRead(27)) {
       Serial.println(dataBuffer[1]);
-    }
+    }//*/
     //for (int i = 0; i < 8; i++) {
     //Serial.print(dataBuffer[i]);
     //Serial.print("   ");
@@ -181,9 +180,7 @@ void loop() {
     // Set the characteristic's value to be the array of bytes that is actually a string.
 
     pRemoteCharacteristic->writeValue(dataBuffer, 8, 1);
-    Serial.println(millis());
-    Serial.println("----");
-    //outSer.flush();
+
 
     //delay(10);
   } else if (doScan) {
