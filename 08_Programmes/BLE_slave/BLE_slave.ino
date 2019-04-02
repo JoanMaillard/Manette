@@ -184,6 +184,7 @@ void loop() {
 
     pRemoteCharacteristic->writeValue(dataBuffer, 8, 1); //write inputs inside of dataBuffer to BT server
     feedbackDataServ = pRemoteCharacteristicBack->readRawData(); //read feedback data from server
+    Serial.println("read feedback data");
     for (byte i = 0; i < 2; i++) {
       feedbackData[i] = feedbackDataServ[i];
       Serial.print(feedbackData[i]);
