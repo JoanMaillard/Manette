@@ -164,7 +164,7 @@ void loop() {
   }
 
   if (connected) {
-    uint8_t* feedbackDataServ;
+    std::string feedbackDataServ;
     uint8_t feedbackData[2] = {0, 0};
     //Serial.println(millis());
 
@@ -183,13 +183,9 @@ void loop() {
 
 
     pRemoteCharacteristic->writeValue(dataBuffer, 8, 1); //write inputs inside of dataBuffer to BT server
-    feedbackDataServ = pRemoteCharacteristicBack->readRawData(); //read feedback data from server
+    feedbackDataServ = pRemoteCharacteristicBack->readValue(); //read feedback data from server
     Serial.println("read feedback data");
-    for (byte i = 0; i < 2; i++) {
-      feedbackData[i] = feedbackDataServ[i];
-      Serial.print(feedbackData[i]);
-      Serial.print("  ");
-    }
+    Serial.println(feedbackDataServ.c_str());
     Serial.println(""); 
     //TODO:  Treat feedback data (screen, buzzer and so on)
 
