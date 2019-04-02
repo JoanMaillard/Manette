@@ -86,4 +86,5 @@ void loop() {
     Serial.println(fallbackProperties[i]);
   }
   pCharacteristicBack->setValue(fallbackProperties, 2);
+  pCharacteristicBack->notify(0);
 }
