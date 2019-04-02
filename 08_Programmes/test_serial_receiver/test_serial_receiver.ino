@@ -14,15 +14,16 @@
 #define START 1 //addr 0
 #define SELECT 0 //addr 0
 
-byte yolo=0;
+uint8_t yolo=0;
 byte dataBuffer[BUFFER_SIZE];
 
 void setup() {
   // put your setup code here, to run once:
   //pinMode(3,INPUT_PULLUP);
   //pinMode(2,OUTPUT);
-  Serial.begin(115200);
-  Serial3.begin(115200);
+  //Serial.begin(115200);
+  Serial3.begin(115200,SERIAL_8N1);
+  //Serial2.begin(115200);
   pinMode(2, OUTPUT);
   //digitalWrite(2,HIGH);
 }
@@ -30,11 +31,11 @@ void setup() {
 void loop() {
   yolo++;
   // put your main code here, to run repeatedly:
-  byte dataBufferWrite[2] = {127, yolo}; // two feedback bytes, as per the protocol
+  uint8_t dataBufferWrite[2] = {127, yolo}; // two feedback bytes, as per the protocol
   Serial3.readBytes(dataBuffer,BUFFER_SIZE); //controller input data
   for (int i = 0; i < BUFFER_SIZE; i++) {
-    Serial.print(dataBuffer[i]); //prints controller data
-    Serial.print(" ");
+    //Serial.print(dataBuffer[i]); //prints controller data
+    //Serial.print(" ");
   }
   if (bitRead(dataBuffer[0], A)||bitRead(dataBuffer[1], NORTH)) {
     digitalWrite(2, HIGH); //lights the LED if the button assigned to number 2 is pressed
@@ -42,9 +43,12 @@ void loop() {
   else {
     digitalWrite(2, LOW);
   }
-  //Serial.print(millis());
-  Serial.println("");
+  ////Serial.print(millis());
+  //Serial.println("");
   Serial3.write(dataBufferWrite, 2);
+  for (int i = 0; i<2; i++) {
+    //Serial.println(dataBufferWrite[i]);
+  }
   /*if (!digitalRead(3)) {
     reset();
   }//*/

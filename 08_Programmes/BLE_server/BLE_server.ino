@@ -38,6 +38,7 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
       }
       outSer.write(ctrlInput, 8);
       Serial.println("");
+      
     }
 };
 
@@ -77,9 +78,12 @@ void setup() {
 }
 
 void loop() {
-
-  while (outSer.available() < 2) {}
+  //Serial.println("loop");
+  //while (outSer.available() < 2) {}
   //insert code for follow-up feedback
   outSer.readBytes(fallbackProperties, 2);
+  for (int i = 0; i < 2; i++) {
+    Serial.println(fallbackProperties[i]);
+  }
   pCharacteristicBack->setValue(fallbackProperties, 2);
 }
