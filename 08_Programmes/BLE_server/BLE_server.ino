@@ -10,13 +10,16 @@ byte fallbackProperties[2] = {0};
 
 BLECharacteristic *pCharacteristic;
 BLECharacteristic *pCharacteristicBack;
+BLEServer *pServer;
 uint8_t defaultInValues[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 uint8_t defaultOutValues[2] = {0, 0};
 HardwareSerial outSer(2);
 
 class MyCallbacks : public BLEServerCallbacks {
-    void onConnect(BLEServer* pServer) {
+    void onConnect(BLEServer* pServer, esp_ble_gatts_cb_param_t *param) {
       Serial.println("Device connected");
+      pServer->updateConnParams(param->connect.remote_bda,0x06, 0x07, 0, 10);
+      Serial.println("Successfully updated params");
     }
 
     void onDisconnect(BLEServer* pServer) {
@@ -49,7 +52,7 @@ void setup() {
   Serial.println("Starting BLE work!");
 
   BLEDevice::init("ESP1");
-  BLEServer *pServer = BLEDevice::createServer();
+  pServer = BLEDevice::createServer();
   pServer->setCallbacks(new MyCallbacks());
   BLEService *pService = pServer->createService(SERVICE_UUID);
   pCharacteristic = pService->createCharacteristic(
