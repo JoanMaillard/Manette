@@ -25,6 +25,7 @@ void setup() {
   Serial3.begin(115200,SERIAL_8N1);
   //Serial2.begin(115200);
   pinMode(2, OUTPUT);
+  pinMode(5,OUTPUT);
   //digitalWrite(2,HIGH);
 }
 
@@ -43,6 +44,10 @@ void loop() {
   else {
     digitalWrite(2, LOW);
   }
+  if(bitRead(dataBuffer[0],LS)){
+    digitalWrite(5,HIGH);
+  }
+  
   ////Serial.print(millis());
   //Serial.println("");
   Serial3.write(dataBufferWrite, 2);
