@@ -1,0 +1,102 @@
+N.B. Sauf mention contraire, le projet actif est le P1704 Manette
+
+SEMAINE 1
+
+Jour 1 - 04.03.2019
+- Prise en main du projet
+- Information sur les versions existantes des manettes
+- Etablissement d'un git
+- Etablissement de certains objectifs de base
+- Début de prise en main d'un module Bluetooth (choix encore à faire)
+- Réflexions sur la solution d'alimentation (de préférence Li-Ion 2S2P avec BMS)
+- Réalisation d'un diagramme de fonction basique
+	- Voir document "diagramme_fonctionnel.vsdx"
+- Préparation de la station de travail (driver Wacom)
+
+Jour 2 - 05.03.2019
+- Réfection du document de choix du module Bluetooth
+- Commande du module Bluetooth
+- Elaboration d'un fichier MS Project pour la planification
+- Discussion avec le groupe des robots chevaliers et minotaure pour établir la façon d'intégrer les manettes: nous développons un dongle
+- Mise en place d'un système de test de data transfer pour le serial 
+- Préparation pour un test simple (1 potard, 2 boutons à transmettre en serial)
+- Avance sur le fichier MS project
+
+Jour 3 - 07.03.2019
+- Finition du test simple, établissement de la quantité de données totale à transmettre par l'AtMega vers l'ESP (8 octets)
+- Préparation du PPT de présentation du lendemain
+- Update MS Project sheet
+- Recherches sur la communication Bluetooth
+- Ajout d'un périphérique de level shifting 5v-3.3v
+- Added transistor pour que l'ESP reset l'AtMega qui lit les boutons etc.
+- Essai de l'ancienne manette
+
+Jour 4 - 08.03.2019
+- Réunion avec M. Locatelli pour revoir le cahier des charges
+- Removed transistor (pas nécessaire, problème corrigé - mauvais contact)
+- Commande des ESP32
+- Aide à la réparation / remise en service de la manette avec les chevaliers
+
+SEMAINE 2
+
+Jour 5 - 11.03.2019
+- Réfection du MS Project et du cahier des charges
+- Elaboration du programme de test PJON
+- Suite de l'aide à la remise en service des chevaliers
+
+Jour 6 - 12.03.2019
+- Suite de l'élaboration du programme de test PJON
+- Elaboration d'un plan de base pour la manette version breadboard
+- Correctifs sur le diagramme fonctionnel, graphique de complément sur la communication BT/PJON
+
+Jour 7 - 14.03.2019
+- Préparation de la présentation des projets
+- Réfections du cahier des charges
+- Etablissement du cahier des charges avec le groupe des chevaliers
+- Réfections sur le code de l'ESP pour intégrer le code PJON avec la communication BT comme sous-couche
+
+Jour 8 - 15.03.2019
+- Début du montage de la manette Breadboard (avec beaucoup de scotch)
+- Présentation des projets
+- Validation des cahiers des charges
+- Recherches diverses (gâchettes analogiques -> potentiomètres linéaires, doc BT, ...)
+
+SEMAINE 3
+
+Jour 9 - 18.03.2019
+- Continuation du montage de la manette Breadboard
+- Complément de doc
+
+Jour 10 - 19.03.2019
+- Fin montage de la manette breadboard
+- Mise en place dans le code de test de la manette: système de calibration (non-centré)
+- Correction de problèmes d'interférence I2C sur les axes des pins A4/A5
+- Toujours pas d'ESP32
+
+Jour 11 - 21.03.2019
+- Corrections légères sur le code de test de la manette (correction d'une imprécision dans le système de calibration à cause du courant de fuite causé par la LED)
+- Toujours pas d'ESP32, peaufinage du protocole (optimisation), réflexions sur le système duplex
+
+Jour 12 - 22.03.2019
+- Les ESP32 sont arrivés - suis allé les chercher
+- Discussion avec M. Vulliamy pour l'impression 3D - il faudra fournir les plans complets ainsi que vérifier la faisabilité de l'impression
+- Discussion avec un représentant du groupe des robots S7 par rapport à la disponibilité des pins RX/TX de leur côté
+- Test du code préparé à l'avance - le BLE 4.1 ne sera pas approprié, car monodirectionnel -> passage au BLE 4.2 bidirectionnel (profil GATT)
+
+SEMAINE 4
+
+Jour 13 - 25.03.2019
+- Complément de doc, préparation pour les revues de projet
+- Etablissement de la communication bidirectionnelle entre deux ESP32s
+- Mesure succinte du temps de réaction: 30ms si confirmation; moins sinon
+
+Jour 14 - 26.03.2019
+- Complément de doc, préparation pour les revues de projet
+- Link entre le proto de la manette et le récepteur/émetteur
+
+Jour 15 - 28.03.2019
+- Constatation d'une grosse latence à l'intérieur du circuit interne de la manette, entre le l'ATMega de data gathering et la sortie de l'ESP32
+- Troubleshooting latence.docx
+
+Jour 16 - 29.03.2019
+- 

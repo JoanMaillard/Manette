@@ -1,0 +1,36 @@
+Rapport de choix écran manettes:
+
+Au choix:
+- Ecran LCD Arduino standard
+- Ecran OLED couleur Adafruit SSD1351
+- Ecran OLED monochrome Adafruit SSD1306
+
+Avantages LCD Arduino standard
+- A disposition
+- Documentation disponible rapidement car déjà utilisés par le groupe précédent
+- En couleur
+
+Désavantages LCD Aduino standard
+- Taux de rafraîchissement très bas (on voit clairement la ligne de rafraîchissement balayer l'écran)
+- Désagréable à utiliser
+
+Avantages OLED couleur SSD1351
+- Taux de rafraîchissement haut
+- Librairie facile d'utilisation
+- Format carré 128x128 facile à mapper et utiliser
+- Résistant à l'usure et bonne visibilité
+
+Désavantages OLED couleur SSD1351
+- Doit être commandé
+
+Avantages OLED monochrome SSD1306
+- Taux de rafraîchissement rapide
+- Faible consommation
+- Résistant à l'usure et bonne visibilité
+
+Désavantages OLED monochrome SSD1306
+- Monochrome
+- Doit être commandé
+- Matrice 128x64, moins grande que l'écran couleur
+
+Notre choix se porte sur l'écran OLED couleur SSD1351
