@@ -57,3 +57,11 @@ Matériel utilisé:
 - 1 led (allumage)
 - 1 led (connection)
 - 1 led (calibration)
+
+_______________________________________________
+
+Codes en utilisation:
+- Arduino / Data gatherer: data_gatherer
+- ESP32 émetteur, manette: BLE_client
+- ESP32 récepteur, chevalier/minotaure: BLE_server
+- Arduino / objet à contrôler: manette_recepteur_objet_a_controler
