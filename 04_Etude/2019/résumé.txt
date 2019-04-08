@@ -15,8 +15,6 @@ https://www.cypress.com/file/138606/download
 https://techtutorialsx.com/2018/12/09/esp32-arduino-serial-over-bluetooth-client-connection-event/
 https://en.wikipedia.org/wiki/Bluetooth_Low_Energy
 
-Choix module Bluetooth: "rapport de décision module Bluetooth"
-
 Boutons
 
 https://ch.farnell.com/fr-CH/multimec/1js00/cap-commutateur-round-9-6mm-bleu/dp/2280392
