@@ -56,6 +56,7 @@ Jour 7 - 14.03.2019
 - Réfections sur le code de l'ESP pour intégrer le code PJON avec la communication BT comme sous-couche
 
 Jour 8 - 15.03.2019
+- Abandon PJON (c.f. Etude/2019/Utilisation PJON)
 - Début du montage de la manette Breadboard (avec beaucoup de scotch)
 - Présentation des projets
 - Validation des cahiers des charges
@@ -99,4 +100,30 @@ Jour 15 - 28.03.2019
 - Troubleshooting latence.docx
 
 Jour 16 - 29.03.2019
-- 
+- Recherche pour des correctifs sur la latence (c.f. Etude/2019/Mesure latence)
+
+SEMAINE 5
+
+Jour 17 - 01.04.2019
+
+- (Projet: AUTRE) Présentations des projets
+- Correctifs latence (c.f. Etude/2019/Troubleshooting latence)
+
+Jour 18 - 02.04.2019
+
+- Mise en place des correctifs latence au niveau du code
+- Livraison au groupe P1631 selon le cahier des charges (c.f. Rapport de réunion 02.04.2019)
+
+Jour 19 - 04.04.2019
+
+- Changement de l'intervalle de correction pour encore augmenter la responsivité (c.f. test BLE accéléré)
+
+Jour 20 - 05.04.2019
+
+- Documentation
+
+SEMAINE 6
+
+Jour 21 - 08.04.2019
+
+- Documentation
