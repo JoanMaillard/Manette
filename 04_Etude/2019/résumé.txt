@@ -50,6 +50,7 @@ Matériel utilisé:
 - 1 RECOM RE785.0-0.5
 - 1 RECOM RE783.3-0.5
 - 1 AtMega 328P-PU
+- 2 PCA9306
 - 2 NodeMCU ESP32
 - 1 MCP23017
 - 1 boutons

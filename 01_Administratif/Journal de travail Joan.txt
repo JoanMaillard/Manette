@@ -82,22 +82,20 @@ Jour 12 - 22.03.2019
 - Les ESP32 sont arrivés - suis allé les chercher
 - Discussion avec M. Vulliamy pour l'impression 3D - il faudra fournir les plans complets ainsi que vérifier la faisabilité de l'impression
 - Discussion avec un représentant du groupe des robots S7 par rapport à la disponibilité des pins RX/TX de leur côté
-- Test du code préparé à l'avance - le BLE 4.1 ne sera pas approprié, car monodirectionnel -> passage au BLE 4.2 bidirectionnel (profil GATT)
+- Test du code préparé à l'avance - le BLE 4.1 ne sera pas approprié, car monodirectionnel -> passage au BLE 4.2 bidirectionnel (profil GATT) (c.f. Dessins/Sous-diagramme BT)
 
 SEMAINE 4
 
 Jour 13 - 25.03.2019
 - Complément de doc, préparation pour les revues de projet
 - Etablissement de la communication bidirectionnelle entre deux ESP32s
-- Mesure succinte du temps de réaction: 30ms si confirmation; moins sinon
 
 Jour 14 - 26.03.2019
 - Complément de doc, préparation pour les revues de projet
 - Link entre le proto de la manette et le récepteur/émetteur
 
 Jour 15 - 28.03.2019
-- Constatation d'une grosse latence à l'intérieur du circuit interne de la manette, entre le l'ATMega de data gathering et la sortie de l'ESP32
-- Troubleshooting latence.docx
+- Constatation d'une grosse latence à l'intérieur du circuit interne de la manette, entre le l'ATMega de data gathering et la sortie de l'ESP32 (c.f. Etude/Troubleshooting latence)
 
 Jour 16 - 29.03.2019
 - Recherche pour des correctifs sur la latence (c.f. Etude/2019/Mesure latence)
