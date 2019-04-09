@@ -204,11 +204,11 @@ Text GLabel 8650 1350 1    50   Input ~ 0
 Right_joystick_button
 Text GLabel 8500 4000 1    50   Input ~ 0
 Left_joystick_button
-Text GLabel 9975 6100 0    50   Input ~ 0
+Text GLabel 9775 5525 0    50   Input ~ 0
 +5V
-Text GLabel 9975 5800 0    50   Output ~ 0
+Text GLabel 9775 5325 0    50   Output ~ 0
 Right_trigger
-Text GLabel 9975 5700 0    50   Output ~ 0
+Text GLabel 9775 5950 0    50   Output ~ 0
 Left_trigger
 Text GLabel 7900 1350 1    50   Input ~ 0
 +5V
@@ -312,7 +312,7 @@ U 1 1 5C83B5DB
 P 10700 4975
 F 0 "SW13" H 10700 5260 50  0000 C CNN
 F 1 "Calib" H 10700 5169 50  0000 C CNN
-F 2 "" H 10700 5175 50  0001 C CNN
+F 2 "Button_Switch_THT:Bouton_MEC" H 10700 5175 50  0001 C CNN
 F 3 "" H 10700 5175 50  0001 C CNN
 	1    10700 4975
 	1    0    0    -1  
@@ -547,9 +547,9 @@ Text GLabel 10500 2750 0    50   Input ~ 0
 Button_START
 Text GLabel 10500 3100 0    50   Input ~ 0
 Button_SELECT
-Text GLabel 9975 6000 0    50   Input ~ 0
+Text GLabel 9775 5425 0    50   Input ~ 0
 R_Bumper
-Text GLabel 9975 5900 0    50   Input ~ 0
+Text GLabel 9775 6050 0    50   Input ~ 0
 L_Bumper
 Text GLabel 10500 4250 0    50   Input ~ 0
 Button_LEFT
@@ -750,12 +750,12 @@ $EndComp
 $Comp
 L power:GND #PWR0108
 U 1 1 5C81DB7C
-P 9900 6225
-F 0 "#PWR0108" H 9900 5975 50  0001 C CNN
-F 1 "GND" H 9905 6052 50  0000 C CNN
-F 2 "" H 9900 6225 50  0001 C CNN
-F 3 "" H 9900 6225 50  0001 C CNN
-	1    9900 6225
+P 9700 5650
+F 0 "#PWR0108" H 9700 5400 50  0001 C CNN
+F 1 "GND" H 9705 5477 50  0000 C CNN
+F 2 "" H 9700 5650 50  0001 C CNN
+F 3 "" H 9700 5650 50  0001 C CNN
+	1    9700 5650
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -943,21 +943,10 @@ Connection ~ 7850 5400
 Wire Wire Line
 	7750 5500 7750 5400
 Connection ~ 7750 5400
-$Comp
-L Connector:Screw_Terminal_01x06 J2
-U 1 1 5CB06501
-P 10175 5900
-F 0 "J2" H 10255 5892 50  0000 L CNN
-F 1 "Screw_Terminal_01x06" H 10255 5801 50  0000 L CNN
-F 2 "" H 10175 5900 50  0001 C CNN
-F 3 "~" H 10175 5900 50  0001 C CNN
-	1    10175 5900
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	9900 6225 9900 6200
+	9700 5650 9700 5625
 Wire Wire Line
-	9900 6200 9975 6200
+	9700 5625 9775 5625
 Wire Wire Line
 	11100 4600 11100 4975
 Wire Wire Line
@@ -965,4 +954,43 @@ Wire Wire Line
 Connection ~ 11100 4975
 Wire Wire Line
 	975  1125 1625 1125
+$Comp
+L Connector:Screw_Terminal_01x04 J3
+U 1 1 5CB5236C
+P 9975 6050
+F 0 "J3" H 10055 6042 50  0000 L CNN
+F 1 "Screw_Terminal_01x04" H 10055 5951 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-4_P5.08mm" H 9975 6050 50  0001 C CNN
+F 3 "~" H 9975 6050 50  0001 C CNN
+	1    9975 6050
+	1    0    0    -1  
+$EndComp
+Text GLabel 9775 6150 0    50   Input ~ 0
++5V
+$Comp
+L power:GND #PWR0106
+U 1 1 5CB5E3D5
+P 9700 6275
+F 0 "#PWR0106" H 9700 6025 50  0001 C CNN
+F 1 "GND" H 9705 6102 50  0000 C CNN
+F 2 "" H 9700 6275 50  0001 C CNN
+F 3 "" H 9700 6275 50  0001 C CNN
+	1    9700 6275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 6275 9700 6250
+Wire Wire Line
+	9700 6250 9775 6250
+$Comp
+L Connector:Screw_Terminal_01x04 J2
+U 1 1 5CB6269D
+P 9975 5425
+F 0 "J2" H 10055 5417 50  0000 L CNN
+F 1 "Screw_Terminal_01x04" H 10055 5326 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-4_P5.08mm" H 9975 5425 50  0001 C CNN
+F 3 "~" H 9975 5425 50  0001 C CNN
+	1    9975 5425
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
