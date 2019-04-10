@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# PCB_test_NKK-rescue_C-Device
+# C-Device
 #
-DEF PCB_test_NKK-rescue_C-Device C 0 10 N Y 1 F N
+DEF C-Device C 0 10 N Y 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "PCB_test_NKK-rescue_C-Device" 25 -100 50 H V L CNN
+F1 "C-Device" 25 -100 50 H V L CNN
 F2 "" 38 -150 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -19,11 +19,11 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# PCB_test_NKK-rescue_Conn_01x02-Connector_Generic
+# Conn_01x02-Connector_Generic
 #
-DEF PCB_test_NKK-rescue_Conn_01x02-Connector_Generic J 0 40 Y N 1 F N
+DEF Conn_01x02-Connector_Generic J 0 40 Y N 1 F N
 F0 "J" 0 100 50 H V C CNN
-F1 "PCB_test_NKK-rescue_Conn_01x02-Connector_Generic" 0 -200 50 H V C CNN
+F1 "Conn_01x02-Connector_Generic" 0 -200 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -38,11 +38,11 @@ X Pin_2 2 -200 -100 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# PCB_test_NKK-rescue_Conn_01x03-Connector_Generic
+# Conn_01x03-Connector_Generic
 #
-DEF PCB_test_NKK-rescue_Conn_01x03-Connector_Generic J 0 40 Y N 1 F N
+DEF Conn_01x03-Connector_Generic J 0 40 Y N 1 F N
 F0 "J" 0 200 50 H V C CNN
-F1 "PCB_test_NKK-rescue_Conn_01x03-Connector_Generic" 0 -200 50 H V C CNN
+F1 "Conn_01x03-Connector_Generic" 0 -200 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -59,11 +59,11 @@ X Pin_3 3 -200 -100 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# PCB_test_NKK-rescue_NKK_Smartswitch-NKK_Smartswitch
+# NKK_Smartswitch-NKK_Smartswitch
 #
-DEF PCB_test_NKK-rescue_NKK_Smartswitch-NKK_Smartswitch U 0 40 Y Y 1 F N
+DEF NKK_Smartswitch-NKK_Smartswitch U 0 40 Y Y 1 F N
 F0 "U" 0 600 50 H V C CNN
-F1 "PCB_test_NKK-rescue_NKK_Smartswitch-NKK_Smartswitch" 0 700 50 H V C CNN
+F1 "NKK_Smartswitch-NKK_Smartswitch" 0 700 50 H V C CNN
 F2 "" 0 -250 50 H I C CNN
 F3 "" 0 -250 50 H I C CNN
 DRAW
@@ -81,11 +81,11 @@ X Vcc 9 -450 100 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# PCB_test_NKK-rescue_R-783.3-0.5-Regulator_Switching
+# R-783.3-0.5-Regulator_Switching
 #
-DEF PCB_test_NKK-rescue_R-783.3-0.5-Regulator_Switching U 0 10 Y Y 1 F N
+DEF R-783.3-0.5-Regulator_Switching U 0 10 Y Y 1 F N
 F0 "U" -150 125 50 H V C CNN
-F1 "PCB_test_NKK-rescue_R-783.3-0.5-Regulator_Switching" 0 125 50 H V L CNN
+F1 "R-783.3-0.5-Regulator_Switching" 0 125 50 H V L CNN
 F2 "Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT" 50 -250 50 H I L CIN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
