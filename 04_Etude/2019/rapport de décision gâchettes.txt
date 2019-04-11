@@ -1,0 +1,44 @@
+Rapport de décision gâchettes analogiques
+
+Possibilités:
+- Gâchettes non-analogiques (boutons)
+- Gâchettes analogiques (1) avec potentiomètres circulaires, bande et roue dentées
+- Gâchettes analogiques (2) avec potentiomètres linéaires et ressorts
+- Gâchettes analogiques (3) avec potentiomètres linéaires motorisés
+
+Avantages des gâchettes non-analogiques:
+- Simple à mettre en place
+- Pas cher
+
+Désavantages des gâchettes non-analogiques:
+- Non-analogique...
+
+Avantages des gâchettes (1)
+- Analogique
+- Se sert de potentiomètres avec lesquels nous sommes familiers
+- Bon marché
+
+Désavantages des gâchettes (1)
+- Mécaniquement complexe
+- Prend beaucoup de place
+
+Avantages des gâchettes (2)
+- Analogique
+- Se sert de potentiomètres qui ont déjà le bon facteur de forme
+- Bon marché
+
+Désavantages des gâchettes (2)
+- Doit être commandé
+- Mécanisme de rappel externe (ressorts) prenant de la place, potentiellement susceptible à l'usure
+
+Avantages des gâchettes (3)
+- Analogique
+- Se sert de potentiomètres qui ont déjà le bon facteur forme
+- Mécanisme de rappel intégré (moteur), permet éventuellement de donner du feedback
+
+Désavantages des gâchettes (3)
+- Cher
+- Consomme plus d'énergie que les autres options
+- Nécessite une alimentation séparée
+
+Notre choix se porte sur les gâchettes (2).
