@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:manette_2019-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -301,17 +302,9 @@ F 3 "" H 2075 2625 50  0001 C CNN
 	1    2075 2625
 	1    0    0    -1  
 $EndComp
-Text GLabel 4075 800  2    50   Output ~ 0
-Button_A
-Text GLabel 4075 1300 2    50   Output ~ 0
-Button_B
-Text GLabel 4075 2300 2    50   Output ~ 0
-Button_Y
-Text GLabel 4075 1800 2    50   Output ~ 0
-Button_X
-Text GLabel 4075 2800 2    50   Output ~ 0
+Text GLabel 3975 900  2    50   Output ~ 0
 Button_START
-Text GLabel 4075 3325 2    50   Output ~ 0
+Text GLabel 3975 1425 2    50   Output ~ 0
 Button_SELECT
 Text Label 1725 3150 0    197  ~ 0
 Inputs
@@ -479,12 +472,12 @@ $EndComp
 $Comp
 L power:GND #PWR0113
 U 1 1 5C9E80F4
-P 3475 5875
-F 0 "#PWR0113" H 3475 5625 50  0001 C CNN
-F 1 "GND" H 3480 5702 50  0000 C CNN
-F 2 "" H 3475 5875 50  0001 C CNN
-F 3 "" H 3475 5875 50  0001 C CNN
-	1    3475 5875
+P 3375 1975
+F 0 "#PWR0113" H 3375 1725 50  0001 C CNN
+F 1 "GND" H 3380 1802 50  0000 C CNN
+F 2 "" H 3375 1975 50  0001 C CNN
+F 3 "" H 3375 1975 50  0001 C CNN
+	1    3375 1975
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -582,7 +575,7 @@ Wire Wire Line
 	800  1200 925  1200
 Text GLabel 6150 5275 2    50   Input ~ 0
 Calib
-Text GLabel 4175 5750 0    50   Output ~ 0
+Text GLabel 4075 1850 0    50   Output ~ 0
 Calib
 $Comp
 L ESP32:ESP32 U1
@@ -1116,210 +1109,70 @@ Connection ~ 10300 6450
 Wire Wire Line
 	10300 6450 11150 6450
 $Comp
-L Switch:SW_Push_LED SW1
-U 1 1 5CC6D929
-P 3875 900
-F 0 "SW1" H 3875 1285 50  0000 C CNN
-F 1 "Button_A" H 3875 1194 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3875 1200 50  0001 C CNN
-F 3 "" H 3875 1200 50  0001 C CNN
-	1    3875 900 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3675 800  3475 800 
-Wire Wire Line
-	3475 800  3475 900 
-Wire Wire Line
-	3675 900  3475 900 
-Connection ~ 3475 900 
-Wire Wire Line
-	3475 900  3475 1300
-$Comp
-L Switch:SW_Push_LED SW2
-U 1 1 5CC8F52A
-P 3875 1400
-F 0 "SW2" H 3875 1785 50  0000 C CNN
-F 1 "Button_B" H 3875 1694 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3875 1700 50  0001 C CNN
-F 3 "" H 3875 1700 50  0001 C CNN
-	1    3875 1400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3675 1300 3475 1300
-Wire Wire Line
-	3675 1400 3475 1400
-$Comp
-L Switch:SW_Push_LED SW3
-U 1 1 5CC91949
-P 3875 1900
-F 0 "SW3" H 3875 2285 50  0000 C CNN
-F 1 "Button_X" H 3875 2194 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3875 2200 50  0001 C CNN
-F 3 "" H 3875 2200 50  0001 C CNN
-	1    3875 1900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3675 1800 3475 1800
-Wire Wire Line
-	3675 1900 3475 1900
-$Comp
-L Switch:SW_Push_LED SW4
-U 1 1 5CC9405E
-P 3875 2400
-F 0 "SW4" H 3875 2785 50  0000 C CNN
-F 1 "Button_Y" H 3875 2694 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3875 2700 50  0001 C CNN
-F 3 "" H 3875 2700 50  0001 C CNN
-	1    3875 2400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3675 2300 3475 2300
-Wire Wire Line
-	3675 2400 3475 2400
-$Comp
 L Switch:SW_Push_LED SW5
 U 1 1 5CCB42C2
-P 3875 2900
-F 0 "SW5" H 3875 3285 50  0000 C CNN
-F 1 "Button_START" H 3875 3194 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3875 3200 50  0001 C CNN
-F 3 "" H 3875 3200 50  0001 C CNN
-	1    3875 2900
+P 3775 1000
+F 0 "SW5" H 3775 1385 50  0000 C CNN
+F 1 "Button_START" H 3775 1294 50  0000 C CNN
+F 2 "Button_Switch_THT:Bouton_MEC" H 3775 1300 50  0001 C CNN
+F 3 "" H 3775 1300 50  0001 C CNN
+	1    3775 1000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3675 2800 3475 2800
+	3575 900  3375 900 
 Wire Wire Line
-	3675 2900 3475 2900
-Connection ~ 3475 1300
-Connection ~ 3475 1400
+	3575 1000 3375 1000
 Wire Wire Line
-	3475 1300 3475 1400
+	3375 900  3375 1000
+Connection ~ 3375 1000
 Wire Wire Line
-	3475 1400 3475 1800
-Connection ~ 3475 1800
-Connection ~ 3475 1900
-Wire Wire Line
-	3475 1800 3475 1900
-Wire Wire Line
-	3475 1900 3475 2300
-Connection ~ 3475 2300
-Connection ~ 3475 2400
-Wire Wire Line
-	3475 2300 3475 2400
-Wire Wire Line
-	3475 2400 3475 2800
-Connection ~ 3475 2800
-Wire Wire Line
-	3475 2800 3475 2900
-Connection ~ 3475 2900
-Wire Wire Line
-	3475 2900 3475 3325
+	3375 1000 3375 1425
 $Comp
 L Switch:SW_Push_LED SW6
 U 1 1 5CCCB259
-P 3875 3425
-F 0 "SW6" H 3875 3810 50  0000 C CNN
-F 1 "Button_SELECT" H 3875 3719 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3875 3725 50  0001 C CNN
-F 3 "" H 3875 3725 50  0001 C CNN
-	1    3875 3425
+P 3775 1525
+F 0 "SW6" H 3775 1910 50  0000 C CNN
+F 1 "Button_SELECT" H 3775 1819 50  0000 C CNN
+F 2 "Button_Switch_THT:Bouton_MEC" H 3775 1825 50  0001 C CNN
+F 3 "" H 3775 1825 50  0001 C CNN
+	1    3775 1525
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3675 3325 3475 3325
+	3575 1425 3375 1425
+Connection ~ 3375 1425
 Wire Wire Line
-	3675 3425 3475 3425
-Connection ~ 3475 3325
+	3375 1425 3375 1525
 Wire Wire Line
-	3475 3325 3475 3425
-Connection ~ 3475 3425
+	3375 1975 3375 1950
 Wire Wire Line
-	3475 5875 3475 5850
-Wire Wire Line
-	4175 5850 3475 5850
-Connection ~ 3475 5850
+	4075 1950 3375 1950
 $Comp
 L Device:R R10
 U 1 1 5CD95D34
-P 4225 3425
-F 0 "R10" V 4125 3425 50  0000 C CNN
-F 1 "R" V 4050 3425 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4155 3425 50  0001 C CNN
-F 3 "~" H 4225 3425 50  0001 C CNN
-	1    4225 3425
+P 4125 1525
+F 0 "R10" V 4025 1525 50  0000 C CNN
+F 1 "R" V 3950 1525 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4055 1525 50  0001 C CNN
+F 3 "~" H 4125 1525 50  0001 C CNN
+	1    4125 1525
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:R R9
 U 1 1 5CD9F3F2
-P 4225 2900
-F 0 "R9" V 4125 2900 50  0000 C CNN
-F 1 "R" V 4050 2900 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4155 2900 50  0001 C CNN
-F 3 "~" H 4225 2900 50  0001 C CNN
-	1    4225 2900
+P 4125 1000
+F 0 "R9" V 4025 1000 50  0000 C CNN
+F 1 "R" V 3950 1000 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4055 1000 50  0001 C CNN
+F 3 "~" H 4125 1000 50  0001 C CNN
+	1    4125 1000
 	0    -1   -1   0   
 $EndComp
-$Comp
-L Device:R R8
-U 1 1 5CDA3E2F
-P 4225 2400
-F 0 "R8" V 4125 2400 50  0000 C CNN
-F 1 "R" V 4050 2400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4155 2400 50  0001 C CNN
-F 3 "~" H 4225 2400 50  0001 C CNN
-	1    4225 2400
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R7
-U 1 1 5CDAD1A9
-P 4225 1900
-F 0 "R7" V 4125 1900 50  0000 C CNN
-F 1 "R" V 4050 1900 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4155 1900 50  0001 C CNN
-F 3 "~" H 4225 1900 50  0001 C CNN
-	1    4225 1900
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R6
-U 1 1 5CDB1B6D
-P 4225 1400
-F 0 "R6" V 4125 1400 50  0000 C CNN
-F 1 "R" V 4050 1400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4155 1400 50  0001 C CNN
-F 3 "~" H 4225 1400 50  0001 C CNN
-	1    4225 1400
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R5
-U 1 1 5CDB653F
-P 4225 900
-F 0 "R5" V 4125 900 50  0000 C CNN
-F 1 "R" V 4050 900 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4155 900 50  0001 C CNN
-F 3 "~" H 4225 900 50  0001 C CNN
-	1    4225 900 
-	0    -1   -1   0   
-$EndComp
-Text GLabel 4375 900  2    50   Input ~ 0
+Text GLabel 4275 1000 2    50   Input ~ 0
 +5V
-Text GLabel 4375 1400 2    50   Input ~ 0
-+5V
-Text GLabel 4375 1900 2    50   Input ~ 0
-+5V
-Text GLabel 4375 2400 2    50   Input ~ 0
-+5V
-Text GLabel 4375 2900 2    50   Input ~ 0
-+5V
-Text GLabel 4375 3425 2    50   Input ~ 0
+Text GLabel 4275 1525 2    50   Input ~ 0
 +5V
 Text GLabel 2325 4900 1    50   Input ~ 0
 +5V
@@ -1443,158 +1296,108 @@ $EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J6
 U 1 1 5CD55C77
-P 4375 5750
-F 0 "J6" H 4454 5742 50  0000 L CNN
-F 1 "Calib" H 4454 5651 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 4375 5750 50  0001 C CNN
-F 3 "~" H 4375 5750 50  0001 C CNN
-	1    4375 5750
-	1    0    0    -1  
-$EndComp
-Text GLabel 4375 5425 2    50   Input ~ 0
-+5V
-Text GLabel 4375 4925 2    50   Input ~ 0
-+5V
-Text GLabel 4375 4425 2    50   Input ~ 0
-+5V
-Text GLabel 4375 3925 2    50   Input ~ 0
-+5V
-$Comp
-L Device:R R13
-U 1 1 5CDC469D
-P 4225 4925
-F 0 "R13" V 4125 4925 50  0000 C CNN
-F 1 "R" V 4050 4925 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4155 4925 50  0001 C CNN
-F 3 "~" H 4225 4925 50  0001 C CNN
-	1    4225 4925
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R12
-U 1 1 5CDBFCC7
-P 4225 4425
-F 0 "R12" V 4125 4425 50  0000 C CNN
-F 1 "R" V 4050 4425 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4155 4425 50  0001 C CNN
-F 3 "~" H 4225 4425 50  0001 C CNN
-	1    4225 4425
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R11
-U 1 1 5CDBB28D
-P 4225 3925
-F 0 "R11" V 4125 3925 50  0000 C CNN
-F 1 "R" V 4050 3925 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4155 3925 50  0001 C CNN
-F 3 "~" H 4225 3925 50  0001 C CNN
-	1    4225 3925
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R14
-U 1 1 5CDA87E3
-P 4225 5425
-F 0 "R14" V 4125 5425 50  0000 C CNN
-F 1 "R" V 4050 5425 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4155 5425 50  0001 C CNN
-F 3 "~" H 4225 5425 50  0001 C CNN
-	1    4225 5425
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	3475 5850 3475 5425
-Connection ~ 3475 5425
-Wire Wire Line
-	3675 5425 3475 5425
-Wire Wire Line
-	3475 5325 3475 5425
-Connection ~ 3475 5325
-Wire Wire Line
-	3675 5325 3475 5325
-$Comp
-L Switch:SW_Push_LED SW10
-U 1 1 5CCFCA60
-P 3875 5425
-F 0 "SW10" H 3875 5810 50  0000 C CNN
-F 1 "Button_DOWN" H 3875 5719 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3875 5725 50  0001 C CNN
-F 3 "" H 3875 5725 50  0001 C CNN
-	1    3875 5425
+P 4275 1850
+F 0 "J6" H 4354 1842 50  0000 L CNN
+F 1 "Calib" H 4354 1751 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 4275 1850 50  0001 C CNN
+F 3 "~" H 4275 1850 50  0001 C CNN
+	1    4275 1850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3475 4925 3475 5325
-Connection ~ 3475 4925
+	3575 1525 3375 1525
 Wire Wire Line
-	3675 4925 3475 4925
-Wire Wire Line
-	3475 4825 3475 4925
-Connection ~ 3475 4825
-Wire Wire Line
-	3675 4825 3475 4825
+	3375 1525 3375 1950
+Connection ~ 3375 1525
+Connection ~ 3375 1950
 $Comp
-L Switch:SW_Push_LED SW9
-U 1 1 5CCF8FD6
-P 3875 4925
-F 0 "SW9" H 3875 5310 50  0000 C CNN
-F 1 "Button_LEFT" H 3875 5219 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3875 5225 50  0001 C CNN
-F 3 "" H 3875 5225 50  0001 C CNN
-	1    3875 4925
+L power:GND #PWR0128
+U 1 1 5CC9AA68
+P 3375 3050
+F 0 "#PWR0128" H 3375 2800 50  0001 C CNN
+F 1 "GND" H 3380 2877 50  0000 C CNN
+F 2 "" H 3375 3050 50  0001 C CNN
+F 3 "" H 3375 3050 50  0001 C CNN
+	1    3375 3050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3475 4425 3475 4825
-Connection ~ 3475 4425
-Wire Wire Line
-	3675 4425 3475 4425
-Wire Wire Line
-	3475 4325 3475 4425
-Connection ~ 3475 4325
-Wire Wire Line
-	3675 4325 3475 4325
+	3375 3050 3375 3025
 $Comp
-L Switch:SW_Push_LED SW8
-U 1 1 5CCF55D7
-P 3875 4425
-F 0 "SW8" H 3875 4810 50  0000 C CNN
-F 1 "Button_UP" H 3875 4719 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3875 4725 50  0001 C CNN
-F 3 "" H 3875 4725 50  0001 C CNN
-	1    3875 4425
+L power:GND #PWR0129
+U 1 1 5CCA0050
+P 3375 3750
+F 0 "#PWR0129" H 3375 3500 50  0001 C CNN
+F 1 "GND" H 3380 3577 50  0000 C CNN
+F 2 "" H 3375 3750 50  0001 C CNN
+F 3 "" H 3375 3750 50  0001 C CNN
+	1    3375 3750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3475 3925 3475 4325
-Connection ~ 3475 3925
-Wire Wire Line
-	3675 3925 3475 3925
-Wire Wire Line
-	3475 3825 3475 3925
-Wire Wire Line
-	3475 3425 3475 3825
-Connection ~ 3475 3825
-Wire Wire Line
-	3675 3825 3475 3825
-$Comp
-L Switch:SW_Push_LED SW7
-U 1 1 5CCD509B
-P 3875 3925
-F 0 "SW7" H 3875 4310 50  0000 C CNN
-F 1 "Button_RIGHT" H 3875 4219 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3875 4225 50  0001 C CNN
-F 3 "" H 3875 4225 50  0001 C CNN
-	1    3875 3925
-	1    0    0    -1  
-$EndComp
-Text GLabel 4075 5325 2    50   Output ~ 0
-Button_DOWN
-Text GLabel 4075 3825 2    50   Output ~ 0
-Button_RIGHT
-Text GLabel 4075 4325 2    50   Output ~ 0
-Button_UP
-Text GLabel 4075 4825 2    50   Output ~ 0
+	3375 3750 3375 3725
+Text GLabel 3950 3825 0    50   Output ~ 0
 Button_LEFT
+Wire Wire Line
+	3375 3725 3950 3725
+Text GLabel 3950 3925 0    50   Output ~ 0
+Button_UP
+Text GLabel 3950 4025 0    50   Output ~ 0
+Button_RIGHT
+Text GLabel 3950 4125 0    50   Output ~ 0
+Button_DOWN
+Wire Wire Line
+	3375 3025 3950 3025
+$Comp
+L Connector:Screw_Terminal_01x03 J10
+U 1 1 5CCBD83F
+P 4150 4025
+F 0 "J10" H 4230 4067 50  0000 L CNN
+F 1 "L_button_In2" H 4230 3976 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 4150 4025 50  0001 C CNN
+F 3 "~" H 4150 4025 50  0001 C CNN
+	1    4150 4025
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J9
+U 1 1 5CCBD964
+P 4150 3725
+F 0 "J9" H 4230 3767 50  0000 L CNN
+F 1 "L_button_In1" H 4230 3676 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 4150 3725 50  0001 C CNN
+F 3 "~" H 4150 3725 50  0001 C CNN
+	1    4150 3725
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J8
+U 1 1 5CCC0940
+P 4150 3325
+F 0 "J8" H 4230 3367 50  0000 L CNN
+F 1 "R_button_In2" H 4230 3276 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 4150 3325 50  0001 C CNN
+F 3 "~" H 4150 3325 50  0001 C CNN
+	1    4150 3325
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J7
+U 1 1 5CCC0947
+P 4150 3025
+F 0 "J7" H 4229 3067 50  0000 L CNN
+F 1 "R_Button_In1" H 4229 2976 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 4150 3025 50  0001 C CNN
+F 3 "~" H 4150 3025 50  0001 C CNN
+	1    4150 3025
+	1    0    0    -1  
+$EndComp
+Text GLabel 3950 3125 0    50   Output ~ 0
+Button_B
+Text GLabel 3950 3225 0    50   Output ~ 0
+Button_A
+Text GLabel 3950 3325 0    50   Output ~ 0
+Button_Y
+Text GLabel 3950 3425 0    50   Output ~ 0
+Button_X
 $EndSCHEMATC

@@ -385,62 +385,62 @@ VCC
 $Comp
 L power:PWR_FLAG #FLG0101
 U 1 1 5CA7532E
-P 6400 7375
-F 0 "#FLG0101" H 6400 7450 50  0001 C CNN
-F 1 "PWR_FLAG" H 6400 7549 50  0000 C CNN
-F 2 "" H 6400 7375 50  0001 C CNN
-F 3 "~" H 6400 7375 50  0001 C CNN
-	1    6400 7375
+P 6350 6400
+F 0 "#FLG0101" H 6350 6475 50  0001 C CNN
+F 1 "PWR_FLAG" H 6350 6574 50  0000 C CNN
+F 2 "" H 6350 6400 50  0001 C CNN
+F 3 "~" H 6350 6400 50  0001 C CNN
+	1    6350 6400
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:PWR_FLAG #FLG0102
 U 1 1 5CA753AE
-P 6575 7375
-F 0 "#FLG0102" H 6575 7450 50  0001 C CNN
-F 1 "PWR_FLAG" H 6575 7549 50  0000 C CNN
-F 2 "" H 6575 7375 50  0001 C CNN
-F 3 "~" H 6575 7375 50  0001 C CNN
-	1    6575 7375
+P 6525 6400
+F 0 "#FLG0102" H 6525 6475 50  0001 C CNN
+F 1 "PWR_FLAG" H 6525 6574 50  0000 C CNN
+F 2 "" H 6525 6400 50  0001 C CNN
+F 3 "~" H 6525 6400 50  0001 C CNN
+	1    6525 6400
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:PWR_FLAG #FLG0103
 U 1 1 5CA77741
-P 6725 7375
-F 0 "#FLG0103" H 6725 7450 50  0001 C CNN
-F 1 "PWR_FLAG" H 6725 7549 50  0000 C CNN
-F 2 "" H 6725 7375 50  0001 C CNN
-F 3 "~" H 6725 7375 50  0001 C CNN
-	1    6725 7375
+P 6675 6400
+F 0 "#FLG0103" H 6675 6475 50  0001 C CNN
+F 1 "PWR_FLAG" H 6675 6574 50  0000 C CNN
+F 2 "" H 6675 6400 50  0001 C CNN
+F 3 "~" H 6675 6400 50  0001 C CNN
+	1    6675 6400
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:PWR_FLAG #FLG0104
 U 1 1 5CA79B65
-P 6875 7375
-F 0 "#FLG0104" H 6875 7450 50  0001 C CNN
-F 1 "PWR_FLAG" H 6875 7549 50  0000 C CNN
-F 2 "" H 6875 7375 50  0001 C CNN
-F 3 "~" H 6875 7375 50  0001 C CNN
-	1    6875 7375
+P 6825 6400
+F 0 "#FLG0104" H 6825 6475 50  0001 C CNN
+F 1 "PWR_FLAG" H 6825 6574 50  0000 C CNN
+F 2 "" H 6825 6400 50  0001 C CNN
+F 3 "~" H 6825 6400 50  0001 C CNN
+	1    6825 6400
 	1    0    0    -1  
 $EndComp
-Text GLabel 6725 7375 3    50   Input ~ 0
+Text GLabel 6675 6400 3    50   Input ~ 0
 +3.3V
-Text GLabel 6575 7375 3    50   Input ~ 0
+Text GLabel 6525 6400 3    50   Input ~ 0
 +5V
-Text GLabel 6400 7375 3    50   Input ~ 0
+Text GLabel 6350 6400 3    50   Input ~ 0
 VCC
 $Comp
 L power:GND #PWR0102
 U 1 1 5C816B1D
-P 6875 7375
-F 0 "#PWR0102" H 6875 7125 50  0001 C CNN
-F 1 "GND" H 6880 7202 50  0000 C CNN
-F 2 "" H 6875 7375 50  0001 C CNN
-F 3 "" H 6875 7375 50  0001 C CNN
-	1    6875 7375
+P 6825 6400
+F 0 "#PWR0102" H 6825 6150 50  0001 C CNN
+F 1 "GND" H 6830 6227 50  0000 C CNN
+F 2 "" H 6825 6400 50  0001 C CNN
+F 3 "" H 6825 6400 50  0001 C CNN
+	1    6825 6400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -550,17 +550,6 @@ F 3 "" H 5550 5875 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Screw_Terminal_01x02 J1
-U 1 1 5CB34D45
-P 600 1200
-F 0 "J1" H 520 875 50  0000 C CNN
-F 1 "Power" H 520 966 50  0000 C CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 600 1200 50  0001 C CNN
-F 3 "~" H 600 1200 50  0001 C CNN
-	1    600  1200
-	-1   0    0    1   
-$EndComp
-$Comp
 L power:GND #PWR0119
 U 1 1 5CB6DBAC
 P 925 1425
@@ -583,7 +572,7 @@ U 1 1 5CABDA52
 P 9650 1050
 F 0 "U1" H 9650 1525 50  0000 C CNN
 F 1 "ESP32" H 9650 1434 50  0000 C CNN
-F 2 "Manette_2019:ESP32" H 9050 1000 50  0001 C CNN
+F 2 "manette_2019:ESP32" H 9050 1000 50  0001 C CNN
 F 3 "" H 9050 1000 50  0001 C CNN
 	1    9650 1050
 	1    0    0    -1  
@@ -594,7 +583,7 @@ U 1 1 5CABE2FF
 P 10150 3175
 F 0 "U8" H 10150 3600 50  0000 C CNN
 F 1 "PCA9306" H 10150 3509 50  0000 C CNN
-F 2 "PCA9306:PCA9306" H 9950 3175 50  0001 C CNN
+F 2 "manette_2019:PCA9306" H 9950 3175 50  0001 C CNN
 F 3 "" H 9950 3175 50  0001 C CNN
 	1    10150 3175
 	1    0    0    -1  
@@ -725,14 +714,14 @@ Wire Notes Line
 Wire Notes Line
 	2700 2850 2700 475 
 $Comp
-L Device:C C1
+L Device:C C2
 U 1 1 5CB980CB
-P 3400 6525
-F 0 "C1" H 3515 6571 50  0000 L CNN
-F 1 "C" H 3515 6480 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 3438 6375 50  0001 C CNN
-F 3 "~" H 3400 6525 50  0001 C CNN
-	1    3400 6525
+P 3375 6725
+F 0 "C2" H 3490 6771 50  0000 L CNN
+F 1 "C" H 3490 6680 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 3413 6575 50  0001 C CNN
+F 3 "Vin_Esp32" H 3575 6600 50  0000 C CNN
+	1    3375 6725
 	1    0    0    -1  
 $EndComp
 Wire Notes Line
@@ -741,200 +730,52 @@ Wire Notes Line
 	3200 6100 3200 7800
 Wire Notes Line
 	4725 6100 4725 475 
-$Comp
-L power:GND #PWR0114
-U 1 1 5CC21EBE
-P 3400 6675
-F 0 "#PWR0114" H 3400 6425 50  0001 C CNN
-F 1 "GND" H 3405 6502 50  0000 C CNN
-F 2 "" H 3400 6675 50  0001 C CNN
-F 3 "" H 3400 6675 50  0001 C CNN
-	1    3400 6675
-	1    0    0    -1  
-$EndComp
-Text GLabel 3400 6350 1    50   Input ~ 0
+Text GLabel 3375 6400 1    50   Input ~ 0
 VCC
-Wire Wire Line
-	3400 6375 3400 6350
-Text GLabel 3525 6375 2    50   Output ~ 0
-Vcc_ESP32
-Wire Wire Line
-	3400 6375 3525 6375
-Connection ~ 3400 6375
 $Comp
-L Device:C C2
+L Device:C C5
 U 1 1 5CC5B24F
-P 4200 6525
-F 0 "C2" H 4315 6571 50  0000 L CNN
-F 1 "C" H 4315 6480 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 4238 6375 50  0001 C CNN
-F 3 "~" H 4200 6525 50  0001 C CNN
-	1    4200 6525
+P 4850 6725
+F 0 "C5" H 4965 6771 50  0000 L CNN
+F 1 "C" H 4965 6680 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 4888 6575 50  0001 C CNN
+F 3 "Vin_Bus" H 5025 6600 50  0000 C CNN
+	1    4850 6725
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR0120
-U 1 1 5CC5B256
-P 4200 6675
-F 0 "#PWR0120" H 4200 6425 50  0001 C CNN
-F 1 "GND" H 4205 6502 50  0000 C CNN
-F 2 "" H 4200 6675 50  0001 C CNN
-F 3 "" H 4200 6675 50  0001 C CNN
-	1    4200 6675
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4200 6375 4200 6350
-Text GLabel 4325 6375 2    50   Output ~ 0
-Vcc_Atmega328P
-Wire Wire Line
-	4200 6375 4325 6375
-Connection ~ 4200 6375
-Text GLabel 4200 6350 1    50   Input ~ 0
+Text GLabel 4850 6400 1    50   Input ~ 0
 +5V
-Text GLabel 8525 2200 0    50   Input ~ 0
-Vcc_ESP32
 Wire Wire Line
 	7950 2100 8550 2100
 $Comp
-L Device:C C3
-U 1 1 5CCA67BF
-P 5150 6525
-F 0 "C3" H 5265 6571 50  0000 L CNN
-F 1 "C" H 5265 6480 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 5188 6375 50  0001 C CNN
-F 3 "~" H 5150 6525 50  0001 C CNN
-	1    5150 6525
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0107
-U 1 1 5CCA67C6
-P 5150 6675
-F 0 "#PWR0107" H 5150 6425 50  0001 C CNN
-F 1 "GND" H 5155 6502 50  0000 C CNN
-F 2 "" H 5150 6675 50  0001 C CNN
-F 3 "" H 5150 6675 50  0001 C CNN
-	1    5150 6675
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5150 6375 5150 6350
-Text GLabel 5275 6375 2    50   Output ~ 0
-Vcc_Bus
-Wire Wire Line
-	5150 6375 5275 6375
-Connection ~ 5150 6375
-Text GLabel 5150 6350 1    50   Input ~ 0
-+5V
-Text GLabel 6100 2075 0    50   Input ~ 0
-Vcc_Bus
-$Comp
-L Device:C C4
-U 1 1 5CCB7B93
-P 5875 6525
-F 0 "C4" H 5990 6571 50  0000 L CNN
-F 1 "C" H 5990 6480 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 5913 6375 50  0001 C CNN
-F 3 "~" H 5875 6525 50  0001 C CNN
-	1    5875 6525
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0121
-U 1 1 5CCB7B9A
-P 5875 6675
-F 0 "#PWR0121" H 5875 6425 50  0001 C CNN
-F 1 "GND" H 5880 6502 50  0000 C CNN
-F 2 "" H 5875 6675 50  0001 C CNN
-F 3 "" H 5875 6675 50  0001 C CNN
-	1    5875 6675
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5875 6375 5875 6350
-Text GLabel 6000 6375 2    50   Output ~ 0
-Vcc_Right_Js
-Wire Wire Line
-	5875 6375 6000 6375
-Connection ~ 5875 6375
-Text GLabel 5875 6350 1    50   Input ~ 0
-+5V
-$Comp
-L Device:C C5
-U 1 1 5CCBB296
-P 6700 6525
-F 0 "C5" H 6815 6571 50  0000 L CNN
-F 1 "C" H 6815 6480 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 6738 6375 50  0001 C CNN
-F 3 "~" H 6700 6525 50  0001 C CNN
-	1    6700 6525
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0122
-U 1 1 5CCBB29D
-P 6700 6675
-F 0 "#PWR0122" H 6700 6425 50  0001 C CNN
-F 1 "GND" H 6705 6502 50  0000 C CNN
-F 2 "" H 6700 6675 50  0001 C CNN
-F 3 "" H 6700 6675 50  0001 C CNN
-	1    6700 6675
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6700 6375 6700 6350
-Text GLabel 6825 6375 2    50   Output ~ 0
-Vcc_Left_Js
-Wire Wire Line
-	6700 6375 6825 6375
-Connection ~ 6700 6375
-Text GLabel 6700 6350 1    50   Input ~ 0
-+5V
-Text GLabel 700  3600 1    50   Input ~ 0
-Vcc_Right_Js
-Text GLabel 850  5875 1    50   Input ~ 0
-Vcc_Left_Js
-$Comp
 L Device:C C6
+U 1 1 5CCA67BF
+P 5250 6725
+F 0 "C6" H 5365 6771 50  0000 L CNN
+F 1 "C" H 5365 6680 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 5288 6575 50  0001 C CNN
+F 3 "Vin_Atmega" H 5475 6600 50  0000 C CNN
+	1    5250 6725
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C7
 U 1 1 5CCE01FA
-P 3400 7375
-F 0 "C6" H 3515 7421 50  0000 L CNN
-F 1 "C" H 3515 7330 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 3438 7225 50  0001 C CNN
-F 3 "~" H 3400 7375 50  0001 C CNN
-	1    3400 7375
+P 5775 6725
+F 0 "C7" H 5890 6771 50  0000 L CNN
+F 1 "C" H 5890 6680 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 5813 6575 50  0001 C CNN
+F 3 "Vin_OLED_Display" H 6125 6600 50  0000 C CNN
+	1    5775 6725
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR0123
-U 1 1 5CCE0201
-P 3400 7525
-F 0 "#PWR0123" H 3400 7275 50  0001 C CNN
-F 1 "GND" H 3405 7352 50  0000 C CNN
-F 2 "" H 3400 7525 50  0001 C CNN
-F 3 "" H 3400 7525 50  0001 C CNN
-	1    3400 7525
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3400 7225 3400 7200
-Text GLabel 3525 7225 2    50   Output ~ 0
-Vcc_OLED_Display
-Wire Wire Line
-	3400 7225 3525 7225
-Connection ~ 3400 7225
-Text GLabel 3400 7200 1    50   Input ~ 0
+Text GLabel 5775 6400 1    50   Input ~ 0
 +3.3V
-Text GLabel 9050 4425 0    50   Input ~ 0
-Vcc_OLED_Display
-Wire Wire Line
-	800  1100 1100 1100
 $Comp
-L Device:C C9
+L Device:C C1
 U 1 1 5CCF4611
 P 1100 1250
-F 0 "C9" H 1215 1296 50  0000 L CNN
+F 0 "C1" H 1215 1296 50  0000 L CNN
 F 1 "C" H 1215 1205 50  0000 L CNN
 F 2 "Capacitor_THT:C_Radial_D10.0mm_H20.0mm_P5.00mm" H 1138 1100 50  0001 C CNN
 F 3 "~" H 1100 1250 50  0001 C CNN
@@ -950,73 +791,28 @@ Wire Wire Line
 	925  1400 925  1425
 Wire Wire Line
 	1100 1100 1325 1100
-Connection ~ 1100 1100
 $Comp
-L Device:C C7
+L Device:C C4
 U 1 1 5CD26113
-P 4350 7375
-F 0 "C7" H 4465 7421 50  0000 L CNN
-F 1 "C" H 4465 7330 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 4388 7225 50  0001 C CNN
-F 3 "~" H 4350 7375 50  0001 C CNN
-	1    4350 7375
+P 4350 6725
+F 0 "C4" H 4465 6771 50  0000 L CNN
+F 1 "C" H 4465 6680 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 4388 6575 50  0001 C CNN
+F 3 "Vin_Rec_U7" H 4575 6600 50  0000 C CNN
+	1    4350 6725
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0124
-U 1 1 5CD2611A
-P 4350 7525
-F 0 "#PWR0124" H 4350 7275 50  0001 C CNN
-F 1 "GND" H 4355 7352 50  0000 C CNN
-F 2 "" H 4350 7525 50  0001 C CNN
-F 3 "" H 4350 7525 50  0001 C CNN
-	1    4350 7525
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4350 7225 4350 7200
-Text GLabel 4475 7225 2    50   Output ~ 0
-Vcc_Rec_3.3
-Wire Wire Line
-	4350 7225 4475 7225
-Connection ~ 4350 7225
-Text GLabel 4350 7200 1    50   Input ~ 0
-VCC
-Text GLabel 1775 1475 0    50   Input ~ 0
-Vcc_Rec_3.3
-Text GLabel 1775 2325 0    50   Input ~ 0
-Vcc_Rec_5
-$Comp
-L Device:C C8
+L Device:C C3
 U 1 1 5CD5092B
-P 5175 7375
-F 0 "C8" H 5290 7421 50  0000 L CNN
-F 1 "C" H 5290 7330 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 5213 7225 50  0001 C CNN
-F 3 "~" H 5175 7375 50  0001 C CNN
-	1    5175 7375
+P 3825 6725
+F 0 "C3" H 3940 6771 50  0000 L CNN
+F 1 "C" H 3940 6680 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 3863 6575 50  0001 C CNN
+F 3 "Vin_Rec_U6" H 4100 6600 50  0000 C CNN
+	1    3825 6725
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR0125
-U 1 1 5CD50932
-P 5175 7525
-F 0 "#PWR0125" H 5175 7275 50  0001 C CNN
-F 1 "GND" H 5180 7352 50  0000 C CNN
-F 2 "" H 5175 7525 50  0001 C CNN
-F 3 "" H 5175 7525 50  0001 C CNN
-	1    5175 7525
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5175 7225 5175 7200
-Text GLabel 5300 7225 2    50   Output ~ 0
-Vcc_Rec_5
-Wire Wire Line
-	5175 7225 5300 7225
-Connection ~ 5175 7225
-Text GLabel 5175 7200 1    50   Input ~ 0
-VCC
 Wire Wire Line
 	9600 5250 9750 5250
 Wire Wire Line
@@ -1310,4 +1106,184 @@ Wire Wire Line
 	3375 1525 3375 1950
 Connection ~ 3375 1525
 Connection ~ 3375 1950
+$Comp
+L power:GND #PWR0128
+U 1 1 5CC9AA68
+P 3375 3050
+F 0 "#PWR0128" H 3375 2800 50  0001 C CNN
+F 1 "GND" H 3380 2877 50  0000 C CNN
+F 2 "" H 3375 3050 50  0001 C CNN
+F 3 "" H 3375 3050 50  0001 C CNN
+	1    3375 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3375 3050 3375 3025
+$Comp
+L power:GND #PWR0129
+U 1 1 5CCA0050
+P 3375 3750
+F 0 "#PWR0129" H 3375 3500 50  0001 C CNN
+F 1 "GND" H 3380 3577 50  0000 C CNN
+F 2 "" H 3375 3750 50  0001 C CNN
+F 3 "" H 3375 3750 50  0001 C CNN
+	1    3375 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3375 3750 3375 3725
+Text GLabel 3950 3825 0    50   Output ~ 0
+Button_LEFT
+Wire Wire Line
+	3375 3725 3950 3725
+Text GLabel 3950 3925 0    50   Output ~ 0
+Button_UP
+Text GLabel 3950 4025 0    50   Output ~ 0
+Button_RIGHT
+Text GLabel 3950 4125 0    50   Output ~ 0
+Button_DOWN
+Wire Wire Line
+	3375 3025 3950 3025
+$Comp
+L Connector:Screw_Terminal_01x03 J10
+U 1 1 5CCBD83F
+P 4150 4025
+F 0 "J10" H 4230 4067 50  0000 L CNN
+F 1 "L_button_In2" H 4230 3976 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 4150 4025 50  0001 C CNN
+F 3 "~" H 4150 4025 50  0001 C CNN
+	1    4150 4025
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J9
+U 1 1 5CCBD964
+P 4150 3725
+F 0 "J9" H 4230 3767 50  0000 L CNN
+F 1 "L_button_In1" H 4230 3676 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 4150 3725 50  0001 C CNN
+F 3 "~" H 4150 3725 50  0001 C CNN
+	1    4150 3725
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J8
+U 1 1 5CCC0940
+P 4150 3325
+F 0 "J8" H 4230 3367 50  0000 L CNN
+F 1 "R_button_In2" H 4230 3276 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 4150 3325 50  0001 C CNN
+F 3 "~" H 4150 3325 50  0001 C CNN
+	1    4150 3325
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J7
+U 1 1 5CCC0947
+P 4150 3025
+F 0 "J7" H 4229 3067 50  0000 L CNN
+F 1 "R_Button_In1" H 4229 2976 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 4150 3025 50  0001 C CNN
+F 3 "~" H 4150 3025 50  0001 C CNN
+	1    4150 3025
+	1    0    0    -1  
+$EndComp
+Text GLabel 3950 3125 0    50   Output ~ 0
+Button_B
+Text GLabel 3950 3225 0    50   Output ~ 0
+Button_A
+Text GLabel 3950 3325 0    50   Output ~ 0
+Button_Y
+Text GLabel 3950 3425 0    50   Output ~ 0
+Button_X
+Connection ~ 1100 1100
+Wire Wire Line
+	800  1100 1100 1100
+$Comp
+L Connector:Screw_Terminal_01x02 J1
+U 1 1 5CB34D45
+P 600 1200
+F 0 "J1" H 520 875 50  0000 C CNN
+F 1 "Power" H 520 966 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 600 1200 50  0001 C CNN
+F 3 "~" H 600 1200 50  0001 C CNN
+	1    600  1200
+	-1   0    0    1   
+$EndComp
+Text GLabel 8550 2200 0    50   Input ~ 0
+VCC
+Text GLabel 1775 2325 0    50   Input ~ 0
+VCC
+Text GLabel 1775 1475 0    50   Input ~ 0
+VCC
+Text GLabel 850  5875 1    50   Input ~ 0
++5V
+Text GLabel 700  3600 1    50   Input ~ 0
++5V
+Text GLabel 6100 2075 0    50   Input ~ 0
++5V
+Text GLabel 9050 4425 0    50   Input ~ 0
++3.3V
+Wire Wire Line
+	3375 6875 3375 7000
+Wire Wire Line
+	3375 7000 3825 7000
+Wire Wire Line
+	3825 7000 3825 6875
+Connection ~ 3825 7000
+Wire Wire Line
+	4850 7000 4850 6875
+Wire Wire Line
+	5250 7000 5250 6875
+Wire Wire Line
+	5775 7000 5775 6875
+Wire Wire Line
+	3375 6400 3375 6475
+Wire Wire Line
+	3375 6475 3825 6475
+Wire Wire Line
+	3825 6475 3825 6575
+Connection ~ 3375 6475
+Wire Wire Line
+	3375 6475 3375 6575
+Connection ~ 3825 6475
+Wire Wire Line
+	4850 6400 4850 6475
+Wire Wire Line
+	5250 6475 4850 6475
+Wire Wire Line
+	5250 6475 5250 6575
+Connection ~ 4850 6475
+Wire Wire Line
+	4850 6475 4850 6575
+$Comp
+L power:GND #PWR?
+U 1 1 5CCF972D
+P 4350 7000
+F 0 "#PWR?" H 4350 6750 50  0001 C CNN
+F 1 "GND" H 4355 6827 50  0000 C CNN
+F 2 "" H 4350 7000 50  0001 C CNN
+F 3 "" H 4350 7000 50  0001 C CNN
+	1    4350 7000
+	1    0    0    -1  
+$EndComp
+Connection ~ 4350 7000
+Wire Wire Line
+	3825 7000 4350 7000
+Wire Wire Line
+	4350 7000 4350 6875
+Wire Wire Line
+	4350 6575 4350 6475
+Wire Wire Line
+	3825 6475 4350 6475
+Wire Wire Line
+	4350 7000 4850 7000
+Connection ~ 4850 7000
+Wire Wire Line
+	4850 7000 5250 7000
+Wire Wire Line
+	5250 7000 5775 7000
+Connection ~ 5250 7000
+Wire Wire Line
+	5775 6400 5775 6575
 $EndSCHEMATC
