@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:manette_2019_boutons-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -94,7 +95,7 @@ Connection ~ 4525 3275
 Wire Wire Line
 	4525 2200 4525 2300
 Text GLabel 3375 2800 2    50   Output ~ 0
-VCC
+Vcc_LED
 Text GLabel 3375 2700 2    50   Output ~ 0
 GND
 Text GLabel 3375 2600 2    50   Input ~ 0
@@ -155,13 +156,13 @@ Wire Wire Line
 	4525 3475 4525 3375
 Connection ~ 4525 3375
 Text GLabel 5325 3375 2    50   Input ~ 0
-VCC
+Vcc_LED
 Text GLabel 5325 2850 2    50   Input ~ 0
-VCC
+Vcc_LED
 Text GLabel 5325 2300 2    50   Input ~ 0
-VCC
+Vcc_LED
 Text GLabel 5325 1775 2    50   Input ~ 0
-VCC
+Vcc_LED
 Text GLabel 5025 1675 2    50   Output ~ 0
 Bouton_1
 Text GLabel 5025 2200 2    50   Output ~ 0
@@ -192,4 +193,6 @@ F 3 "~" H 3175 2400 50  0001 C CNN
 	1    3175 2400
 	-1   0    0    1   
 $EndComp
+Text Notes 5975 2300 0    50   ~ 0
+Ce PCB sera produit en 2 exemplaires par manette,\nl'un d'eux comportera les boutons A B X et Y, alors\nque l'autre aura le pad directionnel.\n
 $EndSCHEMATC

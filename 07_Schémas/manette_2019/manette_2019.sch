@@ -17,12 +17,12 @@ $EndDescr
 $Comp
 L Device:Speaker LS1
 U 1 1 5C7D5866
-P 10600 5600
-F 0 "LS1" H 10800 5650 50  0000 L CNN
-F 1 "Speaker" H 10800 5550 50  0000 L CNN
-F 2 "Buzzer_Beeper:Buzzer_T135" H 10600 5400 50  0001 C CNN
-F 3 "~" H 10590 5550 50  0001 C CNN
-	1    10600 5600
+P 10600 5500
+F 0 "LS1" H 10800 5550 50  0000 L CNN
+F 1 "Speaker" H 10800 5450 50  0000 L CNN
+F 2 "Buzzer_Beeper:Buzzer_T135" H 10600 5300 50  0001 C CNN
+F 3 "~" H 10590 5450 50  0001 C CNN
+	1    10600 5500
 	1    0    0    -1  
 $EndComp
 Text GLabel 9050 4325 0    50   Output ~ 0
@@ -50,7 +50,7 @@ Text GLabel 8550 1800 0    50   Output ~ 0
 SCK
 Text GLabel 8550 2000 0    50   Output ~ 0
 MOSI
-Text GLabel 8550 1500 0    50   Output ~ 0
+Text GLabel 8550 1600 0    50   Output ~ 0
 RESET
 Text GLabel 6150 5375 2    50   Output ~ 0
 SDA
@@ -102,13 +102,13 @@ Text GLabel 6150 4075 2    50   Input ~ 0
 R_joystick_analog_x
 Text GLabel 6150 4175 2    50   Input ~ 0
 R_joystick_analog_y
-Text GLabel 6100 1175 0    50   Input ~ 0
+Text GLabel 7200 1625 2    50   Input ~ 0
 Right_joystick_button
 Text GLabel 6150 4275 2    50   Input ~ 0
 L_joystick_analog_x
 Text GLabel 6150 4375 2    50   Input ~ 0
 L_joystick_analog_y
-Text GLabel 6100 1325 0    50   Input ~ 0
+Text GLabel 6100 1025 0    50   Input ~ 0
 Left_joystick_button
 Text GLabel 6150 4575 2    50   Input ~ 0
 L_trigger
@@ -151,28 +151,6 @@ Wire Wire Line
 	7150 3825 7150 3725
 Wire Wire Line
 	7150 3725 7050 3725
-$Comp
-L Device:LED D1
-U 1 1 5C83283C
-P 10200 5250
-F 0 "D1" H 10200 5075 50  0000 C CNN
-F 1 "LED_B" H 10250 5150 50  0000 C CNN
-F 2 "LED_THT:LED_D3.0mm" H 10200 5250 50  0001 C CNN
-F 3 "~" H 10200 5250 50  0001 C CNN
-	1    10200 5250
-	1    0    0    1   
-$EndComp
-$Comp
-L Device:R R1
-U 1 1 5C8328E9
-P 9900 5250
-F 0 "R1" V 9825 5200 50  0000 L CNN
-F 1 "R" V 9900 5225 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 9830 5250 50  0001 C CNN
-F 3 "~" H 9900 5250 50  0001 C CNN
-	1    9900 5250
-	0    -1   1    0   
-$EndComp
 Text GLabel 2375 2325 2    50   Output ~ 0
 +5V
 $Comp
@@ -186,83 +164,59 @@ F 3 "" H 9200 6150 50  0001 C CNN
 	1    9200 6150
 	1    0    0    -1  
 $EndComp
-Text GLabel 8800 5450 0    50   Input ~ 0
+Text GLabel 8800 5350 0    50   Input ~ 0
 Buzzer
 $Comp
 L Device:R R3
 U 1 1 5C865F77
-P 9900 5600
-F 0 "R3" V 9975 5550 50  0000 L CNN
-F 1 "R" V 9900 5575 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 9830 5600 50  0001 C CNN
-F 3 "~" H 9900 5600 50  0001 C CNN
-	1    9900 5600
+P 9900 5500
+F 0 "R3" V 9975 5450 50  0000 L CNN
+F 1 "R" V 9900 5475 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 9830 5500 50  0001 C CNN
+F 3 "~" H 9900 5500 50  0001 C CNN
+	1    9900 5500
 	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:LED D2
-U 1 1 5C86BA29
-P 10200 5425
-F 0 "D2" H 10350 5475 50  0000 C CNN
-F 1 "LED_R" H 10350 5550 50  0000 C CNN
-F 2 "LED_THT:LED_D3.0mm" H 10200 5425 50  0001 C CNN
-F 3 "~" H 10200 5425 50  0001 C CNN
-	1    10200 5425
-	1    0    0    1   
-$EndComp
-$Comp
-L Device:R R2
-U 1 1 5C86BA30
-P 9900 5425
-F 0 "R2" V 9825 5375 50  0000 L CNN
-F 1 "R" V 9900 5400 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 9830 5425 50  0001 C CNN
-F 3 "~" H 9900 5425 50  0001 C CNN
-	1    9900 5425
-	0    -1   1    0   
 $EndComp
 $Comp
 L Device:D D3
 U 1 1 5C878C9C
-P 10050 5750
-F 0 "D3" H 10050 5950 50  0000 C CNN
-F 1 "D" H 10050 5875 50  0000 C CNN
-F 2 "Diode_THT:D_A-405_P10.16mm_Horizontal" H 10050 5750 50  0001 C CNN
-F 3 "~" H 10050 5750 50  0001 C CNN
-	1    10050 5750
+P 10050 5650
+F 0 "D3" H 10050 5850 50  0000 C CNN
+F 1 "D" H 10050 5775 50  0000 C CNN
+F 2 "Diode_THT:D_A-405_P10.16mm_Horizontal" H 10050 5650 50  0001 C CNN
+F 3 "~" H 10050 5650 50  0001 C CNN
+	1    10050 5650
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	10250 5700 10400 5700
+	10250 5600 10400 5600
 Wire Wire Line
-	10050 5600 10400 5600
-Text GLabel 8800 5350 0    50   Input ~ 0
-Power
+	10050 5500 10400 5500
 Text GLabel 8800 5250 0    50   Input ~ 0
 Connected
-Text GLabel 6100 1475 0    50   Input ~ 0
+Text GLabel 6100 1175 0    50   Input ~ 0
 Button_LEFT
-Text GLabel 6100 1625 0    50   Input ~ 0
+Text GLabel 6100 1325 0    50   Input ~ 0
 Button_UP
-Text GLabel 6100 1775 0    50   Input ~ 0
+Text GLabel 6100 1475 0    50   Input ~ 0
 Button_RIGHT
-Text GLabel 6100 1925 0    50   Input ~ 0
+Text GLabel 6100 1625 0    50   Input ~ 0
 Button_DOWN
-Text GLabel 7200 875  2    50   Input ~ 0
-Button_A
 Text GLabel 7200 1025 2    50   Input ~ 0
-Button_B
+Button_A
 Text GLabel 7200 1175 2    50   Input ~ 0
-Button_Y
+Button_B
 Text GLabel 7200 1325 2    50   Input ~ 0
-Button_X
-Text GLabel 7200 1775 2    50   Input ~ 0
-Button_START
-Text GLabel 7200 1925 2    50   Input ~ 0
-Button_SELECT
+Button_Y
 Text GLabel 7200 1475 2    50   Input ~ 0
+Button_X
+Text GLabel 6100 1925 0    50   Input ~ 0
+Button_START
+Text GLabel 6100 1775 0    50   Input ~ 0
+Button_SELECT
+Text GLabel 7200 875  2    50   Input ~ 0
 R_Bumper
-Text GLabel 7200 1625 2    50   Input ~ 0
+Text GLabel 6100 875  0    50   Input ~ 0
 L_Bumper
 Wire Wire Line
 	6850 3875 6850 3975
@@ -302,19 +256,15 @@ F 3 "" H 2075 2625 50  0001 C CNN
 	1    2075 2625
 	1    0    0    -1  
 $EndComp
-Text GLabel 3975 900  2    50   Output ~ 0
-Button_START
-Text GLabel 3975 1425 2    50   Output ~ 0
-Button_SELECT
 Text Label 1725 3150 0    197  ~ 0
 Inputs
 Text GLabel 9050 3925 0    50   Input ~ 0
 DC
-Text GLabel 8550 1600 0    50   Output ~ 0
+Text GLabel 8550 1700 0    50   Output ~ 0
 DC
 Text GLabel 9050 4125 0    50   Input ~ 0
 OLEDCS
-Text GLabel 8550 1700 0    50   Output ~ 0
+Text GLabel 8550 1500 0    50   Output ~ 0
 OLEDCS
 Text GLabel 5550 2875 1    50   Input ~ 0
 +5V
@@ -334,13 +284,13 @@ Text GLabel 7500 2375 2    50   Input ~ 0
 +5V
 Text GLabel 9700 2975 0    50   Input ~ 0
 +5V
-Text GLabel 10600 3175 2    50   Input ~ 0
-RX_ESP32
 Text GLabel 10600 3075 2    50   Input ~ 0
+RX_ESP32
+Text GLabel 10600 3175 2    50   Input ~ 0
 TX_ESP32
-Text GLabel 9700 3175 0    50   Input ~ 0
-TX_Atmega
 Text GLabel 9700 3075 0    50   Input ~ 0
+TX_Atmega
+Text GLabel 9700 3175 0    50   Input ~ 0
 RX_Atmega
 $Comp
 L Regulator_Switching:R-783.3-0.5 U6
@@ -366,7 +316,7 @@ F 3 "" H 2075 1775 50  0001 C CNN
 $EndComp
 Text GLabel 2375 1475 2    50   Output ~ 0
 +3.3V
-Text Label 625  775  0    197  ~ 0
+Text Label 625  600  0    197  ~ 0
 Power
 Text Label 9150 2700 0    197  ~ 0
 SerialComm
@@ -374,11 +324,9 @@ Text Label 4800 725  0    197  ~ 0
 Command
 Wire Wire Line
 	950  6025 850  6025
-Text GLabel 10750 1200 2    50   Output ~ 0
-Buzzer
 Text GLabel 10750 1300 2    50   Output ~ 0
-Power
-Text GLabel 10750 1400 2    50   Output ~ 0
+Buzzer
+Text GLabel 10750 1200 2    50   Output ~ 0
 Connected
 Text GLabel 1325 1100 2    50   Output ~ 0
 VCC
@@ -472,12 +420,12 @@ $EndComp
 $Comp
 L power:GND #PWR0113
 U 1 1 5C9E80F4
-P 3375 1975
-F 0 "#PWR0113" H 3375 1725 50  0001 C CNN
-F 1 "GND" H 3380 1802 50  0000 C CNN
-F 2 "" H 3375 1975 50  0001 C CNN
-F 3 "" H 3375 1975 50  0001 C CNN
-	1    3375 1975
+P 3000 2575
+F 0 "#PWR0113" H 3000 2325 50  0001 C CNN
+F 1 "GND" H 3005 2402 50  0000 C CNN
+F 2 "" H 3000 2575 50  0001 C CNN
+F 3 "" H 3000 2575 50  0001 C CNN
+	1    3000 2575
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -549,22 +497,9 @@ F 3 "" H 5550 5875 50  0001 C CNN
 	1    5550 5875
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR0119
-U 1 1 5CB6DBAC
-P 925 1425
-F 0 "#PWR0119" H 925 1175 50  0001 C CNN
-F 1 "GND" H 930 1252 50  0000 C CNN
-F 2 "" H 925 1425 50  0001 C CNN
-F 3 "" H 925 1425 50  0001 C CNN
-	1    925  1425
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	800  1200 925  1200
 Text GLabel 6150 5275 2    50   Input ~ 0
 Calib
-Text GLabel 4075 1850 0    50   Output ~ 0
+Text GLabel 3125 2450 0    50   Output ~ 0
 Calib
 $Comp
 L ESP32:ESP32 U1
@@ -617,8 +552,8 @@ F 3 "~" H 7350 2375 50  0001 C CNN
 	1    7350 2375
 	0    1    1    0   
 $EndComp
-Text GLabel 10500 5075 1    50   Input ~ 0
-+3.3V
+Text GLabel 11150 4975 1    50   Input ~ 0
+Vcc
 NoConn ~ 5825 3175
 NoConn ~ 6150 3275
 NoConn ~ 6150 3375
@@ -653,14 +588,12 @@ NoConn ~ 8800 5950
 NoConn ~ 8800 5850
 NoConn ~ 8800 5750
 NoConn ~ 8800 5650
-NoConn ~ 9600 5150
 NoConn ~ 9600 5650
 NoConn ~ 9600 5750
 NoConn ~ 9600 5850
-NoConn ~ 9600 5950
 NoConn ~ 9700 3275
-NoConn ~ 6100 1025
-NoConn ~ 6100 875 
+NoConn ~ 7200 1925
+NoConn ~ 7200 1775
 NoConn ~ 7200 2225
 NoConn ~ 7200 2075
 Wire Wire Line
@@ -772,26 +705,6 @@ $EndComp
 Text GLabel 5775 6400 1    50   Input ~ 0
 +3.3V
 $Comp
-L Device:C C1
-U 1 1 5CCF4611
-P 1100 1250
-F 0 "C1" H 1215 1296 50  0000 L CNN
-F 1 "C" H 1215 1205 50  0000 L CNN
-F 2 "Capacitor_THT:C_Radial_D10.0mm_H20.0mm_P5.00mm" H 1138 1100 50  0001 C CNN
-F 3 "~" H 1100 1250 50  0001 C CNN
-	1    1100 1250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	925  1200 925  1400
-Wire Wire Line
-	1100 1400 925  1400
-Connection ~ 925  1400
-Wire Wire Line
-	925  1400 925  1425
-Wire Wire Line
-	1100 1100 1325 1100
-$Comp
 L Device:C C4
 U 1 1 5CD26113
 P 4350 6725
@@ -814,162 +727,76 @@ F 3 "Vin_Rec_U6" H 4100 6600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9600 5250 9750 5250
-Wire Wire Line
-	10350 5250 10500 5250
-Wire Wire Line
-	10350 5425 10500 5425
-Wire Wire Line
-	10500 5425 10500 5250
-Wire Wire Line
-	10500 5250 10500 5075
-Connection ~ 10500 5250
-Wire Wire Line
-	9750 5425 9725 5425
-Wire Wire Line
-	9725 5425 9725 5350
-Wire Wire Line
 	9600 5350 9725 5350
 Wire Wire Line
-	9600 5450 9725 5450
+	9725 5350 9725 5500
 Wire Wire Line
-	9725 5450 9725 5600
+	9725 5500 9750 5500
 Wire Wire Line
-	9725 5600 9750 5600
+	10050 5800 10250 5800
 Wire Wire Line
-	10050 5900 10250 5900
-Wire Wire Line
-	10250 5900 10250 5700
-Connection ~ 10050 5600
+	10250 5800 10250 5600
+Connection ~ 10050 5500
 $Comp
 L Device:R R15
 U 1 1 5CDA7820
-P 9925 6125
-F 0 "R15" V 10000 6075 50  0000 L CNN
-F 1 "R" V 9925 6100 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 9855 6125 50  0001 C CNN
-F 3 "~" H 9925 6125 50  0001 C CNN
-	1    9925 6125
+P 9925 6025
+F 0 "R15" V 10000 5975 50  0000 L CNN
+F 1 "R" V 9925 6000 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 9855 6025 50  0001 C CNN
+F 3 "~" H 9925 6025 50  0001 C CNN
+	1    9925 6025
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:D D4
 U 1 1 5CDA7827
-P 10075 6275
-F 0 "D4" H 10075 6475 50  0000 C CNN
-F 1 "D" H 10075 6400 50  0000 C CNN
-F 2 "Diode_THT:D_A-405_P10.16mm_Horizontal" H 10075 6275 50  0001 C CNN
-F 3 "~" H 10075 6275 50  0001 C CNN
-	1    10075 6275
+P 10075 6175
+F 0 "D4" H 10075 6375 50  0000 C CNN
+F 1 "D" H 10075 6300 50  0000 C CNN
+F 2 "Diode_THT:D_A-405_P10.16mm_Horizontal" H 10075 6175 50  0001 C CNN
+F 3 "~" H 10075 6175 50  0001 C CNN
+	1    10075 6175
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	9775 6125 9675 6125
+	9775 6025 9675 6025
 Wire Wire Line
-	9675 6125 9675 5550
+	9675 6025 9675 5450
 Wire Wire Line
-	9675 5550 9600 5550
+	9675 5450 9600 5450
 Wire Wire Line
-	10075 6425 10075 6450
+	10075 6325 10075 6350
 Wire Wire Line
-	11150 6450 11150 5900
+	11150 6350 11150 5800
 Wire Wire Line
-	11150 5250 10500 5250
-Wire Wire Line
-	10250 5900 11150 5900
-Connection ~ 10250 5900
-Connection ~ 11150 5900
-Wire Wire Line
-	11150 5900 11150 5250
-Text GLabel 8800 5550 0    50   Input ~ 0
+	10250 5800 11150 5800
+Connection ~ 10250 5800
+Connection ~ 11150 5800
+Text GLabel 8800 5450 0    50   Input ~ 0
 Rumble
 Wire Wire Line
-	10075 6450 10300 6450
+	10075 6350 10300 6350
 $Comp
 L Connector:Screw_Terminal_01x02 J5
 U 1 1 5CDD987E
-P 10500 6125
-F 0 "J5" H 10579 6117 50  0000 L CNN
-F 1 "Rumble" H 10579 6026 50  0000 L CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 10500 6125 50  0001 C CNN
-F 3 "~" H 10500 6125 50  0001 C CNN
-	1    10500 6125
-	1    0    0    -1  
-$EndComp
-Connection ~ 10075 6125
-Wire Wire Line
-	10075 6125 10300 6125
-Wire Wire Line
-	10300 6225 10300 6450
-Connection ~ 10300 6450
-Wire Wire Line
-	10300 6450 11150 6450
-$Comp
-L Switch:SW_Push_LED SW5
-U 1 1 5CCB42C2
-P 3775 1000
-F 0 "SW5" H 3775 1385 50  0000 C CNN
-F 1 "Button_START" H 3775 1294 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3775 1300 50  0001 C CNN
-F 3 "" H 3775 1300 50  0001 C CNN
-	1    3775 1000
+P 10500 6025
+F 0 "J5" H 10579 6017 50  0000 L CNN
+F 1 "Rumble" H 10579 5926 50  0000 L CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 10500 6025 50  0001 C CNN
+F 3 "~" H 10500 6025 50  0001 C CNN
+	1    10500 6025
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3575 900  3375 900 
+	10075 6025 10300 6025
 Wire Wire Line
-	3575 1000 3375 1000
+	10300 6125 10300 6350
+Connection ~ 10300 6350
 Wire Wire Line
-	3375 900  3375 1000
-Connection ~ 3375 1000
+	10300 6350 11150 6350
 Wire Wire Line
-	3375 1000 3375 1425
-$Comp
-L Switch:SW_Push_LED SW6
-U 1 1 5CCCB259
-P 3775 1525
-F 0 "SW6" H 3775 1910 50  0000 C CNN
-F 1 "Button_SELECT" H 3775 1819 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 3775 1825 50  0001 C CNN
-F 3 "" H 3775 1825 50  0001 C CNN
-	1    3775 1525
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3575 1425 3375 1425
-Connection ~ 3375 1425
-Wire Wire Line
-	3375 1425 3375 1525
-Wire Wire Line
-	3375 1975 3375 1950
-Wire Wire Line
-	4075 1950 3375 1950
-$Comp
-L Device:R R10
-U 1 1 5CD95D34
-P 4125 1525
-F 0 "R10" V 4025 1525 50  0000 C CNN
-F 1 "R" V 3950 1525 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4055 1525 50  0001 C CNN
-F 3 "~" H 4125 1525 50  0001 C CNN
-	1    4125 1525
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:R R9
-U 1 1 5CD9F3F2
-P 4125 1000
-F 0 "R9" V 4025 1000 50  0000 C CNN
-F 1 "R" V 3950 1000 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 4055 1000 50  0001 C CNN
-F 3 "~" H 4125 1000 50  0001 C CNN
-	1    4125 1000
-	0    -1   -1   0   
-$EndComp
-Text GLabel 4275 1000 2    50   Input ~ 0
-+5V
-Text GLabel 4275 1525 2    50   Input ~ 0
-+5V
+	3000 2575 3000 2550
 Text GLabel 2325 4900 1    50   Input ~ 0
 +5V
 $Comp
@@ -984,9 +811,9 @@ F 3 "" H 2325 5925 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 2475 5050 2    50   Output ~ 0
-Left_trigger
+L_trigger
 Text GLabel 2475 5775 2    50   Output ~ 0
-Right_trigger
+R_trigger
 Text GLabel 2325 5625 1    50   Input ~ 0
 +5V
 $Comp
@@ -1092,20 +919,14 @@ $EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J6
 U 1 1 5CD55C77
-P 4275 1850
-F 0 "J6" H 4354 1842 50  0000 L CNN
-F 1 "Calib" H 4354 1751 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 4275 1850 50  0001 C CNN
-F 3 "~" H 4275 1850 50  0001 C CNN
-	1    4275 1850
+P 3325 2450
+F 0 "J6" H 3404 2442 50  0000 L CNN
+F 1 "Calib" H 3404 2351 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical" H 3325 2450 50  0001 C CNN
+F 3 "~" H 3325 2450 50  0001 C CNN
+	1    3325 2450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3575 1525 3375 1525
-Wire Wire Line
-	3375 1525 3375 1950
-Connection ~ 3375 1525
-Connection ~ 3375 1950
 $Comp
 L power:GND #PWR0128
 U 1 1 5CC9AA68
@@ -1188,28 +1009,14 @@ F 3 "~" H 4150 3025 50  0001 C CNN
 	1    4150 3025
 	1    0    0    -1  
 $EndComp
-Text GLabel 3950 3125 0    50   Output ~ 0
-Button_B
-Text GLabel 3950 3225 0    50   Output ~ 0
-Button_A
 Text GLabel 3950 3325 0    50   Output ~ 0
-Button_Y
+Button_B
 Text GLabel 3950 3425 0    50   Output ~ 0
+Button_A
+Text GLabel 3950 3225 0    50   Output ~ 0
+Button_Y
+Text GLabel 3950 3125 0    50   Output ~ 0
 Button_X
-Connection ~ 1100 1100
-Wire Wire Line
-	800  1100 1100 1100
-$Comp
-L Connector:Screw_Terminal_01x02 J1
-U 1 1 5CB34D45
-P 600 1200
-F 0 "J1" H 520 875 50  0000 C CNN
-F 1 "Power" H 520 966 50  0000 C CNN
-F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 600 1200 50  0001 C CNN
-F 3 "~" H 600 1200 50  0001 C CNN
-	1    600  1200
-	-1   0    0    1   
-$EndComp
 Text GLabel 8550 2200 0    50   Input ~ 0
 VCC
 Text GLabel 1775 2325 0    50   Input ~ 0
@@ -1257,10 +1064,10 @@ Connection ~ 4850 6475
 Wire Wire Line
 	4850 6475 4850 6575
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0107
 U 1 1 5CCF972D
 P 4350 7000
-F 0 "#PWR?" H 4350 6750 50  0001 C CNN
+F 0 "#PWR0107" H 4350 6750 50  0001 C CNN
 F 1 "GND" H 4355 6827 50  0000 C CNN
 F 2 "" H 4350 7000 50  0001 C CNN
 F 3 "" H 4350 7000 50  0001 C CNN
@@ -1286,4 +1093,130 @@ Wire Wire Line
 Connection ~ 5250 7000
 Wire Wire Line
 	5775 6400 5775 6575
+$Comp
+L Device:C C1
+U 1 1 5CCF4611
+P 1275 1400
+F 0 "C1" H 1390 1446 50  0000 L CNN
+F 1 "C" H 1390 1355 50  0000 L CNN
+F 2 "Capacitor_THT:C_Radial_D10.0mm_H20.0mm_P5.00mm" H 1313 1250 50  0001 C CNN
+F 3 "~" H 1275 1400 50  0001 C CNN
+	1    1275 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0119
+U 1 1 5CB6DBAC
+P 1275 1800
+F 0 "#PWR0119" H 1275 1550 50  0001 C CNN
+F 1 "GND" H 1280 1627 50  0000 C CNN
+F 2 "" H 1275 1800 50  0001 C CNN
+F 3 "" H 1275 1800 50  0001 C CNN
+	1    1275 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J1
+U 1 1 5CCCFDC6
+P 600 1100
+F 0 "J1" H 520 775 50  0000 C CNN
+F 1 "Vcc" H 520 866 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 600 1100 50  0001 C CNN
+F 3 "~" H 600 1100 50  0001 C CNN
+	1    600  1100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x02 J13
+U 1 1 5CCCFFAC
+P 600 1825
+F 0 "J13" H 520 1500 50  0000 C CNN
+F 1 "Alim_LED" H 520 1591 50  0000 C CNN
+F 2 "TerminalBlock:TerminalBlock_bornier-2_P5.08mm" H 600 1825 50  0001 C CNN
+F 3 "~" H 600 1825 50  0001 C CNN
+	1    600  1825
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1275 1725 1275 1800
+Text GLabel 800  1825 2    50   Output ~ 0
+VCC_LED
+Wire Wire Line
+	800  1725 1275 1725
+Connection ~ 1275 1100
+Wire Wire Line
+	1275 1100 1325 1100
+Wire Wire Line
+	800  1100 900  1100
+Wire Wire Line
+	800  1000 900  1000
+Wire Wire Line
+	900  1000 900  1100
+Connection ~ 900  1100
+Wire Wire Line
+	900  1100 1275 1100
+Wire Wire Line
+	1275 1250 1275 1100
+Wire Wire Line
+	1275 1550 1275 1725
+Connection ~ 1275 1725
+Text GLabel 3950 2925 0    50   Input ~ 0
+VCC_LED
+Text GLabel 3950 3625 0    50   Input ~ 0
+VCC_LED
+Wire Wire Line
+	3125 2550 3000 2550
+Wire Wire Line
+	11150 4975 11150 5800
+$Comp
+L Connector:Screw_Terminal_01x02 J11
+U 1 1 5CCD18CB
+P 10075 5150
+F 0 "J11" H 10155 5142 50  0000 L CNN
+F 1 "Alim_Button_Start_Select" H 10155 5051 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal" H 10075 5150 50  0001 C CNN
+F 3 "~" H 10075 5150 50  0001 C CNN
+	1    10075 5150
+	1    0    0    -1  
+$EndComp
+NoConn ~ 9600 5950
+$Comp
+L Connector:Screw_Terminal_01x03 J12
+U 1 1 5CCB5CB4
+P 3700 1900
+F 0 "J12" H 3780 1942 50  0000 L CNN
+F 1 "Start_Select_In" H 3780 1851 50  0000 L CNN
+F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 3700 1900 50  0001 C CNN
+F 3 "~" H 3700 1900 50  0001 C CNN
+	1    3700 1900
+	1    0    0    -1  
+$EndComp
+Text GLabel 9875 5150 0    50   Input ~ 0
+Vcc
+Wire Wire Line
+	9600 5250 9875 5250
+$Comp
+L power:GND #PWR0114
+U 1 1 5CCE01A7
+P 2800 1825
+F 0 "#PWR0114" H 2800 1575 50  0001 C CNN
+F 1 "GND" H 2805 1652 50  0000 C CNN
+F 2 "" H 2800 1825 50  0001 C CNN
+F 3 "" H 2800 1825 50  0001 C CNN
+	1    2800 1825
+	1    0    0    -1  
+$EndComp
+Text GLabel 3500 1900 0    50   Output ~ 0
+Button_START
+Text GLabel 3500 2000 0    50   Output ~ 0
+Button_SELECT
+Wire Wire Line
+	2800 1825 2800 1800
+Wire Wire Line
+	2800 1800 3500 1800
+NoConn ~ 8800 5550
+NoConn ~ 9600 5550
+Connection ~ 10075 6025
+Text GLabel 10750 1400 2    50   Output ~ 0
+Rumble
 $EndSCHEMATC
