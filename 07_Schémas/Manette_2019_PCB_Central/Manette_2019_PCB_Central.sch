@@ -17,23 +17,23 @@ $EndDescr
 $Comp
 L Switch:SW_MEC_5G_LED SW1
 U 1 1 5CCA9747
-P 5075 2400
-F 0 "SW1" H 5075 2785 50  0000 C CNN
-F 1 "Button_Start" H 5075 2694 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 5075 2700 50  0001 C CNN
-F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=488" H 5075 2700 50  0001 C CNN
-	1    5075 2400
+P 4600 2400
+F 0 "SW1" H 4600 2785 50  0000 C CNN
+F 1 "Button_Start" H 4600 2694 50  0000 C CNN
+F 2 "Button_Switch_THT:Bouton_MEC" H 4600 2700 50  0001 C CNN
+F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=488" H 4600 2700 50  0001 C CNN
+	1    4600 2400
 	1    0    0    -1  
 $EndComp
 $Comp
 L Switch:SW_MEC_5G_LED SW2
 U 1 1 5CCA9816
-P 5075 2975
-F 0 "SW2" H 5075 3360 50  0000 C CNN
-F 1 "Button_Select" H 5075 3269 50  0000 C CNN
-F 2 "Button_Switch_THT:Bouton_MEC" H 5075 3275 50  0001 C CNN
-F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=488" H 5075 3275 50  0001 C CNN
-	1    5075 2975
+P 4600 2975
+F 0 "SW2" H 4600 3360 50  0000 C CNN
+F 1 "Button_Select" H 4600 3269 50  0000 C CNN
+F 2 "Button_Switch_THT:Bouton_MEC" H 4600 3275 50  0001 C CNN
+F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=488" H 4600 3275 50  0001 C CNN
+	1    4600 2975
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -68,38 +68,38 @@ Text GLabel 2150 2475 2    50   Input ~ 0
 button_START
 Text GLabel 2150 2575 2    50   Input ~ 0
 button_SELECT
-Text GLabel 5275 2875 2    50   Output ~ 0
+Text GLabel 4800 2875 2    50   Output ~ 0
 button_SELECT
 Wire Wire Line
 	3725 2400 3725 2875
-Text GLabel 5275 2300 2    50   Output ~ 0
+Text GLabel 4800 2300 2    50   Output ~ 0
 button_START
 Connection ~ 3725 2875
 Wire Wire Line
 	3725 2300 3725 2400
 Connection ~ 3725 2400
-Text GLabel 5575 2400 2    50   Input ~ 0
+Text GLabel 5100 2400 2    50   Input ~ 0
 Vcc
 $Comp
 L Device:R R2
 U 1 1 5CCAA43B
-P 5425 2975
-F 0 "R2" V 5525 2975 50  0000 C CNN
-F 1 "R" V 5625 2975 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5355 2975 50  0001 C CNN
-F 3 "~" H 5425 2975 50  0001 C CNN
-	1    5425 2975
+P 4950 2975
+F 0 "R2" V 5050 2975 50  0000 C CNN
+F 1 "R" V 5150 2975 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4880 2975 50  0001 C CNN
+F 3 "~" H 4950 2975 50  0001 C CNN
+	1    4950 2975
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:R R1
 U 1 1 5CCAA564
-P 5425 2400
-F 0 "R1" V 5525 2400 50  0000 C CNN
-F 1 "R" V 5625 2400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5355 2400 50  0001 C CNN
-F 3 "~" H 5425 2400 50  0001 C CNN
-	1    5425 2400
+P 4950 2400
+F 0 "R1" V 5050 2400 50  0000 C CNN
+F 1 "R" V 5150 2400 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4880 2400 50  0001 C CNN
+F 3 "~" H 4950 2400 50  0001 C CNN
+	1    4950 2400
 	0    1    1    0   
 $EndComp
 $Comp
@@ -125,17 +125,17 @@ F 3 "~" H 1950 2575 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Text GLabel 2150 2275 2    50   Output ~ 0
-Alim_Button_Start_Select
+Conn_LED_On
 Wire Wire Line
 	3725 2875 3725 3175
-Text GLabel 4875 2975 0    50   Input ~ 0
-Alim_Button_Start_Select
-Text GLabel 5575 2975 2    50   Input ~ 0
+Text GLabel 4400 2975 0    50   Input ~ 0
+Conn_LED_On
+Text GLabel 5100 2975 2    50   Input ~ 0
 Vcc
 Wire Wire Line
-	3725 2300 4875 2300
+	3725 2300 4400 2300
 Wire Wire Line
-	3725 2400 4875 2400
+	3725 2875 4400 2875
 Wire Wire Line
-	3725 2875 4875 2875
+	3725 2400 4400 2400
 $EndSCHEMATC

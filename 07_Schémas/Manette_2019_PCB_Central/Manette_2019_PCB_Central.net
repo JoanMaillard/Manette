@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source P:\projet_manette\manette\07_Schémas\Manette_2019_PCB_Central\Manette_2019_PCB_Central.sch)
-    (date "02.05.2019 16:44:00")
+    (date "03.05.2019 11:58:18")
     (tool "Eeschema (5.0.0)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -123,7 +123,7 @@
     (net (code 3) (name "Net-(R1-Pad2)")
       (node (ref SW1) (pin 3))
       (node (ref R1) (pin 2)))
-    (net (code 4) (name Alim_Button_Start_Select)
+    (net (code 4) (name Conn_LED_On)
       (node (ref J1) (pin 2))
       (node (ref SW2) (pin 2)))
     (net (code 5) (name button_SELECT)

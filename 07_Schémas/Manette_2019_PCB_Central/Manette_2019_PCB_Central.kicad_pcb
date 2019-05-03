@@ -96,7 +96,7 @@
   (net 4 "Net-(R1-Pad2)")
   (net 5 "Net-(R2-Pad2)")
   (net 6 Vcc)
-  (net 7 Alim_Button_Start_Select)
+  (net 7 Conn_LED_On)
 
   (net_class Default "Ceci est la Netclass par défaut."
     (clearance 0.2)
@@ -105,7 +105,7 @@
     (via_drill 0.4)
     (uvia_dia 0.3)
     (uvia_drill 0.1)
-    (add_net Alim_Button_Start_Select)
+    (add_net Conn_LED_On)
     (add_net GND)
     (add_net "Net-(R1-Pad2)")
     (add_net "Net-(R2-Pad2)")
@@ -218,7 +218,7 @@
       (net 6 Vcc))
     (pad "" np_thru_hole circle (at 0 2.54) (size 1.1 1.1) (drill 1.1) (layers *.Cu *.Mask))
     (pad 2 thru_hole circle (at 2.54 0) (size 2.2 2.2) (drill 1.1) (layers *.Cu *.Mask)
-      (net 7 Alim_Button_Start_Select))
+      (net 7 Conn_LED_On))
     (pad "" np_thru_hole circle (at 2.54 2.54) (size 1.1 1.1) (drill 1.1) (layers *.Cu *.Mask))
     (model ${KISYS3DMOD}/TerminalBlock_Phoenix.3dshapes/TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal.wrl
       (at (xyz 0 0 0))
@@ -350,7 +350,7 @@
     (pad 3 thru_hole circle (at 5.08 3.81) (size 2 2) (drill 0.8) (layers *.Cu *.Mask)
       (net 5 "Net-(R2-Pad2)"))
     (pad 2 thru_hole circle (at -5.08 -3.81) (size 2 2) (drill 0.8) (layers *.Cu *.Mask)
-      (net 7 Alim_Button_Start_Select))
+      (net 7 Conn_LED_On))
     (pad 1 thru_hole circle (at 5.08 -3.81) (size 2 2) (drill 0.8) (layers *.Cu *.Mask)
       (net 3 GND))
   )
