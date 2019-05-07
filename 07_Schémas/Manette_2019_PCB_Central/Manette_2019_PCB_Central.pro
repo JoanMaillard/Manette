@@ -1,6 +1,6 @@
-update=02.05.2019 15:32:10
+update=02.05.2019 15:43:32
 version=1
-last_client=kicad
+last_client=eeschema
 [general]
 version=1
 RootSch=
@@ -37,7 +37,7 @@ PageLayoutDescrFile=P:/projet_manette/manette/07_Schémas/cartouche_MCT.kicad_wk
 PlotDirectoryName=
 SubpartIdSeparator=0
 SubpartFirstId=65
-NetFmtName=Pcbnew
+NetFmtName=
 SpiceAjustPassiveValues=0
 LabSize=50
 ERC_TestSimilarLabels=1
