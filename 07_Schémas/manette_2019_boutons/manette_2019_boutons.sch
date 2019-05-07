@@ -96,15 +96,15 @@ Wire Wire Line
 	4525 2200 4525 2300
 Text GLabel 3375 2800 2    50   Output ~ 0
 Vcc_LED
-Text GLabel 3375 2700 2    50   Output ~ 0
+Text GLabel 3375 2600 2    50   Output ~ 0
 GND
-Text GLabel 3375 2600 2    50   Input ~ 0
+Text GLabel 3375 2100 2    50   Input ~ 0
 Bouton_1
-Text GLabel 3375 2500 2    50   Input ~ 0
-Bouton_2
-Text GLabel 3375 2400 2    50   Input ~ 0
-Bouton_3
 Text GLabel 3375 2300 2    50   Input ~ 0
+Bouton_2
+Text GLabel 3375 2500 2    50   Input ~ 0
+Bouton_3
+Text GLabel 3375 2700 2    50   Input ~ 0
 Bouton_4
 $Comp
 L Device:R R1
@@ -172,25 +172,14 @@ Bouton_3
 Text GLabel 5025 3275 2    50   Output ~ 0
 Bouton_4
 $Comp
-L Connector:Screw_Terminal_01x03 J1
+L Connector_Generic:Conn_01x08 J1
 U 1 1 5CC930DA
-P 3175 2700
-F 0 "J1" H 3300 2650 50  0000 C CNN
-F 1 "Conn_bouton_1" H 3525 2725 50  0000 C CNN
-F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 3175 2700 50  0001 C CNN
-F 3 "~" H 3175 2700 50  0001 C CNN
-	1    3175 2700
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Screw_Terminal_01x03 J2
-U 1 1 5CC93321
-P 3175 2400
-F 0 "J2" H 3300 2350 50  0000 C CNN
-F 1 "Conn_bouton_2" H 3525 2425 50  0000 C CNN
-F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 3175 2400 50  0001 C CNN
-F 3 "~" H 3175 2400 50  0001 C CNN
-	1    3175 2400
+P 3175 2500
+F 0 "J1" H 3300 2450 50  0000 C CNN
+F 1 "Conn_bouton" H 3525 2525 50  0000 C CNN
+F 2 "manette_2019:Conn_8" H 3175 2500 50  0001 C CNN
+F 3 "~" H 3175 2500 50  0001 C CNN
+	1    3175 2500
 	-1   0    0    1   
 $EndComp
 Text Notes 5975 2300 0    50   ~ 0

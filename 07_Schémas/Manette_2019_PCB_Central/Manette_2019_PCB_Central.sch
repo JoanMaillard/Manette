@@ -39,18 +39,16 @@ $EndComp
 $Comp
 L power:GND #PWR0101
 U 1 1 5CCA9DD4
-P 2250 2800
-F 0 "#PWR0101" H 2250 2550 50  0001 C CNN
-F 1 "GND" H 2255 2627 50  0000 C CNN
-F 2 "" H 2250 2800 50  0001 C CNN
-F 3 "" H 2250 2800 50  0001 C CNN
-	1    2250 2800
+P 2475 2400
+F 0 "#PWR0101" H 2475 2150 50  0001 C CNN
+F 1 "GND" H 2480 2227 50  0000 C CNN
+F 2 "" H 2475 2400 50  0001 C CNN
+F 3 "" H 2475 2400 50  0001 C CNN
+	1    2475 2400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2150 2675 2250 2675
-Wire Wire Line
-	2250 2675 2250 2800
+	2475 2275 2475 2400
 $Comp
 L power:GND #PWR0102
 U 1 1 5CCA9DF9
@@ -62,11 +60,11 @@ F 3 "" H 3725 3175 50  0001 C CNN
 	1    3725 3175
 	1    0    0    -1  
 $EndComp
-Text GLabel 2150 2375 2    50   Output ~ 0
+Text GLabel 2150 2475 2    50   Output ~ 0
 Vcc
-Text GLabel 2150 2475 2    50   Input ~ 0
+Text GLabel 2150 2775 2    50   Input ~ 0
 button_START
-Text GLabel 2150 2575 2    50   Input ~ 0
+Text GLabel 2150 2975 2    50   Input ~ 0
 button_SELECT
 Text GLabel 4800 2875 2    50   Output ~ 0
 button_SELECT
@@ -102,29 +100,7 @@ F 3 "~" H 4950 2400 50  0001 C CNN
 	1    4950 2400
 	0    1    1    0   
 $EndComp
-$Comp
-L Connector:Screw_Terminal_01x02 J1
-U 1 1 5CCAAA90
-P 1950 2375
-F 0 "J1" H 2100 2250 50  0000 C CNN
-F 1 "Button_OUT" H 2250 2375 50  0000 C CNN
-F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal" H 1950 2375 50  0001 C CNN
-F 3 "~" H 1950 2375 50  0001 C CNN
-	1    1950 2375
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:Screw_Terminal_01x03 J2
-U 1 1 5CCAB7AA
-P 1950 2575
-F 0 "J2" H 2075 2525 50  0000 C CNN
-F 1 "Button_In" H 2200 2625 50  0000 C CNN
-F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MPT-0,5-3-2.54_1x03_P2.54mm_Horizontal" H 1950 2575 50  0001 C CNN
-F 3 "~" H 1950 2575 50  0001 C CNN
-	1    1950 2575
-	-1   0    0    1   
-$EndComp
-Text GLabel 2150 2275 2    50   Output ~ 0
+Text GLabel 2150 2875 2    50   Output ~ 0
 Conn_LED_On
 Wire Wire Line
 	3725 2875 3725 3175
@@ -138,4 +114,20 @@ Wire Wire Line
 	3725 2875 4400 2875
 Wire Wire Line
 	3725 2400 4400 2400
+$Comp
+L Connector_Generic:Conn_01x08 J1
+U 1 1 5CD02BF6
+P 1950 2675
+F 0 "J1" H 1870 2050 50  0000 C CNN
+F 1 "Conn_Middle_PCB" H 1870 2141 50  0000 C CNN
+F 2 "manette_2019:Conn_8" H 1950 2675 50  0001 C CNN
+F 3 "~" H 1950 2675 50  0001 C CNN
+	1    1950 2675
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2150 2275 2475 2275
+NoConn ~ 2150 2675
+NoConn ~ 2150 2575
+NoConn ~ 2150 2375
 $EndSCHEMATC
