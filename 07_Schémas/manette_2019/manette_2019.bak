@@ -194,21 +194,21 @@ Wire Wire Line
 	10050 5500 10400 5500
 Text GLabel 8800 5450 0    50   Input ~ 0
 Connected
-Text GLabel 6100 1175 0    50   Input ~ 0
-Button_LEFT
-Text GLabel 6100 1325 0    50   Input ~ 0
-Button_UP
-Text GLabel 6100 1475 0    50   Input ~ 0
-Button_RIGHT
 Text GLabel 6100 1625 0    50   Input ~ 0
+Button_LEFT
+Text GLabel 6100 1475 0    50   Input ~ 0
+Button_UP
+Text GLabel 6100 1325 0    50   Input ~ 0
+Button_RIGHT
+Text GLabel 6100 1175 0    50   Input ~ 0
 Button_DOWN
-Text GLabel 7200 1025 2    50   Input ~ 0
-Button_A
-Text GLabel 7200 1175 2    50   Input ~ 0
-Button_B
-Text GLabel 7200 1325 2    50   Input ~ 0
-Button_Y
 Text GLabel 7200 1475 2    50   Input ~ 0
+Button_A
+Text GLabel 7200 1325 2    50   Input ~ 0
+Button_B
+Text GLabel 7200 1175 2    50   Input ~ 0
+Button_Y
+Text GLabel 7200 1025 2    50   Input ~ 0
 Button_X
 Text GLabel 6100 1925 0    50   Input ~ 0
 Button_START
@@ -925,48 +925,46 @@ $EndComp
 $Comp
 L power:GND #PWR0128
 U 1 1 5CC9AA68
-P 3375 3150
-F 0 "#PWR0128" H 3375 2900 50  0001 C CNN
-F 1 "GND" H 3380 2977 50  0000 C CNN
-F 2 "" H 3375 3150 50  0001 C CNN
-F 3 "" H 3375 3150 50  0001 C CNN
-	1    3375 3150
+P 3275 3150
+F 0 "#PWR0128" H 3275 2900 50  0001 C CNN
+F 1 "GND" H 3280 2977 50  0000 C CNN
+F 2 "" H 3275 3150 50  0001 C CNN
+F 3 "" H 3275 3150 50  0001 C CNN
+	1    3275 3150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3375 3150 3375 3125
+	3275 3150 3275 3125
 $Comp
 L power:GND #PWR0129
 U 1 1 5CCA0050
-P 3375 4300
-F 0 "#PWR0129" H 3375 4050 50  0001 C CNN
-F 1 "GND" H 3380 4127 50  0000 C CNN
-F 2 "" H 3375 4300 50  0001 C CNN
-F 3 "" H 3375 4300 50  0001 C CNN
-	1    3375 4300
+P 3250 4300
+F 0 "#PWR0129" H 3250 4050 50  0001 C CNN
+F 1 "GND" H 3255 4127 50  0000 C CNN
+F 2 "" H 3250 4300 50  0001 C CNN
+F 3 "" H 3250 4300 50  0001 C CNN
+	1    3250 4300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3375 4300 3375 4275
-Text GLabel 3950 4175 0    50   Output ~ 0
+	3250 4300 3250 4275
+Text GLabel 3850 4775 0    50   Output ~ 0
 Button_LEFT
-Wire Wire Line
-	3375 4275 3950 4275
-Text GLabel 3950 4375 0    50   Output ~ 0
+Text GLabel 3850 4575 0    50   Output ~ 0
 Button_UP
-Text GLabel 3950 4575 0    50   Output ~ 0
+Text GLabel 3850 4375 0    50   Output ~ 0
 Button_RIGHT
-Text GLabel 3950 4775 0    50   Output ~ 0
+Text GLabel 3850 4175 0    50   Output ~ 0
 Button_DOWN
 Wire Wire Line
-	3375 3125 3950 3125
-Text GLabel 3950 3425 0    50   Output ~ 0
+	3275 3125 3850 3125
+Text GLabel 3850 3225 0    50   Output ~ 0
 Button_B
-Text GLabel 3950 3625 0    50   Output ~ 0
+Text GLabel 3850 3025 0    50   Output ~ 0
 Button_A
-Text GLabel 3950 3225 0    50   Output ~ 0
+Text GLabel 3850 3425 0    50   Output ~ 0
 Button_Y
-Text GLabel 3950 3025 0    50   Output ~ 0
+Text GLabel 3850 3625 0    50   Output ~ 0
 Button_X
 Text GLabel 8550 2200 0    50   Input ~ 0
 VCC
@@ -1104,9 +1102,9 @@ Wire Wire Line
 	900  1100 1275 1100
 Wire Wire Line
 	1275 1250 1275 1100
-Text GLabel 3950 2925 0    50   Input ~ 0
+Text GLabel 3850 2925 0    50   Input ~ 0
 VCC_LED
-Text GLabel 3950 4075 0    50   Input ~ 0
+Text GLabel 3850 4075 0    50   Input ~ 0
 VCC_LED
 Wire Wire Line
 	4075 2600 3950 2600
@@ -1139,23 +1137,23 @@ Wire Wire Line
 $Comp
 L Connector_Generic:Conn_01x08 J8
 U 1 1 5CCEC7D5
-P 4150 4375
-F 0 "J8" H 4230 4367 50  0000 L CNN
-F 1 "Conn_L_PCB" H 4230 4276 50  0000 L CNN
-F 2 "manette_2019:Conn_8" H 4150 4375 50  0001 C CNN
-F 3 "~" H 4150 4375 50  0001 C CNN
-	1    4150 4375
+P 4050 4375
+F 0 "J8" H 4130 4367 50  0000 L CNN
+F 1 "Conn_L_Button" H 4130 4276 50  0000 L CNN
+F 2 "manette_2019:Conn_8" H 4050 4375 50  0001 C CNN
+F 3 "~" H 4050 4375 50  0001 C CNN
+	1    4050 4375
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector_Generic:Conn_01x08 J7
 U 1 1 5CCEC8A9
-P 4150 3225
-F 0 "J7" H 4230 3217 50  0000 L CNN
-F 1 "Conn_R_PCB" H 4230 3126 50  0000 L CNN
-F 2 "manette_2019:Conn_8" H 4150 3225 50  0001 C CNN
-F 3 "~" H 4150 3225 50  0001 C CNN
-	1    4150 3225
+P 4050 3225
+F 0 "J7" H 4130 3217 50  0000 L CNN
+F 1 "Conn_R_Button" H 4130 3126 50  0000 L CNN
+F 2 "manette_2019:Conn_8" H 4050 3225 50  0001 C CNN
+F 3 "~" H 4050 3225 50  0001 C CNN
+	1    4050 3225
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1192,11 +1190,13 @@ Text GLabel 9950 6025 2    50   Output ~ 0
 Conn_LED_On
 Text GLabel 3500 1700 0    50   Output ~ 0
 Conn_LED_On
-NoConn ~ 3950 3325
-NoConn ~ 3950 3525
-NoConn ~ 3950 4675
-NoConn ~ 3950 4475
+NoConn ~ 3850 3325
+NoConn ~ 3850 3525
+NoConn ~ 3850 4675
+NoConn ~ 3850 4475
 NoConn ~ 3500 2000
 NoConn ~ 3500 1900
 NoConn ~ 3500 2200
+Wire Wire Line
+	3250 4275 3850 4275
 $EndSCHEMATC

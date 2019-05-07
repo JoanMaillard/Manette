@@ -98,13 +98,13 @@ Text GLabel 3375 2800 2    50   Output ~ 0
 Vcc_LED
 Text GLabel 3375 2600 2    50   Output ~ 0
 GND
-Text GLabel 3375 2700 2    50   Input ~ 0
-Bouton_1
-Text GLabel 3375 2500 2    50   Input ~ 0
-Bouton_2
-Text GLabel 3375 2300 2    50   Input ~ 0
-Bouton_3
 Text GLabel 3375 2100 2    50   Input ~ 0
+Bouton_1
+Text GLabel 3375 2300 2    50   Input ~ 0
+Bouton_2
+Text GLabel 3375 2500 2    50   Input ~ 0
+Bouton_3
+Text GLabel 3375 2700 2    50   Input ~ 0
 Bouton_4
 $Comp
 L Device:R R1

@@ -194,21 +194,21 @@ Wire Wire Line
 	10050 5500 10400 5500
 Text GLabel 8800 5450 0    50   Input ~ 0
 Connected
-Text GLabel 6100 1175 0    50   Input ~ 0
-Button_LEFT
-Text GLabel 6100 1325 0    50   Input ~ 0
-Button_UP
-Text GLabel 6100 1475 0    50   Input ~ 0
-Button_RIGHT
 Text GLabel 6100 1625 0    50   Input ~ 0
+Button_LEFT
+Text GLabel 6100 1475 0    50   Input ~ 0
+Button_UP
+Text GLabel 6100 1325 0    50   Input ~ 0
+Button_RIGHT
+Text GLabel 6100 1175 0    50   Input ~ 0
 Button_DOWN
-Text GLabel 7200 1025 2    50   Input ~ 0
-Button_A
-Text GLabel 7200 1175 2    50   Input ~ 0
-Button_B
-Text GLabel 7200 1325 2    50   Input ~ 0
-Button_Y
 Text GLabel 7200 1475 2    50   Input ~ 0
+Button_A
+Text GLabel 7200 1325 2    50   Input ~ 0
+Button_B
+Text GLabel 7200 1175 2    50   Input ~ 0
+Button_Y
+Text GLabel 7200 1025 2    50   Input ~ 0
 Button_X
 Text GLabel 6100 1925 0    50   Input ~ 0
 Button_START
@@ -925,48 +925,46 @@ $EndComp
 $Comp
 L power:GND #PWR0128
 U 1 1 5CC9AA68
-P 3275 3150
-F 0 "#PWR0128" H 3275 2900 50  0001 C CNN
-F 1 "GND" H 3280 2977 50  0000 C CNN
-F 2 "" H 3275 3150 50  0001 C CNN
-F 3 "" H 3275 3150 50  0001 C CNN
-	1    3275 3150
+P 3275 2950
+F 0 "#PWR0128" H 3275 2700 50  0001 C CNN
+F 1 "GND" H 3280 2777 50  0000 C CNN
+F 2 "" H 3275 2950 50  0001 C CNN
+F 3 "" H 3275 2950 50  0001 C CNN
+	1    3275 2950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3275 3150 3275 3125
+	3275 2950 3275 2925
 $Comp
 L power:GND #PWR0129
 U 1 1 5CCA0050
-P 3275 4300
-F 0 "#PWR0129" H 3275 4050 50  0001 C CNN
-F 1 "GND" H 3280 4127 50  0000 C CNN
-F 2 "" H 3275 4300 50  0001 C CNN
-F 3 "" H 3275 4300 50  0001 C CNN
-	1    3275 4300
+P 3250 4100
+F 0 "#PWR0129" H 3250 3850 50  0001 C CNN
+F 1 "GND" H 3255 3927 50  0000 C CNN
+F 2 "" H 3250 4100 50  0001 C CNN
+F 3 "" H 3250 4100 50  0001 C CNN
+	1    3250 4100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3275 4300 3275 4275
-Text GLabel 3850 4175 0    50   Output ~ 0
-Button_LEFT
-Wire Wire Line
-	3275 4275 3850 4275
-Text GLabel 3850 4375 0    50   Output ~ 0
-Button_UP
-Text GLabel 3850 4575 0    50   Output ~ 0
-Button_RIGHT
+	3250 4100 3250 4075
 Text GLabel 3850 4775 0    50   Output ~ 0
+Button_LEFT
+Text GLabel 3850 4575 0    50   Output ~ 0
+Button_UP
+Text GLabel 3850 4375 0    50   Output ~ 0
+Button_RIGHT
+Text GLabel 3850 4175 0    50   Output ~ 0
 Button_DOWN
 Wire Wire Line
-	3275 3125 3850 3125
-Text GLabel 3850 3425 0    50   Output ~ 0
-Button_B
-Text GLabel 3850 3625 0    50   Output ~ 0
-Button_A
+	3275 2925 3850 2925
 Text GLabel 3850 3225 0    50   Output ~ 0
-Button_Y
+Button_B
 Text GLabel 3850 3025 0    50   Output ~ 0
+Button_A
+Text GLabel 3850 3425 0    50   Output ~ 0
+Button_Y
+Text GLabel 3850 3625 0    50   Output ~ 0
 Button_X
 Text GLabel 8550 2200 0    50   Input ~ 0
 VCC
@@ -1104,9 +1102,9 @@ Wire Wire Line
 	900  1100 1275 1100
 Wire Wire Line
 	1275 1250 1275 1100
-Text GLabel 3850 2925 0    50   Input ~ 0
+Text GLabel 3850 3125 0    50   Input ~ 0
 VCC_LED
-Text GLabel 3850 4075 0    50   Input ~ 0
+Text GLabel 3850 4275 0    50   Input ~ 0
 VCC_LED
 Wire Wire Line
 	4075 2600 3950 2600
@@ -1199,4 +1197,6 @@ NoConn ~ 3850 4475
 NoConn ~ 3500 2000
 NoConn ~ 3500 1900
 NoConn ~ 3500 2200
+Wire Wire Line
+	3250 4075 3850 4075
 $EndSCHEMATC

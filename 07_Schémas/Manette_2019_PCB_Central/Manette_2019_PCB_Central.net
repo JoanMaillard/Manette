@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source P:\projet_manette\manette\07_Schémas\Manette_2019_PCB_Central\Manette_2019_PCB_Central.sch)
-    (date "06.05.2019 14:56:16")
+    (date "07.05.2019 10:19:46")
     (tool "Eeschema (5.0.0)")
     (sheet (number 1) (name /) (tstamps /)
       (title_block

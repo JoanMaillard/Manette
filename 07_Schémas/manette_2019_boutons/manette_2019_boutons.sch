@@ -94,9 +94,9 @@ Wire Wire Line
 Connection ~ 4525 3275
 Wire Wire Line
 	4525 2200 4525 2300
-Text GLabel 3375 2800 2    50   Output ~ 0
-Vcc_LED
 Text GLabel 3375 2600 2    50   Output ~ 0
+Vcc_LED
+Text GLabel 3375 2800 2    50   Output ~ 0
 GND
 Text GLabel 3375 2100 2    50   Input ~ 0
 Bouton_1
