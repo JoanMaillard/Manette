@@ -5,11 +5,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
+Title "Boutons Centraux"
+Date "2019-05-09"
 Rev ""
-Comp ""
-Comment1 ""
+Comp "CPNV MCT"
+Comment1 "AKC"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -60,7 +60,7 @@ F 3 "" H 3725 3175 50  0001 C CNN
 	1    3725 3175
 	1    0    0    -1  
 $EndComp
-Text GLabel 2150 2375 2    50   Output ~ 0
+Text GLabel 2150 2475 2    50   Output ~ 0
 Vcc
 Text GLabel 2150 2775 2    50   Input ~ 0
 button_START
@@ -129,5 +129,5 @@ Wire Wire Line
 	2150 2275 2475 2275
 NoConn ~ 2150 2675
 NoConn ~ 2150 2575
-NoConn ~ 2150 2475
+NoConn ~ 2150 2375
 $EndSCHEMATC

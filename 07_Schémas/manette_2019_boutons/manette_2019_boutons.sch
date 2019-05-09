@@ -5,11 +5,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
+Title "Boutons de jeu"
+Date "2019-05-09"
 Rev ""
-Comp ""
-Comment1 ""
+Comp "CPNV MCT"
+Comment1 "AKC"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -99,13 +99,13 @@ Vcc_LED
 Text GLabel 3375 2800 2    50   Output ~ 0
 GND
 Text GLabel 3375 2100 2    50   Input ~ 0
-Bouton_1
+Bouton_Gauche
 Text GLabel 3375 2300 2    50   Input ~ 0
-Bouton_2
+Bouton_Bas
 Text GLabel 3375 2500 2    50   Input ~ 0
-Bouton_3
+Bouton_Droite
 Text GLabel 3375 2700 2    50   Input ~ 0
-Bouton_4
+Bouton_Haut
 $Comp
 L Device:R R1
 U 1 1 5CC91A3A
@@ -164,13 +164,13 @@ Vcc_LED
 Text GLabel 5325 1775 2    50   Input ~ 0
 Vcc_LED
 Text GLabel 5025 1675 2    50   Output ~ 0
-Bouton_1
+Bouton_Gauche
 Text GLabel 5025 2200 2    50   Output ~ 0
-Bouton_2
+Bouton_Bas
 Text GLabel 5025 2750 2    50   Output ~ 0
-Bouton_3
+Bouton_Droite
 Text GLabel 5025 3275 2    50   Output ~ 0
-Bouton_4
+Bouton_Haut
 $Comp
 L Connector_Generic:Conn_01x08 J1
 U 1 1 5CC930DA
