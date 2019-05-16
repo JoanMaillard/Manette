@@ -61,7 +61,7 @@ F 3 "" H 3725 3175 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 2150 2475 2    50   Output ~ 0
-Vcc
++5V
 Text GLabel 2150 2775 2    50   Input ~ 0
 button_START
 Text GLabel 2150 2975 2    50   Input ~ 0
@@ -77,7 +77,7 @@ Wire Wire Line
 	3725 2300 3725 2400
 Connection ~ 3725 2400
 Text GLabel 5100 2400 2    50   Input ~ 0
-Vcc
++5V
 $Comp
 L Device:R R2
 U 1 1 5CCAA43B
@@ -107,7 +107,7 @@ Wire Wire Line
 Text GLabel 4400 2975 0    50   Input ~ 0
 Conn_LED_On
 Text GLabel 5100 2975 2    50   Input ~ 0
-Vcc
++5V
 Wire Wire Line
 	3725 2300 4400 2300
 Wire Wire Line

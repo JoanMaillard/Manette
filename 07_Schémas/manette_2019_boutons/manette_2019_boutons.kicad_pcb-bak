@@ -492,7 +492,7 @@
   (gr_arc (start 175.895 106.045) (end 175.895 109.22) (angle -90) (layer Edge.Cuts) (width 0.15))
   (gr_arc (start 130.175 71.755) (end 130.175 68.58) (angle -90) (layer Edge.Cuts) (width 0.15))
   (gr_arc (start 175.895 71.755) (end 179.07 71.755) (angle -90) (layer Edge.Cuts) (width 0.15))
-  (gr_text "P1701 Manette\nBoutons\nMCT 2018-2019\nAKC\n" (at 144.78 104.14) (layer B.Cu)
+  (gr_text "P1701 Manette\nBoutons de jeu\nMCT 2018-2019\nAKC\n" (at 144.78 104.14) (layer B.Cu)
     (effects (font (size 1 1) (thickness 0.25)) (justify mirror))
   )
   (gr_line (start 127 71.755) (end 127 106.045) (layer Edge.Cuts) (width 0.15))
@@ -587,7 +587,7 @@
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
     (polygon
       (pts
-        (xy 128.27 69.215) (xy 128.27 100.33) (xy 177.165 100.33) (xy 177.165 69.215)
+        (xy 128.27 69.215) (xy 128.27 97.79) (xy 177.165 97.79) (xy 177.165 69.215)
       )
     )
     (filled_polygon
