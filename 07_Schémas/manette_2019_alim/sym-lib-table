@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name Booster)(type Legacy)(uri "P:/projet_manette/manette/07_Schémas/Librairies de composants/Manette_2019/Booster.lib")(options "")(descr ""))
+  (lib (name booster_alim)(type Legacy)(uri "P:/projet_manette/manette/07_Schémas/Librairies de composants/Manette_2019/booster_alim.lib")(options "")(descr ""))
+  (lib (name BMS)(type Legacy)(uri "P:/projet_manette/manette/07_Schémas/Librairies de composants/Manette_2019/BMS.lib")(options "")(descr ""))
+)

@@ -268,30 +268,6 @@ Text GLabel 9700 3075 0    50   Input ~ 0
 TX_Atmega
 Text GLabel 9700 3175 0    50   Input ~ 0
 RX_Atmega
-$Comp
-L Regulator_Switching:R-783.3-0.5 U6
-U 1 1 5CB0E72E
-P 2075 1475
-F 0 "U6" H 2075 1717 50  0000 C CNN
-F 1 "R-783.3-0.5" H 2075 1626 50  0000 C CNN
-F 2 "Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT" H 2125 1225 50  0001 L CIN
-F 3 "https://www.recom-power.com/pdf/Innoline/R-78xx-0.5.pdf" H 2075 1475 50  0001 C CNN
-	1    2075 1475
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0117
-U 1 1 5CB1A915
-P 2075 1775
-F 0 "#PWR0117" H 2075 1525 50  0001 C CNN
-F 1 "GND" H 2080 1602 50  0000 C CNN
-F 2 "" H 2075 1775 50  0001 C CNN
-F 3 "" H 2075 1775 50  0001 C CNN
-	1    2075 1775
-	1    0    0    -1  
-$EndComp
-Text GLabel 2375 1475 2    50   Output ~ 0
-+3.3V
 Text Label 1050 725  0    197  ~ 0
 Power
 Text Label 9150 2700 0    197  ~ 0
@@ -533,7 +509,6 @@ NoConn ~ 8550 1100
 NoConn ~ 8550 1000
 NoConn ~ 8550 900 
 NoConn ~ 8550 800 
-NoConn ~ 10750 2200
 NoConn ~ 10750 2100
 NoConn ~ 10750 2000
 NoConn ~ 10750 1900
@@ -626,17 +601,17 @@ Wire Notes Line
 	3200 6100 3200 7800
 Wire Notes Line
 	4725 6100 4725 475 
-Text GLabel 4425 6400 1    50   Input ~ 0
+Text GLabel 3975 6400 1    50   Input ~ 0
 +5V
 $Comp
 L Device:C C5
 U 1 1 5CC5B24F
-P 4425 6725
-F 0 "C5" H 4540 6771 50  0000 L CNN
-F 1 "C" H 4540 6680 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 4463 6575 50  0001 C CNN
-F 3 "Vin_Bus" H 4600 6600 50  0000 C CNN
-	1    4425 6725
+P 3775 6725
+F 0 "C5" H 3890 6771 50  0000 L CNN
+F 1 "C" H 3890 6680 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 3813 6575 50  0001 C CNN
+F 3 "Vin_Bus" H 3950 6600 50  0000 C CNN
+	1    3775 6725
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -644,34 +619,23 @@ Wire Wire Line
 $Comp
 L Device:C C6
 U 1 1 5CCA67BF
-P 4825 6725
-F 0 "C6" H 4940 6771 50  0000 L CNN
-F 1 "C" H 4940 6680 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 4863 6575 50  0001 C CNN
-F 3 "Vin_Atmega" H 5050 6600 50  0000 C CNN
-	1    4825 6725
+P 4175 6725
+F 0 "C6" H 4290 6771 50  0000 L CNN
+F 1 "C" H 4290 6680 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 4213 6575 50  0001 C CNN
+F 3 "Vin_Atmega" H 4400 6600 50  0000 C CNN
+	1    4175 6725
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C C7
 U 1 1 5CCE01FA
-P 5375 6725
-F 0 "C7" H 5490 6771 50  0000 L CNN
-F 1 "C" H 5490 6680 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 5413 6575 50  0001 C CNN
-F 3 "Vin_OLED_Display" H 5725 6600 50  0000 C CNN
-	1    5375 6725
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C3
-U 1 1 5CD5092B
-P 3825 6725
-F 0 "C3" H 3940 6771 50  0000 L CNN
-F 1 "C" H 3940 6680 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 3863 6575 50  0001 C CNN
-F 3 "Vin_Rec_U6" H 4100 6600 50  0000 C CNN
-	1    3825 6725
+P 4725 6725
+F 0 "C7" H 4840 6771 50  0000 L CNN
+F 1 "C" H 4840 6680 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 4763 6575 50  0001 C CNN
+F 3 "Vin_OLED_Display" H 5075 6600 50  0000 C CNN
+	1    4725 6725
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -765,7 +729,7 @@ U 1 1 5CC9B38B
 P 2325 5775
 F 0 "RV2" H 2255 5821 50  0000 R CNN
 F 1 "R_POT" H 2255 5730 50  0000 R CNN
-F 2 "Potentiometer_THT:Potentiometer_Bourns_PTA2043_Single_Slide" H 2325 5775 50  0001 C CNN
+F 2 "manette_2019:Potentiomètre linéaire" H 2325 5775 50  0001 C CNN
 F 3 "~" H 2325 5775 50  0001 C CNN
 	1    2325 5775
 	1    0    0    -1  
@@ -786,8 +750,8 @@ L Device:R_POT RV1
 U 1 1 5CCA4804
 P 2325 5050
 F 0 "RV1" H 2255 5096 50  0000 R CNN
-F 1 "R_POT" H 2255 5005 50  0000 R CNN
-F 2 "Potentiometer_THT:Potentiometer_Bourns_PTA2043_Single_Slide" H 2325 5050 50  0001 C CNN
+F 1 "L_POT" H 2255 5005 50  0000 R CNN
+F 2 "manette_2019:Potentiomètre linéaire" H 2325 5050 50  0001 C CNN
 F 3 "~" H 2325 5050 50  0001 C CNN
 	1    2325 5050
 	1    0    0    -1  
@@ -916,51 +880,33 @@ Text GLabel 3850 3625 0    50   Output ~ 0
 Button_X
 Text GLabel 8550 2200 0    50   Input ~ 0
 +5V
-Text GLabel 1775 1475 0    50   Input ~ 0
-+5V
 Text GLabel 850  5875 1    50   Input ~ 0
 +5V
 Text GLabel 700  3600 1    50   Input ~ 0
 +5V
 Text GLabel 6100 2075 0    50   Input ~ 0
 +5V
-Text GLabel 9050 4425 0    50   Input ~ 0
-+3.3V
 Wire Wire Line
 	3375 6875 3375 7000
 Wire Wire Line
-	3375 7000 3825 7000
+	3775 7000 3775 6875
 Wire Wire Line
-	3825 7000 3825 6875
-Connection ~ 3825 7000
+	4175 7000 4175 6875
 Wire Wire Line
-	4425 7000 4425 6875
-Wire Wire Line
-	4825 7000 4825 6875
-Wire Wire Line
-	4425 6400 4425 6475
-Wire Wire Line
-	3375 6475 3825 6475
-Wire Wire Line
-	3825 6475 3825 6575
+	3975 6400 3975 6475
 Wire Wire Line
 	3375 6475 3375 6575
 $Comp
 L power:GND #PWR0107
 U 1 1 5CCF972D
-P 4350 7000
-F 0 "#PWR0107" H 4350 6750 50  0001 C CNN
-F 1 "GND" H 4355 6827 50  0000 C CNN
-F 2 "" H 4350 7000 50  0001 C CNN
-F 3 "" H 4350 7000 50  0001 C CNN
-	1    4350 7000
+P 3675 7000
+F 0 "#PWR0107" H 3675 6750 50  0001 C CNN
+F 1 "GND" H 3680 6827 50  0000 C CNN
+F 2 "" H 3675 7000 50  0001 C CNN
+F 3 "" H 3675 7000 50  0001 C CNN
+	1    3675 7000
 	1    0    0    -1  
 $EndComp
-Connection ~ 4350 7000
-Wire Wire Line
-	3825 7000 4350 7000
-Wire Wire Line
-	4350 7000 4425 7000
 $Comp
 L Device:C C1
 U 1 1 5CCF4611
@@ -1118,27 +1064,38 @@ NoConn ~ 3500 1900
 NoConn ~ 3500 2200
 Wire Wire Line
 	3250 4075 3850 4075
-Connection ~ 4425 7000
 Wire Wire Line
-	4425 7000 4825 7000
+	3775 6475 3775 6575
 Wire Wire Line
-	3825 6475 4425 6475
+	4175 6475 4175 6575
 Wire Wire Line
-	4425 6475 4425 6575
-Connection ~ 3825 6475
+	4725 7000 4725 6875
 Wire Wire Line
-	4825 6475 4825 6575
-Connection ~ 4425 6475
+	4725 6575 4725 6475
+Text GLabel 9050 4425 0    50   Input ~ 0
++5V
 Wire Wire Line
-	4825 7000 5375 7000
+	3375 7000 3675 7000
 Wire Wire Line
-	5375 7000 5375 6875
-Connection ~ 4825 7000
+	3375 6475 3775 6475
+Connection ~ 3675 7000
 Wire Wire Line
-	5375 6575 5375 6475
+	3675 7000 3775 7000
+Connection ~ 3775 6475
 Wire Wire Line
-	4425 6475 4825 6475
-Connection ~ 4825 6475
+	3775 6475 3975 6475
+Connection ~ 3775 7000
 Wire Wire Line
-	4825 6475 5375 6475
+	3775 7000 4175 7000
+Connection ~ 4175 6475
+Connection ~ 4175 7000
+Wire Wire Line
+	4175 7000 4725 7000
+Connection ~ 3975 6475
+Wire Wire Line
+	3975 6475 4175 6475
+Wire Wire Line
+	4175 6475 4725 6475
+Text GLabel 10750 2200 2    50   Output ~ 0
++3.3V
 $EndSCHEMATC
