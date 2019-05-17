@@ -729,7 +729,7 @@ U 1 1 5CC9B38B
 P 2325 5775
 F 0 "RV2" H 2255 5821 50  0000 R CNN
 F 1 "R_POT" H 2255 5730 50  0000 R CNN
-F 2 "Potentiometer_THT:Potentiometer_Bourns_PTA2043_Single_Slide" H 2325 5775 50  0001 C CNN
+F 2 "manette_2019:Potentiomètre linéaire" H 2325 5775 50  0001 C CNN
 F 3 "~" H 2325 5775 50  0001 C CNN
 	1    2325 5775
 	1    0    0    -1  
@@ -750,8 +750,8 @@ L Device:R_POT RV1
 U 1 1 5CCA4804
 P 2325 5050
 F 0 "RV1" H 2255 5096 50  0000 R CNN
-F 1 "R_POT" H 2255 5005 50  0000 R CNN
-F 2 "Potentiometer_THT:Potentiometer_Bourns_PTA2043_Single_Slide" H 2325 5050 50  0001 C CNN
+F 1 "L_POT" H 2255 5005 50  0000 R CNN
+F 2 "manette_2019:Potentiomètre linéaire" H 2325 5050 50  0001 C CNN
 F 3 "~" H 2325 5050 50  0001 C CNN
 	1    2325 5050
 	1    0    0    -1  

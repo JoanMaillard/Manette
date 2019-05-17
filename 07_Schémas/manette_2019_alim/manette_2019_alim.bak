@@ -1,0 +1,133 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Alimentation Manette 2019"
+Date "2019-05-17"
+Rev ""
+Comp "CPNV"
+Comment1 "Adel Kahrimanovic"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:USB_B_Micro J1
+U 1 1 5CDE7A28
+P 7925 2550
+F 0 "J1" V 7934 2879 50  0000 L CNN
+F 1 "USB_B_Micro" V 8025 2879 50  0000 L CNN
+F 2 "" H 8075 2500 50  0001 C CNN
+F 3 "~" H 8075 2500 50  0001 C CNN
+	1    7925 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 5CDE7C08
+P 3350 4000
+F 0 "BT?" H 3232 4004 50  0000 R CNN
+F 1 "Battery_Cell" H 3232 4095 50  0000 R CNN
+F 2 "" V 3350 4060 50  0001 C CNN
+F 3 "~" V 3350 4060 50  0001 C CNN
+	1    3350 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 5CDE7CED
+P 4400 4000
+F 0 "BT?" H 4282 4004 50  0000 R CNN
+F 1 "Battery_Cell" H 4282 4095 50  0000 R CNN
+F 2 "" V 4400 4060 50  0001 C CNN
+F 3 "~" V 4400 4060 50  0001 C CNN
+	1    4400 4000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 5CDE7D3F
+P 5575 4025
+F 0 "BT?" H 5457 4029 50  0000 R CNN
+F 1 "Battery_Cell" H 5457 4120 50  0000 R CNN
+F 2 "" V 5575 4085 50  0001 C CNN
+F 3 "~" V 5575 4085 50  0001 C CNN
+	1    5575 4025
+	-1   0    0    1   
+$EndComp
+$Comp
+L BMS:KP-1660-1S U2
+U 1 1 5CDE86BF
+P 6700 3825
+F 0 "U2" H 6422 3946 50  0000 R CNN
+F 1 "KP-1660-1S" H 6422 3855 50  0000 R CNN
+F 2 "" H 6700 3825 50  0001 C CNN
+F 3 "" H 6700 3825 50  0001 C CNN
+	1    6700 3825
+	1    0    0    -1  
+$EndComp
+$Comp
+L booster_alim:PRT10255 U3
+U 1 1 5CDE876C
+P 8600 3725
+F 0 "U3" H 8600 4140 50  0000 C CNN
+F 1 "PRT10255" H 8600 4049 50  0000 C CNN
+F 2 "" H 8600 3725 50  0001 C CNN
+F 3 "" H 8600 3725 50  0001 C CNN
+	1    8600 3725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 3725 7325 3725
+Wire Wire Line
+	7325 3725 7325 2550
+Wire Wire Line
+	7325 2550 7525 2550
+Wire Wire Line
+	7325 3725 8150 3725
+Connection ~ 7325 3725
+Wire Wire Line
+	8150 3575 8125 3575
+Wire Wire Line
+	8125 3575 8125 3200
+Wire Wire Line
+	6700 3200 6700 3425
+Wire Wire Line
+	6700 3200 5575 3200
+Wire Wire Line
+	5575 3200 5575 3925
+Wire Wire Line
+	5575 3200 4400 3200
+Wire Wire Line
+	4400 3200 4400 3900
+Connection ~ 5575 3200
+Wire Wire Line
+	4400 3200 3350 3200
+Wire Wire Line
+	3350 3200 3350 3900
+Connection ~ 4400 3200
+Wire Wire Line
+	3350 4200 3350 4875
+Wire Wire Line
+	3350 4875 4400 4875
+Wire Wire Line
+	4400 4875 4400 4200
+Wire Wire Line
+	4400 4875 5575 4875
+Wire Wire Line
+	5575 4875 5575 4225
+Connection ~ 4400 4875
+Wire Wire Line
+	5575 4875 6700 4875
+Wire Wire Line
+	6700 4875 6700 4075
+Connection ~ 5575 4875
+Wire Wire Line
+	6700 3200 8125 3200
+Connection ~ 6700 3200
+Connection ~ 8125 3200
+Wire Wire Line
+	8125 3200 8125 2850
+$EndSCHEMATC
