@@ -174,3 +174,32 @@ Jour 31 - 09.05.2019
 Jour 32 - 10.05.2019
 
 - Revue de projet
+
+SEMAINE 9
+
+Jour 33 - 13.05.2019
+
+-  
+
+Jour 34 - 14.05.2019
+
+-
+
+Jour 35 - 16.05.2019
+
+-
+
+Jour 36 - 17.05.2019
+
+-
+
+SEMAINE 10
+
+Jour 37 - 20.05.2019
+
+- Brasure des boutons sur les PCB correspondants
+
+Jour 38 - 21.05.2019
+
+- Migration git
+- Correction d'une erreur de brasure
