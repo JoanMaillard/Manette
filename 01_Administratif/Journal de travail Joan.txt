@@ -179,27 +179,33 @@ SEMAINE 9
 
 Jour 33 - 13.05.2019
 
--  
+- Prog NKK
 
 Jour 34 - 14.05.2019
 
--
+- Prog NKK
 
 Jour 35 - 16.05.2019
 
--
+- Absent - maladie
 
 Jour 36 - 17.05.2019
 
--
+- Documentation
+- Commande PCB
 
 SEMAINE 10
 
 Jour 37 - 20.05.2019
 
 - Brasure des boutons sur les PCB correspondants
+- Préparation code de l'affichage
 
 Jour 38 - 21.05.2019
 
 - Migration git
 - Correction d'une erreur de brasure
+
+Jour 39 - 23.05.2019
+
+- Complétion code de l'affichage, adaptation pour les manettes définitives
