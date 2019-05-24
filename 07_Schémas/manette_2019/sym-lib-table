@@ -2,4 +2,5 @@
   (lib (name Manette_arcade)(type Legacy)(uri "P:/projet_manette/manette/07_Schémas/Librairies de composants/Manette_arcade_2018/Manette_arcade.lib")(options "")(descr ""))
   (lib (name MCP23017)(type Legacy)(uri P:/projet_manette/manette/07_Schémas/manette_2019/MCP23017.lib)(options "")(descr ""))
   (lib (name ESP32)(type Legacy)(uri P:/projet_manette/manette/07_Schémas/manette_2019/ESP32.lib)(options "")(descr ""))
+  (lib (name manette_2019-rescue)(type Legacy)(uri ${KIPRJMOD}/manette_2019-rescue.lib)(options "")(descr ""))
 )

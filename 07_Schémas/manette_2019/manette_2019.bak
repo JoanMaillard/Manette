@@ -72,13 +72,13 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20w
 	1    0    0    -1  
 $EndComp
 Text GLabel 2100 6625 2    50   Output ~ 0
-Left_joystick_analog_x
+L_joystick_analog_x
 Text GLabel 2100 6875 2    50   Output ~ 0
-Left_joystick_analog_y
+L_joystick_analog_y
 Text GLabel 1950 4350 2    50   Output ~ 0
-Right_joystick_analog_x
+R_joystick_analog_x
 Text GLabel 1950 4600 2    50   Output ~ 0
-Right_joystick_analog_y
+R_joystick_analog_y
 Text GLabel 1450 3750 1    50   Output ~ 0
 Right_joystick_button
 Text GLabel 1600 6025 1    50   Output ~ 0
