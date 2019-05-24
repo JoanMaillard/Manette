@@ -209,3 +209,13 @@ Jour 38 - 21.05.2019
 Jour 39 - 23.05.2019
 
 - Complétion code de l'affichage, adaptation pour les manettes définitives
+
+Jour 40 - 24.05.2019
+
+- Présentation ESP32
+- Préparation à la présentation du projet au jour 41
+
+Jour 41 - 27.05.2019
+
+- Présentation du projet à l'aula du CPNV
+- 

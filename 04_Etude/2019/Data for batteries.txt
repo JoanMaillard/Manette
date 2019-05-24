@@ -1,0 +1,7 @@
+Step-up 0.3-5.5->5V:
+https://www.digikey.ch/product-detail/fr/sparkfun-electronics/PRT-10255/1568-1155-ND/5673741
+BMS 1S:
+https://www.akkushop-schweiz.ch/ch/1s-pcb-keeppower-pcm-kp-1660-s1-schutzelektronik/
+Batteries:
+18650 1S3P batteries de vélos BionX/Stromer refurbished
+
