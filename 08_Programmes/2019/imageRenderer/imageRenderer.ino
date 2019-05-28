@@ -13,13 +13,14 @@
  #define GREEN_24 0xff
  
  #define SDAOut 2
- #define SDAIn 25
+ #define SDAIn 22
  #define SCK 4
  #define RST 5
  #define DC 19
  #include <SPI.h>
 
 SPIClass * spiBus = NULL;
+static const int spiClk = 15000000;
 
 byte a[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
@@ -334,17 +335,36 @@ int * outputBuffer;
 
 void setup() {
   // put your setup code here, to run once:
+    Serial.begin(115200);
+    pinMode(SS, OUTPUT);
+    pinMode(DC, OUTPUT);
+    pinMode(RST, OUTPUT);
+    digitalWrite(RST,HIGH);
+    digitalWrite(DC, HIGH);
+    Serial.println("pin setup done");
     setScreenSize(128,128);
+    Serial.println("screen size set");
     spiBus = new SPIClass(VSPI);
-    spiBus->begin(SCK,
+    Serial.println("SPI bus set");
+    spiBus->begin(SCK,SDAIn,SDAOut, SS);
+    Serial.println("SPI bus begun");
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   for (byte x = 0; x<28; x++) {
+    Serial.println(x);
     renderScreen(x);
     delay(1000);
   }
+}
+
+void spiCommand(byte transferData) { //if isData, use data, otherwise use command
+  spiBus->beginTransaction(SPISettings(spiClk, MSBFIRST, SPI_MODE0));
+  digitalWrite(SS, LOW);
+  spiBus->transfer(transferData);  
+  digitalWrite(SS, HIGH);
+  spiBus->endTransaction();
 }
 
 void setScreenSize(int size_x, int size_y) {
@@ -352,6 +372,7 @@ void setScreenSize(int size_x, int size_y) {
   max_y = size_y-1;
   bufferSize = size_x * size_y;
   int bufferInitializer[size_x * size_y * (COLOR_DEPTH/8)];
+  //Serial.println(sizeof(bufferInitializer)/sizeof(byte));
   outputBuffer = bufferInitializer;
 }
 
@@ -367,13 +388,16 @@ void addImageToBufferXY(int x, int y, byte * image, int imageWidth, int imageSiz
 }
 
 void emptyBuffer()  { //makes the whole buffer black
-  for (int i = 0; i<bufferSize*(COLOR_DEPTH/8); i++) {
-    outputBuffer[i] = 0x00;
+    Serial.println("");
+  for (int i = 0; i<bufferSize; i++) {
+    //Serial.println(i);
+    outputBuffer[2*i] = 0x00;
+    outputBuffer[2*i+1] = 0x00;
   }
 }
 
 void writeBuffer() {
-  /*for (int i = 0; i < bufferSize*(COLOR_DEPTH/8); i++) {
+  for (int i = 0; i < bufferSize*(COLOR_DEPTH/8); i++) {
     spiCommand(outputBuffer[i]);
   }//*/
 }
@@ -433,8 +457,10 @@ void menu1TextDisplay() {
   addImageToBufferXY(15+(3*LETTER_WIDTH),74,o,LETTER_WIDTH, LETTER_LENGTH);
 }
 
-void renderScreen(byte state) { //renders the screen depending on the state dictated by the handler
+void renderScreen(byte state) {//renders the screen depending on the state dictated by the handler
+  Serial.println("entered renderer");
   emptyBuffer();
+  Serial.println("buffer emptied");
   switch (state) {
     case 0:
     return;
@@ -529,4 +555,5 @@ void renderScreen(byte state) { //renders the screen depending on the state dict
     break;
   }
   writeBuffer();
+  Serial.println("buffer written");
 }
