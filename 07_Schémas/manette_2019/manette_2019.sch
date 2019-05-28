@@ -242,7 +242,7 @@ Text GLabel 9050 4125 0    50   Input ~ 0
 OLEDCS
 Text GLabel 8550 1500 0    50   Output ~ 0
 OLEDCS
-Text GLabel 5550 2875 1    50   Input ~ 0
+Text GLabel 5550 2775 1    50   Input ~ 0
 +5V
 Text GLabel 8550 1400 0    50   Input ~ 0
 SDCS
@@ -1098,4 +1098,13 @@ Wire Wire Line
 	3275 2950 3275 2925
 Wire Wire Line
 	3275 2925 3850 2925
+Wire Wire Line
+	5550 2875 5550 2825
+Wire Wire Line
+	5650 2875 5650 2825
+Wire Wire Line
+	5650 2825 5550 2825
+Connection ~ 5550 2825
+Wire Wire Line
+	5550 2825 5550 2775
 $EndSCHEMATC

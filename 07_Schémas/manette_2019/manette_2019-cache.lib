@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# manette_2019-rescue_ATmega328-PU-MCU_Microchip_ATmega
+# manette_2019-rescue:ATmega328-PU-MCU_Microchip_ATmega
 #
-DEF manette_2019-rescue_ATmega328-PU-MCU_Microchip_ATmega U 0 20 Y Y 1 F N
+DEF manette_2019-rescue:ATmega328-PU-MCU_Microchip_ATmega U 0 20 Y Y 1 F N
 F0 "U" -500 1450 50 H V L BNN
-F1 "manette_2019-rescue_ATmega328-PU-MCU_Microchip_ATmega" 100 -1450 50 H V L TNN
+F1 "manette_2019-rescue:ATmega328-PU-MCU_Microchip_ATmega" 100 -1450 50 H V L TNN
 F2 "Package_DIP:DIP-28_W7.62mm" 0 0 50 H I C CIN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -44,11 +44,11 @@ X XTAL1/PB6 9 600 600 100 L 50 50 1 1 B
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_C-Device
+# manette_2019-rescue:C-Device
 #
-DEF manette_2019-rescue_C-Device C 0 10 N Y 1 F N
+DEF manette_2019-rescue:C-Device C 0 10 N Y 1 F N
 F0 "C" 25 100 50 H V L CNN
-F1 "manette_2019-rescue_C-Device" 25 -100 50 H V L CNN
+F1 "manette_2019-rescue:C-Device" 25 -100 50 H V L CNN
 F2 "" 38 -150 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -62,11 +62,11 @@ X ~ 2 0 -150 110 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_Conn_01x02-Connector_Generic
+# manette_2019-rescue:Conn_01x02-Connector_Generic
 #
-DEF manette_2019-rescue_Conn_01x02-Connector_Generic J 0 40 Y N 1 F N
+DEF manette_2019-rescue:Conn_01x02-Connector_Generic J 0 40 Y N 1 F N
 F0 "J" 0 100 50 H V C CNN
-F1 "manette_2019-rescue_Conn_01x02-Connector_Generic" 0 -200 50 H V C CNN
+F1 "manette_2019-rescue:Conn_01x02-Connector_Generic" 0 -200 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -81,11 +81,11 @@ X Pin_2 2 -200 -100 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_Conn_01x08-Connector_Generic
+# manette_2019-rescue:Conn_01x08-Connector_Generic
 #
-DEF manette_2019-rescue_Conn_01x08-Connector_Generic J 0 40 Y N 1 F N
+DEF manette_2019-rescue:Conn_01x08-Connector_Generic J 0 40 Y N 1 F N
 F0 "J" 0 400 50 H V C CNN
-F1 "manette_2019-rescue_Conn_01x08-Connector_Generic" 0 -500 50 H V C CNN
+F1 "manette_2019-rescue:Conn_01x08-Connector_Generic" 0 -500 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -112,11 +112,11 @@ X Pin_8 8 -200 -400 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_Conn_01x09-Connector_Generic
+# manette_2019-rescue:Conn_01x09-Connector_Generic
 #
-DEF manette_2019-rescue_Conn_01x09-Connector_Generic J 0 40 Y N 1 F N
+DEF manette_2019-rescue:Conn_01x09-Connector_Generic J 0 40 Y N 1 F N
 F0 "J" 0 500 50 H V C CNN
-F1 "manette_2019-rescue_Conn_01x09-Connector_Generic" 0 -500 50 H V C CNN
+F1 "manette_2019-rescue:Conn_01x09-Connector_Generic" 0 -500 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -145,11 +145,11 @@ X Pin_9 9 -200 -400 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_D-Device
+# manette_2019-rescue:D-Device
 #
-DEF manette_2019-rescue_D-Device D 0 40 N N 1 F N
+DEF manette_2019-rescue:D-Device D 0 40 N N 1 F N
 F0 "D" 0 100 50 H V C CNN
-F1 "manette_2019-rescue_D-Device" 0 -100 50 H V C CNN
+F1 "manette_2019-rescue:D-Device" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -167,11 +167,11 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_ESP32-ESP32
+# manette_2019-rescue:ESP32-ESP32
 #
-DEF manette_2019-rescue_ESP32-ESP32 U 0 40 Y Y 1 F N
+DEF manette_2019-rescue:ESP32-ESP32 U 0 40 Y Y 1 F N
 F0 "U" 0 400 50 H V C CNN
-F1 "manette_2019-rescue_ESP32-ESP32" 0 500 50 H V C CNN
+F1 "manette_2019-rescue:ESP32-ESP32" 0 500 50 H V C CNN
 F2 "" -600 -50 50 H I C CNN
 F3 "" -600 -50 50 H I C CNN
 DRAW
@@ -209,11 +209,11 @@ X D18/VSPI-SCK 9 1100 -350 100 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_GND-power
+# manette_2019-rescue:GND-power
 #
-DEF manette_2019-rescue_GND-power #PWR 0 0 Y Y 1 F P
+DEF manette_2019-rescue:GND-power #PWR 0 0 Y Y 1 F P
 F0 "#PWR" 0 -250 50 H I C CNN
-F1 "manette_2019-rescue_GND-power" 0 -150 50 H V C CNN
+F1 "manette_2019-rescue:GND-power" 0 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -222,11 +222,11 @@ X GND 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_Joystick_RSF_2-Axis-Manette_arcade
+# manette_2019-rescue:Joystick_RSF_2-Axis-Manette_arcade
 #
-DEF manette_2019-rescue_Joystick_RSF_2-Axis-Manette_arcade JS 0 40 Y Y 1 F N
+DEF manette_2019-rescue:Joystick_RSF_2-Axis-Manette_arcade JS 0 40 Y Y 1 F N
 F0 "JS" -150 50 60 H V C CNN
-F1 "manette_2019-rescue_Joystick_RSF_2-Axis-Manette_arcade" -600 50 60 V V C CNN
+F1 "manette_2019-rescue:Joystick_RSF_2-Axis-Manette_arcade" -600 50 60 V V C CNN
 F2 "" -200 0 60 H I C CNN
 F3 "" -200 0 60 H I C CNN
 DRAW
@@ -256,11 +256,11 @@ X ~ 9 100 -650 200 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_MCP23017-MCP23017
+# manette_2019-rescue:MCP23017-MCP23017
 #
-DEF manette_2019-rescue_MCP23017-MCP23017 U 0 40 Y Y 1 F N
+DEF manette_2019-rescue:MCP23017-MCP23017 U 0 40 Y Y 1 F N
 F0 "U" 100 -50 50 H V C CNN
-F1 "manette_2019-rescue_MCP23017-MCP23017" 100 50 50 H V C CNN
+F1 "manette_2019-rescue:MCP23017-MCP23017" 100 50 50 H V C CNN
 F2 "" 100 -50 50 H I C CNN
 F3 "" 100 -50 50 H I C CNN
 DRAW
@@ -296,11 +296,11 @@ X VDD 9 -450 -1500 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_PCA9306-PCA9306
+# manette_2019-rescue:PCA9306-PCA9306
 #
-DEF manette_2019-rescue_PCA9306-PCA9306 U 0 40 Y Y 1 F N
+DEF manette_2019-rescue:PCA9306-PCA9306 U 0 40 Y Y 1 F N
 F0 "U" 0 350 50 H V C CNN
-F1 "manette_2019-rescue_PCA9306-PCA9306" 0 450 50 H V C CNN
+F1 "manette_2019-rescue:PCA9306-PCA9306" 0 450 50 H V C CNN
 F2 "" -50 0 50 H I C CNN
 F3 "" -50 0 50 H I C CNN
 DRAW
@@ -316,11 +316,11 @@ X VREF1 8 450 200 100 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_PWR_FLAG-power
+# manette_2019-rescue:PWR_FLAG-power
 #
-DEF manette_2019-rescue_PWR_FLAG-power #FLG 0 0 N N 1 F P
+DEF manette_2019-rescue:PWR_FLAG-power #FLG 0 0 N N 1 F P
 F0 "#FLG" 0 75 50 H I C CNN
-F1 "manette_2019-rescue_PWR_FLAG-power" 0 150 50 H V C CNN
+F1 "manette_2019-rescue:PWR_FLAG-power" 0 150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -329,11 +329,11 @@ X pwr 1 0 0 0 U 50 50 0 0 w
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_R-Device
+# manette_2019-rescue:R-Device
 #
-DEF manette_2019-rescue_R-Device R 0 0 N Y 1 F N
+DEF manette_2019-rescue:R-Device R 0 0 N Y 1 F N
 F0 "R" 80 0 50 V V C CNN
-F1 "manette_2019-rescue_R-Device" 0 0 50 V V C CNN
+F1 "manette_2019-rescue:R-Device" 0 0 50 V V C CNN
 F2 "" -70 0 50 V I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -346,11 +346,11 @@ X ~ 2 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_R_POT-Device
+# manette_2019-rescue:R_POT-Device
 #
-DEF manette_2019-rescue_R_POT-Device RV 0 40 Y N 1 F N
+DEF manette_2019-rescue:R_POT-Device RV 0 40 Y N 1 F N
 F0 "RV" -175 0 50 V V C CNN
-F1 "manette_2019-rescue_R_POT-Device" -100 0 50 V V C CNN
+F1 "manette_2019-rescue:R_POT-Device" -100 0 50 V V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -366,11 +366,11 @@ X 3 3 0 -150 50 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_Resonator-Device
+# manette_2019-rescue:Resonator-Device
 #
-DEF manette_2019-rescue_Resonator-Device Y 0 40 Y N 1 F N
+DEF manette_2019-rescue:Resonator-Device Y 0 40 Y N 1 F N
 F0 "Y" 0 225 50 H V C CNN
-F1 "manette_2019-rescue_Resonator-Device" 0 150 50 H V C CNN
+F1 "manette_2019-rescue:Resonator-Device" 0 150 50 H V C CNN
 F2 "" -25 0 50 H I C CNN
 F3 "" -25 0 50 H I C CNN
 $FPLIST
@@ -399,11 +399,11 @@ X 3 3 150 0 50 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_Screw_Terminal_01x02-Connector
+# manette_2019-rescue:Screw_Terminal_01x02-Connector
 #
-DEF manette_2019-rescue_Screw_Terminal_01x02-Connector J 0 40 Y N 1 F N
+DEF manette_2019-rescue:Screw_Terminal_01x02-Connector J 0 40 Y N 1 F N
 F0 "J" 0 100 50 H V C CNN
-F1 "manette_2019-rescue_Screw_Terminal_01x02-Connector" 0 -200 50 H V C CNN
+F1 "manette_2019-rescue:Screw_Terminal_01x02-Connector" 0 -200 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 $FPLIST
@@ -422,11 +422,11 @@ X Pin_2 2 -200 -100 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_Speaker-Device
+# manette_2019-rescue:Speaker-Device
 #
-DEF manette_2019-rescue_Speaker-Device LS 0 0 Y N 1 F N
+DEF manette_2019-rescue:Speaker-Device LS 0 0 Y N 1 F N
 F0 "LS" 50 225 50 H V R CNN
-F1 "manette_2019-rescue_Speaker-Device" 50 150 50 H V R CNN
+F1 "manette_2019-rescue:Speaker-Device" 50 150 50 H V R CNN
 F2 "" 0 -200 50 H I C CNN
 F3 "" -10 -50 50 H I C CNN
 DRAW
@@ -437,11 +437,11 @@ X 2 2 -200 -100 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# manette_2019-rescue_ULN2803A-Transistor_Array
+# manette_2019-rescue:ULN2803A-Transistor_Array
 #
-DEF manette_2019-rescue_ULN2803A-Transistor_Array U 0 20 Y Y 1 F N
+DEF manette_2019-rescue:ULN2803A-Transistor_Array U 0 20 Y Y 1 F N
 F0 "U" 0 525 50 H V C CNN
-F1 "manette_2019-rescue_ULN2803A-Transistor_Array" 0 450 50 H V C CNN
+F1 "manette_2019-rescue:ULN2803A-Transistor_Array" 0 450 50 H V C CNN
 F2 "" 50 -650 50 H I L CNN
 F3 "" 100 -200 50 H I C CNN
 $FPLIST
