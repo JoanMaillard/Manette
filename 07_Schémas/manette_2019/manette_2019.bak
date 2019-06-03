@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Device:Speaker LS1
+L manette_2019-rescue:Speaker-Device LS1
 U 1 1 5C7D5866
 P 10600 5500
 F 0 "LS1" H 10800 5550 50  0000 L CNN
@@ -34,7 +34,7 @@ MOSI
 Text GLabel 9050 4025 0    50   Input ~ 0
 RESET
 $Comp
-L MCP23017:MCP23017 U3
+L manette_2019-rescue:MCP23017-MCP23017 U3
 U 1 1 5C80D464
 P 6550 575
 F 0 "U3" H 6650 590 50  0000 C CNN
@@ -61,7 +61,7 @@ SCL
 Text GLabel 6100 2675 0    50   Input ~ 0
 SDA
 $Comp
-L MCU_Microchip_ATmega:ATmega328-PU U2
+L manette_2019-rescue:ATmega328-PU-MCU_Microchip_ATmega U2
 U 1 1 5C8105C7
 P 5550 4375
 F 0 "U2" H 5150 5900 50  0000 R CNN
@@ -86,7 +86,7 @@ Left_joystick_button
 Wire Wire Line
 	700  3750 800  3750
 $Comp
-L Manette_arcade:Joystick_RSF_2-Axis JS1
+L manette_2019-rescue:Joystick_RSF_2-Axis-Manette_arcade JS1
 U 1 1 5C7D4903
 P 1300 6775
 F 0 "JS1" H 2150 7200 60  0000 R CNN
@@ -105,9 +105,9 @@ R_joystick_analog_y
 Text GLabel 7200 1625 2    50   Input ~ 0
 Right_joystick_button
 Text GLabel 6150 4275 2    50   Input ~ 0
-L_joystick_analog_x
-Text GLabel 6150 4375 2    50   Input ~ 0
 L_joystick_analog_y
+Text GLabel 6150 4375 2    50   Input ~ 0
+L_joystick_analog_x
 Text GLabel 6100 1025 0    50   Input ~ 0
 Left_joystick_button
 Text GLabel 6150 4575 2    50   Input ~ 0
@@ -115,7 +115,7 @@ L_trigger
 Text GLabel 6150 4475 2    50   Input ~ 0
 R_trigger
 $Comp
-L Transistor_Array:ULN2803A U5
+L manette_2019-rescue:ULN2803A-Transistor_Array U5
 U 1 1 5C82C60F
 P 9200 5450
 F 0 "U5" H 9200 6017 50  0000 C CNN
@@ -126,7 +126,7 @@ F 3 "http://www.ti.com/lit/ds/symlink/uln2803a.pdf" H 9300 5250 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Resonator Y1
+L manette_2019-rescue:Resonator-Device Y1
 U 1 1 5C82CAB8
 P 6850 3725
 F 0 "Y1" V 7050 3575 50  0000 L CNN
@@ -137,7 +137,7 @@ F 3 "~" H 6825 3725 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:GND #PWR0110
+L manette_2019-rescue:GND-power #PWR0110
 U 1 1 5C82D22E
 P 7150 3825
 F 0 "#PWR0110" H 7150 3575 50  0001 C CNN
@@ -152,7 +152,7 @@ Wire Wire Line
 Wire Wire Line
 	7150 3725 7050 3725
 $Comp
-L power:GND #PWR0111
+L manette_2019-rescue:GND-power #PWR0111
 U 1 1 5C8638D7
 P 9200 6150
 F 0 "#PWR0111" H 9200 5900 50  0001 C CNN
@@ -165,7 +165,7 @@ $EndComp
 Text GLabel 8800 5350 0    50   Input ~ 0
 Buzzer
 $Comp
-L Device:R R3
+L manette_2019-rescue:R-Device R3
 U 1 1 5C865F77
 P 9900 5500
 F 0 "R3" V 9975 5450 50  0000 L CNN
@@ -176,7 +176,7 @@ F 3 "~" H 9900 5500 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:D D3
+L manette_2019-rescue:D-Device D3
 U 1 1 5C878C9C
 P 10050 5650
 F 0 "D3" H 10050 5850 50  0000 C CNN
@@ -201,17 +201,17 @@ Button_RIGHT
 Text GLabel 6100 1475 0    50   Input ~ 0
 Button_DOWN
 Text GLabel 7200 1175 2    50   Input ~ 0
-Button_A
-Text GLabel 7200 1325 2    50   Input ~ 0
-Button_B
-Text GLabel 7200 1475 2    50   Input ~ 0
 Button_Y
-Text GLabel 7200 1025 2    50   Input ~ 0
+Text GLabel 7200 1325 2    50   Input ~ 0
 Button_X
+Text GLabel 7200 1475 2    50   Input ~ 0
+Button_A
+Text GLabel 7200 1025 2    50   Input ~ 0
+Button_B
 Text GLabel 6100 1925 0    50   Input ~ 0
-Button_START
-Text GLabel 6100 1775 0    50   Input ~ 0
 Button_SELECT
+Text GLabel 6100 1775 0    50   Input ~ 0
+Button_START
 Text GLabel 7200 875  2    50   Input ~ 0
 R_Bumper
 Text GLabel 6100 875  0    50   Input ~ 0
@@ -283,7 +283,7 @@ Connected
 Text GLabel 1325 1100 2    50   Output ~ 0
 +5V
 $Comp
-L power:PWR_FLAG #FLG0102
+L manette_2019-rescue:PWR_FLAG-power #FLG0102
 U 1 1 5CA753AE
 P 6525 6400
 F 0 "#FLG0102" H 6525 6475 50  0001 C CNN
@@ -294,7 +294,7 @@ F 3 "~" H 6525 6400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:PWR_FLAG #FLG0103
+L manette_2019-rescue:PWR_FLAG-power #FLG0103
 U 1 1 5CA77741
 P 6675 6400
 F 0 "#FLG0103" H 6675 6475 50  0001 C CNN
@@ -305,7 +305,7 @@ F 3 "~" H 6675 6400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:PWR_FLAG #FLG0104
+L manette_2019-rescue:PWR_FLAG-power #FLG0104
 U 1 1 5CA79B65
 P 6825 6400
 F 0 "#FLG0104" H 6825 6475 50  0001 C CNN
@@ -320,7 +320,7 @@ Text GLabel 6675 6400 3    50   Input ~ 0
 Text GLabel 6525 6400 3    50   Input ~ 0
 +5V
 $Comp
-L power:GND #PWR0102
+L manette_2019-rescue:GND-power #PWR0102
 U 1 1 5C816B1D
 P 6825 6400
 F 0 "#PWR0102" H 6825 6150 50  0001 C CNN
@@ -331,7 +331,7 @@ F 3 "" H 6825 6400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0116
+L manette_2019-rescue:GND-power #PWR0116
 U 1 1 5CB04B27
 P 10725 3300
 F 0 "#PWR0116" H 10725 3050 50  0001 C CNN
@@ -346,7 +346,7 @@ Wire Wire Line
 Wire Wire Line
 	8900 4625 8900 4525
 $Comp
-L power:GND #PWR0101
+L manette_2019-rescue:GND-power #PWR0101
 U 1 1 5C7E33B4
 P 8900 4625
 F 0 "#PWR0101" H 8900 4375 50  0001 C CNN
@@ -357,7 +357,7 @@ F 3 "" H 8900 4625 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0113
+L manette_2019-rescue:GND-power #PWR0113
 U 1 1 5C9E80F4
 P 3950 2625
 F 0 "#PWR0113" H 3950 2375 50  0001 C CNN
@@ -368,7 +368,7 @@ F 3 "" H 3950 2625 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0104
+L manette_2019-rescue:GND-power #PWR0104
 U 1 1 5C817E41
 P 850 7525
 F 0 "#PWR0104" H 850 7275 50  0001 C CNN
@@ -379,7 +379,7 @@ F 3 "" H 850 7525 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0105
+L manette_2019-rescue:GND-power #PWR0105
 U 1 1 5C818469
 P 700 5225
 F 0 "#PWR0105" H 700 4975 50  0001 C CNN
@@ -390,7 +390,7 @@ F 3 "" H 700 5225 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0103
+L manette_2019-rescue:GND-power #PWR0103
 U 1 1 5C816DC7
 P 5875 2250
 F 0 "#PWR0103" H 5875 2000 50  0001 C CNN
@@ -415,7 +415,7 @@ Wire Wire Line
 Wire Wire Line
 	7200 2525 7350 2525
 $Comp
-L power:GND #PWR0115
+L manette_2019-rescue:GND-power #PWR0115
 U 1 1 5CABEA89
 P 7350 2875
 F 0 "#PWR0115" H 7350 2625 50  0001 C CNN
@@ -426,7 +426,7 @@ F 3 "" H 7350 2875 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0118
+L manette_2019-rescue:GND-power #PWR0118
 U 1 1 5CB302EA
 P 5550 5875
 F 0 "#PWR0118" H 5550 5625 50  0001 C CNN
@@ -441,7 +441,7 @@ Calib
 Text GLabel 4075 2500 0    50   Output ~ 0
 Calib
 $Comp
-L ESP32:ESP32 U1
+L manette_2019-rescue:ESP32-ESP32 U1
 U 1 1 5CABDA52
 P 9650 1050
 F 0 "U1" H 9650 1525 50  0000 C CNN
@@ -452,7 +452,7 @@ F 3 "" H 9050 1000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L PCA9306:PCA9306 U8
+L manette_2019-rescue:PCA9306-PCA9306 U8
 U 1 1 5CABE2FF
 P 10150 3175
 F 0 "U8" H 10150 3600 50  0000 C CNN
@@ -481,7 +481,7 @@ TX_Atmega
 Text GLabel 6150 4875 2    50   Output ~ 0
 RX_Atmega
 $Comp
-L Device:R R4
+L manette_2019-rescue:R-Device R4
 U 1 1 5CB92D6D
 P 7350 2375
 F 0 "R4" V 7143 2375 50  0000 C CNN
@@ -544,7 +544,7 @@ Wire Wire Line
 Connection ~ 800  5150
 Connection ~ 700  5150
 $Comp
-L Manette_arcade:Joystick_RSF_2-Axis JS2
+L manette_2019-rescue:Joystick_RSF_2-Axis-Manette_arcade JS2
 U 1 1 5C7D49EC
 P 1150 4500
 F 0 "JS2" H 1975 4950 60  0000 R CNN
@@ -562,7 +562,7 @@ Wire Wire Line
 Wire Wire Line
 	5875 2225 6100 2225
 $Comp
-L power:GND #PWR0109
+L manette_2019-rescue:GND-power #PWR0109
 U 1 1 5CBC802A
 P 7950 2200
 F 0 "#PWR0109" H 7950 1950 50  0001 C CNN
@@ -585,7 +585,7 @@ Wire Notes Line
 Wire Notes Line
 	2700 2850 2700 475 
 $Comp
-L Device:C C2
+L manette_2019-rescue:C-Device C2
 U 1 1 5CB980CB
 P 3375 6725
 F 0 "C2" H 3490 6771 50  0000 L CNN
@@ -604,7 +604,7 @@ Wire Notes Line
 Text GLabel 3975 6400 1    50   Input ~ 0
 +5V
 $Comp
-L Device:C C5
+L manette_2019-rescue:C-Device C5
 U 1 1 5CC5B24F
 P 3775 6725
 F 0 "C5" H 3890 6771 50  0000 L CNN
@@ -617,7 +617,7 @@ $EndComp
 Wire Wire Line
 	7950 2100 8550 2100
 $Comp
-L Device:C C6
+L manette_2019-rescue:C-Device C6
 U 1 1 5CCA67BF
 P 4175 6725
 F 0 "C6" H 4290 6771 50  0000 L CNN
@@ -628,7 +628,7 @@ F 3 "Vin_Atmega" H 4400 6600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C7
+L manette_2019-rescue:C-Device C7
 U 1 1 5CCE01FA
 P 4725 6725
 F 0 "C7" H 4840 6771 50  0000 L CNN
@@ -650,7 +650,7 @@ Wire Wire Line
 	10250 5800 10250 5600
 Connection ~ 10050 5500
 $Comp
-L Device:R R15
+L manette_2019-rescue:R-Device R15
 U 1 1 5CDA7820
 P 9925 5000
 F 0 "R15" V 10000 4950 50  0000 L CNN
@@ -661,7 +661,7 @@ F 3 "~" H 9925 5000 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:D D4
+L manette_2019-rescue:D-Device D4
 U 1 1 5CDA7827
 P 10075 5150
 F 0 "D4" H 10075 5350 50  0000 C CNN
@@ -685,7 +685,7 @@ Rumble
 Wire Wire Line
 	10075 5325 10300 5325
 $Comp
-L Connector:Screw_Terminal_01x02 J5
+L manette_2019-rescue:Screw_Terminal_01x02-Connector J5
 U 1 1 5CDD987E
 P 10500 5000
 F 0 "J5" H 10579 4992 50  0000 L CNN
@@ -707,7 +707,7 @@ Wire Wire Line
 Text GLabel 2325 4900 1    50   Input ~ 0
 +5V
 $Comp
-L power:GND #PWR0108
+L manette_2019-rescue:GND-power #PWR0108
 U 1 1 5C81DB7C
 P 2325 5925
 F 0 "#PWR0108" H 2325 5675 50  0001 C CNN
@@ -724,7 +724,7 @@ R_trigger
 Text GLabel 2325 5625 1    50   Input ~ 0
 +5V
 $Comp
-L Device:R_POT RV2
+L manette_2019-rescue:R_POT-Device RV2
 U 1 1 5CC9B38B
 P 2325 5775
 F 0 "RV2" H 2255 5821 50  0000 R CNN
@@ -735,7 +735,7 @@ F 3 "~" H 2325 5775 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0106
+L manette_2019-rescue:GND-power #PWR0106
 U 1 1 5CCA47FE
 P 2325 5200
 F 0 "#PWR0106" H 2325 4950 50  0001 C CNN
@@ -746,7 +746,7 @@ F 3 "" H 2325 5200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_POT RV1
+L manette_2019-rescue:R_POT-Device RV1
 U 1 1 5CCA4804
 P 2325 5050
 F 0 "RV1" H 2255 5096 50  0000 R CNN
@@ -757,7 +757,7 @@ F 3 "~" H 2325 5050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x02 J2
+L manette_2019-rescue:Conn_01x02-Connector_Generic J2
 U 1 1 5CD06004
 P 2850 3300
 F 0 "J2" H 2929 3292 50  0000 L CNN
@@ -768,7 +768,7 @@ F 3 "~" H 2850 3300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x02 J3
+L manette_2019-rescue:Conn_01x02-Connector_Generic J3
 U 1 1 5CD06125
 P 2850 3750
 F 0 "J3" H 2930 3742 50  0000 L CNN
@@ -779,7 +779,7 @@ F 3 "~" H 2850 3750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0126
+L manette_2019-rescue:GND-power #PWR0126
 U 1 1 5CD0AD74
 P 2550 3425
 F 0 "#PWR0126" H 2550 3175 50  0001 C CNN
@@ -790,7 +790,7 @@ F 3 "" H 2550 3425 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0127
+L manette_2019-rescue:GND-power #PWR0127
 U 1 1 5CD0F199
 P 2550 3875
 F 0 "#PWR0127" H 2550 3625 50  0001 C CNN
@@ -813,7 +813,7 @@ R_Bumper
 Text GLabel 2650 3300 0    50   Output ~ 0
 L_Bumper
 $Comp
-L Connector_Generic:Conn_01x09 J4
+L manette_2019-rescue:Conn_01x09-Connector_Generic J4
 U 1 1 5CD4740A
 P 9250 4125
 F 0 "J4" H 9330 4167 50  0000 L CNN
@@ -824,7 +824,7 @@ F 3 "~" H 9250 4125 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x02 J6
+L manette_2019-rescue:Conn_01x02-Connector_Generic J6
 U 1 1 5CD55C77
 P 4275 2500
 F 0 "J6" H 4354 2492 50  0000 L CNN
@@ -835,20 +835,7 @@ F 3 "~" H 4275 2500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0128
-U 1 1 5CC9AA68
-P 3275 2950
-F 0 "#PWR0128" H 3275 2700 50  0001 C CNN
-F 1 "GND" H 3280 2777 50  0000 C CNN
-F 2 "" H 3275 2950 50  0001 C CNN
-F 3 "" H 3275 2950 50  0001 C CNN
-	1    3275 2950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3275 2950 3275 2925
-$Comp
-L power:GND #PWR0129
+L manette_2019-rescue:GND-power #PWR0129
 U 1 1 5CCA0050
 P 3250 4100
 F 0 "#PWR0129" H 3250 3850 50  0001 C CNN
@@ -868,16 +855,14 @@ Text GLabel 3850 4375 0    50   Output ~ 0
 Button_RIGHT
 Text GLabel 3850 4575 0    50   Output ~ 0
 Button_DOWN
-Wire Wire Line
-	3275 2925 3850 2925
 Text GLabel 3850 3225 0    50   Output ~ 0
-Button_B
-Text GLabel 3850 3425 0    50   Output ~ 0
-Button_A
-Text GLabel 3850 3025 0    50   Output ~ 0
-Button_Y
-Text GLabel 3850 3625 0    50   Output ~ 0
 Button_X
+Text GLabel 3850 3425 0    50   Output ~ 0
+Button_Y
+Text GLabel 3850 3025 0    50   Output ~ 0
+Button_A
+Text GLabel 3850 3625 0    50   Output ~ 0
+Button_B
 Text GLabel 8550 2200 0    50   Input ~ 0
 +5V
 Text GLabel 850  5875 1    50   Input ~ 0
@@ -897,7 +882,7 @@ Wire Wire Line
 Wire Wire Line
 	3375 6475 3375 6575
 $Comp
-L power:GND #PWR0107
+L manette_2019-rescue:GND-power #PWR0107
 U 1 1 5CCF972D
 P 3675 7000
 F 0 "#PWR0107" H 3675 6750 50  0001 C CNN
@@ -908,7 +893,7 @@ F 3 "" H 3675 7000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C1
+L manette_2019-rescue:C-Device C1
 U 1 1 5CCF4611
 P 1275 1400
 F 0 "C1" H 1390 1446 50  0000 L CNN
@@ -919,7 +904,7 @@ F 3 "~" H 1275 1400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR0119
+L manette_2019-rescue:GND-power #PWR0119
 U 1 1 5CB6DBAC
 P 1275 1875
 F 0 "#PWR0119" H 1275 1625 50  0001 C CNN
@@ -930,7 +915,7 @@ F 3 "" H 1275 1875 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:Screw_Terminal_01x02 J1
+L manette_2019-rescue:Screw_Terminal_01x02-Connector J1
 U 1 1 5CCCFDC6
 P 600 1100
 F 0 "J1" H 520 775 50  0000 C CNN
@@ -941,7 +926,7 @@ F 3 "~" H 600 1100 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector:Screw_Terminal_01x02 J10
+L manette_2019-rescue:Screw_Terminal_01x02-Connector J10
 U 1 1 5CCCFFAC
 P 600 1825
 F 0 "J10" H 520 1500 50  0000 C CNN
@@ -1000,7 +985,7 @@ Wire Wire Line
 Wire Wire Line
 	9950 6025 9675 6025
 $Comp
-L Connector_Generic:Conn_01x08 J8
+L manette_2019-rescue:Conn_01x08-Connector_Generic J8
 U 1 1 5CCEC7D5
 P 4050 4375
 F 0 "J8" H 4130 4367 50  0000 L CNN
@@ -1011,7 +996,7 @@ F 3 "~" H 4050 4375 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x08 J7
+L manette_2019-rescue:Conn_01x08-Connector_Generic J7
 U 1 1 5CCEC8A9
 P 4050 3225
 F 0 "J7" H 4130 3217 50  0000 L CNN
@@ -1022,7 +1007,7 @@ F 3 "~" H 4050 3225 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x08 J9
+L manette_2019-rescue:Conn_01x08-Connector_Generic J9
 U 1 1 5CCF355A
 P 3700 1900
 F 0 "J9" H 3780 1942 50  0000 L CNN
@@ -1039,7 +1024,7 @@ Button_SELECT
 Text GLabel 3500 1800 0    50   Output ~ 0
 Button_START
 $Comp
-L power:GND #PWR0114
+L manette_2019-rescue:GND-power #PWR0114
 U 1 1 5CCE01A7
 P 3500 2325
 F 0 "#PWR0114" H 3500 2075 50  0001 C CNN
@@ -1098,4 +1083,19 @@ Wire Wire Line
 	4175 6475 4725 6475
 Text GLabel 10750 2200 2    50   Output ~ 0
 +3.3V
+$Comp
+L manette_2019-rescue:GND-power #PWR0128
+U 1 1 5CC9AA68
+P 3275 2950
+F 0 "#PWR0128" H 3275 2700 50  0001 C CNN
+F 1 "GND" H 3280 2777 50  0000 C CNN
+F 2 "" H 3275 2950 50  0001 C CNN
+F 3 "" H 3275 2950 50  0001 C CNN
+	1    3275 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3275 2950 3275 2925
+Wire Wire Line
+	3275 2925 3850 2925
 $EndSCHEMATC
