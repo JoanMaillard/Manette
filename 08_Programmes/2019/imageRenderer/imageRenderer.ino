@@ -189,10 +189,6 @@ uint16_t arrow[] = {0xffff, 0x0000, 0x0000, 0x0000, 0x0000,
   0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 
   0xffff, 0x0000, 0x0000, 0x0000, 0x0000}; //*/
 
-static int bufferSize = 0;
-static int max_x = 0;
-static int max_y = 0;
-int * outputBuffer;
 byte previousState = 0;
 
 void setup() {
