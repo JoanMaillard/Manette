@@ -13,7 +13,8 @@ BLECharacteristic *pCharacteristicBack;
 BLEServer *pServer;
 uint8_t defaultInValues[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 uint8_t defaultOutValues[2] = {0, 0};
-HardwareSerial outSer(2);
+uint8_t ctrlInput[8] = {0};
+HardwareSerial outSer(0);
 
 class MyCallbacks : public BLEServerCallbacks {
     void onConnect(BLEServer* pServer, esp_ble_gatts_cb_param_t *param) {
@@ -29,7 +30,7 @@ class MyCallbacks : public BLEServerCallbacks {
 
 class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic* pChar) {
-      uint8_t ctrlInput[8] = {0};
+      //uint8_t ctrlInput[8] = {0};
       uint8_t* pCharData;
       Serial.println(millis());
       pCharData = pChar->getData();
@@ -39,7 +40,7 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
         Serial.print(ctrlInput[i], BIN);
         Serial.print("   ");
       }
-      outSer.write(ctrlInput, 8);
+      //outSer.write(ctrlInput, 8);
       Serial.println("");
       
     }
@@ -48,8 +49,8 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
 void setup() {
   // put your setup code here, to run once:
   outSer.begin(115200, SERIAL_8N1);
-  Serial.begin(115200);
-  Serial.println("Starting BLE work!");
+  //Serial.begin(115200);
+  //Serial.println("Starting BLE work!");
 
   BLEDevice::init("ESP1");
   pServer = BLEDevice::createServer();
@@ -77,17 +78,19 @@ void setup() {
   pAdvertising->setMinPreferred(0x06);  // set minimum connection interval to 6x1.25ms
   pAdvertising->setMinPreferred(0x12); // set maximum connection interval to 10x1.25ms
   BLEDevice::startAdvertising();
-  Serial.println("Characteristic defined! Now you can read it in your phone!");
+  //Serial.println("Characteristic defined! Now you can read it in your phone!");
 }
 
 void loop() {
   //Serial.println("loop");
   //while (outSer.available() < 2) {}
   //insert code for follow-up feedback
+  while (outSer.available()<2){}
   outSer.readBytes(fallbackProperties, 2);
-  for (int i = 0; i < 2; i++) {
+  outSet.write(ctrlInput,8);
+  /*for (int i = 0; i < 2; i++) {
     Serial.println(fallbackProperties[i]);
-  }
+  }//*/
   pCharacteristicBack->setValue(fallbackProperties, 2);
   pCharacteristicBack->notify(0);
 }
