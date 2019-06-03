@@ -13,34 +13,36 @@ BLECharacteristic *pCharacteristicBack;
 BLEServer *pServer;
 uint8_t defaultInValues[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 uint8_t defaultOutValues[2] = {0, 0};
-HardwareSerial outSer(2);
+uint8_t ctrlInput[8] = {0};
+HardwareSerial outSer(0);
+bool serBackChanged = false;
 
 class MyCallbacks : public BLEServerCallbacks {
     void onConnect(BLEServer* pServer, esp_ble_gatts_cb_param_t *param) {
-      Serial.println("Device connected");
+      //Serial.println("Device connected");
       pServer->updateConnParams(param->connect.remote_bda,0x06, 0x07, 0, 10);
-      Serial.println("Successfully updated params");
+      //Serial.println("Successfully updated params");
     }
 
     void onDisconnect(BLEServer* pServer) {
-      Serial.println("Device disconnected");
+      //Serial.println("Device disconnected");
     }
 };
 
 class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic* pChar) {
-      uint8_t ctrlInput[8] = {0};
+      //uint8_t ctrlInput[8] = {0};
       uint8_t* pCharData;
-      Serial.println(millis());
+      //Serial.println(millis());
       pCharData = pChar->getData();
-      Serial.println(millis());
+      //Serial.println(millis());
       for (int i = 0; i < 8; i++) {
         ctrlInput[i] = pCharData[i];
-        Serial.print(ctrlInput[i], BIN);
-        Serial.print("   ");
+        //Serial.print(ctrlInput[i], BIN);
+        //Serial.print("   ");
       }
-      outSer.write(ctrlInput, 8);
-      Serial.println("");
+      //outSer.write(ctrlInput, 8);
+      //Serial.println("");
       
     }
 };
@@ -48,8 +50,9 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
 void setup() {
   // put your setup code here, to run once:
   outSer.begin(115200, SERIAL_8N1);
-  Serial.begin(115200);
-  Serial.println("Starting BLE work!");
+  //outSer.setRxBufferSize(2);
+  //Serial.begin(115200);
+  //Serial.println("Starting BLE work!");
 
   BLEDevice::init("ESP1");
   pServer = BLEDevice::createServer();
@@ -75,19 +78,26 @@ void setup() {
   pAdvertising->addServiceUUID(SERVICE_UUID);
   pAdvertising->setScanResponse(true);
   pAdvertising->setMinPreferred(0x06);  // set minimum connection interval to 6x1.25ms
-  pAdvertising->setMinPreferred(0x12); // set maximum connection interval to 10x1.25ms
+  pAdvertising->setMaxPreferred(0x12); // set maximum connection interval to 10x1.25ms
   BLEDevice::startAdvertising();
-  Serial.println("Characteristic defined! Now you can read it in your phone!");
+  //Serial.println("Characteristic defined! Now you can read it in your phone!");
 }
 
 void loop() {
+  //Serial.println(millis());
   //Serial.println("loop");
   //while (outSer.available() < 2) {}
   //insert code for follow-up feedback
+  if (outSer.available()>=2){
   outSer.readBytes(fallbackProperties, 2);
-  for (int i = 0; i < 2; i++) {
-    Serial.println(fallbackProperties[i]);
+  outSer.write(ctrlInput,8);
+  serBackChanged = true;
   }
+  /*for (int i = 0; i < 2; i++) {
+    //Serial.println(fallbackProperties[i]);
+  }//*/
+  if (serBackChanged) {
   pCharacteristicBack->setValue(fallbackProperties, 2);
   pCharacteristicBack->notify(0);
+  }
 }
