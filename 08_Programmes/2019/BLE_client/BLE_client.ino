@@ -207,10 +207,10 @@ byte dataBuffer[BUFFER_SIZE];
 HardwareSerial outSer(2);
 
 // The remote service we wish to connect to.
-static BLEUUID serviceUUID("b9d4de40-44be-11e9-b210-d663bd873d93");
+static BLEUUID serviceUUID("b9d4de40-44be-11e9-b210-d663bd873d93"); //A faire matcher avec les UUID du serveur correspondant. UUID de service
 // The characteristic of the remote service we are interested in.
-static BLEUUID    charUUID("b9d4e282-44be-11e9-b210-d663bd873d93");
-static BLEUUID    backUUID("861c92c2-4ef6-11e9-8647-d663bd873d93");
+static BLEUUID    charUUID("b9d4e282-44be-11e9-b210-d663bd873d93"); //A faire matcher avec les UUID du serveur correspondant. UUID de commande
+static BLEUUID    backUUID("861c92c2-4ef6-11e9-8647-d663bd873d93"); //A faire matcher avec les UUID du serveur correspondant. UUID de feedback
 
 static boolean doConnect = false;
 static boolean connected = false;

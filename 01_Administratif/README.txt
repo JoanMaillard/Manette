@@ -25,3 +25,6 @@ Index des termes et des documents liés
 
 - Documentation consultée et retenue: voir Etude/résumé
 
+- Info ESP32: Si la commande Serial.begin(int) est utilisée et que des messages sont envoyés au Serial, il faut IMPERATIVEMENT brancher l'ESP32
+par USB. Pour le faire fonctionner de façon autonome, passer en commentaire toutes les instructions Serial est impératif.
+

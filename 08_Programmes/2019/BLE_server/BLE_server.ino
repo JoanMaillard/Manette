@@ -3,9 +3,9 @@
 #include <BLEServer.h>
 #include <HardwareSerial.h>
 
-#define SERVICE_UUID        "b9d4de40-44be-11e9-b210-d663bd873d93"
-#define CHARACTERISTIC_UUID "b9d4e282-44be-11e9-b210-d663bd873d93"
-#define CHARACTERISTIC_BCK_UUID "861c92c2-4ef6-11e9-8647-d663bd873d93"
+#define SERVICE_UUID        "b9d4de40-44be-11e9-b210-d663bd873d93" //Unique, à changer pour chaque serveur. UUID de service
+#define CHARACTERISTIC_UUID "b9d4e282-44be-11e9-b210-d663bd873d93" //Unique, à changer pour chaque serveur. UUID de commande
+#define CHARACTERISTIC_BCK_UUID "861c92c2-4ef6-11e9-8647-d663bd873d93" //Unique, à changer pour chaque serveur. UUID de feedback
 byte fallbackProperties[2] = {0};
 
 BLECharacteristic *pCharacteristic;
