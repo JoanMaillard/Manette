@@ -1,0 +1,40 @@
+Rapport de décision: batteries
+
+1) Piles
+2) Accus NiMh
+3) Accus LiIon
+
+Avantages 1)
+- Haute densité d'énergie, facilement accessible
+
+Désavantages 1)
+- Usage unique -> doivent être changées régulièrement
+- Fort taux d'autodécharge si laissé dans la manette pour une période prolongée
+- Coûteux et peu pratique
+
+Avantages 2)
+- Batteries rechargeables
+- Tension stable pendant une longue période
+
+Désavantages 2)
+- Mauvaise autonomie
+- Faible densité d'énergie
+- Tension basse
+- Lourd
+- Fort taux d'autodécharge
+
+Avantages 3)
+- Rechargeable
+- Haute densité d'énergie
+- Systèmes de gestion et de sécurité faciles à trouver
+- Faible taux d'autodécharge
+- Forte autonomie
+- Léger
+- Longue endurance
+
+Désavantages 3)
+- Nécessite de l'électronique de gestion
+- Plus compliqué à mettre en place sans les outils appropriés
+
+Notre choix se porte sur l'option 3), car nous avons à disposition les outils
+appropriés (soudeuse à points au domicile de Joan Maillard)

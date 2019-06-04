@@ -33,7 +33,7 @@ Layout
 1 start
 1 select
 1 switch pour l'allumage (2 positions)
-1 port USB(-C?) pour charger
+1 port USB-microB pour charger
 1 écran pour la sélection des modes de jeu
 1 buzzer pour donner des informations auditives
 1 BMS
@@ -65,4 +65,4 @@ Codes en utilisation:
 - Arduino / Data gatherer: data_gatherer
 - ESP32 émetteur, manette: BLE_client
 - ESP32 récepteur, chevalier/minotaure: BLE_server
-- Arduino / objet à contrôler: manette_recepteur_objet_a_controler
+- Arduino / objet à contrôler: Géré par le groupe P1631

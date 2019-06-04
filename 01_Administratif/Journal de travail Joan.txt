@@ -215,7 +215,26 @@ Jour 40 - 24.05.2019
 - Présentation ESP32
 - Préparation à la présentation du projet au jour 41
 
+SEMAINE 11
+
 Jour 41 - 27.05.2019
 
 - Présentation du projet à l'aula du CPNV
-- 
+- Documentation
+
+Jour 42 - 28.05.2019
+
+- Documentation
+
+SEMAINE 12
+
+Jour 43 - 03.06.2019
+
+- Mise en place de l'interface entre l'ESP32 des minotaure et chevaliers (P1631) et leur système
+- Essai et vérification de fonctionnalité des menus (transmission d'état)
+- Ajout d'une paire d'éléments menu
+
+Jour 44 - 04.06.2019
+
+- Documentation
+- Revue de projet
