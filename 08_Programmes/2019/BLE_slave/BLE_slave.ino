@@ -1,3 +1,9 @@
+/*
+ * 
+ *      CODE INUTILISE, VEUILLEZ UTILISER LE CODE "BLE_client" !!!
+ * 
+ */
+
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEScan.h>
