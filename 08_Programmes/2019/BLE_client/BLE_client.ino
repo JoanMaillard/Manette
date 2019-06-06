@@ -222,70 +222,102 @@ static BLEAdvertisedDevice* myDevice;
 //uint8_t val[8] = {0,0,0,0,0,0,0,0};//*/
 uint8_t retVal[2] = {0, 0}; //*/
 
+/*
+ * 
+ * @func static notifyCallback callback notifier function for event handling (unused but necessary for the BLE client class to work)
+ * @param null
+ * @return void
+ * 
+ */
 
 static void notifyCallback(
   BLERemoteCharacteristic* pBLERemoteCharacteristic,
   uint8_t* pData,
   size_t length,
   bool isNotify) {
-  Serial.print("Notify callback for characteristic ");
-  Serial.print(pBLERemoteCharacteristic->getUUID().toString().c_str());
-  Serial.print(" of data length ");
-  Serial.println(length);
-  Serial.print("data: ");
-  Serial.println((char*)pData);
+  //Serial.print("Notify callback for characteristic ");
+  //Serial.print(pBLERemoteCharacteristic->getUUID().toString().c_str());
+  //Serial.print(" of data length ");
+  //Serial.println(length);
+  //Serial.print("data: ");
+  //Serial.println((char*)pData);
 }
 
 class MyClientCallback : public BLEClientCallbacks {
+
+/*
+ * 
+ * @func onConnect what happens when the client connects
+ * @param BLEClient* pointer to the target client instance
+ * @return void
+ * 
+ */
+  
     void onConnect(BLEClient* pclient) {
     }
 
+/*
+ * 
+ * @func onDisconnect what happens when the client disconnects or loses connection
+ * @param BLEClient* pointer to the target client instance
+ * @return void
+ * 
+ */
+
     void onDisconnect(BLEClient* pclient) {
       connected = false;
-      Serial.println("onDisconnect");
+      //Serial.println("onDisconnect");
     }
 };
 
+/*
+ * 
+ * @func connectToServer connect the client to the server
+ * @param null
+ * @return bool 
+ * 
+ */
+
 bool connectToServer() {
-  Serial.print("Forming a connection to ");
-  Serial.println(myDevice->getAddress().toString().c_str());
+  //Serial.print("Forming a connection to ");
+  //Serial.println(myDevice->getAddress().toString().c_str());
 
   BLEClient*  pClient  = BLEDevice::createClient();
-  Serial.println(" - Created client");
+  //Serial.println(" - Created client");
 
   pClient->setClientCallbacks(new MyClientCallback());
 
   // Connect to the remove BLE Server.
   pClient->connect(myDevice);  // if you pass BLEAdvertisedDevice instead of address, it will be recognized type of peer device address (public or private)
-  Serial.println(" - Connected to server");
+  //Serial.println(" - Connected to server");
 
   // Obtain a reference to the service we are after in the remote BLE server.
   BLERemoteService* pRemoteService = pClient->getService(serviceUUID);
   if (pRemoteService == nullptr) {
-    Serial.print("Failed to find our service UUID: ");
-    Serial.println(serviceUUID.toString().c_str());
+    //Serial.print("Failed to find our service UUID: ");
+    //Serial.println(serviceUUID.toString().c_str());
     pClient->disconnect();
     return false;
   }
-  Serial.println(" - Found our service");
+  //Serial.println(" - Found our service");
 
 
   // Obtain a reference to the characteristic in the service of the remote BLE server.
   pRemoteCharacteristic = pRemoteService->getCharacteristic(charUUID);
   pRemoteCharacteristicBack = pRemoteService->getCharacteristic(backUUID);
   if (pRemoteCharacteristic == nullptr) {
-    Serial.print("Failed to find our characteristic UUID: ");
-    Serial.println(charUUID.toString().c_str());
+    //Serial.print("Failed to find our characteristic UUID: ");
+    //Serial.println(charUUID.toString().c_str());
     pClient->disconnect();
     return false;
   }
-  Serial.println(" - Found our characteristic");
+  //Serial.println(" - Found our characteristic");
 
   // Read the value of the characteristic.
   if (pRemoteCharacteristic->canRead()) {
     std::string value = pRemoteCharacteristic->readValue();
-    Serial.print("The characteristic value was: ");
-    Serial.println(value.c_str());
+    //Serial.print("The characteristic value was: ");
+    //Serial.println(value.c_str());
   }
   if (pRemoteCharacteristicBack->canRead()) {
     std::string value = pRemoteCharacteristicBack->readValue();
@@ -307,9 +339,18 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
     /**
         Called for each advertising BLE server.
     */
+
+    /*
+     * 
+     * @func onResult
+     * @param BLEAdvertisedDevice an advertised device found
+     * @return void
+     * 
+     */
+     
     void onResult(BLEAdvertisedDevice advertisedDevice) {
-      Serial.print("BLE Advertised Device found: ");
-      Serial.println(advertisedDevice.toString().c_str());
+      //Serial.print("BLE Advertised Device found: ");
+      //Serial.println(advertisedDevice.toString().c_str());
 
       // We have found a device, let us now see if it contains the service we are looking for.
       if (advertisedDevice.haveServiceUUID() && advertisedDevice.isAdvertisingService(serviceUUID)) {
@@ -323,8 +364,16 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
     } // onResult
 }; // MyAdvertisedDeviceCallbacks
 
+/*
+ * 
+ * @func setup default setup function for arduino
+ * @param null
+ * @return void
+ * 
+ */
 
 void setup() {
+  delay(1000);
   pinMode(CS_PIN, OUTPUT);
   pinMode(DC_PIN, OUTPUT);
   pinMode(RST_PIN, OUTPUT);
@@ -335,9 +384,10 @@ void setup() {
   tft.fillRect(0, 0, 128, 128, BLACK);
 
   outSer.begin(115200, SERIAL_8N1);
-  Serial.begin(115200);
+  //Serial.begin(115200);
   //pinMode(27, INPUT_PULLUP);
-  Serial.println("Starting Arduino BLE Client application...");
+  //Serial.println("Starting Arduino BLE Client application...");
+  delay(1000);
   BLEDevice::init("");
 
   // Retrieve a Scanner and set the callback we want to use to be informed when we
@@ -349,8 +399,16 @@ void setup() {
   pBLEScan->setWindow(449);
   pBLEScan->setActiveScan(true);
   pBLEScan->start(5, false);
+  delay(1000);
 } // End of setup.
 
+/*
+ * 
+ * @func loop default loop function for arduino
+ * @param null
+ * @return void
+ * 
+ */
 
 // This is the Arduino main loop function.
 void loop() {
@@ -359,10 +417,10 @@ void loop() {
   // connected we set the connected flag to be true.
   if (doConnect == true) {
     if (connectToServer()) {
-      Serial.println("We are now connected to the BLE Server.");
+      //Serial.println("We are now connected to the BLE Server.");
 
     } else {
-      Serial.println("We have failed to connect to the server; there is nothin more we will do.");
+      //Serial.println("We have failed to connect to the server; there is nothin more we will do.");
     }
     doConnect = false;
 
@@ -371,52 +429,60 @@ void loop() {
   if (connected) {
     std::string feedbackDataServ;
     uint8_t feedbackData[2] = {0, 0};
-    Serial.print("1 ");
-    Serial.println(millis());
+    //Serial.print("1 ");
+    //Serial.println(millis());
 
     outSer.write(WRITE_CONTROL); //signal inputs controller that the ESP is ready to read controller data
     while (outSer.available() < 8) {} //do nothing as long as not all the serial inputs are ready to be read
     outSer.readBytes(dataBuffer, BUFFER_SIZE); //read inputs from inputs controller and store into dataBuffer
 
-    Serial.print("2 ");
-    Serial.println(millis());
-    for (int i = 0; i < 8; i++) {
-    Serial.print(dataBuffer[i]);
-    Serial.print("   ");
-     }//*/
-    Serial.print("3 ");
-    Serial.println(millis());
+    //Serial.print("2 ");
+    //Serial.println(millis());
+    //for (int i = 0; i < 8; i++) {
+    //Serial.print(dataBuffer[i]);
+    //Serial.print("   ");
+    // }//*/
+    //Serial.print("3 ");
+    //Serial.println(millis());
 
     // Set the characteristic's value to be the array of bytes that is actually a string.
 
 
     pRemoteCharacteristic->writeValue(dataBuffer, 8, 0); //write inputs inside of dataBuffer to BT server
-    Serial.print("4 ");
-    Serial.println(millis());
+    //Serial.print("4 ");
+    //Serial.println(millis());
     feedbackDataServ = pRemoteCharacteristicBack->readValue(); //read feedback data from server
-    Serial.print("5 ");
-    Serial.println(millis());
-    Serial.println("read feedback data");
+    //Serial.print("5 ");
+    //Serial.println(millis());
+    //Serial.println("read feedback data");
     for (byte i = 0; i < 2; i++) {
       feedbackData[i] = (uint8_t)feedbackDataServ[i];
-      Serial.print(feedbackData[i]);
-      //Serial.print("a");
-      Serial.print("  ");
+      //Serial.print(feedbackData[i]);
+      ////Serial.print("a");
+      //Serial.print("  ");
     }
-    Serial.print("6 ");
-    Serial.println(millis());
+    //Serial.print("6 ");
+    //Serial.println(millis());
     renderScreen(feedbackData[0]);
-    Serial.print("7 ");
-    Serial.println(millis());
-    Serial.println("____");
+    //Serial.print("7 ");
+    //Serial.println(millis());
+    //Serial.println("____");
     //TODO:  Treat feedback data (screen, buzzer and so on)
 
-    /*Serial.println(millis());
-      Serial.println("----");//*/
+    /*//Serial.println(millis());
+      //Serial.println("----");//*/
   } else if (doScan) {
     BLEDevice::getScan()->start(5, false);  // this is just eample to start scan after disconnect, most likely there is better way to do it in arduino
   }
 } // End of loop
+
+/*
+ * 
+ *  @func displayHearts displays the heart according to the given ID
+ *  @param byte ID of the heart to display (1-6)
+ *  @return void
+ *  
+ */
 
 void displayHearts(byte number) { //displays a heart in the nth position
    //tft.setCursor(0,0);
@@ -425,6 +491,14 @@ void displayHearts(byte number) { //displays a heart in the nth position
    else
    {tft.drawRGBBitmap(2+(number-3)*24, 29, heart, 23, 23);}
 }
+
+/*
+ * 
+ * @func displayTimeRemaining displays the proper image for the time remaining
+ * @param byte state for the time remaining (0 for most - 3 for least)
+ * @return void
+ * 
+ */
 
 void displayTimeRemaining(byte timeLeftState) { //displays the time icon depending on the state
   switch (timeLeftState) {
@@ -445,22 +519,70 @@ void displayTimeRemaining(byte timeLeftState) { //displays the time icon dependi
   }
 }
 
+/*
+ * 
+ * @func goScreen displays the "go" screen (ID 3)
+ * @param null
+ * @return void
+ * 
+ */
+
 void goScreen() {
   tft.fillScreen(GREEN);
   tft.setCursor(40,50);
   tft.setTextColor(WHITE);
   tft.setTextSize(4);
   tft.print("GO");
+  tft.setCursor(2,80);
+  tft.setTextSize(1);
+  tft.print("Appuyez sur vert");
+  tft.setCursor(2,90);
+  tft.print("pour démarrer");
 }
+
+/*
+ * 
+ * @func menu1TextDisplay displays the text for the first menu
+ * @param null
+ * @return void
+ * 
+ */
 
 void menu1TextDisplay() {
   tft.setTextSize(2);
   tft.setCursor(25,48);
   tft.setTextColor(WHITE);
-  tft.print("Manuel");
-  tft.setCursor(25, 74);
   tft.print("Auto");
+  tft.setCursor(25, 74);
+  tft.print("Manuel");
 }
+
+/*
+ * 
+ * @func menuPauseDisplay displays the text for the pause menu
+ * @param null
+ *  @return void
+ * 
+ */
+
+void menuPauseDisplay() {
+  tft.setTextSize(2);
+  tft.setCursor(15,48);
+  tft.setTextColor(WHITE);
+  tft.print("Reprendre");
+  tft.setCursor(15, 74);
+  tft.print("Retour");
+  tft.setCursor(15,84);
+  tft.print("menu");
+}
+
+/*
+ * 
+ * @func renderScreen main decision function for screen rendering
+ * @param byte screen state ID
+ * @return void
+ * 
+ */
 
 void renderScreen(byte state) {//renders the screen depending on the state dictated by the handler
   if (previousState != state) {
@@ -537,6 +659,14 @@ void renderScreen(byte state) {//renders the screen depending on the state dicta
     case 27:
       displayHearts(1);
       displayTimeRemaining(3);
+    break;
+    case 28:
+      menuPauseDisplay();
+      tft.drawRGBBitmap(2, 50, arrow, 5, 9);
+    break;
+    case 29:
+      menuPauseDisplay();
+      tft.drawRGBBitmap(2, 76, arrow, 5, 9);
     break;
     default: //transmission error
     tft.setCursor(5,5);
