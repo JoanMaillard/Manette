@@ -8,9 +8,9 @@
 #define CHARACTERISTIC_BCK_UUID "861c92c2-4ef6-11e9-8647-d663bd873d93" //Unique, à changer pour chaque serveur. UUID de feedback
 byte fallbackProperties[2] = {0};
 
-BLECharacteristic *pCharacteristic;
-BLECharacteristic *pCharacteristicBack;
-BLEServer *pServer;
+BLECharacteristic *pCharacteristic; // Pointer to the controller input characteristic
+BLECharacteristic *pCharacteristicBack; // Pointer to the feedback data characteristic
+BLEServer *pServer; // Pointer to the server instance
 uint8_t defaultInValues[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 uint8_t defaultOutValues[2] = {0, 0};
 uint8_t ctrlInput[8] = {0};
@@ -18,11 +18,27 @@ HardwareSerial outSer(0);
 bool serBackChanged = false;
 
 class MyCallbacks : public BLEServerCallbacks {
+  /*
+   * 
+   * @func onConnect Triggers on device connection. Changes connection interval to the shortest possible according to GATT standards.
+   * @param BLEServer* target BLE server
+   * @param esp_ble_gatts_cb_param_t* newly connected device
+   * @return void
+   * 
+   */
     void onConnect(BLEServer* pServer, esp_ble_gatts_cb_param_t *param) {
       //Serial.println("Device connected");
       pServer->updateConnParams(param->connect.remote_bda,0x06, 0x07, 0, 10);
       //Serial.println("Successfully updated params");
     }
+
+    /*
+     * 
+     * @func onDisconnect Triggered on device disconnection. Does nothing.
+     * @param BLEServer* target BLE server
+     * @return void
+     * 
+     */
 
     void onDisconnect(BLEServer* pServer) {
       //Serial.println("Device disconnected");
@@ -30,6 +46,16 @@ class MyCallbacks : public BLEServerCallbacks {
 };
 
 class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
+
+  /*
+   * 
+   * @func onWrite Triggered when a remote client writes into a characteristic hosted by the server. 
+   * Outputs the received data to the writable buffer that gets transmitted upon request.
+   * @param BLECharacteristic* target BLE GATT characteristic
+   * @return void
+   * 
+   */
+   
     void onWrite(BLECharacteristic* pChar) {
       //uint8_t ctrlInput[8] = {0};
       uint8_t* pCharData;
@@ -46,6 +72,14 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
       
     }
 };
+
+/*
+ * 
+ * @func setup Default arduino setup function. Sets up the serial towards controllable obect (SPI). Initializes the BLE server.
+ * @param null
+ * @return void
+ * 
+ */
 
 void setup() {
   // put your setup code here, to run once:
@@ -83,6 +117,15 @@ void setup() {
   //Serial.println("Characteristic defined! Now you can read it in your phone!");
 }
 
+/*
+ * 
+ * @func loop Default arduino loop function. Takes care of checking the serial buffer for a data request in the form
+ * of feedback data and sends the response over. Then transmits the feedback data to the remote client.
+ * @param null
+ * @return void
+ * 
+ */
+ 
 void loop() {
   //Serial.println(millis());
   //Serial.println("loop");
