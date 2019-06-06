@@ -23,9 +23,18 @@ int calibValues[16] = {0};
 bool calibrating = false;
 bool calPressed = false;
 
+/*
+ * 
+ * @func setup Default arduino setup. Initializes EEPROM memory, enables calibration if never attempted,
+ * initializes i2c bus, initializes serial communication to client ESP32
+ * @param null
+ * @return void
+ * 
+ */
+
 void setup() {
   // put your setup code here, to run once:
-  if (EEPROM.read(32) == 255) { //if first launch, meaning no calibrated values are present in EEPROM)
+  if (EEPROM.read(32) == 255) { //if first launch, meaning no calibration values are present in EEPROM)
     for (byte i = 0; i < 16; i++) {
       if (i < 6) {
         calibValues[i] = 0;
@@ -75,6 +84,15 @@ void setup() {
   pinMode(8, OUTPUT); //initialize calibration mode LED pin
   pinMode(9, INPUT_PULLUP); //initialize calibration button pin
 }
+
+/*
+ * 
+ * @func loop Checks for calibration button and flag, then awaits data transfer requests and transmits
+ * input data to the client BLE transmitter
+ * @param null
+ * @return void
+ * 
+ */
 
 void loop() {
 
@@ -155,7 +173,15 @@ void loop() {
   }
 }
 
-byte * getButtons() { //interrogates the MCP23017 and handles the values it returns
+/*
+ * 
+ * @func getButtons Interrogates the MCP23017 and handles the values it returns
+ * @param null
+ * @return byte *
+ * 
+ */
+
+byte * getButtons() { 
   static byte vals[2];
   if (!i2c_start((I2C_7BITADDR << 1) | I2C_WRITE)) { // start transfer
     //Serial.println("I2C device busy");
@@ -178,7 +204,15 @@ byte * getButtons() { //interrogates the MCP23017 and handles the values it retu
   return vals;
 }
 
-void getValues() { //get all values from all axies
+/*
+ * 
+ * @func getValues get all values from all axies
+ * @param null
+ * @return void
+ * 
+ */
+
+void getValues() { 
   int joyRawValues[4] = {0};
   for (byte i = 0; i < 4; i++) { //gather raw joystick values
     joyRawValues[i] = analogRead(i + 2);
@@ -198,6 +232,14 @@ void getValues() { //get all values from all axies
   }
 }
 
+/*
+ * 
+ * @func calButCheck Detects calibration button presses
+ * @param null
+ * @return void
+ * 
+ */
+
 void calButCheck() { //calibration button detection
   if (!calPressed && !digitalRead(9)) {
     calPressed = true;
@@ -214,11 +256,20 @@ void calButCheck() { //calibration button detection
   }
 }
 
-byte * conc(byte val1, byte val2) { // data formatting procedure
+/*
+ * 
+ * @func conc Concatenates and formats calculated data data
+ * @param byte First byte of button data
+ * @param byte Second byte of button data
+ * @return byte *
+ * 
+ */
+
+byte * conc(byte val1, byte val2) { 
   static byte concatenated[DATA_SIZE];
   byte *buttonData = getButtons();
-  concatenated[0] = 255 - buttonData[0];
-  concatenated[1] = 255 - buttonData[1];
+  concatenated[0] = 255 - val1;
+  concatenated[1] = 255 - val2;
   for (byte i = 0; i < 6; i++) {
     concatenated[i + 2] = definitiveValues[i];
   }
