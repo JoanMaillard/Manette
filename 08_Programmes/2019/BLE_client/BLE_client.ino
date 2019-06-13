@@ -254,6 +254,7 @@ class MyClientCallback : public BLEClientCallbacks {
  */
   
     void onConnect(BLEClient* pclient) {
+      connected = true;
     }
 
 /*
