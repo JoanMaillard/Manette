@@ -13,9 +13,10 @@ BLECharacteristic *pCharacteristicBack; // Pointer to the feedback data characte
 BLEServer *pServer; // Pointer to the server instance
 uint8_t defaultInValues[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 uint8_t defaultOutValues[2] = {0, 0};
-uint8_t ctrlInput[8] = {0};
+uint8_t ctrlInput[9] = {0};
 HardwareSerial outSer(0);
 bool serBackChanged = false;
+bool ctrlConnected = false;
 
 class MyCallbacks : public BLEServerCallbacks {
   /*
@@ -29,6 +30,7 @@ class MyCallbacks : public BLEServerCallbacks {
     void onConnect(BLEServer* pServer, esp_ble_gatts_cb_param_t *param) {
       //Serial.println("Device connected");
       pServer->updateConnParams(param->connect.remote_bda,0x06, 0x07, 0, 10);
+      ctrlConnected = true;
       //Serial.println("Successfully updated params");
     }
 
@@ -42,6 +44,7 @@ class MyCallbacks : public BLEServerCallbacks {
 
     void onDisconnect(BLEServer* pServer) {
       //Serial.println("Device disconnected");
+      ctrlConnected = false;
     }
 };
 
@@ -67,6 +70,12 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
         //Serial.print(ctrlInput[i], BIN);
         //Serial.print("   ");
       }
+     if (ctrlConnected) {
+      ctrlInput[8] = 255;
+     }
+     else {
+      ctrlInput[8] = 0;
+     }
       //outSer.write(ctrlInput, 8);
       //Serial.println("");
       
@@ -133,7 +142,7 @@ void loop() {
   //insert code for follow-up feedback
   if (outSer.available()>=2){
   outSer.readBytes(fallbackProperties, 2);
-  outSer.write(ctrlInput,8);
+  outSer.write(ctrlInput,9);
   serBackChanged = true;
   }
   /*for (int i = 0; i < 2; i++) {
