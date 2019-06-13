@@ -55,18 +55,11 @@ class MyCtrlCharCallbacksCtrl1 : public BLECharacteristicCallbacks {
    */
    
     void onWrite(BLECharacteristic* pChar) {
-      //uint8_t ctrlInput[8] = {0};
       uint8_t* pCharData;
-      //Serial.println(millis());
       pCharData = pChar->getData();
-      //Serial.println(millis());
       for (byte i = 0; i < 2; i++) {
         ctrlInput[i] = pCharData[i];
-        //Serial.print(ctrlInput[i], BIN);
-        //Serial.print("   ");
       }
-      //outSer.write(ctrlInput, 8);
-      //Serial.println("");
       
     }
 };
@@ -83,19 +76,11 @@ class MyCtrlCharCallbacksCtrl2 : public BLECharacteristicCallbacks {
    */
    
     void onWrite(BLECharacteristic* pChar) {
-      //uint8_t ctrlInput[8] = {0};
       uint8_t* pCharData;
-      //Serial.println(millis());
       pCharData = pChar->getData();
-      //Serial.println(millis());
       for (byte i = 0; i < 2; i++) {
         ctrlInput[i+2] = pCharData[i];
-        //Serial.print(ctrlInput[i], BIN);
-        //Serial.print("   ");
       }
-      //outSer.write(ctrlInput, 8);
-      //Serial.println("");
-      
     }
 };
 
@@ -143,15 +128,14 @@ void setup() {
 
 /*
  * 
- * @func loop Default arduino loop function. Takes care of checking the serial buffer for a data request in the form
- * of feedback data and sends the response over. Then transmits the feedback data to the remote client.
+ * @func loop Default arduino loop function. Transmits controller data to Arduino Leonardo via serial.
  * @param null
  * @return void
  * 
  */
  
 void loop() {
-  if (outSer.read()==255){
+  if (outSer.read()==255) {
   outSer.write(ctrlInput,4);
   }
 }

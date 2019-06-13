@@ -62,7 +62,6 @@ class MyClientCallback : public BLEClientCallbacks {
 
     void onDisconnect(BLEClient* pclient) {
       connected = false;
-      //Serial.println("onDisconnect");
     }
 };
 
@@ -98,7 +97,6 @@ bool connectToServer() {
     pClient->disconnect();
     return false;
   }
-  //Serial.println(" - Found our characteristic");
 
   // Read the value of the characteristic.
   if (pRemoteCharacteristic->canRead()) {
@@ -107,9 +105,6 @@ bool connectToServer() {
 
   if (pRemoteCharacteristic->canNotify())
     pRemoteCharacteristic->registerForNotify(notifyCallback);
-
-  /*if (pRemoteCharacteristicBack->canNotify())
-    pRemoteCharacteristicBack->registerForNotify(notifyCallback);*/
 
   connected = true;
   return true;
