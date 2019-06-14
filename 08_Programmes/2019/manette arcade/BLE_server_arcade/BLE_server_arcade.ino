@@ -13,7 +13,8 @@ BLEServer *pServer; // Pointer to the server instance
 uint8_t defaultInValues[2] = {0, 0};
 uint8_t ctrlInput[4] = {0};
 HardwareSerial outSer(0);
-bool serBackChanged = false;
+unsigned long lastChangeCtrl1 = 0;
+unsigned long lastChangeCtrl2 = 0;
 
 class MyCallbacks : public BLEServerCallbacks {
   /*
@@ -60,7 +61,8 @@ class MyCtrlCharCallbacksCtrl1 : public BLECharacteristicCallbacks {
       for (byte i = 0; i < 2; i++) {
         ctrlInput[i] = pCharData[i];
       }
-      
+      bitSet(ctrlInput[1],7);
+      lastChangeCtrl1 = millis();
     }
 };
 
@@ -81,6 +83,8 @@ class MyCtrlCharCallbacksCtrl2 : public BLECharacteristicCallbacks {
       for (byte i = 0; i < 2; i++) {
         ctrlInput[i+2] = pCharData[i];
       }
+      bitSet(ctrlInput[3],7);
+      lastChangeCtrl2 = millis();
     }
 };
 
@@ -137,5 +141,18 @@ void setup() {
 void loop() {
   if (outSer.read()==255) {
   outSer.write(ctrlInput,4);
+  }
+  if (lastChangeCtrl1 != 0) {
+    if (lastChangeCtrl1 + 200 < millis()) {
+      ctrlInput[0] = 0;
+      ctrlInput[1] = 0;
+    }
+  }
+  if (lastChangeCtrl2 != 0) {
+    if (lastChangeCtrl2 + 200 < millis()) {
+      ctrlInput[2] = 0;
+      ctrlInput[3] = 0;
+    }
+    
   }
 }
