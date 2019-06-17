@@ -3,20 +3,18 @@
 #include <BLEServer.h>
 #include <HardwareSerial.h>
 
-#define SERVICE_UUID        "b9d4de40-44be-11e9-b210-d663bd873d93" //Unique, à changer pour chaque serveur. UUID de service
-#define CHARACTERISTIC_UUID "b9d4e282-44be-11e9-b210-d663bd873d93" //Unique, à changer pour chaque serveur. UUID de commande
-#define CHARACTERISTIC_BCK_UUID "861c92c2-4ef6-11e9-8647-d663bd873d93" //Unique, à changer pour chaque serveur. UUID de feedback
-byte fallbackProperties[2] = {0};
+#define SERVICE_UUID        "b9d4de40-44be-11e9-b210-d663bd873d93"              //Unique, à changer pour chaque serveur. UUID de service A CHANGER
+#define CHARACTERISTIC1_UUID "b9d4e282-44be-11e9-b210-d663bd873d93" //Unique, à changer pour chaque serveur. UUID de commande A CHANGER
+#define CHARACTERISTIC2_UUID "861c92c2-4ef6-11e9-8647-d663bd873d93"   //Unique, à changer pour chaque serveur. UUID de feedback A CHANGER
 
-BLECharacteristic *pCharacteristic; // Pointer to the controller input characteristic
-BLECharacteristic *pCharacteristicBack; // Pointer to the feedback data characteristic
+BLECharacteristic *pCharacteristic1; // Pointer to the controller input characteristic
+BLECharacteristic *pCharacteristic2;
 BLEServer *pServer; // Pointer to the server instance
-uint8_t defaultInValues[8] = {0, 0, 0, 0, 0, 0, 0, 0};
-uint8_t defaultOutValues[2] = {0, 0};
-uint8_t ctrlInput[9] = {0};
+uint8_t defaultInValues[2] = {0, 0};
+uint8_t ctrlInput[4] = {0};
 HardwareSerial outSer(0);
-bool serBackChanged = false;
-bool ctrlConnected = false;
+unsigned long lastChangeCtrl1 = 0;
+unsigned long lastChangeCtrl2 = 0;
 
 class MyCallbacks : public BLEServerCallbacks {
   /*
@@ -30,7 +28,6 @@ class MyCallbacks : public BLEServerCallbacks {
     void onConnect(BLEServer* pServer, esp_ble_gatts_cb_param_t *param) {
       //Serial.println("Device connected");
       pServer->updateConnParams(param->connect.remote_bda,0x06, 0x07, 0, 10);
-      ctrlConnected = true;
       //Serial.println("Successfully updated params");
     }
 
@@ -44,11 +41,10 @@ class MyCallbacks : public BLEServerCallbacks {
 
     void onDisconnect(BLEServer* pServer) {
       //Serial.println("Device disconnected");
-      ctrlConnected = false;
     }
 };
 
-class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
+class MyCtrlCharCallbacksCtrl1 : public BLECharacteristicCallbacks {
 
   /*
    * 
@@ -60,25 +56,35 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
    */
    
     void onWrite(BLECharacteristic* pChar) {
-      //uint8_t ctrlInput[8] = {0};
       uint8_t* pCharData;
-      //Serial.println(millis());
       pCharData = pChar->getData();
-      //Serial.println(millis());
-      for (int i = 0; i < 8; i++) {
+      for (byte i = 0; i < 2; i++) {
         ctrlInput[i] = pCharData[i];
-        //Serial.print(ctrlInput[i], BIN);
-        //Serial.print("   ");
       }
-     if (ctrlConnected) {
-      ctrlInput[8] = 255;
-     }
-     else {
-      ctrlInput[8] = 0;
-     }
-      //outSer.write(ctrlInput, 8);
-      //Serial.println("");
-      
+      bitSet(ctrlInput[1],7);
+      lastChangeCtrl1 = millis();
+    }
+};
+
+class MyCtrlCharCallbacksCtrl2 : public BLECharacteristicCallbacks {
+
+  /*
+   * 
+   * @func onWrite Triggered when a remote client writes into a characteristic hosted by the server. 
+   * Outputs the received data to the writable buffer that gets transmitted upon request.
+   * @param BLECharacteristic* target BLE GATT characteristic
+   * @return void
+   * 
+   */
+   
+    void onWrite(BLECharacteristic* pChar) {
+      uint8_t* pCharData;
+      pCharData = pChar->getData();
+      for (byte i = 0; i < 2; i++) {
+        ctrlInput[i+2] = pCharData[i];
+      }
+      bitSet(ctrlInput[3],7);
+      lastChangeCtrl2 = millis();
     }
 };
 
@@ -93,28 +99,26 @@ class MyCtrlCharCallbacks : public BLECharacteristicCallbacks {
 void setup() {
   // put your setup code here, to run once:
   outSer.begin(115200, SERIAL_8N1);
-  //outSer.setRxBufferSize(2);
-  //Serial.begin(115200);
-  //Serial.println("Starting BLE work!");
 
   BLEDevice::init("ESP1");
   pServer = BLEDevice::createServer();
   pServer->setCallbacks(new MyCallbacks());
   BLEService *pService = pServer->createService(SERVICE_UUID);
-  pCharacteristic = pService->createCharacteristic(
-                      CHARACTERISTIC_UUID,
+  pCharacteristic1 = pService->createCharacteristic(
+                      CHARACTERISTIC1_UUID,
                       BLECharacteristic::PROPERTY_READ |
                       BLECharacteristic::PROPERTY_WRITE
                     );
-  pCharacteristic->setCallbacks(new MyCtrlCharCallbacks);
-  pCharacteristic->setValue(defaultInValues, 8);
-  pCharacteristicBack = pService->createCharacteristic(
-                          CHARACTERISTIC_BCK_UUID,
+  pCharacteristic1->setCallbacks(new MyCtrlCharCallbacksCtrl1);
+  pCharacteristic1->setValue(defaultInValues, 2);
+  pCharacteristic2 = pService->createCharacteristic(
+                          CHARACTERISTIC2_UUID,
                           BLECharacteristic::PROPERTY_READ |
                           BLECharacteristic::PROPERTY_WRITE
                         );
-
-  pCharacteristicBack->setValue(defaultOutValues, 2);
+  
+  pCharacteristic2->setCallbacks(new MyCtrlCharCallbacksCtrl2);
+  pCharacteristic2->setValue(defaultInValues, 2);
   pService->start();
   // BLEAdvertising *pAdvertising = pServer->getAdvertising();  // this still is working for backward compatibility
   BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
@@ -128,28 +132,27 @@ void setup() {
 
 /*
  * 
- * @func loop Default arduino loop function. Takes care of checking the serial buffer for a data request in the form
- * of feedback data and sends the response over. Then transmits the feedback data to the remote client.
+ * @func loop Default arduino loop function. Transmits controller data to Arduino Leonardo via serial.
  * @param null
  * @return void
  * 
  */
  
 void loop() {
-  //Serial.println(millis());
-  //Serial.println("loop");
-  //while (outSer.available() < 2) {}
-  //insert code for follow-up feedback
-  if (outSer.available()>=2){
-  outSer.readBytes(fallbackProperties, 2);
-  outSer.write(ctrlInput,9);
-  serBackChanged = true;
+  if (outSer.read()==255) {
+  outSer.write(ctrlInput,4);
   }
-  /*for (int i = 0; i < 2; i++) {
-    //Serial.println(fallbackProperties[i]);
-  }//*/
-  if (serBackChanged) {
-  pCharacteristicBack->setValue(fallbackProperties, 2);
-  pCharacteristicBack->notify(0);
+  if (lastChangeCtrl1 != 0) {
+    if (lastChangeCtrl1 + 200 < millis()) {
+      ctrlInput[0] = 0;
+      ctrlInput[1] = 0;
+    }
+  }
+  if (lastChangeCtrl2 != 0) {
+    if (lastChangeCtrl2 + 200 < millis()) {
+      ctrlInput[2] = 0;
+      ctrlInput[3] = 0;
+    }
+    
   }
 }
