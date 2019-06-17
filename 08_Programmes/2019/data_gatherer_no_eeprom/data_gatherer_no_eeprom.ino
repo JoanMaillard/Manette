@@ -24,13 +24,13 @@ bool calibrating = false;
 bool calPressed = false;
 
 /*
- * 
- * @func setup Default arduino setup. Initializes EEPROM memory, enables calibration if never attempted,
- * initializes i2c bus, initializes serial communication to client ESP32
- * @param null
- * @return void
- * 
- */
+
+   @func setup Default arduino setup. Initializes EEPROM memory, enables calibration if never attempted,
+   initializes i2c bus, initializes serial communication to client ESP32
+   @param null
+   @return void
+
+*/
 
 void setup() {
   // put your setup code here, to run once:
@@ -86,102 +86,102 @@ void setup() {
 }
 
 /*
- * 
- * @func loop Checks for calibration button and flag, then awaits data transfer requests and transmits
- * input data to the client BLE transmitter
- * @param null
- * @return void
- * 
- */
+
+   @func loop Checks for calibration button and flag, then awaits data transfer requests and transmits
+   input data to the client BLE transmitter
+   @param null
+   @return void
+
+*/
 
 void loop() {
 
   byte *buttonData = getButtons();
   calButCheck(); //checks calibration button
 
- /* if (calibrating) { //calibration procedure if enabled
-    //Serial.println("Calibrating...");
-    digitalWrite(8, HIGH); //enable calibration LED
-    int temp[12] = {0};
-    for (byte i = 0; i < 16; i++) { //puts default values everywhere for calibration purposes
-      if (i < 6) {
-        calibValues[i] = 0;
-        temp[i] = 1023;
-      }
+  /* if (calibrating) { //calibration procedure if enabled
+     //Serial.println("Calibrating...");
+     digitalWrite(8, HIGH); //enable calibration LED
+     int temp[12] = {0};
+     for (byte i = 0; i < 16; i++) { //puts default values everywhere for calibration purposes
+       if (i < 6) {
+         calibValues[i] = 0;
+         temp[i] = 1023;
+       }
 
-      else if (i < 12) {
-        calibValues[i] = 1023;
-        temp[i] = 0;
-      }
-      else {
-        calibValues[i] = 512;
-      }
-    }
-    int tempCalibValues[6] = {0};
-    while (calibrating) {
-      byte *buttonData = getButtons();
-      calButCheck(); //check calibration button for calibration end
-      for (byte i = 0; i < 6; i++) {
-        tempCalibValues[i] = analogRead(i); //gather raw data for calibration
-      }
-      for (byte i = 0; i < 6; i++) { //minimums
-        if (tempCalibValues[i] < temp[i]) {
-          temp[i] = tempCalibValues[i];
-        }
-      }
-      for (byte i = 0; i < 6; i++) { //maximums
-        if (tempCalibValues[i] > temp[i + 6]) {
-          temp[i + 6] = tempCalibValues[i];
-        }
-      }
-    }
-    //end of calibration procedure
-    for (byte i = 0; i < 12; i++) { //puts calibrated values into current memory
-      if (i < 6) {
-        calibValues[i] = temp[i];
-      }
-      else {
-        calibValues[i] = temp[i] - 2;
-      }
-    }
-    for (byte i = 2; i < 6; i++) { //middle values on joysticks for centering (per-axis-side calculation)
-      calibValues[i + 10] = analogRead(i);
-    }
+       else if (i < 12) {
+         calibValues[i] = 1023;
+         temp[i] = 0;
+       }
+       else {
+         calibValues[i] = 512;
+       }
+     }
+     int tempCalibValues[6] = {0};
+     while (calibrating) {
+       byte *buttonData = getButtons();
+       calButCheck(); //check calibration button for calibration end
+       for (byte i = 0; i < 6; i++) {
+         tempCalibValues[i] = analogRead(i); //gather raw data for calibration
+       }
+       for (byte i = 0; i < 6; i++) { //minimums
+         if (tempCalibValues[i] < temp[i]) {
+           temp[i] = tempCalibValues[i];
+         }
+       }
+       for (byte i = 0; i < 6; i++) { //maximums
+         if (tempCalibValues[i] > temp[i + 6]) {
+           temp[i + 6] = tempCalibValues[i];
+         }
+       }
+     }
+     //end of calibration procedure
+     for (byte i = 0; i < 12; i++) { //puts calibrated values into current memory
+       if (i < 6) {
+         calibValues[i] = temp[i];
+       }
+       else {
+         calibValues[i] = temp[i] - 2;
+       }
+     }
+     for (byte i = 2; i < 6; i++) { //middle values on joysticks for centering (per-axis-side calculation)
+       calibValues[i + 10] = analogRead(i);
+     }
 
-    for (byte i = 0; i < 16; i++) { //puts calibrated values into permanent memory (EEPROM)
-      if (i < 6 || i >= 12) {
-        EEPROM.update(2 * i, highByte(calibValues[i]));
-        EEPROM.update(2 * i + 1, lowByte(calibValues[i]));
-      }
-      else {
-        int tempStorable = temp[i] - 2;
-        EEPROM.update(2 * i, highByte(tempStorable));
-        EEPROM.update(2 * i + 1, lowByte(tempStorable));
-      }
-    }
-    EEPROM.update(32, 0);
-  } //end of calibration procedure __________________________________________________________________________
+     for (byte i = 0; i < 16; i++) { //puts calibrated values into permanent memory (EEPROM)
+       if (i < 6 || i >= 12) {
+         EEPROM.update(2 * i, highByte(calibValues[i]));
+         EEPROM.update(2 * i + 1, lowByte(calibValues[i]));
+       }
+       else {
+         int tempStorable = temp[i] - 2;
+         EEPROM.update(2 * i, highByte(tempStorable));
+         EEPROM.update(2 * i + 1, lowByte(tempStorable));
+       }
+     }
+     EEPROM.update(32, 0);
+    } //end of calibration procedure __________________________________________________________________________
 
-  else {//*/ //normal procedure if calibration procedure is disabled
-    digitalWrite(8, LOW); //shut down calibration LED
+    else {//*/ //normal procedure if calibration procedure is disabled
+  digitalWrite(8, LOW); //shut down calibration LED
 
-    if (Serial.read() == 255) { //if the BLE transmitter has sent a data transfer request, gather values and send them away
-      getValues();
-      byte *mainData = conc(buttonData[0], buttonData[1]);
-      Serial.write(mainData, 8);
-    }
+  if (Serial.read() == 255) { //if the BLE transmitter has sent a data transfer request, gather values and send them away
+    getValues();
+    byte *mainData = conc(buttonData[0], buttonData[1]);
+    Serial.write(mainData, 8);
   }
 }
 
-/*
- * 
- * @func getButtons Interrogates the MCP23017 and handles the values it returns
- * @param null
- * @return byte *
- * 
- */
 
-byte * getButtons() { 
+/*
+
+   @func getButtons Interrogates the MCP23017 and handles the values it returns
+   @param null
+   @return byte
+
+*/
+
+byte * getButtons() {
   static byte vals[2];
   if (!i2c_start((I2C_7BITADDR << 1) | I2C_WRITE)) { // start transfer
     //Serial.println("I2C device busy");
@@ -205,14 +205,14 @@ byte * getButtons() {
 }
 
 /*
- * 
- * @func getValues get all values from all axies
- * @param null
- * @return void
- * 
- */
 
-void getValues() { 
+   @func getValues get all values from all axies
+   @param null
+   @return void
+
+*/
+
+void getValues() {
   int joyRawValues[4] = {0};
   for (byte i = 0; i < 4; i++) { //gather raw joystick values
     joyRawValues[i] = analogRead(i + 2);
@@ -233,12 +233,12 @@ void getValues() {
 }
 
 /*
- * 
- * @func calButCheck Detects calibration button presses
- * @param null
- * @return void
- * 
- */
+
+   @func calButCheck Detects calibration button presses
+   @param null
+   @return void
+
+*/
 
 void calButCheck() { //calibration button detection
   if (!calPressed && !digitalRead(9)) {
@@ -257,15 +257,15 @@ void calButCheck() { //calibration button detection
 }
 
 /*
- * 
- * @func conc Concatenates and formats calculated data data
- * @param byte First byte of button data
- * @param byte Second byte of button data
- * @return byte *
- * 
- */
 
-byte * conc(byte val1, byte val2) { 
+   @func conc Concatenates and formats calculated data data
+   @param byte First byte of button data
+   @param byte Second byte of button data
+   @return byte
+
+*/
+
+byte * conc(byte val1, byte val2) {
   static byte concatenated[DATA_SIZE];
   byte *buttonData = getButtons();
   concatenated[0] = 255 - val1;
