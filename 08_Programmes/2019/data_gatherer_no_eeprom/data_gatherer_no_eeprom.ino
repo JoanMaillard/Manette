@@ -22,6 +22,7 @@ byte definitiveValues[6] = {0}; //1: trig 1; 2: trig 2; 3-6: joysticks
 int calibValues[16] = {0};
 bool calibrating = false;
 bool calPressed = false;
+byte testData[8] = {12,13,14,15,16,17,18,19};
 
 /*
 
@@ -166,8 +167,8 @@ void loop() {
   digitalWrite(8, LOW); //shut down calibration LED
 
   if (Serial.read() == 255) { //if the BLE transmitter has sent a data transfer request, gather values and send them away
-    getValues();
-    byte *mainData = conc(buttonData[0], buttonData[1]);
+    //getValues();
+    //byte *mainData = conc(buttonData[0], buttonData[1]);
     Serial.write(mainData, 8);
   }
 }
