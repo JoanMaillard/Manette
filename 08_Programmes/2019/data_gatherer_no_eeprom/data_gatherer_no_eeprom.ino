@@ -97,7 +97,6 @@ void setup() {
 
 void loop() {
 
-  byte *buttonData = getButtons();
   calButCheck(); //checks calibration button
 
   /* if (calibrating) { //calibration procedure if enabled
