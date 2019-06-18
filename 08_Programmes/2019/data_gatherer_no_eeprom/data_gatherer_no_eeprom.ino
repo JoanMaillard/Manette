@@ -1,3 +1,4 @@
+
 #define SDA_PORT PORTD
 #define SDA_PIN 6 // = A4
 #define SCL_PORT PORTD
@@ -165,11 +166,11 @@ void loop() {
     else {//*/ //normal procedure if calibration procedure is disabled
   digitalWrite(8, LOW); //shut down calibration LED
 
-  if (Serial.read() == 255) { //if the BLE transmitter has sent a data transfer request, gather values and send them away
+  //if (Serial.read() == 255) { //if the BLE transmitter has sent a data transfer request, gather values and send them away
     //getValues();
     //byte *mainData = conc(buttonData[0], buttonData[1]);
-    Serial.write(mainData, 8);
-  }
+    Serial.write(testData, 8);
+//  }
 }
 
 

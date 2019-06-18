@@ -1,7 +1,7 @@
 #define SDA_PORT PORTD
-#define SDA_PIN 6 // = A4
+#define SDA_PIN 5 // = A4
 #define SCL_PORT PORTD
-#define SCL_PIN 7 // = A5
+#define SCL_PIN 6 // = A5
 #include <SoftI2CMaster.h>
 #include <EEPROM.h>
 
@@ -82,7 +82,7 @@ void setup() {
   pinMode(pinaxis5, INPUT);
   pinMode(pinaxis6, INPUT);
   pinMode(8, OUTPUT); //initialize calibration mode LED pin
-  pinMode(9, INPUT_PULLUP); //initialize calibration button pin
+  pinMode(4, INPUT_PULLUP); //initialize calibration button pin
 }
 
 /*
