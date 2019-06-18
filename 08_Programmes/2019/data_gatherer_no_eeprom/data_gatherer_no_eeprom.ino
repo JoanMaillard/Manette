@@ -36,7 +36,7 @@ byte testData[8] = {12,13,14,15,16,17,18,19};
 
 void setup() {
   // put your setup code here, to run once:
-  if (EEPROM.read(32) == 255) { //if first launch, meaning no calibration values are present in EEPROM)
+  if (EEPROM.read(32) == 255 || EEPROM.read(32) == 0) { //if first launch, meaning no calibration values are present in EEPROM)
     for (byte i = 0; i < 16; i++) {
       if (i < 6) {
         calibValues[i] = 0;
