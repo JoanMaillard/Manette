@@ -241,7 +241,7 @@ void getValues() {
  */
 
 void calButCheck() { //calibration button detection
-  if (!calPressed && !digitalRead(9)) {
+  if (!calPressed && !digitalRead(4)) {
     calPressed = true;
     if (calibrating)
     {
@@ -251,7 +251,7 @@ void calButCheck() { //calibration button detection
       calibrating = true;
     }
   }
-  else if (digitalRead(9)) {
+  else if (digitalRead(4)) {
     calPressed = false;
   }
 }
