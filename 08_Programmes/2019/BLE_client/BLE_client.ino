@@ -20,11 +20,11 @@
 #define YELLOW          0xFFE0
 #define WHITE           0xFFFF
 
-#define MOSI_PIN 11
-#define SCLK_PIN 9
-#define RST_PIN 12
-#define DC_PIN 13
-#define CS_PIN 14
+#define MOSI_PIN 13
+#define SCLK_PIN 14
+#define RST_PIN 26
+#define DC_PIN 27
+#define CS_PIN 25
 
 Adafruit_SSD1351 tft = Adafruit_SSD1351(128, 128, CS_PIN, DC_PIN, MOSI_PIN, SCLK_PIN, RST_PIN);
 static const int spiClk = 15000000;
