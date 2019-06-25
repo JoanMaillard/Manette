@@ -1,3 +1,7 @@
+MAILLARD Joan, KAHRIMANOVIC Adel
+25.06.2019
+P1704 Manette
+
 Rapport de choix de protocole et de module Bluetooth:
 
 Au choix: 

@@ -271,12 +271,26 @@ Jour 49 - 17.06.2019
 
 Jour 50 - 18.06.2019
 
-
+- Mise en place et tests prolongés (voir doc. 04.Etude/2019/tests_prolongés_manette)
 
 Jour 51 - 20.06.2019
 
-
+- Bis
 
 Jour 52 - 21.06.2019
 
+- Réception impressions 3D
+- Modification et adaptation des codes pour la manette breadboard
 
+SEMAINE 15 
+
+Jour 53 - 24.06.2019
+
+- Montage et préparation des PCB finaux
+- Documentation
+
+Jour 54 - 25.06.2019
+
+- Entretien doc
+
+- Réfections sur les gâchettes
