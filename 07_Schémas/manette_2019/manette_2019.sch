@@ -44,17 +44,17 @@ F 3 "" H 6650 525 50  0001 C CNN
 	1    6550 575 
 	1    0    0    -1  
 $EndComp
-Text GLabel 8550 1900 0    50   Input ~ 0
+Text GLabel 10750 1300 2    50   Input ~ 0
 MISO
-Text GLabel 8550 1800 0    50   Output ~ 0
+Text GLabel 10750 1400 2    50   Output ~ 0
 SCK
-Text GLabel 8550 2000 0    50   Output ~ 0
+Text GLabel 10750 800  2    50   Output ~ 0
 MOSI
-Text GLabel 8550 1600 0    50   Output ~ 0
+Text GLabel 10750 1800 2    50   Output ~ 0
 RESET
-Text GLabel 6150 5375 2    50   Output ~ 0
+Text GLabel 6925 5375 2    50   Output ~ 0
 SDA
-Text GLabel 6150 5475 2    50   Output ~ 0
+Text GLabel 7500 5475 2    50   Output ~ 0
 SCL
 Text GLabel 6100 2525 0    50   Input ~ 0
 SCL
@@ -236,23 +236,23 @@ Text Label 1725 3150 0    197  ~ 0
 Inputs
 Text GLabel 9050 3925 0    50   Input ~ 0
 DC
-Text GLabel 8550 1700 0    50   Output ~ 0
+Text GLabel 10750 1500 2    50   Output ~ 0
 DC
 Text GLabel 9050 4125 0    50   Input ~ 0
 OLEDCS
-Text GLabel 8550 1500 0    50   Output ~ 0
+Text GLabel 10750 1900 2    50   Output ~ 0
 OLEDCS
 Text GLabel 5550 2775 1    50   Input ~ 0
 +5V
-Text GLabel 8550 1400 0    50   Input ~ 0
+Text GLabel 10750 2000 2    50   Input ~ 0
 SDCS
 Text GLabel 9050 4225 0    50   Input ~ 0
 SDCS
 Text Label 9925 4100 0    197  ~ 0
 Outputs
-Text GLabel 10750 1100 2    50   Input ~ 0
+Text GLabel 10750 1700 2    50   Input ~ 0
 RX_ESP32
-Text GLabel 10750 1000 2    50   Input ~ 0
+Text GLabel 10750 1600 2    50   Input ~ 0
 TX_ESP32
 Text GLabel 10600 2975 2    50   Input ~ 0
 +3.3V
@@ -276,9 +276,9 @@ Text Label 4800 725  0    197  ~ 0
 Command
 Wire Wire Line
 	950  6025 850  6025
-Text GLabel 10750 1300 2    50   Output ~ 0
+Text GLabel 8550 1500 0    50   Output ~ 0
 Buzzer
-Text GLabel 10750 1200 2    50   Output ~ 0
+Text GLabel 8550 1600 0    50   Output ~ 0
 Connected
 Text GLabel 1325 1100 2    50   Output ~ 0
 +5V
@@ -510,14 +510,14 @@ NoConn ~ 8550 1000
 NoConn ~ 8550 900 
 NoConn ~ 8550 800 
 NoConn ~ 10750 2100
-NoConn ~ 10750 2000
-NoConn ~ 10750 1900
-NoConn ~ 10750 1800
-NoConn ~ 10750 1700
-NoConn ~ 10750 1600
-NoConn ~ 10750 1500
+NoConn ~ 8550 1800
+NoConn ~ 8550 1900
+NoConn ~ 8550 1700
+NoConn ~ 10750 1200
+NoConn ~ 10750 1100
+NoConn ~ 8550 2000
 NoConn ~ 10750 900 
-NoConn ~ 10750 800 
+NoConn ~ 10750 1000
 NoConn ~ 1250 3750
 NoConn ~ 1450 5150
 NoConn ~ 1600 7425
@@ -964,7 +964,7 @@ NoConn ~ 9600 5950
 NoConn ~ 8800 5550
 NoConn ~ 9600 5550
 Connection ~ 10075 5000
-Text GLabel 10750 1400 2    50   Output ~ 0
+Text GLabel 8550 1400 0    50   Output ~ 0
 Rumble
 Wire Wire Line
 	800  1825 1275 1825
@@ -1107,4 +1107,58 @@ Wire Wire Line
 Connection ~ 5550 2825
 Wire Wire Line
 	5550 2825 5550 2775
+$Comp
+L power:+5V #PWR?
+U 1 1 5D125381
+P 7025 4925
+F 0 "#PWR?" H 7025 4775 50  0001 C CNN
+F 1 "+5V" H 7040 5098 50  0000 C CNN
+F 2 "" H 7025 4925 50  0001 C CNN
+F 3 "" H 7025 4925 50  0001 C CNN
+	1    7025 4925
+	1    0    0    -1  
+$EndComp
+$Comp
+L manette_2019-rescue:R-Device R2
+U 1 1 5D1284BD
+P 7425 5325
+F 0 "R2" V 7218 5325 50  0000 C CNN
+F 1 "10k" V 7309 5325 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 7355 5325 50  0001 C CNN
+F 3 "~" H 7425 5325 50  0001 C CNN
+	1    7425 5325
+	1    0    0    -1  
+$EndComp
+$Comp
+L manette_2019-rescue:R-Device R1
+U 1 1 5D12ADBC
+P 6800 5225
+F 0 "R1" V 6593 5225 50  0000 C CNN
+F 1 "10k" V 6684 5225 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P15.24mm_Horizontal" V 6730 5225 50  0001 C CNN
+F 3 "~" H 6800 5225 50  0001 C CNN
+	1    6800 5225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 5075 6800 5025
+Wire Wire Line
+	6800 5025 7025 5025
+Wire Wire Line
+	7025 5025 7025 4925
+Wire Wire Line
+	7025 5025 7425 5025
+Wire Wire Line
+	7425 5025 7425 5175
+Connection ~ 7025 5025
+Wire Wire Line
+	7425 5475 7500 5475
+Wire Wire Line
+	6925 5375 6800 5375
+Wire Wire Line
+	7425 5475 6150 5475
+Connection ~ 7425 5475
+Wire Wire Line
+	6150 5375 6800 5375
+Connection ~ 6800 5375
 $EndSCHEMATC
