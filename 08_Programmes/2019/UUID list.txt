@@ -14,3 +14,8 @@ Intelligence centrale chevalier 1
 	Service f7332b3c-9358-11e9-bc42-526af7764f64
 	Char commande f7332dbc-9358-11e9-bc42-526af7764f64
 	Char feedback f73330b4-9358-11e9-bc42-526af7764f64
+
+Serveur manettes arcade
+	Service d8ecf00e-997a-11e9-a2a3-2a2ae2dbcce4
+	Char manette 1 d8ecf478-997a-11e9-a2a3-2a2ae2dbcce4
+	Char manette 2 d8ecf64e-997a-11e9-a2a3-2a2ae2dbcce4
