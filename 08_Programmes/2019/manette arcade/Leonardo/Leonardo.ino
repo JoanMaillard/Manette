@@ -6,7 +6,7 @@ char left_arrow = KEY_LEFT_ARROW;
 char right_arrow = KEY_RIGHT_ARROW;
 char enter = KEY_RETURN;
 char backspace = KEY_BACKSPACE;
-
+unsigned long timeoutTimeTag;
 byte playerBind[2] = {0, 0};
 
 static byte oldctrl1[2] = {0b00000000, 0b00000000};
@@ -35,7 +35,7 @@ static char controlMap[][2] = {
 */
 
 void setup() {
-  Serial.begin(115200);
+  Serial1.begin(115200);
   Keyboard.begin();
 }
 
@@ -50,10 +50,15 @@ void setup() {
 void loop() {
   byte ctrl1[] = {0, 0};
   byte ctrl2[] = {0, 0};
-  Serial.write(255);
-  while (Serial.available() < 4) {}
-  Serial.readBytes(ctrl1, 2);
-  Serial.readBytes(ctrl2, 2);
+  Serial1.write(255);
+  timeoutTimeTag = millis();
+  while (Serial1.available() < 4) {if (millis() > timeoutTimeTag + 300) {
+      timeoutTimeTag = millis();
+      Serial1.write(255);
+    }
+  }
+  Serial1.readBytes(ctrl1, 2);
+  Serial1.readBytes(ctrl2, 2);
   bindControllers(ctrl1, ctrl2);
   if (playerBind[0] == 1 || playerBind[1] == 1) {
     pressControl(ctrl1, ctrl2);

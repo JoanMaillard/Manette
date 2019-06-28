@@ -3,16 +3,16 @@
 #include <BLEServer.h>
 #include <HardwareSerial.h>
 
-#define SERVICE_UUID        "b9d4de40-44be-11e9-b210-d663bd873d93"              //Unique, à changer pour chaque serveur. UUID de service A CHANGER
-#define CHARACTERISTIC1_UUID "b9d4e282-44be-11e9-b210-d663bd873d93" //Unique, à changer pour chaque serveur. UUID de commande A CHANGER
-#define CHARACTERISTIC2_UUID "861c92c2-4ef6-11e9-8647-d663bd873d93"   //Unique, à changer pour chaque serveur. UUID de feedback A CHANGER
+#define SERVICE_UUID        "d8ecf00e-997a-11e9-a2a3-2a2ae2dbcce4"              //Unique, à changer pour chaque serveur. UUID de service 
+#define CHARACTERISTIC1_UUID "d8ecf478-997a-11e9-a2a3-2a2ae2dbcce4" //Unique, à changer pour chaque serveur. UUID de commande
+#define CHARACTERISTIC2_UUID "d8ecf64e-997a-11e9-a2a3-2a2ae2dbcce4"   //Unique, à changer pour chaque serveur. UUID de feedback 
 
 BLECharacteristic *pCharacteristic1; // Pointer to the controller input characteristic
 BLECharacteristic *pCharacteristic2;
 BLEServer *pServer; // Pointer to the server instance
 uint8_t defaultInValues[2] = {0, 0};
 uint8_t ctrlInput[4] = {0};
-HardwareSerial outSer(0);
+HardwareSerial outSer(2);
 unsigned long lastChangeCtrl1 = 0;
 unsigned long lastChangeCtrl2 = 0;
 
@@ -139,9 +139,9 @@ void setup() {
  */
  
 void loop() {
-  if (outSer.read()==255) {
+  //if (outSer.read()==255) {
   outSer.write(ctrlInput,4);
-  }
+ // }
   if (lastChangeCtrl1 != 0) {
     if (lastChangeCtrl1 + 200 < millis()) {
       ctrlInput[0] = 0;

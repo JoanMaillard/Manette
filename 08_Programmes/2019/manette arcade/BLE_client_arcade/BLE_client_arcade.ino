@@ -13,15 +13,17 @@ byte dataBuffer[BUFFER_SIZE];
 HardwareSerial outSer(2);
 
 // The remote service we wish to connect to.
-static BLEUUID serviceUUID("b9d4de40-44be-11e9-b210-d663bd873d93"); //A faire matcher avec les UUID du serveur correspondant. UUID de service
+static BLEUUID serviceUUID("d8ecf00e-997a-11e9-a2a3-2a2ae2dbcce4"); //A faire matcher avec les UUID du serveur correspondant. UUID de service
 // The characteristic of the remote service we are interested in.
-static BLEUUID    charUUID("b9d4e282-44be-11e9-b210-d663bd873d93"); //A faire matcher avec les UUID du serveur correspondant. UUID de commande
+static BLEUUID    charUUID("d8ecf478-997a-11e9-a2a3-2a2ae2dbcce4"); //A faire matcher avec les UUID du serveur correspondant. UUID de commande
 
 static boolean doConnect = false;
 static boolean connected = false;
 static boolean doScan = false;
 static BLERemoteCharacteristic* pRemoteCharacteristic;
 static BLEAdvertisedDevice* myDevice;
+unsigned long debouncer[14] = {0};
+byte pinList[12] = {18,5,15,4,27,14,13,26,25,12,18,33};
 
 /*
  * 
@@ -149,9 +151,10 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
 
 void setup() {
   delay(1000);
-  outSer.begin(115200, SERIAL_8N1);
   BLEDevice::init("");
-
+  for (byte i = 0; i<12; i++) {
+    pinMode(pinList[i],INPUT_PULLUP);
+  }
   // Retrieve a Scanner and set the callback we want to use to be informed when we
   // have detected a new device.  Specify that we want active scanning and start the
   // scan to run for 5 seconds.
@@ -188,14 +191,65 @@ void loop() {
 
   if (connected) {
 
-    outSer.write(WRITE_CONTROL); //signal inputs controller that the ESP is ready to read controller data
-    while (outSer.available() < 8) {} //do nothing as long as not all the serial inputs are ready to be read
-    outSer.readBytes(dataBuffer, BUFFER_SIZE); //read inputs from inputs controller and store into dataBuffer
-    
+   byte *mainData = getButtons();
     // Set the characteristic's value to be the array of bytes that is actually a string.
-    pRemoteCharacteristic->writeValue(dataBuffer, BUFFER_SIZE, 0); //write inputs inside of dataBuffer to BT server
+    pRemoteCharacteristic->writeValue(mainData, BUFFER_SIZE, 0); //write inputs inside of dataBuffer to BT server
     
   } else if (doScan) {
     BLEDevice::getScan()->start(5, false);  // this is just example to start scan after disconnect, most likely there is better way to do it in arduino
   }
 } // End of loop
+
+/*
+ * 
+ * @func getButtons Concatenates the button values
+ * @param null
+ * @return byte *
+ * 
+ */
+
+byte * getButtons() { 
+  byte outBuffer[2] = {0};
+  for (byte i = 0; i<12; i++) {
+    if (debounce(!digitalRead(pinList[i]), i)) {
+      if (i < 8) {
+        bitSet(outBuffer[0], i);
+      }
+      else {
+        bitSet(outBuffer[1], i);
+      }
+    }
+    else {
+      if (i < 8) {
+        bitClear(outBuffer[0], i);
+      }
+      else {
+        bitClear(outBuffer[1], i);
+      }
+    }
+  }
+  return outBuffer;
+}
+
+/*
+ * 
+ * @func debounce debounce function for buttons, to avoid double presses on the hardware sie (10ms button press persistance)
+ * @param bool button status (true if pressed)
+ * @param byte button ID (starts at 0)
+ * @return bool processed button status
+ * 
+ */
+bool debounce(bool buttonStatus, byte buttonID) {
+    if (buttonStatus) {
+      debouncer[buttonID] = millis();
+      return true;
+    }
+    else {
+      if (debouncer[buttonID] + 10 > millis()) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+}
