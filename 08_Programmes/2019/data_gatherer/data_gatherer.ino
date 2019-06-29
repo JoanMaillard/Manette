@@ -24,13 +24,13 @@ bool calibrating = false;
 bool calPressed = false;
 
 /*
- * 
- * @func setup Default arduino setup. Initializes EEPROM memory, enables calibration if never attempted,
- * initializes i2c bus, initializes serial communication to client ESP32
- * @param null
- * @return void
- * 
- */
+
+   @func setup Default arduino setup. Initializes EEPROM memory, enables calibration if never attempted,
+   initializes i2c bus, initializes serial communication to client ESP32
+   @param null
+   @return void
+
+*/
 
 void setup() {
   // put your setup code here, to run once:
@@ -86,13 +86,13 @@ void setup() {
 }
 
 /*
- * 
- * @func loop Checks for calibration button and flag, then awaits data transfer requests and transmits
- * input data to the client BLE transmitter
- * @param null
- * @return void
- * 
- */
+
+   @func loop Checks for calibration button and flag, then awaits data transfer requests and transmits
+   input data to the client BLE transmitter
+   @param null
+   @return void
+
+*/
 
 void loop() {
 
@@ -174,14 +174,14 @@ void loop() {
 }
 
 /*
- * 
- * @func getButtons Interrogates the MCP23017 and handles the values it returns
- * @param null
- * @return byte *
- * 
- */
 
-byte * getButtons() { 
+   @func getButtons Interrogates the MCP23017 and handles the values it returns
+   @param null
+   @return byte
+
+*/
+
+byte * getButtons() {
   static byte vals[2];
   if (!i2c_start((I2C_7BITADDR << 1) | I2C_WRITE)) { // start transfer
     //Serial.println("I2C device busy");
@@ -206,46 +206,48 @@ byte * getButtons() {
 
 byte * remapButtons(byte *buttonGatheredData) {
   static byte remappedVals[2];
-  if (bitRead(buttonGatheredData[0],3) //A
-      bitSet(remappedVals[0],7);
-  if (bitRead(buttonGatheredData[0],6) //B
-      bitSet(remappedVals[0],6);
-  if (bitRead(buttonGatheredData[0],4) //X
-      bitSet(remappedVals[0],5);
-  if (bitRead(buttonGatheredData[0],5) //Y
-      bitSet(remappedVals[0],4);
-  if (bitRead(buttonGatheredData[1],6) //START
-      bitSet(remappedVals[0],1);
-  if (bitRead(buttonGatheredData[1],7) //SELECT
-      bitSet(remappedVals[0],0);
-  if (bitRead(buttonGatheredData[1],2) //UP
-      bitSet(remappedVals[1],5);
-  if (bitRead(buttonGatheredData[1],4) //DOWN
-      bitSet(remappedVals[1],7);
-  if (bitRead(buttonGatheredData[1],5) //LEFT
-      bitSet(remappedVals[1],4);
-  if (bitRead(buttonGatheredData[1],3) //RIGHT
-      bitSet(remappedVals[1],6);
-  if (bitRead(buttonGatheredData[1],0) //LB
-      bitSet(remappedVals[0],2);
-  if (bitRead(buttonGatheredData[0],0) //RB
-      bitSet(remappedVals[0],3);
-  if (bitRead(buttonGatheredData[0],2) //RJ
-      bitSet(remappedVals[1],2);
-  if (bitRead(buttonGatheredData[1],1) //LJ
-      bitSet(remappedVals[1],3);
-      return remappedVals;
+  remappedVals[0] = 0;
+  remappedVals[1] = 0;
+  if (bitRead(buttonGatheredData[0], 3)) //A
+    bitSet(remappedVals[0], 7);
+  if (bitRead(buttonGatheredData[0], 6)) //B
+    bitSet(remappedVals[0], 6);
+  if (bitRead(buttonGatheredData[0], 4)) //X
+    bitSet(remappedVals[0], 5);
+  if (bitRead(buttonGatheredData[0], 5)) //Y
+    bitSet(remappedVals[0], 4);
+  if (bitRead(buttonGatheredData[1], 6)) //START
+    bitSet(remappedVals[0], 1);
+  if (bitRead(buttonGatheredData[1], 7)) //SELECT
+    bitSet(remappedVals[0], 0);
+  if (bitRead(buttonGatheredData[1], 2)) //UP
+    bitSet(remappedVals[1], 5);
+  if (bitRead(buttonGatheredData[1], 4)) //DOWN
+    bitSet(remappedVals[1], 7);
+  if (bitRead(buttonGatheredData[1], 5)) //LEFT
+    bitSet(remappedVals[1], 4);
+  if (bitRead(buttonGatheredData[1], 3)) //RIGHT
+    bitSet(remappedVals[1], 6);
+  if (bitRead(buttonGatheredData[1], 0)) //LB
+    bitSet(remappedVals[0], 2);
+  if (bitRead(buttonGatheredData[0], 0)) //RB
+    bitSet(remappedVals[0], 3);
+  if (bitRead(buttonGatheredData[0], 2)) //RJ
+    bitSet(remappedVals[1], 2);
+  if (bitRead(buttonGatheredData[1], 1)) //LJ
+    bitSet(remappedVals[1], 3);
+  return remappedVals;
 }
 
 /*
- * 
- * @func getValues get all values from all axies
- * @param null
- * @return void
- * 
- */
 
-void getValues() { 
+   @func getValues get all values from all axies
+   @param null
+   @return void
+
+*/
+
+void getValues() {
   int joyRawValues[4] = {0};
   for (byte i = 0; i < 4; i++) { //gather raw joystick values
     joyRawValues[i] = analogRead(i + 2);
@@ -261,17 +263,19 @@ void getValues() {
     }
     else {
       definitiveValues[i + 2] = map(constrain(joyRawValues[i], calibValues[i + 12], calibValues[(int)8 + ((i / 2) + (2 * (i % 2)))]), calibValues[i + 12], calibValues[(int)8 + ((i / 2) + (2 * (i % 2)))], 128, 255);
+
     }
   }
+  definitiveValues[3] = 255 - definitiveValues[3];
 }
 
 /*
- * 
- * @func calButCheck Detects calibration button presses
- * @param null
- * @return void
- * 
- */
+
+   @func calButCheck Detects calibration button presses
+   @param null
+   @return void
+
+*/
 
 void calButCheck() { //calibration button detection
   if (!calPressed && !digitalRead(4)) {
@@ -290,15 +294,15 @@ void calButCheck() { //calibration button detection
 }
 
 /*
- * 
- * @func conc Concatenates and formats calculated data data
- * @param byte First byte of button data
- * @param byte Second byte of button data
- * @return byte *
- * 
- */
 
-byte * conc(byte val1, byte val2) { 
+   @func conc Concatenates and formats calculated data data
+   @param byte First byte of button data
+   @param byte Second byte of button data
+   @return byte
+
+*/
+
+byte * conc(byte val1, byte val2) {
   static byte concatenated[DATA_SIZE];
   //byte *buttonData = getButtons();
   concatenated[0] = 255 - val1;

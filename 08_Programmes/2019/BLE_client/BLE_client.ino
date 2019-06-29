@@ -207,10 +207,10 @@ byte dataBuffer[BUFFER_SIZE];
 HardwareSerial outSer(2);
 
 // The remote service we wish to connect to.
-static BLEUUID serviceUUID("b9d4de40-44be-11e9-b210-d663bd873d93"); //A faire matcher avec les UUID du serveur correspondant. UUID de service
+static BLEUUID serviceUUID("9e145556-9355-11e9-bc42-526af7764f64"); //A faire matcher avec les UUID du serveur correspondant. UUID de service
 // The characteristic of the remote service we are interested in.
-static BLEUUID    charUUID("b9d4e282-44be-11e9-b210-d663bd873d93"); //A faire matcher avec les UUID du serveur correspondant. UUID de commande
-static BLEUUID    backUUID("861c92c2-4ef6-11e9-8647-d663bd873d93"); //A faire matcher avec les UUID du serveur correspondant. UUID de feedback
+static BLEUUID    charUUID("9e145a06-9355-11e9-bc42-526af7764f64"); //A faire matcher avec les UUID du serveur correspondant. UUID de commande
+static BLEUUID    backUUID("9e145b64-9355-11e9-bc42-526af7764f64"); //A faire matcher avec les UUID du serveur correspondant. UUID de feedback
 
 static boolean doConnect = false;
 static boolean connected = false;
@@ -223,12 +223,12 @@ static BLEAdvertisedDevice* myDevice;
 uint8_t retVal[2] = {0, 0}; //*/
 
 /*
- * 
- * @func static notifyCallback callback notifier function for event handling (unused but necessary for the BLE client class to work)
- * @param null
- * @return void
- * 
- */
+
+   @func static notifyCallback callback notifier function for event handling (unused but necessary for the BLE client class to work)
+   @param null
+   @return void
+
+*/
 
 static void notifyCallback(
   BLERemoteCharacteristic* pBLERemoteCharacteristic,
@@ -245,25 +245,25 @@ static void notifyCallback(
 
 class MyClientCallback : public BLEClientCallbacks {
 
-/*
- * 
- * @func onConnect what happens when the client connects
- * @param BLEClient* pointer to the target client instance
- * @return void
- * 
- */
-  
+    /*
+
+       @func onConnect what happens when the client connects
+       @param BLEClient* pointer to the target client instance
+       @return void
+
+    */
+
     void onConnect(BLEClient* pclient) {
       connected = true;
     }
 
-/*
- * 
- * @func onDisconnect what happens when the client disconnects or loses connection
- * @param BLEClient* pointer to the target client instance
- * @return void
- * 
- */
+    /*
+
+       @func onDisconnect what happens when the client disconnects or loses connection
+       @param BLEClient* pointer to the target client instance
+       @return void
+
+    */
 
     void onDisconnect(BLEClient* pclient) {
       connected = false;
@@ -272,12 +272,12 @@ class MyClientCallback : public BLEClientCallbacks {
 };
 
 /*
- * 
- * @func connectToServer connect the client to the server
- * @param null
- * @return bool 
- * 
- */
+
+   @func connectToServer connect the client to the server
+   @param null
+   @return bool
+
+*/
 
 bool connectToServer() {
   Serial.print("Forming a connection to ");
@@ -342,13 +342,13 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
     */
 
     /*
-     * 
-     * @func onResult
-     * @param BLEAdvertisedDevice an advertised device found
-     * @return void
-     * 
-     */
-     
+
+       @func onResult
+       @param BLEAdvertisedDevice an advertised device found
+       @return void
+
+    */
+
     void onResult(BLEAdvertisedDevice advertisedDevice) {
       Serial.print("BLE Advertised Device found: ");
       Serial.println(advertisedDevice.toString().c_str());
@@ -366,12 +366,12 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
 }; // MyAdvertisedDeviceCallbacks
 
 /*
- * 
- * @func setup default setup function for arduino
- * @param null
- * @return void
- * 
- */
+
+   @func setup default setup function for arduino
+   @param null
+   @return void
+
+*/
 
 void setup() {
   delay(1000);
@@ -384,7 +384,7 @@ void setup() {
   tft.begin();
   tft.fillRect(0, 0, 128, 128, BLACK);
 
-  outSer.begin(115200, SERIAL_8N1,16,17);
+  outSer.begin(115200, SERIAL_8N1, 16, 17);
   Serial.begin(115200);
   //pinMode(27, INPUT_PULLUP);
   Serial.println("Starting Arduino BLE Client application...");
@@ -404,12 +404,12 @@ void setup() {
 } // End of setup.
 
 /*
- * 
- * @func loop default loop function for arduino
- * @param null
- * @return void
- * 
- */
+
+   @func loop default loop function for arduino
+   @param null
+   @return void
+
+*/
 
 // This is the Arduino main loop function.
 void loop() {
@@ -430,19 +430,19 @@ void loop() {
   if (connected) {
     std::string feedbackDataServ;
     uint8_t feedbackData[2] = {0, 0};
-    Serial.print("1 ");
-    Serial.println(millis());
+    // Serial.print("1 ");
+    //  Serial.println(millis());
 
     outSer.write(WRITE_CONTROL); //signal inputs controller that the ESP is ready to read controller data
     while (outSer.available() < 8) {} //do nothing as long as not all the serial inputs are ready to be read
     outSer.readBytes(dataBuffer, BUFFER_SIZE); //read inputs from inputs controller and store into dataBuffer
 
-    Serial.print("2 ");
-    Serial.println(millis());
+    // Serial.print("2 ");
+    // Serial.println(millis());
     for (int i = 0; i < 8; i++) {
-    Serial.print(dataBuffer[i]);
-    Serial.print("   ");
-     }
+      Serial.print(dataBuffer[i]);
+      Serial.print("   ");
+    }
     //Serial.print("3 ");
     //Serial.println(millis());
 
@@ -478,80 +478,84 @@ void loop() {
 } // End of loop
 
 /*
- * 
- *  @func displayHearts displays the heart according to the given ID
- *  @param byte ID of the heart to display (1-6)
- *  @return void
- *  
- */
+
+    @func displayHearts displays the heart according to the given ID
+    @param byte ID of the heart to display (1-6)
+    @return void
+
+*/
 
 void displayHearts(byte number) { //displays a heart in the nth position
-   //tft.setCursor(0,0);
-   if (number<4)
-   {tft.drawRGBBitmap(2+number*24, 5, heart, 23, 23);}
-   else
-   {tft.drawRGBBitmap(2+(number-3)*24, 29, heart, 23, 23);}
+  //tft.setCursor(0,0);
+  if (number < 4)
+  {
+    tft.drawRGBBitmap(2 + number * 24, 5, heart, 23, 23);
+  }
+  else
+  {
+    tft.drawRGBBitmap(2 + (number - 3) * 24, 29, heart, 23, 23);
+  }
 }
 
 /*
- * 
- * @func displayTimeRemaining displays the proper image for the time remaining
- * @param byte state for the time remaining (0 for most - 3 for least)
- * @return void
- * 
- */
+
+   @func displayTimeRemaining displays the proper image for the time remaining
+   @param byte state for the time remaining (0 for most - 3 for least)
+   @return void
+
+*/
 
 void displayTimeRemaining(byte timeLeftState) { //displays the time icon depending on the state
   switch (timeLeftState) {
     case 0:
       tft.drawRGBBitmap(16, 70, time0, 96, 32);
-    break;
+      break;
     case 1:
       tft.drawRGBBitmap(17, 70, time1, 96, 32);
-    break;
+      break;
     case 2:
       tft.drawRGBBitmap(17, 70, time2, 96, 32);
-    break;
+      break;
     case 3:
       tft.drawRGBBitmap(17, 70, time3, 96, 32);
-    break;
+      break;
     default:
-    break;
+      break;
   }
 }
 
 /*
- * 
- * @func goScreen displays the "go" screen (ID 3)
- * @param null
- * @return void
- * 
- */
+
+   @func goScreen displays the "go" screen (ID 3)
+   @param null
+   @return void
+
+*/
 
 void goScreen() {
   tft.fillScreen(GREEN);
-  tft.setCursor(40,50);
+  tft.setCursor(40, 50);
   tft.setTextColor(WHITE);
   tft.setTextSize(4);
   tft.print("GO");
-  tft.setCursor(2,80);
+  tft.setCursor(2, 80);
   tft.setTextSize(1);
   tft.print("Appuyez sur vert");
-  tft.setCursor(2,90);
+  tft.setCursor(2, 90);
   tft.print("pour démarrer");
 }
 
 /*
- * 
- * @func menu1TextDisplay displays the text for the first menu
- * @param null
- * @return void
- * 
- */
+
+   @func menu1TextDisplay displays the text for the first menu
+   @param null
+   @return void
+
+*/
 
 void menu1TextDisplay() {
   tft.setTextSize(2);
-  tft.setCursor(25,48);
+  tft.setCursor(25, 48);
   tft.setTextColor(WHITE);
   tft.print("Auto");
   tft.setCursor(25, 74);
@@ -559,123 +563,123 @@ void menu1TextDisplay() {
 }
 
 /*
- * 
- * @func menuPauseDisplay displays the text for the pause menu
- * @param null
- *  @return void
- * 
- */
+
+   @func menuPauseDisplay displays the text for the pause menu
+   @param null
+    @return void
+
+*/
 
 void menuPauseDisplay() {
   tft.setTextSize(2);
-  tft.setCursor(15,48);
+  tft.setCursor(15, 48);
   tft.setTextColor(WHITE);
   tft.print("Reprendre");
   tft.setCursor(15, 74);
   tft.print("Retour");
-  tft.setCursor(15,84);
+  tft.setCursor(15, 84);
   tft.print("menu");
 }
 
 /*
- * 
- * @func renderScreen main decision function for screen rendering
- * @param byte screen state ID
- * @return void
- * 
- */
+
+   @func renderScreen main decision function for screen rendering
+   @param byte screen state ID
+   @return void
+
+*/
 
 void renderScreen(byte state) {//renders the screen depending on the state dictated by the handler
   if (previousState != state) {
-    
+
     tft.fillScreen(BLACK);
-  switch (state) {
-    case 0:
-      previousState = state;
-    return;
-    break;
-    case 1:
-      menu1TextDisplay();
-      tft.drawRGBBitmap(2, 50, arrow, 5, 9);
-    break;
-    case 2:
-      menu1TextDisplay();
-      tft.drawRGBBitmap(2, 76, arrow, 5, 9);
-    break;
-    case 3: //display GO on a green bgnd
-     goScreen();
-    break;
-    case 4: //display all hearts and time display statuses
-      displayHearts(6);
-    case 5:
-      displayHearts(5);
-    case 6:
-      displayHearts(4);
-    case 7:
-      displayHearts(3);
-    case 8:
-      displayHearts(2);
-    case 9:
-      displayHearts(1);
-      displayTimeRemaining(0);
-    break;
-    case 10:
-      displayHearts(6);
-    case 11:
-      displayHearts(5);
-    case 12:
-      displayHearts(4);
-    case 13:
-      displayHearts(3);
-    case 14:
-      displayHearts(2);
-    case 15:
-      displayHearts(1);
-      displayTimeRemaining(1);
-    break;
-    case 16:
-      displayHearts(6);
-    case 17:
-      displayHearts(5);
-    case 18:
-      displayHearts(4);
-    case 19:
-      displayHearts(3);
-    case 20:
-      displayHearts(2);
-    case 21:
-      displayHearts(1);
-      displayTimeRemaining(2);
-    break;
-    case 22:
-      displayHearts(6);
-    case 23:
-      displayHearts(5);
-    case 24:
-      displayHearts(4);
-    case 25:
-      displayHearts(3);
-    case 26:
-      displayHearts(2);
-    case 27:
-      displayHearts(1);
-      displayTimeRemaining(3);
-    break;
-    case 28:
-      menuPauseDisplay();
-      tft.drawRGBBitmap(2, 50, arrow, 5, 9);
-    break;
-    case 29:
-      menuPauseDisplay();
-      tft.drawRGBBitmap(2, 76, arrow, 5, 9);
-    break;
-    default: //transmission error
-    tft.setCursor(5,5);
-    tft.setTextColor(RED);
-    tft.setTextSize(1);
-    tft.print("Transmission error");
-    break;
-  }
+    switch (state) {
+      case 0:
+        previousState = state;
+        return;
+        break;
+      case 1:
+        menu1TextDisplay();
+        tft.drawRGBBitmap(2, 50, arrow, 5, 9);
+        break;
+      case 2:
+        menu1TextDisplay();
+        tft.drawRGBBitmap(2, 76, arrow, 5, 9);
+        break;
+      case 3: //display GO on a green bgnd
+        goScreen();
+        break;
+      case 4: //display all hearts and time display statuses
+        displayHearts(6);
+      case 5:
+        displayHearts(5);
+      case 6:
+        displayHearts(4);
+      case 7:
+        displayHearts(3);
+      case 8:
+        displayHearts(2);
+      case 9:
+        displayHearts(1);
+        displayTimeRemaining(0);
+        break;
+      case 10:
+        displayHearts(6);
+      case 11:
+        displayHearts(5);
+      case 12:
+        displayHearts(4);
+      case 13:
+        displayHearts(3);
+      case 14:
+        displayHearts(2);
+      case 15:
+        displayHearts(1);
+        displayTimeRemaining(1);
+        break;
+      case 16:
+        displayHearts(6);
+      case 17:
+        displayHearts(5);
+      case 18:
+        displayHearts(4);
+      case 19:
+        displayHearts(3);
+      case 20:
+        displayHearts(2);
+      case 21:
+        displayHearts(1);
+        displayTimeRemaining(2);
+        break;
+      case 22:
+        displayHearts(6);
+      case 23:
+        displayHearts(5);
+      case 24:
+        displayHearts(4);
+      case 25:
+        displayHearts(3);
+      case 26:
+        displayHearts(2);
+      case 27:
+        displayHearts(1);
+        displayTimeRemaining(3);
+        break;
+      case 28:
+        menuPauseDisplay();
+        tft.drawRGBBitmap(2, 50, arrow, 5, 9);
+        break;
+      case 29:
+        menuPauseDisplay();
+        tft.drawRGBBitmap(2, 76, arrow, 5, 9);
+        break;
+      default: //transmission error
+        tft.setCursor(5, 5);
+        tft.setTextColor(RED);
+        tft.setTextSize(1);
+        tft.print("Transmission error");
+        break;
+    }
   }
   previousState = state;
 }
