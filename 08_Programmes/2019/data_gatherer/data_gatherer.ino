@@ -96,7 +96,7 @@ void setup() {
 
 void loop() {
 
-  byte *buttonData = getButtons();
+  byte *buttonData = remapButtons(getButtons());
   calButCheck(); //checks calibration button
 
   if (calibrating) { //calibration procedure if enabled
@@ -119,7 +119,7 @@ void loop() {
     }
     int tempCalibValues[6] = {0};
     while (calibrating) {
-      byte *buttonData = getButtons();
+      byte *buttonData = remapButtons(getButtons());
       calButCheck(); //check calibration button for calibration end
       for (byte i = 0; i < 6; i++) {
         tempCalibValues[i] = analogRead(i); //gather raw data for calibration
@@ -204,6 +204,39 @@ byte * getButtons() {
   return vals;
 }
 
+byte * remapButtons(byte *buttonGatheredData) {
+  static byte remappedVals[2];
+  if (bitRead(buttonGatheredData[0],3) //A
+      bitSet(remappedVals[0],7);
+  if (bitRead(buttonGatheredData[0],6) //B
+      bitSet(remappedVals[0],6);
+  if (bitRead(buttonGatheredData[0],4) //X
+      bitSet(remappedVals[0],5);
+  if (bitRead(buttonGatheredData[0],5) //Y
+      bitSet(remappedVals[0],4);
+  if (bitRead(buttonGatheredData[1],6) //START
+      bitSet(remappedVals[0],1);
+  if (bitRead(buttonGatheredData[1],7) //SELECT
+      bitSet(remappedVals[0],0);
+  if (bitRead(buttonGatheredData[1],2) //UP
+      bitSet(remappedVals[1],5);
+  if (bitRead(buttonGatheredData[1],4) //DOWN
+      bitSet(remappedVals[1],7);
+  if (bitRead(buttonGatheredData[1],5) //LEFT
+      bitSet(remappedVals[1],4);
+  if (bitRead(buttonGatheredData[1],3) //RIGHT
+      bitSet(remappedVals[1],6);
+  if (bitRead(buttonGatheredData[1],0) //LB
+      bitSet(remappedVals[0],2);
+  if (bitRead(buttonGatheredData[0],0) //RB
+      bitSet(remappedVals[0],3);
+  if (bitRead(buttonGatheredData[0],2) //RJ
+      bitSet(remappedVals[1],2);
+  if (bitRead(buttonGatheredData[1],1) //LJ
+      bitSet(remappedVals[1],3);
+      return remappedVals;
+}
+
 /*
  * 
  * @func getValues get all values from all axies
@@ -267,7 +300,7 @@ void calButCheck() { //calibration button detection
 
 byte * conc(byte val1, byte val2) { 
   static byte concatenated[DATA_SIZE];
-  byte *buttonData = getButtons();
+  //byte *buttonData = getButtons();
   concatenated[0] = 255 - val1;
   concatenated[1] = 255 - val2;
   for (byte i = 0; i < 6; i++) {
